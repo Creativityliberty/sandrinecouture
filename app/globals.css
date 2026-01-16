@@ -8,7 +8,6 @@
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
-  /* Un rose gold / vieux rose élégant et lisible */
   --primary: oklch(0.70 0.12 15.5); 
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.97 0.02 15.5);
@@ -41,14 +40,20 @@
   @apply relative overflow-hidden rounded-[2rem] border border-black/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1;
 }
 
-.floating-element {
-  animation: floating 6s ease-in-out infinite;
+/* Animation Marquee pour les villes */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-@keyframes floating {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 .text-gradient {
