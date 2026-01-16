@@ -72,23 +72,28 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white z-[100] p-8 flex flex-col items-center justify-center gap-6 animate-in fade-in duration-300">
+        <div className="lg:hidden fixed inset-0 bg-white/98 backdrop-blur-xl z-[100] p-8 flex flex-col items-center justify-center gap-6 animate-in fade-in duration-300">
           <button className="absolute top-8 right-8 bg-transparent border-none cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}><X size={28} /></button>
-          <div className="w-24 h-24 rounded-full border-4 border-primary/20 overflow-hidden mb-4">
-            <img src="https://aistudio.google.com/app/u/0/u/0/view/1000/logo.png" className="w-full h-full object-cover" alt="Logo" />
+
+          <div className="w-24 h-24 rounded-full border border-primary/20 overflow-hidden mb-4 shadow-xl">
+            <img src="/logo-sandrine.png" className="w-full h-full object-cover" alt="By Sandrine Couture" />
           </div>
+
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-2xl font-black tracking-tighter no-underline text-black uppercase italic"
+              className="text-lg font-black tracking-widest no-underline text-gray-900 uppercase hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>
           ))}
+
           <Link href="/devis" className="w-full max-w-xs no-underline">
-            <Button onClick={() => setIsMobileMenuOpen(false)} size="lg" className="mt-6 uppercase tracking-widest text-[10px] h-16 w-full font-black">Demander un Devis</Button>
+            <Button onClick={() => setIsMobileMenuOpen(false)} size="lg" className="mt-8 uppercase tracking-widest text-[10px] h-14 w-full font-black shadow-lg shadow-primary/20">
+              Demander un Devis
+            </Button>
           </Link>
         </div>
       )}
