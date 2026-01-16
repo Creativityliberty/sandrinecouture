@@ -29,15 +29,24 @@ export function LocalisationSection() {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="p-6 rounded-3xl bg-secondary/50 border border-primary/10">
-                <Truck className="text-primary mb-4" size={24} />
-                <h4 className="font-bold uppercase tracking-widest text-[10px] mb-2">Livraison Partout</h4>
-                <p className="text-sm font-bold italic">Expédition sécurisée dans toute la France.</p>
+              <div className="p-6 rounded-3xl bg-secondary/50 border border-primary/10 flex flex-col justify-between">
+                <div>
+                  <Truck className="text-primary mb-4" size={24} />
+                  <h4 className="font-bold uppercase tracking-widest text-[10px] mb-2">Livraison Partout</h4>
+                  <p className="text-sm font-bold italic">Expédition sécurisée dans toute la France.</p>
+                </div>
+                <img src="/logo-mondial-relay.jpg" alt="Mondial Relay" className="h-8 object-contain mt-6 opacity-80 mix-blend-multiply" />
               </div>
-              <div className="p-6 rounded-3xl bg-black text-white">
-                <Globe className="text-primary mb-4" size={24} />
-                <h4 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-primary/70">France & Europe</h4>
-                <p className="text-sm font-bold italic">Un savoir-faire normand qui s'exporte.</p>
+              <div className="p-6 rounded-3xl bg-black text-white flex flex-col justify-between border border-white/5">
+                <div>
+                  <Globe className="text-primary mb-4" size={24} />
+                  <h4 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-primary/70">France & Europe</h4>
+                  <p className="text-sm font-bold italic">Un savoir-faire normand qui s'exporte.</p>
+                </div>
+                <div className="mt-6 flex items-center gap-2 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                  <span className="text-[8px] font-black uppercase tracking-widest">Partenaire</span>
+                  <img src="/logo-mondial-relay.jpg" alt="Mondial Relay Partner" className="h-6 bg-white py-0.5 px-2 rounded-lg" />
+                </div>
               </div>
             </div>
           </div>
