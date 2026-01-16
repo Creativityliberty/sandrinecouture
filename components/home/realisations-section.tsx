@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ZoomIn, ArrowRight } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 import { Button } from '../ui/button';
 
 export function RealisationsSection() {
@@ -15,29 +15,27 @@ export function RealisationsSection() {
   ];
 
   return (
-    <section id="réalisations" className="py-32 px-6 bg-white overflow-hidden">
+    <section id="réalisations" className="py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-20">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
           <div className="max-w-2xl">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 italic leading-[0.85] uppercase">
-              Réalisations <br /><span className="text-primary not-italic text-4xl md:text-6xl tracking-tight">L'Atelier en Image</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 italic leading-[0.9] uppercase">
+              Réalisations <br /><span className="text-primary not-italic text-2xl sm:text-3xl tracking-tight">L'Atelier en Image</span>
             </h2>
-            <p className="text-xl text-muted-foreground font-medium leading-relaxed">
-              Logos, tabliers, patchs, casquettes, broderies prénoms... Chaque projet est différent, mais l’objectif reste le même : un rendu propre et professionnel.
+            <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+              Un rendu propre et professionnel pour chaque projet unique.
             </p>
           </div>
-          <div className="flex gap-4">
-             <Button onClick={() => window.location.hash = 'devis'} className="h-16 px-8 uppercase text-[10px] tracking-widest font-black">Demander un Devis</Button>
-          </div>
+          <Button onClick={() => window.location.hash = 'devis'} className="h-14 px-8 uppercase text-[9px] tracking-widest font-black">Demander un Devis</Button>
         </div>
 
-        {/* Multiplex Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Multiplex Grid Layout - Mobile Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {images.map((img, i) => (
             <div 
               key={i} 
-              className={`group relative overflow-hidden rounded-[2.5rem] cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-700 ${
-                i === 0 ? 'lg:row-span-2 h-[400px] lg:h-full' : 'h-[350px]'
+              className={`group relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] cursor-pointer shadow-md hover:shadow-xl transition-all duration-700 ${
+                i === 0 ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2 h-[300px] sm:h-[400px] lg:h-full' : 'h-[250px] md:h-[350px]'
               }`}
               onClick={() => setSelectedImg(img.url)}
             >
@@ -46,11 +44,11 @@ export function RealisationsSection() {
                 alt={img.title} 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
-                <p className="text-primary text-[10px] uppercase font-black tracking-[0.3em] mb-2">{img.category}</p>
-                <h4 className="text-white text-2xl font-black tracking-tighter italic uppercase">{img.title}</h4>
-                <div className="mt-6 flex items-center gap-2 text-white/60 text-[10px] uppercase font-bold tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <ZoomIn size={14} /> Cliquez pour agrandir
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-10">
+                <p className="text-primary text-[9px] uppercase font-black tracking-[0.2em] mb-1">{img.category}</p>
+                <h4 className="text-white text-xl md:text-2xl font-black tracking-tighter italic uppercase">{img.title}</h4>
+                <div className="mt-4 flex items-center gap-2 text-white/60 text-[9px] uppercase font-bold tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <ZoomIn size={12} /> Cliquer pour voir
                 </div>
               </div>
             </div>
@@ -60,18 +58,18 @@ export function RealisationsSection() {
         {/* Lightbox Modal */}
         {selectedImg && (
           <div 
-            className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6 animate-in fade-in duration-300"
+            className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300"
             onClick={() => setSelectedImg(null)}
           >
             <button 
-              className="absolute top-10 right-10 text-white hover:text-primary transition-colors bg-white/10 p-4 rounded-full border-none cursor-pointer"
+              className="absolute top-6 right-6 text-white hover:text-primary transition-colors bg-white/10 p-3 rounded-full border-none cursor-pointer"
               onClick={() => setSelectedImg(null)}
             >
-              <X size={32} />
+              <X size={24} />
             </button>
             <img 
               src={selectedImg} 
-              className="max-w-full max-h-[90vh] rounded-3xl shadow-2xl object-contain animate-in zoom-in-95 duration-500"
+              className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain animate-in zoom-in-95 duration-500"
               alt="Vue agrandie"
             />
           </div>

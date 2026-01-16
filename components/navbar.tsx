@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import { SITE_CONFIG } from '../lib/site-config';
 
 interface NavbarProps {
   onNavigate: (page: 'home' | 'devis' | 'entreprises' | 'particuliers') => void;
@@ -18,7 +17,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: 'Professionnels', href: '#entreprises' },
+    { label: 'Entreprises', href: '#entreprises' },
     { label: 'Particuliers', href: '#particuliers' },
     { label: 'Réalisations', href: '#réalisations' },
     { label: 'Contact', href: '#contact' }
@@ -26,27 +25,35 @@ export function Navbar({ onNavigate }: NavbarProps) {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ${
-      isScrolled ? 'py-4' : 'py-8'
+      isScrolled ? 'py-3' : 'py-6'
     }`}>
-      <div className="container mx-auto px-6">
-        <div className={`glass rounded-full px-8 py-3 flex items-center justify-between transition-all duration-500 ${
-          isScrolled ? 'border-black/5 bg-white/80 shadow-lg' : 'border-transparent bg-transparent shadow-none'
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className={`glass rounded-full px-4 sm:px-8 py-2.5 flex items-center justify-between transition-all duration-500 ${
+          isScrolled ? 'border-black/5 bg-white/90 shadow-md' : 'border-transparent bg-transparent shadow-none'
         }`}>
-          {/* Logo */}
+          {/* Logo avec image et forme arrondie */}
           <button onClick={() => onNavigate('home')} className="flex items-center gap-3 group bg-transparent border-none cursor-pointer">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold italic transition-transform group-hover:rotate-12">
-              S
+            <div className="w-10 h-10 rounded-full border border-primary/20 overflow-hidden bg-white shadow-sm transition-transform group-hover:scale-110">
+              <img 
+                src="https://aistudio.google.com/app/u/0/u/0/view/1000/logo.png" 
+                alt="Logo Sandrine Couture" 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback if URL fails
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1613501258908-4100257e937d?w=100&h=100&fit=crop";
+                }}
+              />
             </div>
-            <span className="font-bold tracking-tighter text-lg hidden sm:block uppercase">By Sandrine Couture</span>
+            <span className="font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800">Sandrine Couture</span>
           </button>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <a 
                 key={item.label} 
                 href={item.href}
-                className="text-[11px] uppercase tracking-widest font-bold text-muted-foreground hover:text-primary transition-colors no-underline"
+                className="text-[10px] uppercase tracking-widest font-extrabold text-muted-foreground hover:text-primary transition-colors no-underline"
               >
                 {item.label}
               </a>
@@ -54,9 +61,9 @@ export function Navbar({ onNavigate }: NavbarProps) {
           </div>
 
           {/* CTA */}
-          <div className="flex items-center gap-4">
-            <Button onClick={() => onNavigate('devis')} variant="primary" size="sm" className="hidden sm:flex uppercase text-[10px] tracking-widest">
-              Devis Rapide
+          <div className="flex items-center gap-3">
+            <Button onClick={() => onNavigate('devis')} variant="primary" size="sm" className="hidden sm:flex uppercase text-[9px] tracking-widest h-10 px-6 font-black">
+              Devis
             </Button>
             <button 
               className="lg:hidden p-2 text-black bg-transparent border-none cursor-pointer"
@@ -70,19 +77,22 @@ export function Navbar({ onNavigate }: NavbarProps) {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white z-[100] p-10 flex flex-col items-center justify-center gap-8 animate-in fade-in duration-300">
-          <button className="absolute top-10 right-10 bg-transparent border-none cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}><X size={32} /></button>
+        <div className="lg:hidden fixed inset-0 bg-white z-[100] p-8 flex flex-col items-center justify-center gap-6 animate-in fade-in duration-300">
+          <button className="absolute top-8 right-8 bg-transparent border-none cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}><X size={28} /></button>
+          <div className="w-24 h-24 rounded-full border-4 border-primary/20 overflow-hidden mb-4">
+            <img src="https://aistudio.google.com/app/u/0/u/0/view/1000/logo.png" className="w-full h-full object-cover" alt="Logo" />
+          </div>
           {navItems.map((item) => (
             <a 
               key={item.label} 
               href={item.href}
-              className="text-3xl font-black tracking-tighter no-underline text-black uppercase"
+              className="text-2xl font-black tracking-tighter no-underline text-black uppercase italic"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </a>
           ))}
-          <Button onClick={() => { onNavigate('devis'); setIsMobileMenuOpen(false); }} size="lg" className="mt-8 uppercase tracking-widest">Obtenir un Devis</Button>
+          <Button onClick={() => { onNavigate('devis'); setIsMobileMenuOpen(false); }} size="lg" className="mt-6 uppercase tracking-widest text-[10px] h-16 w-full max-w-xs font-black">Demander un Devis</Button>
         </div>
       )}
     </nav>

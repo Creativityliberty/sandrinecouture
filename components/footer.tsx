@@ -10,7 +10,12 @@ export function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <h3 className="text-3xl font-black tracking-tighter mb-6 italic">By Sandrine Couture</h3>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-full border border-primary/20 overflow-hidden bg-white shadow-sm p-1">
+                 <img src="https://aistudio.google.com/app/u/0/u/0/view/1000/logo.png" className="w-full h-full object-cover rounded-full" alt="Sandrine Couture Logo" />
+              </div>
+              <h3 className="text-3xl font-black tracking-tighter italic">By Sandrine Couture</h3>
+            </div>
             <p className="text-gray-500 max-w-sm leading-relaxed mb-8 text-sm font-medium">
               Atelier de broderie d'excellence en Normandie. Spécialiste du textile professionnel et du cadeau de naissance personnalisé à Robertot.
             </p>
@@ -18,7 +23,7 @@ export function Footer() {
               <a href={SITE_CONFIG.socials.instagram} target="_blank" className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-400"><Instagram size={18} /></a>
               <a href={SITE_CONFIG.socials.facebook} target="_blank" className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-400"><Facebook size={18} /></a>
             </div>
-            <div className="space-y-3 text-sm font-bold uppercase tracking-widest text-primary/60">
+            <div className="space-y-3 text-sm font-bold uppercase tracking-widest text-primary/70">
                <div className="flex items-center gap-2"><Phone size={14} /> {SITE_CONFIG.phone}</div>
                <div className="flex items-center gap-2"><Mail size={14} /> {SITE_CONFIG.email}</div>
             </div>
