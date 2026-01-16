@@ -27,8 +27,8 @@ const MessageBubble = ({ m, setIsOpen }: { m: { role: 'user' | 'assistant', cont
     <div className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'} space-y-3`}>
       {cleanContent && (
         <div className={`max-w-[85%] p-4 rounded-3xl text-[13px] leading-relaxed font-medium shadow-sm transition-all hover:shadow-md ${m.role === 'user'
-            ? 'bg-black text-white rounded-tr-none'
-            : 'bg-white text-gray-800 rounded-tl-none border border-black/5'
+          ? 'bg-black text-white rounded-tr-none'
+          : 'bg-white text-gray-800 rounded-tl-none border border-black/5'
           }`}>
           {cleanContent}
         </div>
@@ -126,11 +126,11 @@ export function AIAssistant() {
           <div className="bg-primary p-6 text-white shrink-0">
             <div className="flex justify-between items-center mb-1">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center">
-                  <Sparkles className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center overflow-hidden border border-white/10">
+                  <img src="/logo-sandrine.png" className="w-full h-full object-cover" alt="Logo" />
                 </div>
                 <div>
-                  <p className="font-black italic uppercase tracking-tighter leading-none">L&apos;Atelier IA</p>
+                  <p className="font-black italic uppercase tracking-tighter leading-none">By Sandrine Couture</p>
                   <div className="flex items-center gap-1.5 mt-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                     <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">En ligne</p>
