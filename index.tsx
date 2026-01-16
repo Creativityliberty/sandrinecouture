@@ -30,7 +30,6 @@ function App() {
         setCurrentPage('particuliers');
       } else {
         setCurrentPage('home');
-        // If it's an anchor like #réalisations, the browser will handle the scroll if we are on 'home'
       }
       window.scrollTo(0, 0);
     };
@@ -65,7 +64,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen font-sans selection:bg-primary/20">
+    <div className="relative min-h-screen font-sans selection:bg-primary/20 bg-white">
       <Navbar onNavigate={(page) => {
           window.location.hash = page === 'home' ? '' : page;
       }} />
