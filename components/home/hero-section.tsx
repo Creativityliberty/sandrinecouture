@@ -64,23 +64,26 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative group animate-in fade-in zoom-in duration-1000 delay-200 hidden sm:block">
-            <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl group-hover:bg-primary/10 transition-all duration-700" />
-            <div className="relative h-[450px] lg:h-[600px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white">
-              <img
-                src="/images/realisations/serviette-brodee-van-surf.webp"
-                alt="Broderie personnalisée Van Surf"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 text-white glass p-5 rounded-2xl border-white/40">
-                <p className="text-sm font-bold italic mb-1 tracking-tight">"Le détail qui fait la différence."</p>
-                <p className="text-[8px] uppercase font-black tracking-[0.2em] opacity-70 text-primary">Atelier Robertot • Normandie</p>
-              </div>
-            </div>
+        </div>
+      </div>
+
+      <div className="relative group animate-in fade-in zoom-in duration-1000 delay-200 hidden lg:block w-full max-w-lg">
+        <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl group-hover:bg-primary/10 transition-all duration-700" />
+        <div className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform transition-transform duration-700 hover:rotate-1">
+          <img
+            src="/images/realisations/serviette-brodee-van-surf.webp"
+            alt="Broderie personnalisée Van Surf"
+            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute bottom-8 left-8 text-white glass p-5 rounded-2xl border-white/40 backdrop-blur-md">
+            <p className="text-sm font-bold italic mb-1 tracking-tight">"Le détail qui fait la différence."</p>
+            <p className="text-[8px] uppercase font-black tracking-[0.2em] opacity-70 text-primary">Atelier Robertot • Normandie</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+      </div >
+    </section >
   );
 }
