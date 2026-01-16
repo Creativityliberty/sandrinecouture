@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const SYSTEM_PROMPT = `Tu es l'expert-conseil et assistant de vente de "By Sandrine Couture", un atelier de broderie de luxe à Robertot (76).
 
