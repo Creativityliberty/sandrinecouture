@@ -1,0 +1,8 @@
+/* TEAM */
+Artisane : Sandrine (By Sandrine Couture)
+Atelier : Robertot, Normandie.
+
+/* SITE */
+Design & Code : NÜMTEMA Core Framework
+Technologie : React, Tailwind CSS, Gemini AI
+Date : 2024

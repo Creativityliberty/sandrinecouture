@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>By Sandrine Couture | Broderie d'Excellence en Normandie</title>
-    <meta name="description" content="Personnalisation textile haut de gamme pour entreprises et particuliers à Robertot, Normandie.">
+    <meta name="description" content="Personnalisation textile haut de gamme pour entreprises et particuliers à Robertot, Normandie. Uniformes pro et cadeaux de naissance uniques.">
     
-    <!-- Tailwind Play CDN for instant styling in preview -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bysandrinecouture.fr/">
+    <meta property="og:title" content="By Sandrine Couture | Broderie d'Excellence">
+    <meta property="og:description" content="Artisanat Normand : Donnez vie à vos textiles avec une broderie durable et de précision.">
+    <meta property="og:image" content="/og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="By Sandrine Couture | Broderie d'Excellence">
+    <meta property="twitter:description" content="Personnalisation textile haut de gamme pour entreprises et particuliers en Normandie.">
+    <meta property="twitter:image" content="/og.jpg">
+
+    <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
     
@@ -18,7 +31,7 @@
               sans: ['Poppins', 'sans-serif'],
             },
             colors: {
-              primary: '#e91e63', // Rose Couture
+              primary: '#e91e63',
               secondary: '#fce4ec',
             }
           }
@@ -44,7 +57,6 @@
       .text-gradient {
         @apply bg-clip-text text-transparent bg-gradient-to-br from-black to-pink-600;
       }
-      /* Custom selection color */
       ::selection {
         background: rgba(233, 30, 99, 0.2);
       }

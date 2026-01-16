@@ -18,7 +18,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
+    { label: 'Professionnels', href: '#professionnels' },
+    { label: 'Particuliers', href: '#particuliers' },
     { label: 'Réalisations', href: '#réalisations' },
     { label: 'Contact', href: '#contact' }
   ];
@@ -36,16 +37,16 @@ export function Navbar({ onNavigate }: NavbarProps) {
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold italic transition-transform group-hover:rotate-12">
               S
             </div>
-            <span className="font-bold tracking-tighter text-lg hidden sm:block">By Sandrine Couture</span>
+            <span className="font-bold tracking-tighter text-lg hidden sm:block uppercase">By Sandrine Couture</span>
           </button>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <a 
                 key={item.label} 
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors no-underline"
+                className="text-[11px] uppercase tracking-widest font-bold text-muted-foreground hover:text-primary transition-colors no-underline"
               >
                 {item.label}
               </a>
@@ -54,8 +55,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
 
           {/* CTA */}
           <div className="flex items-center gap-4">
-            <Button onClick={() => onNavigate('devis')} variant="primary" size="sm" className="hidden sm:flex">
-              Demander un Devis
+            <Button onClick={() => onNavigate('devis')} variant="primary" size="sm" className="hidden sm:flex uppercase text-[10px] tracking-widest">
+              Devis Rapide
             </Button>
             <button 
               className="lg:hidden p-2 text-black bg-transparent border-none cursor-pointer"
@@ -75,13 +76,13 @@ export function Navbar({ onNavigate }: NavbarProps) {
             <a 
               key={item.label} 
               href={item.href}
-              className="text-4xl font-bold tracking-tighter no-underline text-black"
+              className="text-3xl font-black tracking-tighter no-underline text-black uppercase"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </a>
           ))}
-          <Button onClick={() => { onNavigate('devis'); setIsMobileMenuOpen(false); }} size="lg" className="mt-8">Obtenir un Devis</Button>
+          <Button onClick={() => { onNavigate('devis'); setIsMobileMenuOpen(false); }} size="lg" className="mt-8 uppercase tracking-widest">Obtenir un Devis</Button>
         </div>
       )}
     </nav>

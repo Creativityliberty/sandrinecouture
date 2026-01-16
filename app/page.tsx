@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/home/hero-section"
 import { SegmentationSection } from "@/components/home/segmentation-section"
+import { BusinessSection } from "@/components/home/business-section"
 import { BentoServices } from "@/components/home/bento-services"
 import { ReassuranceSection } from "@/components/home/reassurance-section"
 import { ProcessSection } from "@/components/home/process-section"
@@ -46,7 +47,6 @@ export default function HomePage() {
 
   return (
     <div className="relative">
-      {/* Fix: Passed required onNavigate prop to Navbar */}
       <Navbar onNavigate={handleNavigate} />
       
       <main>
@@ -54,10 +54,15 @@ export default function HomePage() {
           <>
             <HeroSection />
             <SegmentationSection />
-            <BentoServices />
+            <BusinessSection />
+            <div id="particuliers">
+              <BentoServices />
+            </div>
             <ReassuranceSection />
             <ProcessSection />
-            <RealisationsSection />
+            <div id="réalisations">
+              <RealisationsSection />
+            </div>
             <LocalisationSection />
             <CtaSection />
           </>

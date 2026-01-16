@@ -1,0 +1,4 @@
+Contact: mailto:bysandrinecouture@gmail.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: fr
+Canonical: https://bysandrinecouture.fr/.well-known/security.txt
