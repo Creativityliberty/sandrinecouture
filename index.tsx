@@ -21,11 +21,17 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.split('?')[0];
-      if (hash === '#devis') setCurrentPage('devis');
-      else if (hash === '#entreprises') setCurrentPage('entreprises');
-      else if (hash === '#particuliers') setCurrentPage('particuliers');
-      else setCurrentPage('home');
       
+      if (hash === '#devis') {
+        setCurrentPage('devis');
+      } else if (hash === '#entreprises') {
+        setCurrentPage('entreprises');
+      } else if (hash === '#particuliers') {
+        setCurrentPage('particuliers');
+      } else {
+        setCurrentPage('home');
+        // If it's an anchor like #réalisations, the browser will handle the scroll if we are on 'home'
+      }
       window.scrollTo(0, 0);
     };
 
