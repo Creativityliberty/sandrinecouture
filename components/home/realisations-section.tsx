@@ -1,48 +1,47 @@
+"use client";
+
 import React, { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
+import { REALISATIONS } from '@/lib/realisations-data';
 
 export function RealisationsSection() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
-  const images = [
-    { url: "https://images.unsplash.com/photo-1596462502278-27bf8761e464?w=800&auto=format&fit=crop", title: "Tablier Brodé Pro", category: "Restauration" },
-    { url: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop", title: "Polo Logo Entreprise", category: "Équipement" },
-    { url: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&auto=format&fit=crop", title: "Cadeau Naissance", category: "Particulier" },
-    { url: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=800&auto=format&fit=crop", title: "Casquette Brodée", category: "Accessoires" },
-    { url: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&auto=format&fit=crop", title: "Patch Velcro", category: "Tactique" },
-    { url: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=800&auto=format&fit=crop", title: "Détail Couture", category: "Savoir-faire" }
-  ];
+  // We only show the first 8 on the home page
+  const displayImages = REALISATIONS.slice(0, 8);
 
   return (
     <section id="réalisations" className="py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-16 text-center md:text-left">
           <div className="max-w-2xl">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-4 italic leading-[0.9] uppercase">
-              Réalisations <br /><span className="text-primary not-italic text-2xl sm:text-3xl tracking-tight">L'Atelier en Image</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-4 italic leading-[0.9] uppercase">
+              Réalisations <br /><span className="text-primary not-italic text-xl sm:text-2xl tracking-tight">L'Atelier en Image</span>
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <p className="text-sm md:text-base text-muted-foreground font-medium leading-relaxed">
               Un rendu propre et professionnel pour chaque projet unique.
             </p>
           </div>
-          <Button onClick={() => window.location.hash = 'devis'} className="h-14 px-8 uppercase text-[9px] tracking-widest font-black">Demander un Devis</Button>
+          <Link href="/realisations">
+            <Button className="h-14 px-8 uppercase text-[9px] tracking-widest font-black">Voir tous mes projets</Button>
+          </Link>
         </div>
 
         {/* Multiplex Grid Layout - Mobile Responsive */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {images.map((img, i) => (
-            <div 
-              key={i} 
-              className={`group relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] cursor-pointer shadow-md hover:shadow-xl transition-all duration-700 ${
-                i === 0 ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2 h-[300px] sm:h-[400px] lg:h-full' : 'h-[250px] md:h-[350px]'
-              }`}
+          {displayImages.map((img, i) => (
+            <div
+              key={i}
+              className={`group relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] cursor-pointer shadow-md hover:shadow-xl transition-all duration-700 ${i === 0 ? 'sm:col-span-2 lg:col-span-1 lg:row-span-2 h-[300px] sm:h-[400px] lg:h-full' : 'h-[250px] md:h-[350px]'
+                }`}
               onClick={() => setSelectedImg(img.url)}
             >
-              <img 
-                src={img.url} 
-                alt={img.title} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+              <img
+                src={img.url}
+                alt={img.title}
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-10">
                 <p className="text-primary text-[9px] uppercase font-black tracking-[0.2em] mb-1">{img.category}</p>
@@ -57,18 +56,18 @@ export function RealisationsSection() {
 
         {/* Lightbox Modal */}
         {selectedImg && (
-          <div 
+          <div
             className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300"
             onClick={() => setSelectedImg(null)}
           >
-            <button 
+            <button
               className="absolute top-6 right-6 text-white hover:text-primary transition-colors bg-white/10 p-3 rounded-full border-none cursor-pointer"
               onClick={() => setSelectedImg(null)}
             >
               <X size={24} />
             </button>
-            <img 
-              src={selectedImg} 
+            <img
+              src={selectedImg}
               className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain animate-in zoom-in-95 duration-500"
               alt="Vue agrandie"
             />

@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Configuration
+DEST_DIR="/Volumes/Numtema/sandrine/sandrinecouture/public/images/realisations"
+
+# Function to rename
+rename_file() {
+    local old="$1"
+    local new="$2"
+    if [ -f "$DEST_DIR/$old" ]; then
+        mv "$DEST_DIR/$old" "$DEST_DIR/$new"
+        echo "Renamed $old to $new"
+    else
+        echo "Warning: $old not found"
+    fi
+}
+
+# Mapping
+rename_file "broderie-sandrine-couture-1.webp" "sac-personnalise-brode-octavia.webp"
+rename_file "broderie-sandrine-couture-2.webp" "poules-decoratives-brodees.webp"
+rename_file "broderie-sandrine-couture-3.webp" "petit-sac-motif-brode.webp"
+rename_file "broderie-sandrine-couture-4.webp" "serviette-personnalisee-lea-velo.webp"
+rename_file "broderie-sandrine-couture-5.webp" "paniers-brodes-personnalises-pio.webp"
+rename_file "broderie-sandrine-couture-6.webp" "serviette-brodee-happy-cats.webp"
+rename_file "broderie-sandrine-couture-7.webp" "trousse-velours-rose-brodee.webp"
+rename_file "broderie-sandrine-couture-8.webp" "protege-carnet-sante-animaux.webp"
+rename_file "broderie-sandrine-couture-9.webp" "banane-brodee-je-roule-ma-bosse.webp"
+rename_file "broderie-sandrine-couture-10.webp" "ourson-brode-serviette-naissance.webp"
+rename_file "broderie-sandrine-couture-11.webp" "serviette-brodee-chiens-orphee-nala.webp"
+rename_file "broderie-sandrine-couture-12.webp" "serviette-brodee-chien-clyne.webp"
+rename_file "broderie-sandrine-couture-13.webp" "serviette-brodee-renard-simon.webp"
+rename_file "broderie-sandrine-couture-14.webp" "souris-brodee-cadeau-noel.webp"
+rename_file "broderie-sandrine-couture-15.webp" "cheval-brode-serviette-blanche.webp"
+rename_file "broderie-sandrine-couture-16.webp" "trousse-toilette-transparente-personnalisee.webp"
+rename_file "broderie-sandrine-couture-17.webp" "pochette-brodee-motif-moto.webp"
+rename_file "broderie-sandrine-couture-18.webp" "pochette-personnalisee-marylou.webp"
+rename_file "broderie-sandrine-couture-19.webp" "trousse-toilette-eponge-brodee.webp"
+rename_file "broderie-sandrine-couture-20.webp" "serviette-brodee-leo-ocean.webp"
+rename_file "broderie-sandrine-couture-21.webp" "sac-dos-lion-flove.webp"
+rename_file "broderie-sandrine-couture-22.webp" "bavoir-bebe-mon-premier-noel.webp"
+rename_file "broderie-sandrine-couture-23.webp" "bavoir-mickey-j-peux-pas-j-ai-biberon.webp"
+rename_file "broderie-sandrine-couture-24.webp" "bavoir-souris-mini-mais-costaud.webp"
+rename_file "broderie-sandrine-couture-25.webp" "bavoir-noel-vert-rennes.webp"
+rename_file "broderie-sandrine-couture-26.webp" "bavoir-peppa-pig-mini-mais-costaud.webp"
+rename_file "broderie-sandrine-couture-27.webp" "bavoir-lion-j-peux-pas-j-ai-biberon.webp"
+rename_file "broderie-sandrine-couture-28.webp" "bavoir-stitch-rose-c-est-mon-ami.webp"
+rename_file "broderie-sandrine-couture-29.webp" "bavoir-poissons-j-peux-pas-j-ai-biberon.webp"
+rename_file "broderie-sandrine-couture-30.webp" "bavoir-noel-jaune-rennes.webp"
+rename_file "broderie-sandrine-couture-31.webp" "sac-main-lin-broderie-discrete.webp"
+rename_file "broderie-sandrine-couture-32.webp" "banane-velours-violet-chic.webp"
+rename_file "broderie-sandrine-couture-33.webp" "doudou-bavoir-mae-graffiti.webp"
+rename_file "broderie-sandrine-couture-34.webp" "chien-broderie-serviette-detail.webp"
+rename_file "broderie-sandrine-couture-35.webp" "serviette-brodee-chien-marie.webp"
+rename_file "broderie-sandrine-couture-36.webp" "serviette-brodee-audi-axel.webp"
+rename_file "broderie-sandrine-couture-37.webp" "pandas-brodes-bambou.webp"
+rename_file "broderie-sandrine-couture-38.webp" "monstre-rigolo-brode.webp"
+rename_file "broderie-sandrine-couture-39.webp" "serviette-brodee-tendre-moment.webp"
+rename_file "broderie-sandrine-couture-40.webp" "chat-orange-brode-serviette.webp"
+rename_file "broderie-sandrine-couture-41.webp" "fleur-noire-stylisee-broderie.webp"
+rename_file "broderie-sandrine-couture-42.webp" "serviette-happy-cats-multicouleurs.webp"
+rename_file "broderie-sandrine-couture-43.webp" "canard-lunettes-whatever-brode.webp"
+rename_file "broderie-sandrine-couture-44.webp" "pere-noel-brode-traditionnel.webp"
+rename_file "broderie-sandrine-couture-45.webp" "bavoir-bebe-noel-rouge.webp"
+rename_file "broderie-sandrine-couture-46.webp" "licorne-brodee-trousse-serviette.webp"
+rename_file "broderie-sandrine-couture-47.webp" "grenouille-rigolote-brodee.webp"
+rename_file "broderie-sandrine-couture-48.webp" "serviette-brodee-cheval-pauline.webp"
+rename_file "broderie-sandrine-couture-49.webp" "fleur-stylisee-christelle.webp"
+rename_file "broderie-sandrine-couture-50.webp" "serviette-lionne-fleurs-sonia.webp"
+rename_file "broderie-sandrine-couture-51.webp" "serviette-brodee-van-surf.webp"
+rename_file "broderie-sandrine-couture-52.webp" "banane-moumoute-blanche-moderne.webp"
+
+echo "Re-linking for REALISATIONS data update..."

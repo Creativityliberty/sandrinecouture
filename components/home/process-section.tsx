@@ -1,4 +1,5 @@
 import React from 'react';
+import { Timer } from 'lucide-react';
 
 export function ProcessSection() {
   const steps = [
@@ -10,12 +11,12 @@ export function ProcessSection() {
 
   return (
     <section className="py-24 px-6 bg-secondary/50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto text-center md:text-left">
         <div className="mb-16">
-          <h2 className="text-5xl font-black mb-4 tracking-tighter italic uppercase">Comment ça marche ?</h2>
-          <p className="text-xl text-muted-foreground font-medium">Vous décrivez votre besoin → je m’occupe du reste.</p>
+          <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter italic uppercase">Comment ça marche ?</h2>
+          <p className="text-lg text-muted-foreground font-medium">Vous décrivez votre besoin → je m’occupe du reste.</p>
         </div>
-        
+
         <div className="grid md:grid-cols-4 gap-8 mb-20">
           {steps.map((step, i) => (
             <div key={i} className="relative">
@@ -30,8 +31,8 @@ export function ProcessSection() {
 
         <div className="p-8 bg-white rounded-[2rem] border border-black/5 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary animate-pulse">
-               <span className="font-bold">⏱️</span>
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <Timer size={20} className="animate-pulse" />
             </div>
             <div>
               <p className="font-bold text-sm uppercase tracking-widest">Délais de production</p>

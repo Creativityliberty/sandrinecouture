@@ -14,8 +14,8 @@ export function BentoServices() {
     <section className="py-24 px-6 bg-pink-50/30">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 text-gradient italic tracking-tighter uppercase">Ce que je réalise</h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+          <h2 className="text-3xl md:text-4xl font-black mb-4 text-gradient italic tracking-tighter uppercase">Ce que je réalise</h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-medium leading-tight">
             Du simple prénom au logo complet, toujours avec une finition propre.
           </p>
         </div>
@@ -25,16 +25,16 @@ export function BentoServices() {
             const Icon = ICON_MAP[service.icon];
             return (
               <div key={service.id} className={`bento-card group glass ${service.gridSpan}`}>
-                <div className="p-8 h-full flex flex-col justify-between relative z-10">
-                  <div>
+                <div className="p-8 h-full flex flex-col justify-between relative z-10 items-center md:items-start text-center md:text-left">
+                  <div className="flex flex-col items-center md:items-start">
                     <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       {Icon && <Icon className="text-primary w-6 h-6" />}
                     </div>
                     <h3 className="text-2xl font-bold mb-3 tracking-tight">{service.title}</h3>
                     <p className="text-gray-500 line-clamp-2 text-sm leading-relaxed">{service.description}</p>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={() => window.location.hash = 'devis'}
                     className="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-3 transition-all text-sm uppercase tracking-widest bg-transparent border-none cursor-pointer"
                   >
@@ -57,7 +57,7 @@ export function BentoServices() {
               Votre logo est systématiquement optimisé et digitalisé avant broderie pour garantir un rendu net, lisible et extrêmement professionnel sur tous vos supports.
             </p>
           </div>
-          <button 
+          <button
             onClick={() => window.location.hash = 'devis'}
             className="px-8 py-4 bg-primary text-white rounded-full font-bold uppercase text-[10px] tracking-widest hover:scale-105 transition-transform border-none cursor-pointer shadow-lg shadow-primary/20"
           >
