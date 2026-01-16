@@ -6,10 +6,73 @@ import { Button } from "./ui/button";
 import { SITE_CONFIG } from "../lib/site-config";
 import Link from "next/link";
 
+const MessageBubble = ({ m, setIsOpen }: { m: { role: 'user' | 'assistant', content: string }, setIsOpen: (o: boolean) => void }) => {
+  const isAssistant = m.role === 'assistant';
+
+  // Parse CTA syntax: [CTA:Label:URL]
+  const ctaRegex = /\[CTA:(.*?):(.*?)\]/g;
+  const parts = m.content.split(ctaRegex);
+  const ctas: { label: string, url: string }[] = [];
+
+  let match;
+  const tempContent = m.content;
+  while ((match = ctaRegex.exec(tempContent)) !== null) {
+    ctas.push({ label: match[1], url: match[2] });
+  }
+
+  // Clean content (remove CTAs from text bubble)
+  const cleanContent = m.content.replace(ctaRegex, '').trim();
+
+  return (
+    <div className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'} space-y-3`}>
+      {cleanContent && (
+        <div className={`max-w-[85%] p-4 rounded-3xl text-[13px] leading-relaxed font-medium shadow-sm transition-all hover:shadow-md ${m.role === 'user'
+            ? 'bg-black text-white rounded-tr-none'
+            : 'bg-white text-gray-800 rounded-tl-none border border-black/5'
+          }`}>
+          {cleanContent}
+        </div>
+      )}
+
+      {isAssistant && ctas.length > 0 && (
+        <div className="flex flex-col gap-2 w-full max-w-[85%] animate-in slide-in-from-left-2 fade-in duration-300">
+          {ctas.map((cta, i) => {
+            const isWhatsApp = cta.url === 'wa_link';
+            const url = isWhatsApp ? `https://wa.me/${SITE_CONFIG.whatsapp}` : cta.url;
+            const isExternal = isWhatsApp || url.startsWith('http');
+
+            const btnClass = "w-full flex items-center justify-between p-4 bg-primary text-white rounded-2xl text-[11px] font-black uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20 group/cta border border-white/10";
+
+            const content = (
+              <>
+                <span className="flex items-center gap-2">
+                  {isWhatsApp ? <Phone size={14} className="text-white/80" /> : <Sparkles size={14} className="text-white/80" />}
+                  {cta.label}
+                </span>
+                <ChevronRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
+              </>
+            );
+
+            return isExternal ? (
+              <a key={i} href={url} target="_blank" rel="noopener noreferrer" className={btnClass + " no-underline"}>
+                {content}
+              </a>
+            ) : (
+              <Link key={i} href={url} onClick={() => setIsOpen(false)} className={btnClass + " no-underline"}>
+                {content}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant', content: string }[]>([
-    { role: 'assistant', content: "Bonjour ! Je suis l'assistant de Sandrine. Comment puis-je vous aider dans votre projet de broderie ?" }
+    { role: 'assistant', content: "Bonjour ! Je suis l'assistant de Sandrine. Avez-vous un projet de broderie en tête ? Je suis là pour vous conseiller. ✨" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +112,7 @@ export function AIAssistant() {
       setMessages(prev => [...prev, { role: 'assistant', content: data.text || "Désolée, je n'ai pas pu traiter votre demande." }]);
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "Une petite erreur technique... Contactez Sandrine directement par WhatsApp !" }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Une petite erreur technique... Contactez Sandrine directement par WhatsApp ! [CTA:Ouvrir WhatsApp:wa_link]" }]);
     } finally {
       setIsLoading(false);
     }
@@ -58,7 +121,7 @@ export function AIAssistant() {
   return (
     <div className="fixed bottom-6 right-6 z-[100] font-sans">
       {isOpen ? (
-        <div className="glass w-[360px] h-[550px] flex flex-col rounded-[2.5rem] overflow-hidden shadow-2xl border-white/20 animate-in slide-in-from-bottom-10 fade-in duration-500 bg-white/95">
+        <div className="glass w-[360px] h-[580px] flex flex-col rounded-[2.5rem] overflow-hidden shadow-2xl border-white/20 animate-in slide-in-from-bottom-10 fade-in duration-500 bg-white/95">
           {/* Header */}
           <div className="bg-primary p-6 text-white shrink-0">
             <div className="flex justify-between items-center mb-1">
@@ -84,20 +147,13 @@ export function AIAssistant() {
           </div>
 
           {/* Chat Messages */}
-          <div ref={scrollRef} className="flex-1 p-6 overflow-y-auto space-y-4 bg-gray-50/50">
+          <div ref={scrollRef} className="flex-1 p-6 overflow-y-auto space-y-6 bg-gray-50/50">
             {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-4 rounded-3xl text-[13px] leading-relaxed font-medium shadow-sm ${m.role === 'user'
-                    ? 'bg-black text-white rounded-tr-none'
-                    : 'bg-white text-gray-800 rounded-tl-none border border-black/5'
-                  }`}>
-                  {m.content}
-                </div>
-              </div>
+              <MessageBubble key={i} m={m} setIsOpen={setIsOpen} />
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white p-4 rounded-3xl rounded-tl-none border border-black/5">
+                <div className="bg-white p-4 rounded-3xl rounded-tl-none border border-black/5 shadow-sm">
                   <Loader2 className="w-4 h-4 animate-spin text-primary" />
                 </div>
               </div>
