@@ -12,54 +12,59 @@ import { LocalisationSection } from './components/home/localisation-section';
 import { CtaSection } from './components/home/cta-section';
 import { AIAssistant } from './components/ai-assistant';
 import { DevisPage } from './components/devis-page';
+import { EntreprisesPage } from './components/entreprises-page';
+import { ParticuliersPage } from './components/particuliers-page';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'devis'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'devis' | 'entreprises' | 'particuliers'>('home');
 
-  // Handle simple routing via state and window events
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash === '#devis') {
-        setCurrentPage('devis');
-        window.scrollTo(0, 0);
-      } else {
-        setCurrentPage('home');
-      }
+      const hash = window.location.hash.split('?')[0];
+      if (hash === '#devis') setCurrentPage('devis');
+      else if (hash === '#entreprises') setCurrentPage('entreprises');
+      else if (hash === '#particuliers') setCurrentPage('particuliers');
+      else setCurrentPage('home');
+      
+      window.scrollTo(0, 0);
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Init
+    handleHashChange(); 
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  const renderContent = () => {
+    switch (currentPage) {
+      case 'devis': return <DevisPage />;
+      case 'entreprises': return <EntreprisesPage />;
+      case 'particuliers': return <ParticuliersPage />;
+      default: return (
+        <>
+          <HeroSection />
+          <SegmentationSection />
+          <div id="services">
+            <BentoServices />
+          </div>
+          <ReassuranceSection />
+          <ProcessSection />
+          <div id="réalisations">
+            <RealisationsSection />
+          </div>
+          <LocalisationSection />
+          <CtaSection />
+        </>
+      );
+    }
+  };
 
   return (
     <div className="relative min-h-screen font-sans selection:bg-primary/20">
       <Navbar onNavigate={(page) => {
-          if (page === 'devis') window.location.hash = 'devis';
-          else window.location.hash = '';
+          window.location.hash = page === 'home' ? '' : page;
       }} />
       
-      <main>
-        {currentPage === 'home' ? (
-          <>
-            <HeroSection />
-            <SegmentationSection />
-            <div id="services">
-              <BentoServices />
-            </div>
-            <ReassuranceSection />
-            <ProcessSection />
-            <div id="réalisations">
-              <RealisationsSection />
-            </div>
-            <LocalisationSection />
-            <CtaSection />
-          </>
-        ) : (
-          <DevisPage />
-        )}
-      </main>
+      <main>{renderContent()}</main>
 
       <AIAssistant />
       <Footer />

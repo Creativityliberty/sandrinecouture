@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { SITE_CONFIG } from '../lib/site-config';
 
 interface NavbarProps {
-  onNavigate: (page: 'home' | 'devis') => void;
+  onNavigate: (page: 'home' | 'devis' | 'entreprises' | 'particuliers') => void;
 }
 
 export function Navbar({ onNavigate }: NavbarProps) {
@@ -18,7 +18,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: 'Professionnels', href: '#professionnels' },
+    { label: 'Professionnels', href: '#entreprises' },
     { label: 'Particuliers', href: '#particuliers' },
     { label: 'Réalisations', href: '#réalisations' },
     { label: 'Contact', href: '#contact' }
