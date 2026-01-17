@@ -6,14 +6,14 @@ import Link from 'next/link';
 export function SegmentationSection() {
   return (
     <section className="py-32 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-16">
+      <div className="max-w-7xl mx-auto text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
         <h2 className="text-3xl sm:text-4xl font-black tracking-tighter italic mb-4 uppercase leading-tight">Deux parcours, <br /><span className="text-primary not-italic">une seule exigence.</span></h2>
         <p className="text-sm text-muted-foreground font-medium max-w-xl mx-auto italic uppercase tracking-tighter">Choisissez votre besoin pour aller à l'essentiel.</p>
       </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12 text-center md:text-left">
         {/* Card Entreprise */}
-        <div className="bento-card glass group min-h-[500px] flex flex-col">
+        <div className="bento-card glass group min-h-[500px] flex flex-col animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200 fill-mode-both">
           <div className="h-64 overflow-hidden relative">
             <img src="/images/realisations/serviette-brodee-audi-axel.webp" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Entreprise" />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
@@ -37,7 +37,7 @@ export function SegmentationSection() {
         </div>
 
         {/* Card Particulier */}
-        <div className="bento-card glass border-primary/5 bg-primary/[0.02] group min-h-[500px] flex flex-col">
+        <div className="bento-card glass border-primary/5 bg-primary/[0.02] group min-h-[500px] flex flex-col animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500 fill-mode-both">
           <div className="h-64 overflow-hidden relative">
             <img src="/images/realisations/sac-personnalise-brode-octavia.webp" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Particulier" />
             <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors" />
