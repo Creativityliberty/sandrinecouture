@@ -59,7 +59,8 @@ export function RealisationsPage() {
                             <img
                                 src={img.url}
                                 alt={img.title}
-                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 transform rotate-0"
+                                style={{ transform: 'rotate(0deg)' }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
                                 <p className="text-primary text-[9px] uppercase font-black tracking-[0.2em] mb-1">{img.category}</p>
