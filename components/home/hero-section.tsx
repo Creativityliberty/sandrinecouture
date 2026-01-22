@@ -1,7 +1,6 @@
-import React from "react";
-import { MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
-import { Button } from "../ui/button";
+import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export function HeroSection() {
   return (
@@ -22,20 +21,27 @@ export function HeroSection() {
             </h1>
 
             <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-backwards text-base md:text-lg text-gray-800 font-bold mb-5 leading-tight italic uppercase tracking-tighter max-w-lg">
-              Uniformes d'équipe, accessoires et cadeaux personnalisés — finition nette et durable.
+              Uniformes d'équipe, accessoires et cadeaux personnalisés —
+              finition nette et durable.
             </p>
 
             <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-backwards text-sm text-gray-500 mb-6 leading-relaxed max-w-lg font-medium">
-              Bienvenue chez <span className="text-black font-bold">By Sandrine Couture</span>. Je réalise vos broderies avec soin : logos pro, patchs velcro, tabliers, mais aussi cadeaux de naissance personnalisés.
+              Bienvenue chez{" "}
+              <span className="text-black font-bold">By Sandrine Couture</span>.
+              Je réalise vos broderies avec soin : logos pro, patchs velcro,
+              tabliers, mais aussi cadeaux de naissance personnalisés.
             </p>
 
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-backwards flex flex-wrap items-center gap-x-6 gap-y-3 mb-10 py-5 border-y border-black/5">
               {[
                 { text: "Devis rapide", icon: CheckCircle2 },
                 { text: "Travail soigné", icon: CheckCircle2 },
-                { text: "Facture pro", icon: CheckCircle2 }
+                { text: "Facture pro", icon: CheckCircle2 },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-primary">
+                <div
+                  key={i}
+                  className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-primary"
+                >
                   <item.icon size={14} /> <span>{item.text}</span>
                 </div>
               ))}
@@ -68,16 +74,20 @@ export function HeroSection() {
             <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl group-hover:bg-primary/10 transition-all duration-700" />
             <div className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform transition-transform duration-700 hover:rotate-1">
               <img
-                src="/images/realisations/serviette-brodee-van-surf.webp"
-                alt="Broderie personnalisée Van Surf"
+                src="/images/realisations/serviette-brodee-happy-cats.webp"
+                alt="Broderie personnalisée Happy Cats"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 loading="eager"
                 fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 text-white glass p-5 rounded-2xl border-white/40 backdrop-blur-md">
-                <p className="text-sm font-bold italic mb-1 tracking-tight">"Le détail qui fait la différence."</p>
-                <p className="text-[8px] uppercase font-black tracking-[0.2em] opacity-70 text-primary">Atelier Robertot • Normandie</p>
+                <p className="text-sm font-bold italic mb-1 tracking-tight">
+                  "Le détail qui fait la différence."
+                </p>
+                <p className="text-[8px] uppercase font-black tracking-[0.2em] opacity-70 text-primary">
+                  Atelier Robertot • Normandie
+                </p>
               </div>
             </div>
           </div>

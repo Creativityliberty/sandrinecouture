@@ -226,7 +226,7 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 32,
-    url: "/images/realisations/trousse-final.webp",
+    url: "/images/realisations/trousse-final-rotated.webp",
     title: "Banane Velours Violet",
     category: "Accessoires",
     desc: "Accessoire tendance avec bandoulière large travaillée.",
