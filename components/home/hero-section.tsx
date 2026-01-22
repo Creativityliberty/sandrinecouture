@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
+import { CheckCircle2, MapPin, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
@@ -47,22 +47,22 @@ export function HeroSection() {
               ))}
             </div>
 
-            <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-backwards flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-backwards flex flex-col sm:flex-row gap-3 mb-6">
               <Link href="/devis">
                 <Button
                   size="lg"
                   variant="whatsapp"
-                  className="h-14 px-8 rounded-full shadow-xl transition-all hover:scale-105 uppercase text-[9px] tracking-[0.2em] font-black w-full sm:w-auto"
+                  className="h-12 px-6 rounded-full shadow-xl transition-all hover:scale-105 uppercase text-[10px] tracking-widest font-bold w-full sm:w-auto flex items-center justify-center gap-2"
                 >
+                  <MessageCircle className="w-4 h-4" />
                   Demander un devis
-                  <ArrowRight className="ml-3 w-4 h-4" />
                 </Button>
               </Link>
               <Link href="/#réalisations">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-14 px-8 rounded-full border-black/10 hover:bg-black hover:text-white transition-all uppercase text-[9px] tracking-[0.2em] font-black w-full sm:w-auto"
+                  className="h-12 px-6 rounded-full border-black/10 hover:bg-black hover:text-white transition-all uppercase text-[10px] tracking-widest font-bold w-full sm:w-auto"
                 >
                   Réalisations
                 </Button>
