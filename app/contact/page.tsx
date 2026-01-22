@@ -1,19 +1,48 @@
 "use client";
 
 import React from 'react';
-import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, ArrowLeft } from 'lucide-react';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
+import { SITE_CONFIG } from '@/lib/site-config';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function ContactPage() {
+function ContactFormContent() {
+  const searchParams = useSearchParams();
+  const [formType, setFormType] = React.useState<'entreprise' | 'particulier'>('entreprise');
   const [formData, setFormData] = React.useState({
     name: '',
-    email: '',
+    company: '',
+    sector: '',
     phone: '',
-    subject: '',
-    message: ''
+    article: '',
+    customArticle: '',
+    quantity: '1',
+    complexity: 'text',
+    placement: 'coeur',
+    description: '',
+    deadline: '',
+    occasion: ''
   });
+
+  const proArticles = ["Polos", "T-shirts", "Sweats / Hoodies", "Tabliers", "Patchs Velcro", "Autre (préciser)"];
+  const persoArticles = ["Serviette de bain", "Peignoir", "Doudou / Peluche", "Bavoir", "Couverture bébé", "Protege carnet de santé", "Sac / Totebag", "Autre (préciser)"];
+  const placements = [
+    { id: 'coeur', label: 'Cœur (Gauche)' },
+    { id: 'dos', label: 'Grand Dos' },
+    { id: 'manche', label: 'Manche' },
+    { id: 'nuque', label: 'Nuque' },
+    { id: 'libre', label: 'Emplacement libre' }
+  ];
+
+  React.useEffect(() => {
+    const type = searchParams.get('type');
+    if (type === 'particulier') setFormType('particulier');
+    else if (type === 'entreprise') setFormType('entreprise');
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -22,10 +51,40 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect to WhatsApp with form data
-    const text = `Bonjour,\n\nNom: ${formData.name}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nSujet: ${formData.subject}\n\nMessage:\n${formData.message}`;
-    const whatsappUrl = `https://wa.me/33629492213?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, '_blank');
+
+    const isPro = formType === 'entreprise';
+    const finalArticle = formData.article === 'Autre (préciser)' ? formData.customArticle : formData.article;
+
+    const complexityLabels: Record<string, string> = {
+      text: "Texte uniquement",
+      simple: "Logo Simple (1-3 couleurs)",
+      complex: "Logo Complexe / Photo"
+    };
+
+    const currentComplexity = complexityLabels[formData.complexity] || "Texte uniquement";
+
+    const message = `✨ *NOUVELLE DEMANDE DE DEVIS* ✨
+
+👤 *CLIENT*
+- Type : ${isPro ? '🏢 PRO / ENTREPRISE' : '👋 PARTICULIER'}
+- Nom : ${formData.name}${isPro ? `\n- Société : ${formData.company}\n- Secteur : ${formData.sector}` : ''}
+- Tél : ${formData.phone}${!isPro && formData.occasion ? `\n- Occasion : ${formData.occasion}` : ''}
+
+🧵 *PROJET*
+- Article : ${finalArticle}
+- Quantité : ${formData.quantity}
+- Type : ${currentComplexity}
+- Placement : ${placements.find(p => p.id === formData.placement)?.label}
+
+📝 *DÉTAILS*
+- Description : ${formData.description || 'Non précisé'}
+- Délai : ${formData.deadline || 'Dès que possible'}
+
+---
+_Envoyé depuis le site Sandrine Couture_`;
+
+    const whatsappURL = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
   };
 
   return (
@@ -105,15 +164,32 @@ export default function ContactPage() {
             </a>
           </div>
 
-          {/* Contact Form */}
+          {/* Devis Form */}
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <h2 className="text-2xl font-black tracking-tighter italic uppercase mb-8">
-              Envoyez un message
+            <h2 className="text-2xl font-black tracking-tighter italic uppercase mb-6">
+              Demander un devis
             </h2>
             
-            <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Type Selection */}
+            <div className="flex gap-4 mb-8">
+              {(['entreprise', 'particulier'] as const).map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setFormType(type)}
+                  className={`flex-1 py-3 px-4 rounded-lg font-bold italic uppercase text-[10px] tracking-widest transition-all ${
+                    formType === type
+                      ? 'bg-primary text-white shadow-lg'
+                      : 'bg-white border border-black/10 text-gray-700 hover:border-primary'
+                  }`}
+                >
+                  {type === 'entreprise' ? '🏢 Entreprise' : '👋 Particulier'}
+                </button>
+              ))}
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
                   Nom
                 </label>
                 <input
@@ -122,28 +198,44 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium"
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                   placeholder="Votre nom"
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-bold uppercase tracking-widest text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium"
-                  placeholder="votre@email.com"
-                />
-              </div>
+              {formType === 'entreprise' && (
+                <>
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                      Société
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                      placeholder="Nom de votre entreprise"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                      Secteur
+                    </label>
+                    <input
+                      type="text"
+                      name="sector"
+                      value={formData.sector}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                      placeholder="Ex: Restaurant, BTP, etc."
+                    />
+                  </div>
+                </>
+              )}
 
               <div>
-                <label className="block text-sm font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
                   Téléphone
                 </label>
                 <input
@@ -151,56 +243,127 @@ export default function ContactPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium"
+                  required
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                   placeholder="06 XX XX XX XX"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold uppercase tracking-widest text-gray-700 mb-2">
-                  Sujet
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                  Article
                 </label>
                 <select
-                  name="subject"
-                  value={formData.subject}
+                  name="article"
+                  value={formData.article}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium"
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                 >
-                  <option value="">Sélectionnez un sujet</option>
-                  <option value="Devis entreprise">Devis entreprise</option>
-                  <option value="Devis particulier">Devis particulier</option>
-                  <option value="Question générale">Question générale</option>
-                  <option value="Partenariat">Partenariat</option>
-                  <option value="Autre">Autre</option>
+                  <option value="">Sélectionnez un article</option>
+                  {(formType === 'entreprise' ? proArticles : persoArticles).map((art) => (
+                    <option key={art} value={art}>{art}</option>
+                  ))}
+                </select>
+              </div>
+
+              {formData.article === 'Autre (préciser)' && (
+                <div>
+                  <input
+                    type="text"
+                    name="customArticle"
+                    value={formData.customArticle}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                    placeholder="Précisez l'article"
+                  />
+                </div>
+              )}
+
+              <div>
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                  Quantité
+                </label>
+                <input
+                  type="number"
+                  name="quantity"
+                  value={formData.quantity}
+                  onChange={handleChange}
+                  min="1"
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                  Complexité
+                </label>
+                <select
+                  name="complexity"
+                  value={formData.complexity}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                >
+                  <option value="text">Texte uniquement</option>
+                  <option value="simple">Logo Simple (1-3 couleurs)</option>
+                  <option value="complex">Logo Complexe / Photo</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-bold uppercase tracking-widest text-gray-700 mb-2">
-                  Message
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                  Placement
+                </label>
+                <select
+                  name="placement"
+                  value={formData.placement}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                >
+                  {placements.map((p) => (
+                    <option key={p.id} value={p.id}>{p.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                  Description
                 </label>
                 <textarea
-                  name="message"
-                  value={formData.message}
+                  name="description"
+                  value={formData.description}
                   onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium resize-none"
-                  placeholder="Votre message..."
+                  rows={3}
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm resize-none"
+                  placeholder="Détails de votre projet..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                  Délai
+                </label>
+                <input
+                  type="text"
+                  name="deadline"
+                  value={formData.deadline}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
+                  placeholder="Ex: Dès que possible, 2 semaines, etc."
                 />
               </div>
 
               <Button
                 type="submit"
                 size="lg"
-                className="w-full h-14 rounded-lg uppercase text-[9px] font-black tracking-widest"
+                className="w-full h-12 rounded-lg uppercase text-[9px] font-black tracking-widest"
               >
                 Envoyer via WhatsApp
               </Button>
 
               <p className="text-[10px] text-gray-600 font-bold uppercase tracking-widest text-center">
-                Votre message sera envoyé directement à Sandrine via WhatsApp
+                Votre devis sera envoyé directement à Sandrine
               </p>
             </form>
           </div>
@@ -209,5 +372,13 @@ export default function ContactPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div>Chargement...</div>}>
+      <ContactFormContent />
+    </Suspense>
   );
 }
