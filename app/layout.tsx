@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import {
-  SchemaOrgOrganization,
   SchemaOrgLocalBusiness,
+  SchemaOrgOrganization,
 } from "@/components/schema-org";
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "By Sandrine Couture | Broderie d'Excellence en Normandie",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Metadata = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
