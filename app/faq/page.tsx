@@ -1,3 +1,5 @@
+"use client";
+
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
