@@ -54,11 +54,11 @@ export function Navbar() {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <span className={`font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800 italic transition-all duration-500 overflow-hidden ${
-              isLogoHovered 
-                ? "max-w-xs opacity-100" 
-                : "max-w-0 opacity-0"
-            }`}>
+            <span
+              className={`font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800 italic transition-all duration-500 overflow-hidden ${
+                isLogoHovered ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
+              }`}
+            >
               By Sandrine Couture
             </span>
           </Link>
@@ -107,6 +107,8 @@ export function Navbar() {
           <button
             className="absolute top-6 right-6 bg-transparent border-none cursor-pointer"
             onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Fermer le menu"
+            title="Fermer le menu"
           >
             <X size={24} />
           </button>
