@@ -74,8 +74,8 @@ export function HeroSection() {
             <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl group-hover:bg-primary/10 transition-all duration-700" />
             <div className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform transition-transform duration-700 hover:rotate-1">
               <img
-                src="/images/realisations/serviette-brodee-happy-cats.webp"
-                alt="Broderie personnalisée Happy Cats"
+                src="/images/realisations/2b-couverture-collection-1.webp"
+                alt="Uniformes professionnels 2B Couverture - T-shirts brodés"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 loading="eager"
                 fetchPriority="high"

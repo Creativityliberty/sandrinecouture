@@ -155,9 +155,9 @@ export function EntreprisesPage() {
             <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl" />
             <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
               <img
-                src="/images/realisations/serviette-brodee-audi-axel.webp"
+                src="/images/realisations/2b-couverture-collection-2.webp"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Broderie pro Audi"
+                alt="Uniformes 2B Couverture - Collection professionnelle"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-10 left-10 glass p-6 rounded-2xl border-white/40 text-white">
