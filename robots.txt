@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bysandrinecouture.fr/sitemap.xml
