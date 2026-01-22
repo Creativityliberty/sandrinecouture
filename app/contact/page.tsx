@@ -340,14 +340,19 @@ _Envoyé depuis le site Sandrine Couture_`;
               </div>
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label
+                  htmlFor="article"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2"
+                >
                   Article
                 </label>
                 <select
+                  id="article"
                   name="article"
                   value={formData.article}
                   onChange={handleChange}
                   required
+                  aria-label="Sélectionnez un article"
                   className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                 >
                   <option value="">Sélectionnez un article</option>
@@ -364,39 +369,58 @@ _Envoyé depuis le site Sandrine Couture_`;
 
               {formData.article === "Autre (préciser)" && (
                 <div>
+                  <label
+                    htmlFor="customArticle"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2"
+                  >
+                    Précisez l'article
+                  </label>
                   <input
+                    id="customArticle"
                     type="text"
                     name="customArticle"
                     value={formData.customArticle}
                     onChange={handleChange}
                     className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                     placeholder="Précisez l'article"
+                    aria-label="Précisez l'article"
                   />
                 </div>
               )}
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label
+                  htmlFor="quantity"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2"
+                >
                   Quantité
                 </label>
                 <input
+                  id="quantity"
                   type="number"
                   name="quantity"
                   value={formData.quantity}
                   onChange={handleChange}
                   min="1"
+                  placeholder="Quantité"
+                  aria-label="Quantité"
                   className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label
+                  htmlFor="complexity"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2"
+                >
                   Complexité
                 </label>
                 <select
+                  id="complexity"
                   name="complexity"
                   value={formData.complexity}
                   onChange={handleChange}
+                  aria-label="Sélectionnez la complexité"
                   className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                 >
                   <option value="text">Texte uniquement</option>
@@ -406,13 +430,18 @@ _Envoyé depuis le site Sandrine Couture_`;
               </div>
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label
+                  htmlFor="placement"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2"
+                >
                   Placement
                 </label>
                 <select
+                  id="placement"
                   name="placement"
                   value={formData.placement}
                   onChange={handleChange}
+                  aria-label="Sélectionnez le placement"
                   className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                 >
                   {placements.map((p) => (

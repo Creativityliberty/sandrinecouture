@@ -83,6 +83,10 @@ export function Navbar() {
             <button
               className="lg:hidden p-2 text-black bg-transparent border-none cursor-pointer"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={
+                isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"
+              }
+              title={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
