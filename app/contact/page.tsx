@@ -33,6 +33,7 @@ function ContactFormContent() {
     "T-shirts",
     "Sweats / Hoodies",
     "Tabliers",
+    "Serviettes",
     "Patchs Velcro",
     "Autre (préciser)",
   ];

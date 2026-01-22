@@ -30,8 +30,7 @@ function DevisForm() {
     "T-shirts",
     "Sweats / Hoodies",
     "Tabliers",
-    "Casquettes",
-    "Bonnets",
+    "Serviettes",
     "Patchs Velcro",
     "Autre (préciser)",
   ];
