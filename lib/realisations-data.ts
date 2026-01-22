@@ -352,10 +352,10 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 50,
-    url: "/images/realisations/sonia-final.webp",
-    title: "Serviette Sonia",
+    url: "/images/realisations/serviette theo.jpg",
+    title: "Serviette Theo",
     category: "Bébé",
-    desc: "Lionne entourée de fleurs et papillons sur éponge rose.",
+    desc: "Serviettes grises avec broderies dorées du prénom 'THEO' - motifs patte de chat et chiots.",
   },
   {
     id: 51,
