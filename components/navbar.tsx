@@ -43,11 +43,11 @@ export function Navbar() {
           {/* Logo avec image et forme arrondie */}
           <Link
             href="/"
-            className="flex items-center gap-3 group bg-transparent border-none cursor-pointer no-underline"
+            className="flex items-center gap-3 group bg-transparent border-none cursor-pointer no-underline relative"
             onMouseEnter={() => setIsLogoHovered(true)}
             onMouseLeave={() => setIsLogoHovered(false)}
           >
-            <div className="w-10 h-10 rounded-full border border-primary/20 overflow-hidden bg-white shadow-sm transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 rounded-full border border-primary/20 overflow-hidden bg-white shadow-sm transition-all duration-500 group-hover:shadow-md group-hover:scale-110">
               <img
                 src="/logo-sandrine.png"
                 alt="Logo Sandrine Couture"
@@ -55,8 +55,10 @@ export function Navbar() {
               />
             </div>
             <span
-              className={`font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800 italic transition-all duration-500 overflow-hidden ${
-                isLogoHovered ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
+              className={`font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800 italic transition-all duration-500 overflow-hidden whitespace-nowrap ${
+                isLogoHovered
+                  ? "max-w-xs opacity-100 translate-x-0"
+                  : "max-w-0 opacity-0 -translate-x-2"
               }`}
             >
               By Sandrine Couture

@@ -15,11 +15,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div
-              className="flex items-center gap-3 mb-5 group cursor-pointer"
+              className="flex items-center gap-3 mb-5 group cursor-pointer relative"
               onMouseEnter={() => setIsLogoHovered(true)}
               onMouseLeave={() => setIsLogoHovered(false)}
             >
-              <div className="w-10 h-10 rounded-full border border-black/10 overflow-hidden bg-white shadow-sm p-1 transition-transform group-hover:scale-110">
+              <div className="w-10 h-10 rounded-full border border-black/10 overflow-hidden bg-white shadow-sm p-1 transition-all duration-500 group-hover:shadow-md group-hover:scale-110">
                 <img
                   src="/logo-sandrine.png"
                   className="w-full h-full object-cover rounded-full"
@@ -27,10 +27,10 @@ export function Footer() {
                 />
               </div>
               <h3
-                className={`font-black tracking-tighter italic uppercase leading-none text-black transition-all duration-500 overflow-hidden ${
+                className={`font-black tracking-tighter italic uppercase leading-none text-black transition-all duration-500 overflow-hidden whitespace-nowrap ${
                   isLogoHovered
-                    ? "max-w-xs opacity-100"
-                    : "max-w-[60px] opacity-100"
+                    ? "max-w-xs opacity-100 translate-x-0"
+                    : "max-w-[60px] opacity-100 -translate-x-1"
                 }`}
               >
                 By Sandrine <br />
