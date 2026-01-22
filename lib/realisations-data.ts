@@ -392,4 +392,25 @@ export const REALISATIONS: Realisation[] = [
     category: "Entreprises",
     desc: "Hoodie noir avec logo brodé 2B Couverture, idéal pour les équipes professionnelles.",
   },
+  {
+    id: 56,
+    url: "/images/realisations/bébé doudou.jpg",
+    title: "Gigoteuse Bientôt Bébé",
+    category: "Bébé",
+    desc: "Gigoteuse verte avec broderie 'BIENTÔT BÉBÉ' et tissu blanc aux motifs animaux tendres.",
+  },
+  {
+    id: 57,
+    url: "/images/realisations/Elyo.jpg",
+    title: "Serviette Elyo",
+    category: "Particuliers",
+    desc: "Serviette de toilette avec motif poissons bleus et broderie du prénom 'ELYO' en bleu ciel.",
+  },
+  {
+    id: 58,
+    url: "/images/realisations/sac dessin.jpg",
+    title: "Sac Manga",
+    category: "Accessoires",
+    desc: "Sac avec motif manga/anime et broderies colorées, design urbain et tendance.",
+  },
 ];
