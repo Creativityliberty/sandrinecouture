@@ -4,6 +4,7 @@ import {
   Info,
   Layout,
   MapPin,
+  MessageCircle,
   MessageSquare,
   Package,
   PartyPopper,
