@@ -116,7 +116,7 @@ _Envoyé depuis le site Sandrine Couture_`;
       <Navbar />
 
       {/* Image Hero Section */}
-      <section className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+      <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden">
         <img
           src="/images/realisations/sandrine-couture.webp"
           alt="Sandrine exposant ses produits"
@@ -125,12 +125,12 @@ _Envoyé depuis le site Sandrine Couture_`;
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 italic uppercase leading-[0.9]">
+          <div className="text-center text-white px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 sm:mb-4 italic uppercase leading-[0.9]">
               Contactez <br />
               <span className="text-primary not-italic">Sandrine</span>
             </h1>
-            <p className="text-lg font-medium max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto">
               Découvrez nos créations et parlons de votre projet
             </p>
           </div>
@@ -138,9 +138,9 @@ _Envoyé depuis le site Sandrine Couture_`;
       </section>
 
       {/* Subtitle Section */}
-      <section className="pt-16 pb-8 px-6">
+      <section className="pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 font-medium max-w-2xl mx-auto">
             Une question ? Un projet ? Nous sommes là pour vous aider.
             Contactez-nous par le moyen qui vous convient le mieux.
           </p>
@@ -148,12 +148,12 @@ _Envoyé depuis le site Sandrine Couture_`;
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-3xl font-black tracking-tighter italic uppercase mb-8">
+              <h2 className="text-2xl sm:text-3xl font-black tracking-tighter italic uppercase mb-6 sm:mb-8">
                 Nos coordonnées
               </h2>
             </div>
@@ -161,20 +161,22 @@ _Envoyé depuis le site Sandrine Couture_`;
             {/* Phone */}
             <a
               href="tel:+33629492213"
-              className="flex gap-6 p-6 bg-gray-50 rounded-2xl hover:bg-primary/10 transition-colors group no-underline"
+              className="flex gap-4 sm:gap-6 p-4 sm:p-6 bg-gray-50 rounded-xl sm:rounded-2xl hover:bg-primary/10 transition-colors group no-underline"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
                 <Phone
-                  size={24}
-                  className="text-primary group-hover:text-white"
+                  size={20}
+                  className="text-primary group-hover:text-white sm:w-6 sm:h-6"
                 />
               </div>
               <div>
-                <p className="font-bold italic uppercase text-sm tracking-tight mb-1">
+                <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   Téléphone
                 </p>
-                <p className="text-gray-600 font-medium">06 29 49 22 13</p>
-                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-2">
+                <p className="text-gray-600 font-medium text-sm">
+                  06 29 49 22 13
+                </p>
+                <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Lun-Ven 9h-18h
                 </p>
               </div>
@@ -183,22 +185,22 @@ _Envoyé depuis le site Sandrine Couture_`;
             {/* Email */}
             <a
               href="mailto:bysandrinecouture@gmail.com"
-              className="flex gap-6 p-6 bg-gray-50 rounded-2xl hover:bg-primary/10 transition-colors group no-underline"
+              className="flex gap-4 sm:gap-6 p-4 sm:p-6 bg-gray-50 rounded-xl sm:rounded-2xl hover:bg-primary/10 transition-colors group no-underline"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
                 <Mail
-                  size={24}
-                  className="text-primary group-hover:text-white"
+                  size={20}
+                  className="text-primary group-hover:text-white sm:w-6 sm:h-6"
                 />
               </div>
               <div>
-                <p className="font-bold italic uppercase text-sm tracking-tight mb-1">
+                <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   Email
                 </p>
-                <p className="text-gray-600 font-medium">
+                <p className="text-gray-600 font-medium text-sm break-all">
                   bysandrinecouture@gmail.com
                 </p>
-                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-2">
+                <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Réponse sous 24h
                 </p>
               </div>
@@ -209,20 +211,22 @@ _Envoyé depuis le site Sandrine Couture_`;
               href="https://maps.google.com/?q=Robertot+76560"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-6 p-6 bg-gray-50 rounded-2xl hover:bg-primary/10 transition-colors group no-underline"
+              className="flex gap-4 sm:gap-6 p-4 sm:p-6 bg-gray-50 rounded-xl sm:rounded-2xl hover:bg-primary/10 transition-colors group no-underline"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
                 <MapPin
-                  size={24}
-                  className="text-primary group-hover:text-white"
+                  size={20}
+                  className="text-primary group-hover:text-white sm:w-6 sm:h-6"
                 />
               </div>
               <div>
-                <p className="font-bold italic uppercase text-sm tracking-tight mb-1">
+                <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   Localisation
                 </p>
-                <p className="text-gray-600 font-medium">Robertot, 76560</p>
-                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-2">
+                <p className="text-gray-600 font-medium text-sm">
+                  Robertot, 76560
+                </p>
+                <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Normandie, France
                 </p>
               </div>
@@ -233,17 +237,17 @@ _Envoyé depuis le site Sandrine Couture_`;
               href="https://wa.me/33629492213"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-6 p-6 bg-primary text-white rounded-2xl hover:shadow-lg transition-all group no-underline"
+              className="flex gap-4 sm:gap-6 p-4 sm:p-6 bg-primary text-white rounded-xl sm:rounded-2xl hover:shadow-lg transition-all group no-underline"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-                <MessageCircle size={24} />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <MessageCircle size={20} className="sm:w-6 sm:h-6" />
               </div>
               <div>
-                <p className="font-bold italic uppercase text-sm tracking-tight mb-1">
+                <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   WhatsApp
                 </p>
-                <p className="font-medium">Messagerie instantanée</p>
-                <p className="text-[10px] text-white/70 font-bold uppercase tracking-widest mt-2">
+                <p className="font-medium text-sm">Messagerie instantanée</p>
+                <p className="text-[9px] sm:text-[10px] text-white/70 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Réponse rapide
                 </p>
               </div>
@@ -251,18 +255,18 @@ _Envoyé depuis le site Sandrine Couture_`;
           </div>
 
           {/* Devis Form */}
-          <div className="bg-gray-50 p-8 rounded-2xl">
-            <h2 className="text-2xl font-black tracking-tighter italic uppercase mb-6">
+          <div className="bg-gray-50 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tighter italic uppercase mb-4 sm:mb-6">
               Demander un devis
             </h2>
 
             {/* Type Selection */}
-            <div className="flex gap-4 mb-8">
+            <div className="flex gap-2 sm:gap-4 mb-6 sm:mb-8">
               {(["entreprise", "particulier"] as const).map((type) => (
                 <button
                   key={type}
                   onClick={() => setFormType(type)}
-                  className={`flex-1 py-3 px-4 rounded-lg font-bold italic uppercase text-[10px] tracking-widest transition-all ${
+                  className={`flex-1 py-2 sm:py-3 px-3 sm:px-4 rounded-lg font-bold italic uppercase text-[9px] sm:text-[10px] tracking-widest transition-all ${
                     formType === type
                       ? "bg-primary text-white shadow-lg"
                       : "bg-white border border-black/10 text-gray-700 hover:border-primary"
@@ -273,9 +277,9 @@ _Envoyé depuis le site Sandrine Couture_`;
               ))}
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2">
+                <label className="block text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-1 sm:mb-2">
                   Nom
                 </label>
                 <input
