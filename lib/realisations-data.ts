@@ -94,9 +94,9 @@ export const REALISATIONS: Realisation[] = [
   {
     id: 13,
     url: "/images/realisations/petit-sac-motif-brode.webp",
-    title: "Serviette Simon",
-    category: "Bébé",
-    desc: "Motif renard malicieux brodé avec le prénom pour un enfant.",
+    title: "Trousse de Toilette Fleur Cuir",
+    category: "Accessoires",
+    desc: "Trousse de toilette avec poche intérieure et fleur en cuir rouge brodée.",
   },
   {
     id: 14,
