@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -43,6 +44,8 @@ export function Navbar() {
           <Link
             href="/"
             className="flex items-center gap-3 group bg-transparent border-none cursor-pointer no-underline"
+            onMouseEnter={() => setIsLogoHovered(true)}
+            onMouseLeave={() => setIsLogoHovered(false)}
           >
             <div className="w-10 h-10 rounded-full border border-primary/20 overflow-hidden bg-white shadow-sm transition-transform group-hover:scale-110">
               <img
@@ -51,7 +54,11 @@ export function Navbar() {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <span className="font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800 italic">
+            <span className={`font-bold tracking-tighter text-sm sm:text-base hidden xs:block uppercase text-gray-800 italic transition-all duration-500 overflow-hidden ${
+              isLogoHovered 
+                ? "max-w-xs opacity-100" 
+                : "max-w-0 opacity-0"
+            }`}>
               By Sandrine Couture
             </span>
           </Link>
