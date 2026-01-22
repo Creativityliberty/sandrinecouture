@@ -47,6 +47,7 @@ export function ParticuliersPage() {
 
   const articles = [
     "Serviettes & peignoirs",
+    "Broderie sur serviette de toilette",
     "Couvertures bébé",
     "Bodies & vêtements",
     "Sacs / trousses",

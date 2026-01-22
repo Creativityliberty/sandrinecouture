@@ -45,6 +45,7 @@ export function EntreprisesPage() {
     "T-shirts personnalisés",
     "Sweats / hoodies brodés",
     "Tabliers brodés",
+    "Broderie sur serviette de toilette",
     "Patchs brodés (cousus ou velcro)",
   ];
 
