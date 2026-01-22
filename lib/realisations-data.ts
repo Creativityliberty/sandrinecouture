@@ -371,4 +371,25 @@ export const REALISATIONS: Realisation[] = [
     category: "Accessoires",
     desc: "Sac banane en tissu polaire blanc, ultra doux et moderne.",
   },
+  {
+    id: 53,
+    url: "/images/realisations/2b-couverture-collection-1.webp",
+    title: "2B Couverture - Collection T-shirts",
+    category: "Entreprises",
+    desc: "Collection de t-shirts professionnels avec logo brodé 2B Couverture en noir, camel et gris.",
+  },
+  {
+    id: 54,
+    url: "/images/realisations/2b-couverture-collection-2.webp",
+    title: "2B Couverture - Uniformes Complets",
+    category: "Entreprises",
+    desc: "Ensemble complet d'uniformes d'équipe : t-shirts, polos et hoodies avec logo brodé.",
+  },
+  {
+    id: 55,
+    url: "/images/realisations/2b-couverture-hoodie.webp",
+    title: "2B Couverture - Hoodie Professionnel",
+    category: "Entreprises",
+    desc: "Hoodie noir avec logo brodé 2B Couverture, idéal pour les équipes professionnelles.",
+  },
 ];
