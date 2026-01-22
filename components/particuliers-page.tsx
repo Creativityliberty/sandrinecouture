@@ -90,24 +90,24 @@ export function ParticuliersPage() {
               )}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <Link href="/devis?type=particulier">
                 <Button
                   variant="whatsapp"
                   size="lg"
-                  className="h-16 px-8 rounded-full shadow-xl uppercase text-[9px] font-black tracking-widest w-full"
+                  className="h-12 px-6 rounded-full shadow-xl uppercase text-[10px] font-bold tracking-widest w-full flex items-center justify-center gap-2"
                 >
-                  Demander un devis WhatsApp
-                  <ArrowRight className="ml-3 w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" />
+                  Demander un devis
                 </Button>
               </Link>
               <Link href="/#réalisations">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="h-16 px-8 rounded-full uppercase text-[9px] font-black tracking-widest w-full"
+                  className="h-12 px-6 rounded-full uppercase text-[10px] font-bold tracking-widest w-full"
                 >
-                  Voir les réalisations
+                  Réalisations
                 </Button>
               </Link>
             </div>
