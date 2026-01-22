@@ -56,14 +56,12 @@ export function ParticuliersPage() {
   return (
     <div className="pt-32 animate-in fade-in duration-700">
       {/* HERO SECTION */}
-      <section className="px-6 mb-24 overflow-hidden relative">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-primary/5 -z-10 blur-[120px] rounded-full translate-y-[-20%]" />
-
+      <section className="px-6 mb-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center text-center lg:text-left">
-          <div className="animate-in slide-in-from-left-8 duration-1000 flex flex-col items-center lg:items-start w-full">
+          <div className="animate-in slide-in-from-left-8 duration-1000 flex flex-col items-center lg:items-start">
             <div className="inline-flex items-center gap-3 px-4 py-1.5 glass rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-6">
               <MapPin className="w-3 h-3" />
-              <span>Robertot (76560) • Livraison possible</span>
+              <span>Robertot (76560) • Normandie • Livraison France</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-black tracking-tighter mb-6 italic leading-[0.9] uppercase">
               Broderie <br />
