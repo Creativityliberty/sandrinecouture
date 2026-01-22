@@ -122,7 +122,8 @@ _Envoyé depuis le site Sandrine Couture_`;
           alt="Sandrine exposant ses produits"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 italic uppercase leading-[0.9]">
