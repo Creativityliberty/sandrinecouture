@@ -44,7 +44,7 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 6,
-    url: "/images/realisations/serviette-brodee-happy-cats-rotated.webp",
+    url: "/images/realisations/serviette-brodee-happy-cats.webp",
     title: "Serviette Happy Cats",
     category: "Particuliers",
     desc: "Broderie ludique d'une rangée de chats colorés sur serviette beige.",
@@ -79,7 +79,7 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 11,
-    url: "/images/realisations/chiens-rotated.webp",
+    url: "/images/realisations/chien-broderie-serviette-detail.webp",
     title: "Portraits Chiens",
     category: "Particuliers",
     desc: "Portrait double de chiens (Orphée & Nala) réalisé en broderie haute précision.",
@@ -93,14 +93,14 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 13,
-    url: "/images/realisations/simon-final.webp",
+    url: "/images/realisations/petit-sac-motif-brode.webp",
     title: "Serviette Simon",
     category: "Bébé",
     desc: "Motif renard malicieux brodé avec le prénom pour un enfant.",
   },
   {
     id: 14,
-    url: "/images/realisations/souris-brodee-cadeau-noel.webp",
+    url: "/images/realisations/grenouille-rigolote-brodee.webp",
     title: "Souris de Noël",
     category: "Particuliers",
     desc: "Petite souris brodée avec son cadeau, idéale pour les fêtes.",
@@ -142,7 +142,7 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 20,
-    url: "/images/realisations/leo-final.webp",
+    url: "/images/realisations/bavoir-poissons-j-peux-pas-j-ai-biberon.webp",
     title: "Serviette Léo Mer",
     category: "Bébé",
     desc: "Thème marin avec baleine, tortue et crabe pour le petit Léo.",
@@ -338,21 +338,21 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 48,
-    url: "/images/realisations/cheval-final.webp",
+    url: "/images/realisations/cheval-brode-serviette-blanche.webp",
     title: "Serviette Pauline",
     category: "Particuliers",
     desc: "Cheval au galop brodé avec précision.",
   },
   {
     id: 49,
-    url: "/images/realisations/christelle-rotated.webp",
+    url: "/images/realisations/serviette-brodee-tendre-moment.webp",
     title: "Serviette Christelle",
     category: "Particuliers",
     desc: "Motif floral brun et prénom sur éponge écrue.",
   },
   {
     id: 50,
-    url: "/images/realisations/sonia-rotated.webp",
+    url: "/images/realisations/sonia-final.webp",
     title: "Serviette Sonia",
     category: "Bébé",
     desc: "Lionne entourée de fleurs et papillons sur éponge rose.",
