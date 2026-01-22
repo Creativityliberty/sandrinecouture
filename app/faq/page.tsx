@@ -66,13 +66,13 @@ export default function FAQPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-6 italic uppercase leading-[0.9]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-4 sm:mb-6 italic uppercase leading-[0.9]">
             Questions <br />
             <span className="text-primary not-italic">Fréquentes</span>
           </h1>
-          <p className="text-lg text-gray-600 mb-8 font-medium max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 font-medium max-w-2xl mx-auto">
             Trouvez les réponses à vos questions sur nos services, délais et
             processus de commande.
           </p>
@@ -80,9 +80,9 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <FAQItem
                 key={index}
@@ -95,22 +95,22 @@ export default function FAQPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-primary/5">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-primary/5">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tighter italic uppercase mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4 sm:mb-6">
             Vous n'avez pas trouvé votre réponse ?
           </h2>
-          <p className="text-gray-600 mb-8 font-medium text-lg">
+          <p className="text-gray-600 mb-6 sm:mb-8 font-medium text-sm sm:text-base md:text-lg">
             Contactez-nous directement, nous sommes là pour vous aider !
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link href="/devis" className="no-underline">
               <Button
                 variant="whatsapp"
                 size="lg"
-                className="h-14 px-8 rounded-full shadow-xl uppercase text-[9px] font-black tracking-widest w-full sm:w-auto"
+                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full shadow-xl uppercase text-[9px] sm:text-[10px] font-bold sm:font-black tracking-widest w-full sm:w-auto flex items-center justify-center gap-2"
               >
-                <MessageCircle className="mr-2 w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
                 Demander via WhatsApp
               </Button>
             </Link>
@@ -121,7 +121,7 @@ export default function FAQPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-14 px-8 rounded-full uppercase text-[9px] font-black tracking-widest w-full sm:w-auto"
+                className="h-12 sm:h-14 px-6 sm:px-8 rounded-full uppercase text-[9px] sm:text-[10px] font-bold sm:font-black tracking-widest w-full sm:w-auto"
               >
                 Envoyer un email
               </Button>

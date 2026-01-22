@@ -55,37 +55,38 @@ export function ParticuliersPage() {
   ];
 
   return (
-    <div className="pt-32 animate-in fade-in duration-700">
+    <div className="pt-20 sm:pt-28 md:pt-32 animate-in fade-in duration-700">
       {/* HERO SECTION */}
-      <section className="px-6 mb-24">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center text-center lg:text-left">
+      <section className="px-4 sm:px-6 mb-12 sm:mb-16 md:mb-24">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 items-center text-center lg:text-left">
           <div className="animate-in slide-in-from-left-8 duration-1000 flex flex-col items-center lg:items-start">
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 glass rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-6">
-              <MapPin className="w-3 h-3" />
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1 sm:py-1.5 glass rounded-full text-[8px] sm:text-[9px] font-black tracking-widest uppercase text-primary mb-4 sm:mb-6">
+              <MapPin className="w-2.5 sm:w-3 h-2.5 sm:h-3" />
               <span>Robertot (76560) • Normandie • Livraison France</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-black tracking-tighter mb-6 italic leading-[0.9] uppercase">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tighter mb-4 sm:mb-6 italic leading-[0.9] uppercase">
               Broderie <br />
               <span className="text-primary not-italic">personnalisée</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-800 font-bold mb-6 italic uppercase tracking-tighter leading-tight">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 font-bold mb-4 sm:mb-6 italic uppercase tracking-tighter leading-tight">
               Prénoms, cadeaux, bébé : une attention unique.
             </p>
-            <p className="text-base text-gray-500 mb-8 leading-relaxed max-w-xl font-medium">
+            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 leading-relaxed max-w-xl font-medium">
               Vous cherchez un cadeau qui marque vraiment ? Je personnalise vos
               textiles avec une broderie propre et résistante : prénom, date,
               petit message, motif… Parfait pour bébé / naissance,
               anniversaires, ou pour vous faire plaisir.
             </p>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10 py-5 border-y border-black/5">
+            <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3 mb-8 sm:mb-10 py-4 sm:py-5 border-y border-black/5">
               {["Devis rapide", "Travail soigné", "Sur-mesure"].map(
                 (check, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary"
+                    className="flex items-center gap-1.5 sm:gap-2 text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-primary"
                   >
-                    <CheckCircle2 size={14} /> <span>{check}</span>
+                    <CheckCircle2 size={12} className="sm:w-3.5 sm:h-3.5" />{" "}
+                    <span>{check}</span>
                   </div>
                 ),
               )}
