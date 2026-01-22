@@ -92,15 +92,15 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white/98 backdrop-blur-xl z-[100] p-8 flex flex-col items-center justify-center gap-6 animate-in fade-in duration-300">
+        <div className="lg:hidden fixed inset-0 bg-white/98 backdrop-blur-xl z-[100] p-6 flex flex-col items-center justify-center gap-4 animate-in fade-in duration-300">
           <button
-            className="absolute top-8 right-8 bg-transparent border-none cursor-pointer"
+            className="absolute top-6 right-6 bg-transparent border-none cursor-pointer"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <X size={28} />
+            <X size={24} />
           </button>
 
-          <div className="w-24 h-24 rounded-full border border-primary/20 overflow-hidden mb-4 shadow-xl">
+          <div className="w-16 h-16 rounded-full border border-primary/20 overflow-hidden mb-2 shadow-md">
             <img
               src="/logo-sandrine.png"
               className="w-full h-full object-cover"
@@ -112,18 +112,18 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-lg font-black tracking-widest no-underline text-gray-900 uppercase hover:text-primary transition-colors"
+              className="text-sm font-bold tracking-widest no-underline text-gray-900 uppercase hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>
           ))}
 
-          <Link href="/devis" className="w-full max-w-xs no-underline">
+          <Link href="/devis" className="w-full max-w-xs no-underline mt-2">
             <Button
               onClick={() => setIsMobileMenuOpen(false)}
               size="lg"
-              className="mt-8 uppercase tracking-widest text-[10px] h-14 w-full font-black shadow-lg shadow-primary/20"
+              className="uppercase tracking-widest text-[9px] h-12 w-full font-bold shadow-lg shadow-primary/20"
             >
               Demander un Devis
             </Button>
