@@ -21,8 +21,8 @@ export function Footer() {
               Atelier de broderie d'excellence en Normandie. Spécialiste du textile professionnel et du cadeau de naissance personnalisé à Robertot.
             </p>
             <div className="flex gap-3 mb-6">
-              <a href={SITE_CONFIG.socials.instagram} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-colors text-black bg-white/40"><Instagram size={16} /></a>
-              <a href={SITE_CONFIG.socials.facebook} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-colors text-black bg-white/40"><Facebook size={16} /></a>
+              <a href={SITE_CONFIG.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-colors text-black bg-white/40"><Instagram size={16} /></a>
+              <a href={SITE_CONFIG.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-colors text-black bg-white/40"><Facebook size={16} /></a>
             </div>
             <div className="space-y-2 text-sm md:text-xs font-bold uppercase tracking-widest text-black/80 drop-shadow-sm">
               <div className="flex items-center gap-2"><Phone size={14} /> {SITE_CONFIG.phone}</div>
