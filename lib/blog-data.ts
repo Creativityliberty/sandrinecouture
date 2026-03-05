@@ -153,12 +153,61 @@ export const BLOG_POSTS: BlogPost[] = [
         slug: "durabilite-broderie-creations-resistent-temps",
         title: "Durabilité de la Broderie : Comment Nos Créations Résistent au Temps",
         excerpt: "Apprenez pourquoi la broderie artisanale est plus durable que l'impression textile et comment en prendre soin.",
-        content: "<p>Bientôt disponible...</p>",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Lorsque vous investissez dans un vêtement personnalisé ou un accessoire unique, une question revient souvent : <em>Combien de temps cela va-t-il durer ?</em> Contrairement aux techniques d'impression ou de flocage qui finissent par s'user, la broderie traverse les années avec élégance. 
+        </p>
+
+        <p class="mb-6">
+          Chez <strong>Sandrine Couture</strong>, implantée au cœur de la <strong>Normandie</strong>, la durabilité n'est pas qu'une promesse, c'est l'essence même de notre artisanat. Découvrez pourquoi nos créations résistent si bien au temps.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">La Force Indestructible du Fil</h2>
+        <p class="mb-6">
+          Le flocage (vinyle pressé à chaud) ou l'impression numérique déposent une fine couche d'encre sur le tissu. Au fil des lavages, surtout en machine, cette couche peut s'effriter ou perdre de son éclat.
+        </p>
+        <p class="mb-6">
+          La <strong>broderie</strong> fonctionne différemment. Le fil traverse la fibre de votre vêtement de part en part des centaines de fois. Le lien textile créé est mécanique. Le logo de votre entreprise ou le prénom de votre enfant sur un <a href="/realisations">doudou</a> devient une partie intégrante du vêtement.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">L'Exigence des Fils Professionnels</h2>
+        <p class="mb-6">
+          Toutes les broderies ne se valent pas. Dans notre atelier normand, nous sélectionnons méticuleusement nos bobines :
+        </p>
+        <ul class="list-disc pl-6 mb-10 space-y-4">
+          <li><strong>Stabilité des couleurs :</strong> Nos fils résistent aux rayons UV du soleil. Que la casquette soit portée tout l'été sur un chantier ou l'éponge étendue au soleil, la couleur reste vive.</li>
+          <li><strong>Fils Polyesters haute résistance :</strong> Contrairement au coton qui peut rétrécir, les bobines polyesters de qualité supportent les lavages fréquents, y compris les machines de vêtements de travail BTP.</li>
+          <li><strong>Résistance chimique :</strong> Même après une confrontation avec des détergents à l'hôpital ou dans la restauration, le fil ne déteint pas sur le vêtement.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Nos Conseils d'Entretien (Le petit plus)</h2>
+        <p class="mb-6">
+          Bien que la broderie soit solide, le vêtement qui la supporte a lui aussi besoin de soin :
+          <ul class="list-disc pl-6 mb-4 mt-2">
+            <li>Lavez de préférence à 30° ou 40°C pour préserver les fibres du coton ou du polo (le fil, lui, résisterait à bien plus !).</li>
+            <li>Repassez la broderie <strong>sur l'envers</strong> pour conserver son relief majestueux.</li>
+            <li>Évitez le nettoyage à sec intensif si votre support n'est pas conçu pour.</li>
+          </ul>
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Le choix de la qualité locale</h2>
+          <p class="mb-6">
+            Vous souhaitez un produit personnalisé qui ne finira pas au rebut après 3 lavages ? Offrir de la qualité, c'est aussi un geste pour la planète (Slow Fashion).
+          </p>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Contactez votre artisane en Normandie
+          </a>
+        </div>
+      </div>
+    `,
         category: "Conseils",
         date: "18 janvier 2026",
         author: "Sandrine",
         readTime: "4 min",
         image: "/images/realisations/chien-broderie-serviette-detail.webp",
+        metaDescription: "Pourquoi choisir la broderie personnalisée ? Découvrez la résistance de notre fil professionnel et les conseils d'entretien durables par Sandrine Couture en Normandie."
     },
     {
         id: 4,
