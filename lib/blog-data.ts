@@ -93,12 +93,60 @@ export const BLOG_POSTS: BlogPost[] = [
         slug: "cadeaux-naissance-personnalises-idees",
         title: "Cadeaux de Naissance Personnalisés : Idées Originales et Durables",
         excerpt: "Explorez nos idées de cadeaux de naissance brodés qui marquent vraiment et deviennent des souvenirs précieux pour les familles.",
-        content: "<p>Bientôt disponible...</p>",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          L'arrivée d'un enfant est un moment magique qui mérite d'être célébré de manière unique. Trouver le cadeau idéal n'est pas toujours facile parmi les listes de naissance standardisées. Et si vous optiez pour un <strong>cadeau de naissance brodé</strong> ? Une touche personnelle qui fait toute la différence et crée un véritable souvenir d'enfance.
+        </p>
+
+        <p class="mb-6">
+          Chez <em>Sandrine Couture</em>, spécialisée dans la <strong>broderie bébé en Normandie</strong>, nous croyons qu'un <strong>cadeau original pour bébé</strong> doit allier esthétisme, utilité et durabilité. Découvrez nos idées pour marquer les esprits et faire plaisir à coup sûr aux jeunes parents.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Les Incontournables de la Naissance</h2>
+        
+        <h3 class="text-2xl font-bold mt-8 mb-4">Le Doudou Personnalisé : Le Compagnon de Tous les Instants</h3>
+        <p class="mb-6">
+          C'est la pièce maîtresse du trousseau. Un <strong>doudou personnalisé</strong> au prénom de l'enfant ne se perd (presque) jamais à la crèche ! Lapin aux longues oreilles, petit ours ou doudou lange, la broderie ajoute cette touche affective qui en fera le trésor de bébé.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">La Cape de Bain Artisanale : Chaleur et Douceur</h3>
+        <p class="mb-6">
+          La sortie du bain est un rituel précieux. Une <strong>cape de bain artisanale</strong> brodée et confectionnée avec une éponge de qualité enveloppera bébé de douceur. Avec de jolis motifs (animaux de la forêt, océan...) et le prénom brodé, c'est le cadeau utile par excellence, que les parents utiliseront pendant des années.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-8 mb-4">Les Bavoirs Festifs et Originaux</h3>
+        <p class="mb-10">
+          On n'a jamais trop de bavoirs ! Mais pourquoi se contenter de modèles basiques ? Optez pour des bavoirs à textes humoristiques ("J'peux pas j'ai biberon", "Mon premier Noël") ou avec de belles illustrations brodées. C'est le petit cadeau abordable qui fait toujours sourire.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Un Choix Durable et Éthique</h2>
+        <p class="mb-6">
+          Pourquoi préférer la broderie à l'impression textile pour les affaires de bébé ? La réponse est simple : la résistance. Les articles pour bébés subissent de fréquents lavages, souvent à haute température. Contrairement à un flocage qui risque de s'effacer ou de craqueler, le fil de broderie reste intact. C'est l'assurance d'un cadeau qui dure dans le temps et qui pourra même être conservé comme souvenir dans la boîte de naissance.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Votre Cadeau sur Mesure en Normandie</h2>
+        <p class="mb-10">
+          Chaque création qui sort de l'atelier <strong>Sandrine Couture</strong> est réalisée avec soin et passion. De la sélection des fils à la confection, chaque étape est maîtrisée localement en Normandie. Offrir une de nos créations, c'est aussi soutenir l'artisanat français et offrir une pièce unique, entièrement personnalisable selon vos envies et le thème de la chambre de l'enfant.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Envie de créer une pièce unique ?</h2>
+          <p class="mb-6">
+            Découvrez l'ensemble de nos créations pour bébés dans notre galerie ou contactez-nous pour donner vie à votre idée de cadeau parfait. Un lapin brodé, un bavoir ou un protège carnet de santé : tout est possible !
+          </p>
+          <a href="/realisations" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Voir nos réalisations bébé
+          </a>
+        </div>
+      </div>
+    `,
         category: "Particuliers",
         date: "20 janvier 2026",
         author: "Sandrine",
         readTime: "6 min",
-        image: "/images/realisations/peluche-lapin-personnalisee-brodee-prenom-mae-cadeau-bebe-normandie.jpg",
+        image: "/images/realisations/canevas-serviette-enfant-broderie-ourson-prenom-luka-sandrine-couture.jpg",
+        metaDescription: "Trouvez le cadeau de naissance original et durable avec la broderie personnalisée bébé en Normandie par Sandrine Couture. Idées doudous, bavoirs et capes de bain artisanales."
     },
     {
         id: 3,
@@ -110,7 +158,7 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "18 janvier 2026",
         author: "Sandrine",
         readTime: "4 min",
-        image: "/images/realisations/trousse-velours-motif-voiture-4x4-brodee-sandrine-couture-france.jpg",
+        image: "/images/realisations/chien-broderie-serviette-detail.webp",
     },
     {
         id: 4,
@@ -134,7 +182,7 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "12 janvier 2026",
         author: "Sandrine",
         readTime: "5 min",
-        image: "/images/realisations/sac-personnalise-brode-octavia.webp",
+        image: "/images/realisations/banane-moumoute-blanche-moderne.webp",
     },
     {
         id: 6,
@@ -146,6 +194,6 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "10 janvier 2026",
         author: "Sandrine",
         readTime: "6 min",
-        image: "/images/realisations/2b-couverture-hoodie.webp",
+        image: "/images/realisations/cheval-brode-serviette-blanche.webp",
     },
 ];
