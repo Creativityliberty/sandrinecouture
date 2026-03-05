@@ -165,35 +165,140 @@ export const BLOG_POSTS: BlogPost[] = [
         slug: "uniformes-professionnels-impact-visuel",
         title: "Uniformes Professionnels : L'Impact Visuel sur Votre Marque",
         excerpt: "Découvrez comment des uniformes brodés cohérents renforcent l'identité de votre entreprise et impressionnent vos clients.",
-        content: "<p>Bientôt disponible...</p>",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          L'image de votre entreprise ne s'arrête pas à votre logo sur un devis ou votre site internet. Elle s'incarne tous les jours sur le terrain à travers vos équipes. Un <strong>uniforme professionnel brodé</strong> est l'un des moyens les plus efficaces pour asseoir votre crédibilité instantanément.
+        </p>
+        <p class="mb-6">
+          En <strong>Normandie</strong>, de plus en plus d'artisans, de commerçants et d'entreprises du bâtiment font confiance à <em>Sandrine Couture</em> pour la personnalisation de leurs vêtements de travail. Mais quel est le véritable impact d'un uniforme logoté ?
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">1. Rassurer le Client au Premier Regard</h2>
+        <p class="mb-6">
+          Lorsqu'un technicien ou un artisan se présente chez un client, son apparence joue un rôle fondamental. Un polo ou une veste arborant fièrement l'emblème de la société (comme nos réalisations pour <a href="/realisations">les artisans locaux</a>) témoigne d'une entreprise structurée et rigoureuse. La broderie, par son aspect noble et en relief, ajoute d'emblée une perception "Haut de Gamme" à votre intervention.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">2. Renforcer l'Esprit d'Équipe</h2>
+        <p class="mb-6">
+          Au-delà des clients, l'uniforme fédère en interne. Porter les mêmes couleurs efface les barrières vestimentaires et crée une cohésion forte autour d'un projet commun. Un vêtement de qualité, confortable et bien coupé, personnalisé avec soin en <strong>France</strong>, montre à vos employés que vous valorisez leur présence sur le terrain.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">3. Une Publicité Ambulante Gratuite</h2>
+        <p class="mb-10">
+          Chaque collaborateur devient un ambassadeur de votre marque. Que ce soit lors d'une pause déjeuner à <strong>Rouen</strong>, sur un chantier, ou dans les transports, votre logo brodé attire l'œil et génère de la visibilité pour votre structure locale. Contrairement au flocage, le fil brodé capte la lumière et résiste parfaitement aux intempéries.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Passez à l'action pour votre équipe</h2>
+          <p class="mb-6">
+            Vous souhaitez équiper vos collaborateurs avec des tenues professionnelles élégantes et durables ? <strong>Sandrine Couture</strong> vous accompagne de A à Z.
+          </p>
+          <a href="/devis" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Demander un devis broderie
+          </a>
+        </div>
+      </div>
+    `,
         category: "Entreprises",
         date: "15 janvier 2026",
         author: "Sandrine",
         readTime: "7 min",
         image: "/images/realisations/2b-couverture-collection-2.webp",
+        metaDescription: "Découvrez l'impact visuel des uniformes professionnels brodés sur votre entreprise. Artisanat de qualité en Normandie avec Sandrine Couture pour vos vêtements de travail."
     },
     {
         id: 5,
         slug: "personnalisation-textile-tendances-2026",
         title: "Personnalisation Textile : Tendances 2026",
         excerpt: "Explorez les dernières tendances en matière de personnalisation textile et comment rester à la pointe du design.",
-        content: "<p>Bientôt disponible...</p>",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Le monde de la personnalisation vêtement ne cesse d'évoluer. Cette année, retour aux sources et à l'authenticité : le <em>moins, mais mieux</em> devient la norme. Découvrez quelles sont les grandes tendances de la <strong>personnalisation textile en 2026</strong>.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">1. Le Boum de la Broderie Sur-Mesure</h2>
+        <p class="mb-6">
+          Oubliez les immenses logos floqués dans le dos qui finissent par craqueler. En 2026, on privilégie la <strong>broderie artisanale</strong>. Chez <strong>Sandrine Couture, en Normandie</strong>, nous constatons une très forte hausse des demandes pour des motifs délicats au niveau du cœur ou sur les manches. La broderie apporte de la texture et un côté premium qu'aucune autre technique n'égale.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">2. Les Couleurs Telluriques et Naturelles</h2>
+        <p class="mb-6">
+          Les teintes néons sont derrière nous. Les entreprises et les particuliers se tournent massivement vers des cotons bio aux couleurs douces : sauge, terracotta, bleu pétrole ou encore sable. La broderie ton-sur-ton (ex: un logo beige sur un <a href="/realisations">sac en velours côtelé beige</a>) s'affirme comme le summum de l'élégance discrète (Quiet Luxury).
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">3. Le Cadeau Hyper-Personnalisé</h2>
+        <p class="mb-10">
+          Que ce soit pour un cadeau de naissance ou un cadeau d'entreprise, l'objet unique est roi. Apposer simplement un prénom, un surnom affectueux ou un trait d'humour en fil fait grimper la valeur sentimentale de l'article de façon exponentielle. L'artisanat français est plus que jamais plébiscité.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Votre projet personnalisé</h2>
+          <p class="mb-6">
+            À la recherche de la dernière tendance ou d'une personnalisation intemporelle ? Discutons de vos idées !
+          </p>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Contactez notre atelier en Normandie
+          </a>
+        </div>
+      </div>
+    `,
         category: "Tendances",
         date: "12 janvier 2026",
         author: "Sandrine",
         readTime: "5 min",
         image: "/images/realisations/banane-moumoute-blanche-moderne.webp",
+        metaDescription: "Découvrez les grandes tendances 2026 de la personnalisation textile et de la broderie artisanale. Sobriété, matières nobles et sur-mesure made in Normandie."
     },
     {
         id: 6,
         slug: "processus-digitalisation-logo-broderie",
         title: "Processus de Digitalisation : De Votre Logo à la Broderie",
         excerpt: "Comprenez comment nous transformons votre logo en fichier de broderie haute définition pour un rendu parfait.",
-        content: "<p>Bientôt disponible...</p>",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Beaucoup de clients s'interrogent : <em>"J'ai mon logo en image, pourquoi ne pouvez-vous pas simplement le broder directement ?"</em> La réponse tient en un mot technique : la <strong>digitalisation</strong> (ou piquage). Voici les coulisses de la création chez Sandrine Couture, votre spécialiste broderie en <strong>Normandie</strong>.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">1. L'Adaptation Graphique</h2>
+        <p class="mb-6">
+          Une image (JPEG, PNG) est composée de pixels. Une machine à broder professionnelle, elle, a besoin d'un trajet d'aiguille précis (points, densités, angles, couleurs de fil). Notre première étape de <strong>digitalisation de logo pour broderie</strong> consiste à repenser parfois légèrement le visuel. Par exemple, des textes inférieurs à 5mm deviendront illisibles une fois piqués, il faut donc les épaissir ou les simplifier.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">2. Le Choix des Points et Densités</h2>
+        <p class="mb-6">
+          Un bon piquage est un métier d'expert. Il faut programmer :
+          <ul class="list-disc pl-6 mb-4 mt-2">
+            <li>Le <strong>point plumetis</strong> (satin) pour des lettrages nets et brillants.</li>
+            <li>Le <strong>point de remplissage</strong> (tatami) pour recouvrir de larges zones avec solidité.</li>
+            <li>Les assises de fil (pour éviter que la broderie ne tire sur un tissu souple).</li>
+          </ul>
+          Ces paramètres varient selon si nous brodons un tissu épais (casquette, veste de travail BTP) ou un polo très fin.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">3. Le Test Machine</h2>
+        <p class="mb-10">
+          Avant d'appliquer l'aiguille sur votre précieux vêtement, nous effectuons toujours des essais en atelier (dans l'Eure / Seine-Maritime). Ce "bon à tirer" textile permet de valider le rendu des couleurs des fils, la tension, et la netteté globale. Car viser l'excellence artisanale en <strong>France</strong> est la promesse de <em>Sandrine Couture</em>.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Confiez-nous votre logo !</h2>
+          <p class="mb-6">
+            Votre logo est prêt ? Envoyez-le-nous pour que nous étudiions sa transformation en une magnifique broderie texturée.
+          </p>
+          <a href="/devis" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Demander une étude graphique
+          </a>
+        </div>
+      </div>
+    `,
         category: "Technique",
         date: "10 janvier 2026",
         author: "Sandrine",
         readTime: "6 min",
         image: "/images/realisations/cheval-brode-serviette-blanche.webp",
+        metaDescription: "Plongez dans les coulisses de l'atelier Sandrine Couture en Normandie : découvrez la digitalisation, l'étape clé pour transformer votre logo en une broderie haut de gamme."
     },
 ];
