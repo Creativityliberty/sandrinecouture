@@ -538,5 +538,47 @@ export const REALISATIONS: Realisation[] = [
     title: "Serviette Mamie Adorée",
     category: "Particuliers",
     desc: "Un message affectueux au cœur brodé pour notre mamie adorée.",
+  },
+  {
+    id: 77,
+    url: "/images/realisations/broderie-vetement-professionnel-entreprise-duha-loc-sandrine-couture-normandie.jpg",
+    title: "Broderie DUHA-LOC",
+    category: "Entreprises",
+    desc: "Personnalisation brodée pour vêtements d'entreprise avec logo et numéro de contact.",
+  },
+  {
+    id: 78,
+    url: "/images/realisations/pochette-velours-cotele-personnalisee-prenom-marylou-creation-artisanale-normandie.jpg",
+    title: "Pochette Marylou",
+    category: "Accessoires",
+    desc: "Belle pochette en velours côtelé beige, personnalisée avec le prénom Marylou.",
+  },
+  {
+    id: 79,
+    url: "/images/realisations/trousse-velours-motif-voiture-4x4-brodee-sandrine-couture-france.jpg",
+    title: "Trousse 4x4",
+    category: "Accessoires",
+    desc: "Trousse en velours avec une superbe broderie d'un 4x4 tout-terrain.",
+  },
+  {
+    id: 80,
+    url: "/images/realisations/serviette-brodee-humoristique-poule-couteau-creation-originale-normandie.jpg",
+    title: "Serviette Poule Originale",
+    category: "Particuliers",
+    desc: "Broderie humoristique d'une poule très apprêtée sur une serviette blanche.",
+  },
+  {
+    id: 81,
+    url: "/images/realisations/serviette-bain-broderie-poule-chef-cuisinier-artisanat-francais.jpg",
+    title: "Serviette Poule Chef",
+    category: "Particuliers",
+    desc: "Poule cheffe cuistot en pleine préparation, broderie de qualité amusante.",
+  },
+  {
+    id: 82,
+    url: "/images/realisations/peluche-lapin-personnalisee-brodee-prenom-mae-cadeau-bebe-normandie.jpg",
+    title: "Peluche Lapin Maé",
+    category: "Bébé",
+    desc: "Très mignonne peluche lapin aux longues oreilles brodées au prénom de Maé.",
   }
 ];
