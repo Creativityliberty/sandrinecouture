@@ -21,13 +21,7 @@ export const REALISATIONS: Realisation[] = [
     category: "Accessoires",
     desc: "Série de poules en tissu aux motifs variés pour une décoration artisanale.",
   },
-  {
-    id: 3,
-    url: "/images/realisations/petit-sac-motif-brode.webp",
-    title: "Sac à Langer Motifs",
-    category: "Bébé",
-    desc: "Grand sac de voyage ou à langer avec motifs animaux et coeurs.",
-  },
+
   {
     id: 4,
     url: "/images/realisations/serviette-personnalisee-lea-velo.webp",
@@ -580,5 +574,12 @@ export const REALISATIONS: Realisation[] = [
     title: "Peluche Lapin Maé",
     category: "Bébé",
     desc: "Très mignonne peluche lapin aux longues oreilles brodées au prénom de Maé.",
+  },
+  {
+    id: 83,
+    url: "/images/realisations/plaid-carnet-de-sante-hugo.jpg",
+    title: "Plaid et Carnet de Santé",
+    category: "Bébé",
+    desc: "Ensemble douillet plaid oursons et protège-carnet dinosaures, personnalisés pour Hugo.",
   }
 ];
