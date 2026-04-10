@@ -631,4 +631,18 @@ export const REALISATIONS: Realisation[] = [
     category: "Bébé",
     desc: "Ensemble bain bébé : Cape de bain et pochette assorties en éponge vert forêt avec broderie oursons roses et biais à pois roses.",
   },
+  {
+    id: 91,
+    url: "/images/realisations/veste-noire-broderie-blanche-dragonfly-doudeville-club-sport.webp",
+    title: "Veste Club Dragonfly",
+    category: "Entreprises",
+    desc: "Veste polaire noire personnalisée avec la broderie blanche du club Dragonfly Doudeville (majjorettes/twirling).",
+  },
+  {
+    id: 92,
+    url: "/images/realisations/serie-vestes-polaires-brodees-club-dragonfly-doudeville.webp",
+    title: "Série Vestes Club",
+    category: "Entreprises",
+    desc: "Production en série de vestes polaires brodées pour le club Dragonfly Doudeville. Travail de précision pour associations et entreprises.",
+  },
 ];
