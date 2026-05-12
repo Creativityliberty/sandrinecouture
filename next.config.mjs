@@ -11,7 +11,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "bysandrinecouture.fr",
+        hostname: "sandrinecouture.com",
         port: "",
         pathname: "/**",
       },

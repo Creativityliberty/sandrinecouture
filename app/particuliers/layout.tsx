@@ -19,8 +19,8 @@ export default function ParticuliersLayout({
     <>
       <SchemaOrgBreadcrumb
         items={[
-          { name: "Accueil", url: "https://bysandrinecouture.fr" },
-          { name: "Particuliers", url: "https://bysandrinecouture.fr/particuliers" },
+          { name: "Accueil", url: "https://sandrinecouture.com" },
+          { name: "Particuliers", url: "https://sandrinecouture.com/particuliers" },
         ]}
       />
       {children}

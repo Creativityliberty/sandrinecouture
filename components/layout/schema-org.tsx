@@ -2,11 +2,11 @@ export function SchemaOrgLocalBusiness() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://bysandrinecouture.fr/",
+    "@id": "https://sandrinecouture.com/",
     name: "By Sandrine Couture",
     description:
       "Atelier de broderie d'excellence en Normandie. Spécialiste du textile professionnel et du cadeau de naissance personnalisé.",
-    url: "https://bysandrinecouture.fr/",
+    url: "https://sandrinecouture.com/",
     telephone: "+33629492213",
     email: "bysandrinecouture@gmail.com",
     address: {
@@ -22,7 +22,7 @@ export function SchemaOrgLocalBusiness() {
       latitude: "49.4769",
       longitude: "0.2192",
     },
-    image: "https://bysandrinecouture.fr/logo-sandrine.png",
+    image: "https://sandrinecouture.com/logo-sandrine.png",
     priceRange: "$$",
     sameAs: [
       "https://instagram.com/bysandrinecouture",
@@ -53,8 +53,8 @@ export function SchemaOrgOrganization() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "By Sandrine Couture",
-    url: "https://bysandrinecouture.fr/",
-    logo: "https://bysandrinecouture.fr/logo-sandrine.png",
+    url: "https://sandrinecouture.com/",
+    logo: "https://sandrinecouture.com/logo-sandrine.png",
     description: "Atelier de broderie d'excellence en Normandie",
     sameAs: [
       "https://instagram.com/bysandrinecouture",

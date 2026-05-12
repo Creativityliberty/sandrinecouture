@@ -58,4 +58,4 @@ Le projet suit les standards SEO 2026 :
 
 - **Atelier:** Robertot, 76560, Normandie
 - **Email:** bysandrinecouture@gmail.com
-- **Web:** [bysandrinecouture.fr](https://bysandrinecouture.fr)
+- **Web:** [sandrinecouture.com](https://sandrinecouture.com)

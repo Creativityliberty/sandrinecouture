@@ -6,7 +6,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bysandrinecouture.fr"),
+  metadataBase: new URL("https://sandrinecouture.com"),
   title: {
     default: "By Sandrine Couture | Broderie d'Excellence en Normandie",
     template: "%s | By Sandrine Couture",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "By Sandrine Couture | Broderie d'Excellence en Normandie",
     description:
       "Artisanat Normand : Donnez vie à vos textiles avec une broderie durable et de précision pour pros et particuliers.",
-    url: "https://bysandrinecouture.fr/",
+    url: "https://sandrinecouture.com/",
     siteName: "By Sandrine Couture",
     images: [
       {

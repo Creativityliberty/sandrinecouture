@@ -19,8 +19,8 @@ export default function DevisLayout({
     <>
       <SchemaOrgBreadcrumb
         items={[
-          { name: "Accueil", url: "https://bysandrinecouture.fr" },
-          { name: "Devis", url: "https://bysandrinecouture.fr/devis" },
+          { name: "Accueil", url: "https://sandrinecouture.com" },
+          { name: "Devis", url: "https://sandrinecouture.com/devis" },
         ]}
       />
       {children}

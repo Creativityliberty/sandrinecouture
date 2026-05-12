@@ -19,8 +19,8 @@ export default function EntreprisesLayout({
     <>
       <SchemaOrgBreadcrumb
         items={[
-          { name: "Accueil", url: "https://bysandrinecouture.fr" },
-          { name: "Entreprises", url: "https://bysandrinecouture.fr/entreprises" },
+          { name: "Accueil", url: "https://sandrinecouture.com" },
+          { name: "Entreprises", url: "https://sandrinecouture.com/entreprises" },
         ]}
       />
       {children}
