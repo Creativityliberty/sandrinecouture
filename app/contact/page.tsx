@@ -1,7 +1,7 @@
 "use client";
 
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";

@@ -352,7 +352,7 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 51,
-    url: "/images/realisations/serviette theo.jpg",
+    url: "/images/realisations/serviette-theo.jpg",
     title: "Serviette Theo",
     category: "Bébé",
     desc: "Serviettes grises with broderies dorées du prénom 'THEO' - motifs patte de chat et chiots.",
@@ -394,21 +394,21 @@ export const REALISATIONS: Realisation[] = [
   },
   {
     id: 57,
-    url: "/images/realisations/bébé doudou.jpg",
+    url: "/images/realisations/bebe-doudou.jpg",
     title: "Gigoteuse Bientôt Bébé",
     category: "Bébé",
     desc: "Gigoteuse verte with broderie 'BIENTÔT BÉBÉ' et tissu blanc aux motifs animaux tendres.",
   },
   {
     id: 58,
-    url: "/images/realisations/Elyo.jpg",
+    url: "/images/realisations/elyo-alt.jpg",
     title: "Serviette Elyo",
     category: "Particuliers",
     desc: "Serviette de toilette with motif poissons bleus et broderie du prénom 'ELYO' en bleu ciel.",
   },
   {
     id: 59,
-    url: "/images/realisations/sac dessin.jpg",
+    url: "/images/realisations/sac-dessin.jpg",
     title: "Sac Manga",
     category: "Accessoires",
     desc: "Sac with motif manga/anime et broderies colorées, design urbain et tendance.",

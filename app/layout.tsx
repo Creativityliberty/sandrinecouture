@@ -1,34 +1,54 @@
 import {
   SchemaOrgLocalBusiness,
   SchemaOrgOrganization,
-} from "@/components/schema-org";
+} from "@/components/layout/schema-org";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "By Sandrine Couture | Broderie d'Excellence en Normandie",
+  metadataBase: new URL("https://bysandrinecouture.fr"),
+  title: {
+    default: "By Sandrine Couture | Broderie d'Excellence en Normandie",
+    template: "%s | By Sandrine Couture",
+  },
   description:
-    "Personnalisation textile haut de gamme pour entreprises et particuliers à Robertot, Normandie. Uniformes pro et cadeaux de naissance uniques.",
-  keywords:
-    "broderie, personnalisation textile, uniformes professionnels, cadeaux naissance, Normandie, Robertot",
+    "Atelier de broderie d'excellence à Robertot, Normandie. Personnalisation textile haut de gamme pour entreprises (uniformes, branding) et particuliers (cadeaux de naissance uniques).",
+  keywords: [
+    "broderie",
+    "personnalisation textile",
+    "uniformes professionnels",
+    "cadeaux naissance",
+    "Normandie",
+    "Robertot",
+    "broderie sur mesure",
+    "artisanat français",
+  ],
   authors: [{ name: "By Sandrine Couture" }],
   creator: "By Sandrine Couture",
   publisher: "By Sandrine Couture",
-  robots:
-    "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "By Sandrine Couture | Broderie d'Excellence en Normandie",
     description:
-      "Artisanat Normand : Donnez vie à vos textiles avec une broderie durable et de précision.",
+      "Artisanat Normand : Donnez vie à vos textiles avec une broderie durable et de précision pour pros et particuliers.",
     url: "https://bysandrinecouture.fr/",
     siteName: "By Sandrine Couture",
     images: [
       {
-        url: "https://bysandrinecouture.fr/og.jpg",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "By Sandrine Couture - Broderie d'Excellence",
-        type: "image/jpeg",
       },
     ],
     type: "website",
@@ -38,11 +58,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "By Sandrine Couture | Broderie d'Excellence",
     description:
-      "Personnalisation textile haut de gamme pour entreprises et particuliers",
-    images: ["https://bysandrinecouture.fr/og.jpg"],
+      "Personnalisation textile haut de gamme pour entreprises et particuliers en Normandie.",
+    images: ["/og.jpg"],
   },
   alternates: {
-    canonical: "https://bysandrinecouture.fr/",
+    canonical: "/",
   },
 };
 

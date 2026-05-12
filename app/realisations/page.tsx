@@ -1,10 +1,10 @@
 "use client"
 
 import React from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { RealisationsPage } from "@/components/realisations-page"
-import { AIAssistant } from "@/components/ai-assistant"
+import { Navbar } from "@/components/layout/navbar"
+import { Footer } from "@/components/layout/footer"
+import { RealisationsPage } from "@/components/pages/realisations-page"
+import { AIAssistant } from "@/components/layout/ai-assistant"
 
 export default function Realisations() {
     return (

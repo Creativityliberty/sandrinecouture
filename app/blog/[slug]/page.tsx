@@ -1,7 +1,7 @@
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";

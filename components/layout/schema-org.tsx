@@ -76,9 +76,11 @@ export function SchemaOrgOrganization() {
   );
 }
 
-export function SchemaOrgBreadcrumb(
-  items: Array<{ name: string; url: string }>,
-) {
+export function SchemaOrgBreadcrumb({
+  items,
+}: {
+  items: Array<{ name: string; url: string }>;
+}) {
   const breadcrumbList = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

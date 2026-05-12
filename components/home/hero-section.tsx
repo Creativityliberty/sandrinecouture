@@ -1,6 +1,6 @@
 import { CheckCircle2, MapPin, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
@@ -16,20 +16,18 @@ export function HeroSection() {
             </div>
 
             <h1 className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 fill-mode-backwards text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-black mb-5 leading-[0.9] tracking-tighter italic uppercase text-balance">
-              Broderie & <br />
-              <span className="text-primary not-italic">Textile.</span>
+              Broderie <br />
+              <span className="text-primary not-italic">D'Excellence.</span>
             </h1>
 
             <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-backwards text-base md:text-lg text-gray-800 font-bold mb-5 leading-tight italic uppercase tracking-tighter max-w-lg">
-              Uniformes d'équipe, accessoires et cadeaux personnalisés —
-              finition nette et durable.
+              Marquez votre image partout. Uniformes pro, textiles d'entreprise et cadeaux uniques.
             </p>
 
             <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-backwards text-sm text-gray-500 mb-6 leading-relaxed max-w-lg font-medium">
               Bienvenue chez{" "}
               <span className="text-black font-bold">By Sandrine Couture</span>.
-              Je réalise vos broderies avec soin : logos pro, patchs velcro,
-              tabliers, mais aussi cadeaux de naissance personnalisés.
+              Je réalise vos personnalisations avec précision, que ce soit pour votre boutique, vos réseaux sociaux ou vos besoins locaux en Normandie.
             </p>
 
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-backwards flex flex-wrap items-center gap-x-6 gap-y-3 mb-10 py-5 border-y border-black/5">

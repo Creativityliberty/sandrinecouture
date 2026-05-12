@@ -1,9 +1,9 @@
 "use client"
 
-import { EntreprisesPage } from "@/components/entreprises-page"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { AIAssistant } from "@/components/ai-assistant"
+import { EntreprisesPage } from "@/components/pages/entreprises-page"
+import { Navbar } from "@/components/layout/navbar"
+import { Footer } from "@/components/layout/footer"
+import { AIAssistant } from "@/components/layout/ai-assistant"
 
 export default function Page() {
     return (

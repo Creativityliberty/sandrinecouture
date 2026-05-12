@@ -1,5 +1,5 @@
 import React from "react";
-import { SITE_CONFIG } from "../../lib/site-config";
+import { SITE_CONFIG } from "@/lib/site-config";
 import { Building2, Baby, Tag, Gift, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 const ICON_MAP: any = {

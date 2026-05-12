@@ -27,3 +27,9 @@ build
 *.njsproj
 *.sln
 *.sw?
+
+# Next.js / TypeScript
+tsconfig.tsbuildinfo
+.npm-cache
+.antigravityignore
+metadata.json

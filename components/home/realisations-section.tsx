@@ -5,7 +5,7 @@ import { X, ZoomIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export function RealisationsSection() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
@@ -60,12 +60,10 @@ export function RealisationsSection() {
               onClick={() => setSelectedImg(img.url)}
             >
               <div className="w-full h-full relative">
-                <Image
+                <img
                   src={img.url}
                   alt={img.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-10">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2, Building2, Package, Layout, MessageSquare, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
-import { SITE_CONFIG } from '../../lib/site-config';
+import { SITE_CONFIG } from "@/lib/site-config";
 
 export function BusinessSection() {
   const products = [

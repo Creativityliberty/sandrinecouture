@@ -1,0 +1,25 @@
+# By Sandrine Couture - AI Development Rules
+
+## 🎨 Design System
+- Use the established "Liquid Glass" aesthetic: blurred backgrounds, subtle borders (`border-black/5`), and high-end typography.
+- Colors: Primary (Pink/Magenta accents), Secondary (Soft pinks/whites), Accent (Dark/Black for text and grounding).
+- Animations: Use `animate-in`, `fade-in`, `slide-in-from-bottom` for all entry sections.
+
+## 📁 Architecture
+- **Server Components:** Default to server components in `/app`. Use `"use client"` only for interactivity.
+- **Component Placement:**
+  - `/components/layout`: Global structure (Navbar, Footer, Schema, AI).
+  - `/components/pages`: Main page wrappers.
+  - `/components/home`: Sections specific to the landing page.
+  - `/components/ui`: Atomic, reusable UI elements.
+
+## 🔍 SEO & Metadata
+- Always use the metadata template from `app/layout.tsx`.
+- Each new page must have its own `layout.tsx` (or metadata export) and `SchemaOrgBreadcrumb`.
+- Use descriptive `alt` tags for all images in `/public/images/realisations`.
+
+## 🛠 Coding Standards
+- Use TypeScript for all new files.
+- Prefer absolute imports with `@/`.
+- Keep components focused and reusable.
+- Follow the "Agentic Coding" flow: Plan in `docs/design.md` before implementing.

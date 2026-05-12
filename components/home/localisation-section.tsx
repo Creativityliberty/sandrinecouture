@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Truck, Globe, Package, ArrowRight } from 'lucide-react';
-import { SITE_CONFIG } from '../../lib/site-config';
+import { SITE_CONFIG } from "@/lib/site-config";
 
 export function LocalisationSection() {
   const cities = [
