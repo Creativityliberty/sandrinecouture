@@ -32,7 +32,7 @@ export function CtaSection() {
           </Button>
         </div>
 
-        <div className="mt-10 inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.3em] font-black text-muted-foreground/50">
+        <div className="mt-10 inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.3em] font-black text-gray-700">
           <MapPin size={10} /> Robertot (76560) • Livraison France
         </div>
       </div>

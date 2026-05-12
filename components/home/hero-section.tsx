@@ -10,7 +10,7 @@ export function HeroSection() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 max-w-7xl mx-auto text-center lg:text-left">
           <div className="flex flex-col items-center lg:items-start w-full">
-            <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 inline-flex items-center gap-3 px-4 py-1.5 glass rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-6">
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 inline-flex items-center gap-3 px-4 py-1.5 glass bg-white/40 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-6">
               <MapPin className="w-3 h-3" />
               <span>Robertot (76560) • Normandie</span>
             </div>

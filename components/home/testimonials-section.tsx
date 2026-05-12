@@ -96,12 +96,12 @@ export function TestimonialsSection() {
                 <div className="flex items-center gap-3">
                   <div className="text-3xl">{testimonial.image}</div>
                   <div>
-                    <p className="font-bold italic uppercase text-sm tracking-tight">
+                    <h3 className="font-bold italic uppercase text-sm tracking-tight">
                       {testimonial.name}
-                    </p>
-                    <p className="text-[10px] text-gray-600 font-bold uppercase tracking-widest">
+                    </h3>
+                    <h4 className="text-[10px] text-gray-700 font-bold uppercase tracking-widest">
                       {testimonial.role}
-                    </p>
+                    </h4>
                     <p className="text-[9px] text-primary font-black uppercase tracking-widest">
                       {testimonial.company}
                     </p>
@@ -116,21 +116,21 @@ export function TestimonialsSection() {
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div className="p-8 bg-white rounded-2xl border border-black/5">
             <p className="text-4xl font-black text-primary mb-2">500+</p>
-            <p className="text-sm font-bold uppercase tracking-widest text-gray-600">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-700">
               Clients satisfaits
-            </p>
+            </h3>
           </div>
           <div className="p-8 bg-white rounded-2xl border border-black/5">
             <p className="text-4xl font-black text-primary mb-2">10 ans</p>
-            <p className="text-sm font-bold uppercase tracking-widest text-gray-600">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-700">
               D'expérience
-            </p>
+            </h3>
           </div>
           <div className="p-8 bg-white rounded-2xl border border-black/5">
             <p className="text-4xl font-black text-primary mb-2">4.9/5</p>
-            <p className="text-sm font-bold uppercase tracking-widest text-gray-600">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-700">
               Note moyenne
-            </p>
+            </h3>
           </div>
         </div>
       </div>

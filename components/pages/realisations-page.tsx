@@ -74,6 +74,8 @@ export function RealisationsPage() {
                 <img
                   src={img.url}
                   alt={img.title}
+                  width={500}
+                  height={400}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   loading={i < 6 ? "eager" : "lazy"}
                 />
@@ -82,9 +84,9 @@ export function RealisationsPage() {
                 <p className="text-primary text-[9px] uppercase font-black tracking-[0.2em] mb-1">
                   {img.category}
                 </p>
-                <h4 className="text-white text-2xl font-black tracking-tighter italic uppercase">
+                <h3 className="text-white text-2xl font-black tracking-tighter italic uppercase">
                   {img.title}
-                </h4>
+                </h3>
               </div>
             </div>
           ))}

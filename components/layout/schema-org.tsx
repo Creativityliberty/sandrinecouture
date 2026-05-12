@@ -22,7 +22,7 @@ export function SchemaOrgLocalBusiness() {
       latitude: "49.4769",
       longitude: "0.2192",
     },
-    image: "https://sandrinecouture.com/logo-sandrine.png",
+    image: "https://sandrinecouture.com/logo-sandrine.webp",
     priceRange: "$$",
     sameAs: [
       "https://instagram.com/bysandrinecouture",
@@ -54,7 +54,7 @@ export function SchemaOrgOrganization() {
     "@type": "Organization",
     name: "By Sandrine Couture",
     url: "https://sandrinecouture.com/",
-    logo: "https://sandrinecouture.com/logo-sandrine.png",
+    logo: "https://sandrinecouture.com/logo-sandrine.webp",
     description: "Atelier de broderie d'excellence en Normandie",
     sameAs: [
       "https://instagram.com/bysandrinecouture",

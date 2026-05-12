@@ -11,10 +11,10 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         londrina: ["Londrina Outline", "sans-serif"],
       },
-      colors: {
-        primary: "#d68b9a",
-        secondary: "#fdf2f4",
-      },
+        colors: {
+          primary: "#b1586a",
+          secondary: "#fdf2f4",
+        },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],
         sm: ["0.875rem", { lineHeight: "1.25rem" }],

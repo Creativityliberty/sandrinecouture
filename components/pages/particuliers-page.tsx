@@ -71,7 +71,7 @@ export function ParticuliersPage() {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 font-bold mb-4 sm:mb-6 italic uppercase tracking-tighter leading-tight">
               Prénoms, cadeaux, bébé : une attention unique.
             </p>
-            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 leading-relaxed max-w-xl font-medium">
+            <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-xl font-medium">
               Vous cherchez un cadeau qui marque vraiment ? Je personnalise vos
               textiles avec une broderie propre et résistante : prénom, date,
               petit message, motif… Parfait pour bébé / naissance,
@@ -124,6 +124,8 @@ export function ParticuliersPage() {
             <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
               <img
                 src="/images/realisations/bavoir-bebe-mon-premier-noel.webp"
+                width={800}
+                height={600}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Bavoir personnalisé bébé"
               />
@@ -185,7 +187,7 @@ export function ParticuliersPage() {
               Personnalisation <br />
               <span className="text-primary not-italic">au choix</span>
             </h2>
-            <p className="text-gray-500 font-medium mb-12 uppercase tracking-tighter italic text-sm">
+            <p className="text-gray-700 font-medium mb-12 uppercase tracking-tighter italic text-sm">
               Vous choisissez le style, je m’occupe du rendu.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-12">

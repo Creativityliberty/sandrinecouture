@@ -24,7 +24,7 @@ export function LocalisationSection() {
               Broderie locale, <br />
               <span className="text-primary not-italic">Rayonnement France.</span>
             </h2>
-            <p className="text-xl text-gray-500 font-medium leading-relaxed max-w-xl mb-10">
+            <p className="text-xl text-gray-600 font-medium leading-relaxed max-w-xl mb-10">
               Mon atelier est niché au cœur de la Normandie, mais mes créations voyagent. Que vous soyez à Rouen ou à l'autre bout de la France, la qualité reste la même.
             </p>
 
@@ -77,7 +77,7 @@ export function LocalisationSection() {
         <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
 
         <div className="mb-6 text-center">
-          <span className="text-[9px] font-black uppercase tracking-[0.5em] text-primary/50 italic">Villes de proximité (76) & Normandie</span>
+          <span className="text-[9px] font-black uppercase tracking-[0.5em] text-primary italic">Villes de proximité (76) & Normandie</span>
         </div>
 
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
@@ -92,7 +92,7 @@ export function LocalisationSection() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-[11px] font-black uppercase tracking-[0.3em] text-gray-300 flex items-center justify-center gap-2">
+        <p className="text-[11px] font-black uppercase tracking-[0.3em] text-gray-600 flex items-center justify-center gap-2">
           <Package size={14} className="text-primary" /> Livraison rapide : <span className="text-black">Toute la France</span>
         </p>
       </div>

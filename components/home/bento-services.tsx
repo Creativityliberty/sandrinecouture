@@ -15,7 +15,7 @@ export function BentoServices() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4 text-gradient italic tracking-tighter uppercase">Ce que je réalise</h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-medium leading-tight">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-medium leading-tight">
             Du simple prénom au logo complet, toujours avec une finition propre.
           </p>
         </div>
@@ -31,7 +31,7 @@ export function BentoServices() {
                       {Icon && <Icon className="text-primary w-6 h-6" />}
                     </div>
                     <h3 className="text-2xl font-bold mb-3 tracking-tight">{service.title}</h3>
-                    <p className="text-gray-500 line-clamp-2 text-sm leading-relaxed">{service.description}</p>
+                    <p className="text-gray-700 line-clamp-2 text-sm leading-relaxed">{service.description}</p>
                   </div>
 
                   <button
@@ -52,8 +52,8 @@ export function BentoServices() {
             <ShieldCheck size={32} className="text-primary" />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h4 className="text-xl font-bold mb-2 italic tracking-tight uppercase">Note Professionnelle</h4>
-            <p className="text-white/60 text-sm font-medium leading-relaxed">
+            <h3 className="text-xl font-bold mb-2 italic tracking-tight uppercase">Note Professionnelle</h3>
+            <p className="text-white/80 text-sm font-medium leading-relaxed">
               Votre logo est systématiquement optimisé et digitalisé avant broderie pour garantir un rendu net, lisible et extrêmement professionnel sur tous vos supports.
             </p>
           </div>

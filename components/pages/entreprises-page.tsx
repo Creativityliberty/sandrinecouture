@@ -102,7 +102,7 @@ export function EntreprisesPage() {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 font-bold mb-4 sm:mb-6 italic uppercase tracking-tighter leading-tight">
               Une image d'équipe professionnelle, durable et cohérente.
             </p>
-            <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8 leading-relaxed max-w-xl font-medium">
+            <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-xl font-medium">
               Restaurants, artisans, hôtels, salons, clubs… Je personnalise vos
               tenues avec une broderie nette et résistante : logo, patch, prénom
               ou fonction. L'objectif : une finition propre, lisible, qui dure
@@ -157,7 +157,9 @@ export function EntreprisesPage() {
             <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl" />
             <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
               <img
-                src="/images/realisations/2b-couverture-team.jpg"
+                src="/images/realisations/2b-couverture-team.webp"
+                width={800}
+                height={600}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Équipe 2B Couverture - Broderie professionnelle"
               />
@@ -299,9 +301,9 @@ export function EntreprisesPage() {
                 }`}
               >
                 <div>
-                  <h4 className="text-4xl font-black tracking-tighter mb-2 italic uppercase">
+                  <h3 className="text-4xl font-black tracking-tighter mb-2 italic uppercase">
                     {pack.name}
-                  </h4>
+                  </h3>
                   <p
                     className={`text-[10px] uppercase tracking-widest font-black mb-8 ${i === 1 ? "text-white/70" : "text-primary"}`}
                   >
@@ -369,9 +371,9 @@ export function EntreprisesPage() {
                   {i + 1}
                 </div>
                 <div className="pt-3">
-                  <h4 className="text-xl font-bold uppercase italic tracking-tight mb-2">
+                  <h3 className="text-xl font-bold uppercase italic tracking-tight mb-2">
                     {step.t}
-                  </h4>
+                  </h3>
                   <p className="text-muted-foreground font-medium">{step.d}</p>
                 </div>
               </div>

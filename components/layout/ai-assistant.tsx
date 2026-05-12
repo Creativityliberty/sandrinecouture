@@ -127,7 +127,7 @@ export function AIAssistant() {
             <div className="flex justify-between items-center mb-1">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center overflow-hidden border border-white/10">
-                  <img src="/logo-sandrine.png" className="w-full h-full object-cover" alt="Logo" />
+                  <img src="/logo-sandrine.webp" width={40} height={40} className="w-full h-full object-cover" alt="Logo" />
                 </div>
                 <div>
                   <p className="font-black italic uppercase tracking-tighter leading-none">By Sandrine Couture</p>

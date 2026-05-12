@@ -63,6 +63,8 @@ export function RealisationsSection() {
                 <img
                   src={img.url}
                   alt={img.title}
+                  width={500}
+                  height={400}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
@@ -70,9 +72,9 @@ export function RealisationsSection() {
                 <p className="text-primary text-[9px] uppercase font-black tracking-[0.2em] mb-1">
                   {img.category}
                 </p>
-                <h4 className="text-white text-xl md:text-2xl font-black tracking-tighter italic uppercase">
+                <h3 className="text-white text-xl md:text-2xl font-black tracking-tighter italic uppercase">
                   {img.title}
-                </h4>
+                </h3>
                 <div className="mt-4 flex items-center gap-2 text-white/60 text-[9px] uppercase font-bold tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <ZoomIn size={12} /> Cliquer pour voir
                 </div>

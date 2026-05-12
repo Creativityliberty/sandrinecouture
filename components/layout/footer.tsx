@@ -39,7 +39,7 @@ export function Footer() {
                 Couture
               </h3>
             </div>
-            <p className="text-gray-700 max-w-sm leading-relaxed mb-6 text-sm md:text-xs font-medium">
+            <p className="text-black max-w-sm leading-relaxed mb-6 text-sm md:text-xs font-medium">
               Atelier de broderie d'excellence en Normandie. Spécialiste du
               textile professionnel et du cadeau de naissance personnalisé à
               Robertot.
@@ -66,7 +66,7 @@ export function Footer() {
                 <Facebook size={16} />
               </a>
             </div>
-            <div className="space-y-2 text-sm md:text-xs font-bold uppercase tracking-widest text-black/80 drop-shadow-sm">
+            <div className="space-y-2 text-sm md:text-xs font-bold uppercase tracking-widest text-black drop-shadow-sm">
               <div className="flex items-center gap-2">
                 <Phone size={14} /> {SITE_CONFIG.phone}
               </div>
@@ -81,12 +81,12 @@ export function Footer() {
             <h4 className="font-bold mb-4 text-xs md:text-[10px] uppercase tracking-widest text-black">
               Nos Secteurs
             </h4>
-            <ul className="space-y-2 text-sm md:text-xs text-gray-700 font-medium list-none p-0">
+            <ul className="space-y-2 text-sm md:text-xs text-black font-medium list-none p-0">
               {SITE_CONFIG.seo.sectors.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/devis?secteur=${s.slug}`}
-                    className="hover:text-black transition-colors no-underline"
+                    className="hover:text-primary transition-colors no-underline"
                   >
                     {s.name}
                   </Link>
@@ -100,12 +100,12 @@ export function Footer() {
             <h4 className="font-bold mb-4 text-xs md:text-[10px] uppercase tracking-widest text-black">
               Nos Produits
             </h4>
-            <ul className="space-y-2 text-sm md:text-xs text-gray-700 font-medium list-none p-0">
+            <ul className="space-y-2 text-sm md:text-xs text-black font-medium list-none p-0">
               {SITE_CONFIG.seo.products.map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/devis?produit=${p.slug}`}
-                    className="hover:text-black transition-colors no-underline"
+                    className="hover:text-primary transition-colors no-underline"
                   >
                     {p.name}
                   </Link>
@@ -132,22 +132,22 @@ export function Footer() {
               ))}
               <li className="pt-2 border-t border-black/10 mt-3">
                 <div className="flex flex-wrap gap-2">
-                  {SITE_CONFIG.seo.cities.map((c) => (
-                    <Link
-                      key={c}
-                      href={`/#broderie-${c.toLowerCase()}`}
-                      className="text-[10px] md:text-[9px] hover:text-black no-underline uppercase tracking-tighter text-gray-600"
-                    >
-                      {c}
-                    </Link>
-                  ))}
+                    {SITE_CONFIG.seo.cities.map((c) => (
+                      <Link
+                        key={c}
+                        href={`/#broderie-${c.toLowerCase()}`}
+                        className="text-[10px] md:text-[9px] hover:text-primary no-underline uppercase tracking-tighter text-black"
+                      >
+                        {c}
+                      </Link>
+                    ))}
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-[9px] font-bold text-gray-600 uppercase tracking-widest">
+        <div className="pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-[9px] font-bold text-black uppercase tracking-widest">
           <div className="flex gap-6">
             <Link
               href="/mentions-legales"
