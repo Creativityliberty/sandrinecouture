@@ -72,7 +72,7 @@ export default function FAQPage() {
             Questions <br />
             <span className="text-primary not-italic">Fréquentes</span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 font-medium max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 font-medium max-w-2xl mx-auto">
             Trouvez les réponses à vos questions sur nos services, délais et
             processus de commande.
           </p>
@@ -100,7 +100,7 @@ export default function FAQPage() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4 sm:mb-6">
             Vous n'avez pas trouvé votre réponse ?
           </h2>
-          <p className="text-gray-600 mb-6 sm:mb-8 font-medium text-sm sm:text-base md:text-lg">
+          <p className="text-gray-700 mb-6 sm:mb-8 font-medium text-sm sm:text-base md:text-lg">
             Contactez-nous directement, nous sommes là pour vous aider !
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

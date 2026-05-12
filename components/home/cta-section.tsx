@@ -9,7 +9,7 @@ export function CtaSection() {
         <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-8 italic uppercase leading-[0.9]">
           Prêt(e) à lancer <br /> votre projet ?
         </h2>
-        <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
+        <p className="text-base md:text-lg text-gray-700 mb-10 leading-relaxed max-w-2xl mx-auto font-medium">
           Dites-moi ce que vous voulez broder — je vous réponds rapidement.
         </p>
 

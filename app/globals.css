@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply font-sans;
+    font-family: var(--font-poppins), sans-serif;
   }
 
   h1,
@@ -15,7 +13,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Londrina Outline", sans-serif;
+    font-family: var(--font-londrina), sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -109,5 +107,26 @@
     max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Optimized Marquee for Mobile */
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  /* Reduce animation intensity for better mobile performance */
+  @media (max-width: 768px) {
+    .animate-in {
+      animation-duration: 500ms !important;
+    }
   }
 }

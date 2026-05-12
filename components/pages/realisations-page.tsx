@@ -29,7 +29,7 @@ export function RealisationsPage() {
       <div className="max-w-7xl mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-12 no-underline"
+          className="inline-flex items-center gap-2 text-gray-700 hover:text-primary transition-colors mb-12 no-underline"
         >
           <ArrowLeft size={16} /> Retour à l'accueil
         </Link>
@@ -39,7 +39,7 @@ export function RealisationsPage() {
             Toutes mes <br />
             <span className="text-primary not-italic">réalisations.</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
             Découvrez un aperçu complet de mon travail au fil des projets.
             Chaque pièce est unique et réalisée avec soin.
           </p>
@@ -54,7 +54,7 @@ export function RealisationsPage() {
               className={`px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${
                 activeFilter === cat
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "bg-secondary text-muted-foreground hover:bg-secondary/80"
+                  : "bg-secondary text-gray-700 hover:bg-secondary/80"
               }`}
             >
               {cat}
@@ -74,8 +74,8 @@ export function RealisationsPage() {
                 <img
                   src={img.url}
                   alt={img.title}
-                  width={500}
-                  height={400}
+                  width={600}
+                  height={800}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   loading={i < 6 ? "eager" : "lazy"}
                 />

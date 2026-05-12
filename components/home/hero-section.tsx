@@ -24,7 +24,7 @@ export function HeroSection() {
               Marquez votre image partout. Uniformes pro, textiles d'entreprise et cadeaux uniques.
             </p>
 
-            <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-backwards text-sm text-gray-500 mb-6 leading-relaxed max-w-lg font-medium">
+            <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-backwards text-sm text-gray-700 mb-6 leading-relaxed max-w-lg font-medium">
               Bienvenue chez{" "}
               <span className="text-black font-bold">By Sandrine Couture</span>.
               Je réalise vos personnalisations avec précision, que ce soit pour votre boutique, vos réseaux sociaux ou vos besoins locaux en Normandie.

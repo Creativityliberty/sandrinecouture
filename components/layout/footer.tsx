@@ -14,8 +14,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 text-left mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div
-              className="flex items-center gap-3 mb-5 group cursor-pointer relative"
+            <Link
+              href="/"
+              aria-label="Retour à l'accueil"
+              className="flex items-center gap-3 mb-5 group cursor-pointer relative no-underline"
               onMouseEnter={() => setIsLogoHovered(true)}
               onMouseLeave={() => setIsLogoHovered(false)}
             >
@@ -38,7 +40,7 @@ export function Footer() {
                 By Sandrine <br />
                 Couture
               </h3>
-            </div>
+            </Link>
             <p className="text-black max-w-sm leading-relaxed mb-6 text-sm md:text-xs font-medium">
               Atelier de broderie d'excellence en Normandie. Spécialiste du
               textile professionnel et du cadeau de naissance personnalisé à

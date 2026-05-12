@@ -14,7 +14,7 @@ export function ProcessSection() {
       <div className="max-w-7xl mx-auto text-center md:text-left">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter italic uppercase">Comment ça marche ?</h2>
-          <p className="text-lg text-muted-foreground font-medium">Vous décrivez votre besoin → je m’occupe du reste.</p>
+          <p className="text-lg text-gray-700 font-medium">Vous décrivez votre besoin → je m’occupe du reste.</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 mb-20">
@@ -23,7 +23,7 @@ export function ProcessSection() {
               <span className="text-8xl font-black text-primary/10 absolute -top-10 -left-4">{step.num}</span>
               <div className="relative z-10 pt-4">
                 <h3 className="text-xl font-bold mb-3 tracking-tight">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{step.desc}</p>
               </div>
             </div>
           ))}
@@ -36,7 +36,7 @@ export function ProcessSection() {
             </div>
             <div>
               <p className="font-bold text-sm uppercase tracking-widest">Délais de production</p>
-              <p className="text-xs text-muted-foreground">Dépend de la complexité et des quantités</p>
+              <p className="text-xs text-gray-700">Dépend de la complexité et des quantités</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-8">

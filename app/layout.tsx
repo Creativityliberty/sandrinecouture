@@ -4,6 +4,7 @@ import {
 } from "@/components/layout/schema-org";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { poppins, londrinaOutline } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sandrinecouture.com"),
@@ -80,14 +81,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning className={`${poppins.variable} ${londrinaOutline.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <SchemaOrgOrganization />
         <SchemaOrgLocalBusiness />
       </head>
-      <body className="antialiased" suppressHydrationWarning>
+      <body className="antialiased font-sans" suppressHydrationWarning>
         {children}
       </body>
     </html>

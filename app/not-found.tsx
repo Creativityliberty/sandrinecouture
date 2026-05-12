@@ -20,10 +20,10 @@ export default function NotFound() {
           <h2 className="text-4xl sm:text-5xl font-black tracking-tighter italic uppercase mb-4 leading-[0.9]">
             Page non trouvée
           </h2>
-          <p className="text-xl text-gray-600 mb-6 font-medium">
+          <p className="text-xl text-gray-700 mb-6 font-medium">
             Désolé, la page que vous cherchez n'existe pas ou a été déplacée.
           </p>
-          <p className="text-gray-500 font-medium max-w-lg mx-auto">
+          <p className="text-gray-700 font-medium max-w-lg mx-auto">
             Peut-être que vous cherchiez une de nos pages principales ?
             Retournez à l'accueil ou explorez nos services.
           </p>
@@ -31,7 +31,7 @@ export default function NotFound() {
 
         {/* Quick Links */}
         <div className="mb-12 p-8 bg-gray-50 rounded-2xl border border-black/5">
-          <p className="text-sm font-bold uppercase tracking-widest text-gray-600 mb-6">
+          <p className="text-sm font-bold uppercase tracking-widest text-gray-700 mb-6">
             Pages populaires
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -83,7 +83,7 @@ export default function NotFound() {
 
         {/* Contact Info */}
         <div className="mt-16 pt-8 border-t border-black/10">
-          <p className="text-sm text-gray-600 font-medium mb-4">
+          <p className="text-sm text-gray-700 font-medium mb-4">
             Besoin d'aide ? Contactez-nous directement
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm font-bold">

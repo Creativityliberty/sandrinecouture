@@ -21,8 +21,8 @@ export function Button({
   const variants = {
     primary: "bg-primary text-white shadow-lg shadow-primary/20 hover:scale-105 hover:shadow-primary/30",
     outline: "border-2 border-black/10 text-black hover:bg-black hover:text-white",
-    ghost: "text-muted-foreground hover:text-primary hover:bg-primary/5",
-    whatsapp: "bg-[#25D366] text-white shadow-lg shadow-green-500/20 hover:scale-105 hover:bg-[#1da851]"
+    ghost: "text-gray-700 hover:text-primary hover:bg-primary/5",
+    whatsapp: "bg-[#1da851] text-white shadow-lg shadow-green-600/20 hover:scale-105 hover:bg-[#16803d]"
   };
   
   const sizes = {

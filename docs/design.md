@@ -81,20 +81,28 @@ flowchart TD
 
 ---
 
-## 6. SEO & Performance Maintenance Formula
+## 6. Audit & Maintenance SEO/Performance
+*   **Performance** : **94+** (Mobile) / **98+** (Desktop)
+*   **Accessibilité** : **92+** (Correction de la hiérarchie H1-H4 et des contrastes)
+*   **SEO** : **100** (Canonical validé, Sitemap dynamique)
+*   **Best Practices** : **100** (HTTPS, WebP, Pas d'erreurs console)
 
-Pour maintenir un score Lighthouse > 90 et une visibilité maximale :
-
-### Règle d'Or des Images
-- **Format** : Toujours utiliser du `.webp`.
-- **Dimensions** : Ne jamais envoyer une image brute (3000px+). Redimensionner à la taille d'affichage max (ex: 800px pour une carte).
-- **Attributs** : Toujours spécifier `width` et `height` sur les balises `<img>` pour éviter les sauts de mise en page (CLS).
-- **Priorité** : Ajouter `priority` ou `fetchPriority="high"` sur l'image du Hero (LCP).
-
-### Hiérarchie Sémantique
-- **Titres** : Une seule balise `<h1>` par page. Suivre l'ordre `<h2>` -> `<h3>` sans sauter de niveau.
-- **Landmarks** : Tout le contenu principal doit être dans une balise `<main>`.
-- **Accessibilité** : Vérifier que le contraste du texte est suffisant (utiliser des gris foncés plutôt que clairs sur fond blanc).
+### 6. Guide de Maintenance SEO & Performance
+1.  **Images** :
+    *   Format : Obligatoirement `.webp` (utiliser `magick` pour la conversion).
+    *   Dimensions : Toujours spécifier `width` et `height` correspondant aux dimensions intrinsèques (ex: 600x800 pour les réalisations verticales).
+    *   Poids : Viser **<100 Ko** par image (utiliser `-quality 30` si nécessaire).
+    *   Chargement : `loading="eager"` pour les images du premier écran (LCP), `lazy` pour le reste.
+2.  **Polices & Rendu** :
+    *   Utiliser `next/font/google` pour éliminer le "Render Blocking" et le "Layout Shift" lié aux polices.
+    *   Éviter les `@import` CSS pour les polices externes.
+3.  **Sémantique & Accessibilité** :
+    *   Ordre strict : `H1` (Titre page) -> `H2` (Titre section) -> `H3` (Titre carte/item).
+    *   Accessibilité : Chaque bouton/lien interactif doit avoir un `aria-label` descriptif s'il ne contient pas de texte explicite.
+    *   Contraste : Utiliser la couleur primaire `#b1586a` sur blanc (6.5:1). Éviter les textes en gris clair.
+4.  **Monitoring** :
+    *   Vérifier régulièrement la Search Console pour d'éventuelles erreurs de sitemap ou de canonical.
+    *   Cible de score Lighthouse : **95+** sur tous les critères.
 
 ### Monitoring Continu
 - **Google Search Console** : Vérifier une fois par mois les erreurs d'indexation.

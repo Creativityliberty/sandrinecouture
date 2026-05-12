@@ -36,6 +36,7 @@ export function BentoServices() {
 
                   <button
                     onClick={() => window.location.hash = 'devis'}
+                    aria-label={`Demander un devis pour ${service.title}`}
                     className="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-3 transition-all text-sm uppercase tracking-widest bg-transparent border-none cursor-pointer"
                   >
                     Demander un devis <ArrowUpRight className="w-4 h-4" />
@@ -59,6 +60,7 @@ export function BentoServices() {
           </div>
           <button
             onClick={() => window.location.hash = 'devis'}
+            aria-label="Lancer la création de mon logo"
             className="px-8 py-4 bg-primary text-white rounded-full font-bold uppercase text-[10px] tracking-widest hover:scale-105 transition-transform border-none cursor-pointer shadow-lg shadow-primary/20"
           >
             Lancer mon logo

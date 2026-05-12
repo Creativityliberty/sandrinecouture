@@ -19,7 +19,7 @@ export function ReassuranceSection() {
               <item.icon size={24} />
             </div>
             <h3 className="font-bold text-lg mb-2 tracking-tight">{item.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+            <p className="text-sm text-gray-700 leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>

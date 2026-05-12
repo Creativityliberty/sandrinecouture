@@ -147,7 +147,7 @@ export function EntreprisesPage() {
                 </Button>
               </Link>
             </div>
-            <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-tight italic">
+            <p className="text-[10px] text-gray-700 font-bold uppercase tracking-tight italic">
               Vous remplissez le devis → WhatsApp s’ouvre avec un message
               complet prêt à envoyer.
             </p>
@@ -159,7 +159,7 @@ export function EntreprisesPage() {
               <img
                 src="/images/realisations/2b-couverture-team.webp"
                 width={800}
-                height={600}
+                height={541}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Équipe 2B Couverture - Broderie professionnelle"
               />
@@ -184,7 +184,7 @@ export function EntreprisesPage() {
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4">
               Pour quels types d’entreprises ?
             </h2>
-            <p className="text-muted-foreground font-medium uppercase tracking-tighter text-sm italic">
+            <p className="text-gray-700 font-medium uppercase tracking-tighter text-sm italic">
               Les demandes les plus fréquentes en broderie professionnelle.
             </p>
           </div>
@@ -206,7 +206,7 @@ export function EntreprisesPage() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-center text-sm font-bold uppercase tracking-widest text-muted-foreground/50 italic">
+          <p className="mt-12 text-center text-sm font-bold uppercase tracking-widest text-gray-700/50 italic">
             Vous n’êtes pas dans la liste ? Aucun souci : on adapte selon votre
             besoin.
           </p>
@@ -286,7 +286,7 @@ export function EntreprisesPage() {
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4">
               Packs entreprise
             </h2>
-            <p className="text-muted-foreground font-medium uppercase tracking-tighter text-sm italic">
+            <p className="text-gray-700 font-medium uppercase tracking-tighter text-sm italic">
               Idéal pour démarrer rapidement avec une base claire.
             </p>
           </div>
@@ -374,7 +374,7 @@ export function EntreprisesPage() {
                   <h3 className="text-xl font-bold uppercase italic tracking-tight mb-2">
                     {step.t}
                   </h3>
-                  <p className="text-muted-foreground font-medium">{step.d}</p>
+                  <p className="text-gray-700 font-medium">{step.d}</p>
                 </div>
               </div>
             ))}
@@ -434,7 +434,7 @@ export function EntreprisesPage() {
           <h2 className="text-3xl font-black italic uppercase mb-4">
             Normandie & livraison France
           </h2>
-          <p className="text-muted-foreground mb-12 font-medium">
+          <p className="text-gray-700 mb-12 font-medium">
             Atelier basé à Robertot (76560). Je travaille avec des entreprises
             en Normandie et partout en France.
           </p>
@@ -483,7 +483,7 @@ export function EntreprisesPage() {
               <Phone className="mr-2 w-4 h-4" /> 06 29 49 22 13
             </Button>
           </div>
-          <p className="mt-8 text-[9px] font-black uppercase tracking-widest text-muted-foreground italic">
+          <p className="mt-8 text-[9px] font-black uppercase tracking-widest text-gray-700 italic">
             Logo + article + quantité + délai = devis rapide.
           </p>
         </div>

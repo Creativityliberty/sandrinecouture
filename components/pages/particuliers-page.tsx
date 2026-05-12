@@ -113,7 +113,7 @@ export function ParticuliersPage() {
                 </Button>
               </Link>
             </div>
-            <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-tight italic">
+            <p className="text-[10px] text-gray-700 font-bold uppercase tracking-tight italic">
               Vous remplissez le devis → WhatsApp s’ouvre avec un message déjà
               prêt à envoyer.
             </p>
@@ -124,8 +124,8 @@ export function ParticuliersPage() {
             <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
               <img
                 src="/images/realisations/bavoir-bebe-mon-premier-noel.webp"
-                width={800}
-                height={600}
+                width={900}
+                height={1200}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Bavoir personnalisé bébé"
               />
@@ -150,7 +150,7 @@ export function ParticuliersPage() {
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4">
               Des idées qui marchent <br />à tous les coups
             </h2>
-            <p className="text-muted-foreground font-medium italic uppercase tracking-tighter">
+            <p className="text-gray-700 font-medium italic uppercase tracking-tighter">
               Des cadeaux simples… mais qui font toujours effet.
             </p>
           </div>
@@ -235,7 +235,7 @@ export function ParticuliersPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground italic flex items-center gap-3">
+            <p className="text-[10px] font-black uppercase tracking-widest text-gray-700 italic flex items-center gap-3">
               <Info size={12} className="text-primary" /> Vous pouvez apporter
               votre textile ou demander une solution selon le projet.
             </p>
@@ -256,7 +256,7 @@ export function ParticuliersPage() {
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4">
               Comment commander ?
             </h2>
-            <p className="text-muted-foreground font-medium uppercase tracking-tighter italic text-sm">
+            <p className="text-gray-700 font-medium uppercase tracking-tighter italic text-sm">
               En quelques minutes, c’est lancé.
             </p>
           </div>
@@ -340,7 +340,7 @@ export function ParticuliersPage() {
           <h2 className="text-3xl font-black italic uppercase mb-4">
             Normandie & livraison possible
           </h2>
-          <p className="text-muted-foreground mb-12 font-medium">
+          <p className="text-gray-700 mb-12 font-medium">
             Atelier basé à Robertot (76560). Je reçois des demandes en Normandie
             et je propose la livraison selon votre projet.
           </p>
@@ -367,7 +367,7 @@ export function ParticuliersPage() {
             Dites-moi ce que <br />
             <span className="text-primary not-italic">vous voulez broder</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 font-medium italic">
+          <p className="text-xl text-gray-700 mb-12 font-medium italic">
             Article + prénom/texte + couleurs + date = devis rapide.
           </p>
 
@@ -392,7 +392,7 @@ export function ParticuliersPage() {
               </Button>
             </Link>
           </div>
-          <p className="mt-8 text-[9px] font-black uppercase tracking-widest text-muted-foreground italic flex items-center justify-center gap-2">
+          <p className="mt-8 text-[9px] font-black uppercase tracking-widest text-gray-700 italic flex items-center justify-center gap-2">
             <Camera size={12} /> Vous pouvez aussi envoyer une photo sur
             WhatsApp pour confirmer.
           </p>

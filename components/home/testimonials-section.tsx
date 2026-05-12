@@ -61,7 +61,7 @@ export function TestimonialsSection() {
             Ils nous font <br />
             <span className="text-primary not-italic">confiance</span>
           </h2>
-          <p className="text-gray-600 font-medium max-w-2xl mx-auto">
+          <p className="text-gray-700 font-medium max-w-2xl mx-auto">
             Découvrez ce que nos clients disent de nos services et de la qualité
             de notre travail.
           </p>

@@ -24,7 +24,7 @@ export function LocalisationSection() {
               Broderie locale, <br />
               <span className="text-primary not-italic">Rayonnement France.</span>
             </h2>
-            <p className="text-xl text-gray-600 font-medium leading-relaxed max-w-xl mb-10">
+            <p className="text-xl text-gray-700 font-medium leading-relaxed max-w-xl mb-10">
               Mon atelier est niché au cœur de la Normandie, mais mes créations voyagent. Que vous soyez à Rouen ou à l'autre bout de la France, la qualité reste la même.
             </p>
 
@@ -40,7 +40,7 @@ export function LocalisationSection() {
               <div className="p-6 rounded-3xl bg-black text-white flex flex-col justify-between border border-white/5">
                 <div>
                   <Globe className="text-primary mb-4" size={24} />
-                  <h3 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-primary/70">France & Europe</h3>
+                  <h3 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-white/80">France & Europe</h3>
                   <p className="text-sm font-bold italic">Un savoir-faire normand qui s'exporte.</p>
                 </div>
                 <div className="mt-6 flex items-center gap-2 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
@@ -56,8 +56,8 @@ export function LocalisationSection() {
             <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white">
               <img
                 src="/images/realisations/poules-decoratives-brodees.webp"
-                width={500}
-                height={400}
+                width={600}
+                height={800}
                 className="w-full h-full object-cover"
                 alt="Poules décoratives brodées - Artisanat Normandie"
               />
@@ -77,13 +77,13 @@ export function LocalisationSection() {
         <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
 
         <div className="mb-6 text-center">
-          <span className="text-[9px] font-black uppercase tracking-[0.5em] text-primary italic">Villes de proximité (76) & Normandie</span>
+          <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/90 italic">Villes de proximité (76) & Normandie</span>
         </div>
 
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
           {scrollingCities.map((city, i) => (
             <div key={i} className="flex items-center gap-12 group">
-              <span className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white/20 group-hover:text-primary transition-colors cursor-default">
+              <span className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white/40 group-hover:text-primary transition-colors cursor-default">
                 {city} <ArrowRight className="text-primary ml-4 group-hover:translate-x-4 inline-block transition-transform w-12 h-12" />
               </span>
             </div>
@@ -92,7 +92,7 @@ export function LocalisationSection() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-[11px] font-black uppercase tracking-[0.3em] text-gray-600 flex items-center justify-center gap-2">
+        <p className="text-[11px] font-black uppercase tracking-[0.3em] text-gray-700 flex items-center justify-center gap-2">
           <Package size={14} className="text-primary" /> Livraison rapide : <span className="text-black">Toute la France</span>
         </p>
       </div>

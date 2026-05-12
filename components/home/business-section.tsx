@@ -31,7 +31,7 @@ export function BusinessSection() {
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 italic leading-none text-gradient">
               Uniformes brodés <br /><span className="text-primary not-italic">pour entreprises</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+            <p className="text-xl text-gray-700 mb-10 max-w-xl leading-relaxed">
               Une image d'équipe professionnelle, durable et cohérente. Je personnalise vos tenues avec une broderie nette et résistante à Robertot.
             </p>
             
@@ -151,7 +151,7 @@ export function BusinessSection() {
                   {i + 1}
                 </div>
                 <h5 className="font-bold text-sm mb-1 uppercase tracking-tight">{s.t}</h5>
-                <p className="text-[10px] text-muted-foreground leading-relaxed px-4">{s.d}</p>
+                <p className="text-[10px] text-gray-700 leading-relaxed px-4">{s.d}</p>
               </div>
             ))}
           </div>

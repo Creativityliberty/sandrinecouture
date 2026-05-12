@@ -18,7 +18,7 @@ export default function BlogPage() {
             Blog & <br />
             <span className="text-primary not-italic">Conseils</span>
           </h1>
-          <p className="text-lg text-gray-600 mb-8 font-medium max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 mb-8 font-medium max-w-2xl mx-auto">
             Découvrez nos articles sur la broderie, la personnalisation textile
             et les tendances du secteur.
           </p>
@@ -55,13 +55,13 @@ export default function BlogPage() {
                       {article.title}
                     </Link>
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2 font-medium">
+                  <p className="text-gray-700 text-sm mb-4 line-clamp-2 font-medium">
                     {article.excerpt}
                   </p>
 
                   {/* Meta */}
                   <div className="mt-auto pt-4 border-t border-black/5 space-y-2">
-                    <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                    <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-gray-700">
                       <div className="flex items-center gap-1">
                         <Calendar size={12} />
                         {article.date}
@@ -94,7 +94,7 @@ export default function BlogPage() {
           <h2 className="text-3xl sm:text-4xl font-black tracking-tighter italic uppercase mb-6">
             Restez informé
           </h2>
-          <p className="text-gray-600 mb-8 font-medium text-lg">
+          <p className="text-gray-700 mb-8 font-medium text-lg">
             Recevez nos derniers articles et conseils directement dans votre
             boîte mail.
           </p>

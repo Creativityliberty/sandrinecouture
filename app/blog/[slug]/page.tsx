@@ -39,7 +39,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
       <main className="max-w-4xl mx-auto px-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 no-underline font-bold uppercase tracking-widest text-[10px]"
+          className="inline-flex items-center gap-2 text-gray-700 hover:text-primary transition-colors mb-8 no-underline font-bold uppercase tracking-widest text-[10px]"
         >
           <ArrowLeft size={16} /> Retour aux articles
         </Link>
@@ -82,7 +82,7 @@ export default async function BlogPostPage(props: { params: Promise<{ slug: stri
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] font-bold uppercase tracking-widest text-gray-500">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] font-bold uppercase tracking-widest text-gray-700">
               <div className="flex items-center gap-2">
                 <Calendar size={14} className="text-primary" />
                 {post.date}

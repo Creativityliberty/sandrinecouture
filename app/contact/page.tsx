@@ -141,7 +141,7 @@ _Envoyé depuis le site Sandrine Couture_`;
       {/* Subtitle Section */}
       <section className="pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 font-medium max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium max-w-2xl mx-auto">
             Une question ? Un projet ? Nous sommes là pour vous aider.
             Contactez-nous par le moyen qui vous convient le mieux.
           </p>
@@ -174,10 +174,10 @@ _Envoyé depuis le site Sandrine Couture_`;
                 <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   Téléphone
                 </p>
-                <p className="text-gray-600 font-medium text-sm">
+                <p className="text-gray-700 font-medium text-sm">
                   06 29 49 22 13
                 </p>
-                <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 sm:mt-2">
+                <p className="text-[9px] sm:text-[10px] text-gray-700 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Lun-Ven 9h-18h
                 </p>
               </div>
@@ -198,10 +198,10 @@ _Envoyé depuis le site Sandrine Couture_`;
                 <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   Email
                 </p>
-                <p className="text-gray-600 font-medium text-sm break-all">
+                <p className="text-gray-700 font-medium text-sm break-all">
                   bysandrinecouture@gmail.com
                 </p>
-                <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 sm:mt-2">
+                <p className="text-[9px] sm:text-[10px] text-gray-700 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Réponse sous 24h
                 </p>
               </div>
@@ -224,10 +224,10 @@ _Envoyé depuis le site Sandrine Couture_`;
                 <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
                   Localisation
                 </p>
-                <p className="text-gray-600 font-medium text-sm">
+                <p className="text-gray-700 font-medium text-sm">
                   Robertot, 76560
                 </p>
-                <p className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 sm:mt-2">
+                <p className="text-[9px] sm:text-[10px] text-gray-700 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Normandie, France
                 </p>
               </div>
@@ -489,7 +489,7 @@ _Envoyé depuis le site Sandrine Couture_`;
                 Envoyer via WhatsApp
               </Button>
 
-              <p className="text-[10px] text-gray-600 font-bold uppercase tracking-widest text-center">
+              <p className="text-[10px] text-gray-700 font-bold uppercase tracking-widest text-center">
                 Votre devis sera envoyé directement à Sandrine
               </p>
             </form>

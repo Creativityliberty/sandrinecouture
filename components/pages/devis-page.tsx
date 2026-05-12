@@ -111,7 +111,7 @@ _Envoyé depuis le site Sandrine Couture_`;
       <div className="max-w-4xl mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 no-underline font-bold text-xs uppercase tracking-widest"
+          className="inline-flex items-center gap-2 text-gray-700 hover:text-primary transition-colors mb-8 no-underline font-bold text-xs uppercase tracking-widest"
         >
           <ArrowLeft size={14} /> Retour à l'accueil
         </Link>
@@ -121,7 +121,7 @@ _Envoyé depuis le site Sandrine Couture_`;
             Votre Projet{" "}
             <span className="text-primary not-italic">sur-mesure</span>
           </h1>
-          <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold italic">
+          <p className="text-sm text-gray-700 uppercase tracking-widest font-bold italic">
             Remplissez ces informations pour un devis précis sous 24h.
           </p>
         </div>

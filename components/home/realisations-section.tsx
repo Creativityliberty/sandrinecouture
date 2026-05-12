@@ -24,7 +24,7 @@ export function RealisationsSection() {
                 L'Atelier en Image
               </span>
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground font-medium leading-relaxed">
+            <p className="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
               Un rendu propre et professionnel pour chaque projet unique.
             </p>
           </div>
@@ -63,9 +63,10 @@ export function RealisationsSection() {
                 <img
                   src={img.url}
                   alt={img.title}
-                  width={500}
-                  height={400}
+                  width={600}
+                  height={800}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  loading={i < 6 ? "eager" : "lazy"}
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-10">

@@ -43,6 +43,7 @@ export function Navbar() {
           {/* Logo avec image et forme arrondie */}
           <Link
             href="/"
+            aria-label="Retour à l'accueil"
             className="flex items-center gap-3 group bg-transparent border-none cursor-pointer no-underline relative"
             onMouseEnter={() => setIsLogoHovered(true)}
             onMouseLeave={() => setIsLogoHovered(false)}
@@ -73,7 +74,7 @@ export function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-[10px] uppercase tracking-widest font-extrabold text-muted-foreground hover:text-primary transition-colors no-underline"
+                className="text-[10px] uppercase tracking-widest font-extrabold text-gray-700 hover:text-primary transition-colors no-underline"
               >
                 {item.label}
               </Link>
@@ -82,7 +83,7 @@ export function Navbar() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
-            <Link href="/devis">
+            <Link href="/devis" aria-label="Demander un devis">
               <Button
                 variant="primary"
                 size="sm"
