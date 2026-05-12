@@ -21,7 +21,9 @@ export function Footer() {
             >
               <div className="w-10 h-10 rounded-full border border-black/10 overflow-hidden bg-white shadow-sm p-1 transition-all duration-500 group-hover:shadow-md group-hover:scale-110">
                 <img
-                  src="/logo-sandrine.png"
+                  src="/logo-sandrine.webp"
+                  width={40}
+                  height={40}
                   className="w-full h-full object-cover rounded-full"
                   alt="Sandrine Couture Logo"
                 />

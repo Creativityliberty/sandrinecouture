@@ -78,3 +78,25 @@ flowchart TD
 2. **Phase 2:** Update `app/layout.tsx` with enhanced metadata templates.
 3. **Phase 3:** Integrate `BreadcrumbJsonLd` on all sub-pages.
 4. **Phase 4:** Optimize Hero sections with the "Shopify-style" clear promise.
+
+---
+
+## 6. SEO & Performance Maintenance Formula
+
+Pour maintenir un score Lighthouse > 90 et une visibilité maximale :
+
+### Règle d'Or des Images
+- **Format** : Toujours utiliser du `.webp`.
+- **Dimensions** : Ne jamais envoyer une image brute (3000px+). Redimensionner à la taille d'affichage max (ex: 800px pour une carte).
+- **Attributs** : Toujours spécifier `width` et `height` sur les balises `<img>` pour éviter les sauts de mise en page (CLS).
+- **Priorité** : Ajouter `priority` ou `fetchPriority="high"` sur l'image du Hero (LCP).
+
+### Hiérarchie Sémantique
+- **Titres** : Une seule balise `<h1>` par page. Suivre l'ordre `<h2>` -> `<h3>` sans sauter de niveau.
+- **Landmarks** : Tout le contenu principal doit être dans une balise `<main>`.
+- **Accessibilité** : Vérifier que le contraste du texte est suffisant (utiliser des gris foncés plutôt que clairs sur fond blanc).
+
+### Monitoring Continu
+- **Google Search Console** : Vérifier une fois par mois les erreurs d'indexation.
+- **PageSpeed Insights** : Tester après chaque mise à jour majeure du design.
+- **Sitemap** : S'assurer que le lien `/sitemap.xml` est bien déclaré dans la console Google.

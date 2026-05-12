@@ -18,7 +18,7 @@ export function ReassuranceSection() {
             <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-6 text-primary">
               <item.icon size={24} />
             </div>
-            <h4 className="font-bold text-lg mb-2 tracking-tight">{item.title}</h4>
+            <h3 className="font-bold text-lg mb-2 tracking-tight">{item.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
           </div>
         ))}

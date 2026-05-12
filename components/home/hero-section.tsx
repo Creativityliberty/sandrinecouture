@@ -74,6 +74,8 @@ export function HeroSection() {
               <img
                 src="/images/realisations/2b-couverture-collection-1.webp"
                 alt="Uniformes professionnels 2B Couverture - T-shirts brodés"
+                width={512}
+                height={600}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 loading="eager"
                 fetchPriority="high"

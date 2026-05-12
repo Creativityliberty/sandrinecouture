@@ -17,15 +17,17 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen font-sans selection:bg-primary/20 bg-white">
       <Navbar />
-      <HeroSection />
-      <SegmentationSection />
-      <BentoServices />
-      <ReassuranceSection />
-      <ProcessSection />
-      <RealisationsSection />
-      <TestimonialsSection />
-      <LocalisationSection />
-      <CtaSection />
+      <main id="main-content">
+        <HeroSection />
+        <SegmentationSection />
+        <BentoServices />
+        <ReassuranceSection />
+        <ProcessSection />
+        <RealisationsSection />
+        <TestimonialsSection />
+        <LocalisationSection />
+        <CtaSection />
+      </main>
       <AIAssistant />
       <Footer />
     </div>

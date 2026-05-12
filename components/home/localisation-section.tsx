@@ -32,20 +32,20 @@ export function LocalisationSection() {
               <div className="p-6 rounded-3xl bg-secondary/50 border border-primary/10 flex flex-col justify-between">
                 <div>
                   <Truck className="text-primary mb-4" size={24} />
-                  <h4 className="font-bold uppercase tracking-widest text-[10px] mb-2">Livraison Partout</h4>
+                  <h3 className="font-bold uppercase tracking-widest text-[10px] mb-2">Livraison Partout</h3>
                   <p className="text-sm font-bold italic">Expédition sécurisée dans toute la France.</p>
                 </div>
-                <img src="/logo-mondial-relay.jpg" alt="Mondial Relay" className="h-8 object-contain mt-6 opacity-80 mix-blend-multiply" />
+                <img src="/logo-mondial-relay.jpg" width={100} height={32} alt="Mondial Relay" className="h-8 object-contain mt-6 opacity-80 mix-blend-multiply" />
               </div>
               <div className="p-6 rounded-3xl bg-black text-white flex flex-col justify-between border border-white/5">
                 <div>
                   <Globe className="text-primary mb-4" size={24} />
-                  <h4 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-primary/70">France & Europe</h4>
+                  <h3 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-primary/70">France & Europe</h3>
                   <p className="text-sm font-bold italic">Un savoir-faire normand qui s'exporte.</p>
                 </div>
                 <div className="mt-6 flex items-center gap-2 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                   <span className="text-[8px] font-black uppercase tracking-widest">Partenaire</span>
-                  <img src="/logo-mondial-relay.jpg" alt="Mondial Relay Partner" className="h-6 bg-white py-0.5 px-2 rounded-lg" />
+                  <img src="/logo-mondial-relay.jpg" width={80} height={24} alt="Mondial Relay Partner" className="h-6 bg-white py-0.5 px-2 rounded-lg" />
                 </div>
               </div>
             </div>
@@ -56,6 +56,8 @@ export function LocalisationSection() {
             <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white">
               <img
                 src="/images/realisations/poules-decoratives-brodees.webp"
+                width={500}
+                height={400}
                 className="w-full h-full object-cover"
                 alt="Poules décoratives brodées - Artisanat Normandie"
               />

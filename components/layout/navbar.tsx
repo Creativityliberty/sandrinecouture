@@ -49,8 +49,10 @@ export function Navbar() {
           >
             <div className="w-10 h-10 rounded-full border border-primary/20 overflow-hidden bg-white shadow-sm transition-all duration-500 group-hover:shadow-md group-hover:scale-110">
               <img
-                src="/logo-sandrine.png"
+                src="/logo-sandrine.webp"
                 alt="Logo Sandrine Couture"
+                width={40}
+                height={40}
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
@@ -117,7 +119,9 @@ export function Navbar() {
 
           <div className="w-16 h-16 rounded-full border border-primary/20 overflow-hidden mb-2 shadow-md">
             <img
-              src="/logo-sandrine.png"
+              src="/logo-sandrine.webp"
+              width={64}
+              height={64}
               className="w-full h-full object-cover"
               alt="By Sandrine Couture"
             />
