@@ -679,41 +679,4 @@ export const REALISATIONS: Realisation[] = [
     category: "Entreprises",
     desc: "Broderie personnalisée pour l'enseigne Dragon Fly Normandie.",
   }
-
-  ,{
-    id: 98,
-    url: "/images/realisations/plaid-carnet-de-sante-hugo.webp",
-    title: "Plaid et Carnet de Santé Hugo",
-    category: "Bébé",
-    desc: "Ensemble couverture douce et protège carnet de santé personnalisés avec le prénom Hugo."
-  },
-  {
-    id: 99,
-    url: "/images/realisations/sac-mangas.webp",
-    title: "Sac à Dos Motif Manga",
-    category: "Accessoires",
-    desc: "Sac personnalisé avec des motifs inspirés de l'univers manga et anime."
-  },
-  {
-    id: 100,
-    url: "/images/realisations/sonia-final.webp",
-    title: "Serviette Personnalisée Sonia",
-    category: "Particuliers",
-    desc: "Serviette de toilette brodée avec des motifs floraux et le prénom Sonia."
-  },
-  {
-    id: 101,
-    url: "/images/realisations/trousse-final.webp",
-    title: "Trousse de Maquillage Brodee",
-    category: "Accessoires",
-    desc: "Trousse de maquillage élégante avec une broderie artisanale sur mesure."
-  },
-  {
-    id: 102,
-    url: "/images/realisations/trousse-velours.webp",
-    title: "Petite Trousse en Velours",
-    category: "Accessoires",
-    desc: "Trousse en velours doux, idéale pour ranger les accessoires de tous les jours."
-  }
 ];
-
