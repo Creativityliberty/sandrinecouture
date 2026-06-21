@@ -678,5 +678,40 @@ export const REALISATIONS: Realisation[] = [
     title: "Dragon Fly Normandie",
     category: "Entreprises",
     desc: "Broderie personnalisée pour l'enseigne Dragon Fly Normandie.",
+  },
+  {
+    id: 98,
+    url: "/images/realisations/ensemble-naissance-koala-baby-love.webp",
+    title: "Ensemble Naissance Koala",
+    category: "Bébé",
+    desc: "Ensemble fait main avec amour comprenant carnet de santé, bavoirs et couverture aux motifs koalas 'Baby Love'."
+  },
+  {
+    id: 99,
+    url: "/images/realisations/gilet-bebe-reversible-moumoute-sherpa.webp",
+    title: "Gilets Réversibles Bébé",
+    category: "Bébé",
+    desc: "Petits gilets de bébé réversibles en moumoute sherpa, confortables et doux pour les petits explorateurs."
+  },
+  {
+    id: 100,
+    url: "/images/realisations/serviettes-bain-brodees-personnalisees-walid-ines.webp",
+    title: "Serviettes Brodées Personnalisées",
+    category: "Particuliers",
+    desc: "Ensemble de serviettes de bain vertes avec broderie personnalisée des prénoms Walid et Ines pour des moments qui comptent."
+  },
+  {
+    id: 101,
+    url: "/images/realisations/lange-bapteme-personnalise-giulia.webp",
+    title: "Lange de Baptême Giulia",
+    category: "Bébé",
+    desc: "Lange blanc brodé en fil doré pour le baptême de Giulia, un souvenir inoubliable."
+  },
+  {
+    id: 102,
+    url: "/images/realisations/doudou-lapin-rose-personnalise-inaya.webp",
+    title: "Doudou Lapin Inaya",
+    category: "Bébé",
+    desc: "Doudous plats lapins roses personnalisés avec le prénom Inaya, d'une grande douceur."
   }
 ];
