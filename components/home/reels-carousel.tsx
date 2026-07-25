@@ -80,27 +80,6 @@ export function ReelsCarousel() {
       thumbnail: "/images/realisations/lange-bapteme-personnalise-giulia.webp",
     },
     {
-      id: 10,
-      title: "Vêtements professionnels brodés",
-      category: "Entreprises",
-      videoUrl: "https://www.facebook.com/reel/1308769530835032/",
-      thumbnail: "/images/realisations/broderie-vetement-professionnel-entreprise-duha-loc-sandrine-couture-normandie.webp",
-    },
-    {
-      id: 11,
-      title: "Piquage minutieux en direct",
-      category: "Technique",
-      videoUrl: "https://www.facebook.com/reel/1410408536826408/",
-      thumbnail: "/images/realisations/2b-couverture-collection-1.webp",
-    },
-    {
-      id: 12,
-      title: "Cadeaux personnalisés uniques",
-      category: "Particuliers",
-      videoUrl: "https://www.facebook.com/reel/723902903420970/",
-      thumbnail: "/images/realisations/banane-moumoute-blanche-moderne.webp",
-    },
-    {
       id: 13,
       title: "Motifs de broderie originaux",
       category: "Atelier",
