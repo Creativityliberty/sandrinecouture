@@ -1007,5 +1007,19 @@ export const REALISATIONS: Realisation[] = [
     title: "Trousse de Toilette Graphique Bleue",
     category: "Accessoires",
     desc: "Trousse de toilette avec tissu graphique bleu et fermeture éclair."
+  },
+  {
+    id: 145,
+    url: "/images/realisations/poncho-bain-enfant-donald-duck-orange-brode.jpg",
+    title: "Poncho de Bain Enfant Donald Duck Orange",
+    category: "Bébé",
+    desc: "Poncho de bain enfant en éponge orange avec capuche, bord rouge à motifs et broderie personnalisée du personnage Disney Donald Duck."
+  },
+  {
+    id: 146,
+    url: "/images/realisations/poncho-bain-enfant-donald-duck-zoom-broderie.jpg",
+    title: "Zoom Broderie Donald Duck sur Éponge Orange",
+    category: "Bébé",
+    desc: "Zoom sur la broderie haute précision du personnage Donald Duck réalisée sur éponge orange – point couleurs vives, détail chapeau et costume."
   }
 ];
