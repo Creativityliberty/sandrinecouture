@@ -350,4 +350,334 @@ export const BLOG_POSTS: BlogPost[] = [
         image: "/images/realisations/cheval-brode-serviette-blanche.webp",
         metaDescription: "Plongez dans les coulisses de l'atelier Sandrine Couture en Normandie : découvrez la digitalisation, l'étape clé pour transformer votre logo en une broderie haut de gamme."
     },
+    {
+        id: 7,
+        slug: "broderie-textile-restaurant-choix-chefs",
+        title: "Marquage Textile pour Restaurants : Pourquoi la Broderie est le Choix Préféré des Chefs",
+        excerpt: "De la cuisine à la salle, découvrez pourquoi la broderie est le marquage privilégié par les restaurateurs pour allier élégance et résistance à toute épreuve.",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Dans l'univers de la gastronomie et de la restauration, chaque détail compte : de la présentation de l'assiette à la tenue du personnel de service. Les vêtements professionnels de votre restaurant ne sont pas qu'un outil de travail, ils sont le reflet direct de votre identité de marque. 
+        </p>
+
+        <p class="mb-6">
+          Qu'il s'agisse de vestes de cuisine pour vos cuisiniers ou de tabliers pour le personnel de salle, le choix de la technique de personnalisation textile est crucial. Découvrez pourquoi la <strong>broderie restaurant</strong> est la solution plébiscitée par les plus grands chefs et restaurateurs en Normandie.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Une résistance absolue aux rigueurs de la cuisine</h2>
+        <p class="mb-6">
+          Le quotidien d'une cuisine professionnelle est intense : chaleur, projections de graisse, frottements réguliers et lavages à haute température pour éliminer les taches tenaces. Face à ces contraintes, l'impression ou le flocage textile montrent rapidement leurs limites. Ils s'écaillent, craquellent ou ternissent après quelques semaines d'utilisation.
+        </p>
+        <p class="mb-6">
+          La <strong>broderie personnalisée</strong> est la seule technique qui garantit une tenue parfaite dans le temps. Grâce à des fils polyesters ultra-résistants, les logos brodés sur vos vestes de cuisine conservent leur couleur et leur éclat d'origine, même après des dizaines de cycles de lavage industriel à 60°C.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">L'élégance en salle : rassurer et séduire vos clients</h2>
+        <p class="mb-6">
+          En salle, le tablier de sommelier ou le polo de service brodé avec le nom de votre établissement envoie un message clair : rigueur, professionnalisme et souci du détail. Le léger relief de la broderie capte la lumière et apporte un cachet haut de gamme incomparable. 
+        </p>
+        <p class="mb-10">
+          Ce soin apporté à la tenue vestimentaire de vos collaborateurs renforce instantanément l'autorité et la réputation de votre table aux yeux de vos clients, à Rouen, Dieppe ou Le Havre.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Quels supports privilégier pour votre restaurant ?</h2>
+        <ul class="list-disc pl-6 mb-10 space-y-4">
+          <li><strong>Les Vestes de Chef</strong> : Une broderie sur le col ou au niveau du cœur pour signer votre professionnalisme.</li>
+          <li><strong>Les Tabliers de Service</strong> : Choisissez des tabliers en coton ou polycoton épais pour un rendu de broderie dense et solide.</li>
+          <li><strong>Les Chemises et Polos</strong> : Idéals pour harmoniser la tenue de votre équipe de salle tout en conservant confort et élégance.</li>
+        </ul>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Équipez votre restaurant avec By Sandrine Couture</h2>
+          <p class="mb-6">
+            Basé en Normandie, notre atelier de broderie personnalise vos uniformes de restauration avec le plus grand soin. Contactez-nous pour échanger sur vos logos et obtenir un devis rapide.
+          </p>
+          <a href="/devis" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Demander un devis restauration
+          </a>
+        </div>
+      </div>
+    `,
+        category: "Entreprises",
+        date: "25 janvier 2026",
+        author: "Sandrine",
+        readTime: "5 min",
+        image: "/images/realisations/broderie-vetement-professionnel-entreprise-duha-loc-sandrine-couture-normandie.webp",
+        metaDescription: "Pourquoi choisir la broderie pour votre restaurant ? Découvrez les avantages de durabilité et d'élégance sur vos vestes de cuisine et tabliers de service."
+    },
+    {
+        id: 8,
+        slug: "liste-naissance-personnalisee-essentiels-brodes",
+        title: "Liste de Naissance Personnalisée : 5 Essentiels Brodés à y Inscrire Absolument",
+        excerpt: "Évitez les doublons et les cadeaux oubliés dans un placard. Voici les 5 articles brodés indispensables à ajouter à votre liste de naissance.",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Préparer l'arrivée de bébé est une aventure formidable. L'une des étapes clés consiste à créer sa liste de naissance pour aider la famille et les amis à choisir des cadeaux utiles. Cependant, on se retrouve souvent submergé de vêtements trop petits ou de jouets en double.
+        </p>
+
+        <p class="mb-6">
+          Pour éviter cela, les cadeaux personnalisés et durables sont la meilleure solution. Un <strong>cadeau de naissance brodé</strong> n'est pas seulement utile, il devient un véritable souvenir d'enfance que l'on garde précieusement. Voici notre sélection des 5 indispensables à ajouter à votre liste de naissance.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">1. Le Doudou Brodé au Prénom de Bébé</h2>
+        <p class="mb-6">
+          C'est le compagnon inséparable de votre enfant. Le faire broder avec son prénom apporte une touche affectueuse unique. C'est également un excellent moyen de ne jamais l'égarer à la crèche ou chez la nounou !
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">2. La Cape de Bain Artisanale</h2>
+        <p class="mb-6">
+          Un incontournable du quotidien. Choisir une cape de bain en éponge épaisse et douce avec le prénom de l'enfant brodé sur la capuche est une valeur sûre. Elle servira pour sécher bébé en douceur dès la maternité et pendant ses premières années.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">3. Le Protège-Carnet de Santé Unique</h2>
+        <p class="mb-6">
+          Le carnet de santé va accompagner votre enfant durant ses 18 premières années. Pour le protéger des déchirures et lui donner un aspect adorable, le protège-carnet de santé personnalisé en tissu molletonné avec une belle broderie est le cadeau parfait.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">4. Le Bavoir personnalisé rigolo</h2>
+        <p class="mb-6">
+          Puisqu'il en faut des dizaines durant les premiers mois, autant joindre l'utile à l'agréable ! Des bavoirs brodés avec de petites phrases amusantes ou de jolies illustrations apportent une touche de gaieté aux repas de bébé.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">5. Le Sac à Linge en Tissu</h2>
+        <p class="mb-10">
+          Idéal pour transporter les affaires de rechange de bébé, ranger ses jouets ou l'emmener en week-end. Le sac pochon personnalisé au prénom de l'enfant est ultra-pratique et s'intègre parfaitement dans la décoration de sa chambre.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Créez votre trousseau bébé avec Sandrine Couture</h2>
+          <p class="mb-6">
+            Tous nos articles bébés sont confectionnés et brodés de manière artisanale en Normandie. Douceur et qualité garanties pour la peau délicate de vos enfants.
+          </p>
+          <a href="/realisations" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Découvrir l'univers bébé
+          </a>
+        </div>
+      </div>
+    `,
+        category: "Particuliers",
+        date: "25 janvier 2026",
+        author: "Sandrine",
+        readTime: "6 min",
+        image: "/images/realisations/sac-linge-enfant-motif-dinosaure-personnalise-mae-sandrine-couture-normandie.webp",
+        metaDescription: "Découvrez notre top 5 des articles brodés indispensables à ajouter à votre liste de naissance. Des cadeaux artisanaux de qualité créés en Normandie."
+    },
+    {
+        id: 9,
+        slug: "broderie-flocage-serigraphie-comparatif",
+        title: "Broderie vs Flocage vs Sérigraphie : Le Guide Comparatif Ultime",
+        excerpt: "Vous hésitez sur le choix du marquage pour vos textiles ? Solidité, coût, relief : nous comparons la broderie, le flocage et la sérigraphie.",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Lorsqu'on lance un projet de vêtements personnalisés pour une entreprise, une association ou un événement, la question de la technique de marquage se pose immédiatement. Faut-il choisir la broderie, le flocage ou la sérigraphie ?
+        </p>
+
+        <p class="mb-6">
+          Chaque technique possède ses propres avantages en termes de coût, de rendu visuel et de résistance. Ce guide comparatif complet vous aide à y voir clair pour faire le meilleur choix selon vos besoins.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">La Broderie : Le Marquage Prestige par Excellence</h2>
+        <p class="mb-6">
+          La <strong>broderie personnalisée</strong> est la méthode de marquage textile la plus noble et la plus durable. Le fil de broderie est directement cousu dans la maille du tissu, créant un léger relief brillant et texturé de haute qualité.
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li><strong>Avantages :</strong> Durabilité infinie, excellente résistance aux lavages industriels à haute température, rendu haut de gamme et valorisant.</li>
+          <li><strong>Inconvénients :</strong> Non adaptée aux logos avec des dégradés de couleurs complexes ou des micro-détails de moins de 5mm.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Le Flocage (Transfert Thermique) : Pour les visuels éphémères</h2>
+        <p class="mb-6">
+          Le flocage consiste à découper un film vinyle et à le presser à chaud sur le tissu. C'est une technique simple, souvent utilisée pour des vêtements de sport (numéros de maillots) ou des événements temporaires.
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li><strong>Avantages :</strong> Coût faible sur les petites séries, compatible avec les couleurs fluo ou pailletées.</li>
+          <li><strong>Inconvénients :</strong> Aspect plastique, sensible à la chaleur, risque de craqueler ou de se décoller après plusieurs lavages en machine.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">La Sérigraphie : Pour les très grandes séries</h2>
+        <p class="mb-6">
+          La sérigraphie est une technique d'impression directe à l'encre à travers un écran de soie. Elle est idéale pour le marquage en gros volumes de t-shirts fins.
+        </p>
+        <ul class="list-disc pl-6 mb-10 space-y-2">
+          <li><strong>Avantages :</strong> Coût unitaire très bas sur de grands volumes, respect des couleurs d'origine.</li>
+          <li><strong>Inconvénients :</strong> Frais de mise en route élevés, l'encre peut s'altérer au lavage à haute température si le tissu est froissé.</li>
+        </ul>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Besoin de conseils pour votre marquage ?</h2>
+          <p class="mb-6">
+            Chez Sandrine Couture, nous vous conseillons sur la faisabilité de votre projet et vous garantissons une broderie haut de gamme réalisée localement en Normandie.
+          </p>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Prendre contact avec l'atelier
+          </a>
+        </div>
+      </div>
+    `,
+        category: "Technique",
+        date: "25 janvier 2026",
+        author: "Sandrine",
+        readTime: "5 min",
+        image: "/images/realisations/2b-couverture-collection-1.webp",
+        metaDescription: "Broderie, flocage ou sérigraphie ? Comparez la durabilité, le prix et le rendu visuel de ces techniques pour réussir vos vêtements personnalisés."
+    },
+    {
+        id: 10,
+        slug: "ecussons-patchs-velcro-personnalises-communication",
+        title: "Écussons & Patchs Velcro Personnalisés : Comment les Intégrer dans Votre Communication",
+        excerpt: "Ultra-polyvalents et interchangeables, les patchs et écussons velcro brodés offrent une flexibilité unique pour votre entreprise ou votre club.",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Vous cherchez une alternative originale et flexible à la broderie directe sur vêtement ? Les écussons brodés et patchs velcro personnalisés gagnent en popularité dans le monde professionnel et associatif. 
+        </p>
+
+        <p class="mb-6">
+          Pratiques et polyvalents, ils permettent d'apposer votre logo sur de multiples supports, même ceux réputés difficiles à broder en direct. Découvrez comment intégrer les <strong>écussons personnalisés</strong> dans votre communication visuelle.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Qu'est-ce qu'un écusson velcro personnalisé ?</h2>
+        <p class="mb-6">
+          Il s'agit d'un badge en tissu entièrement brodé en haute définition, équipé sur sa face arrière d'une bande velcro (partie crochet). Il vient se fixer sur un vêtement ou un accessoire doté de la bande velcro femelle correspondante. Cette modularité permet de changer de logo ou d'insigne en une seconde.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Les avantages de l'écusson brodé</h2>
+        <ul class="list-disc pl-6 mb-6 space-y-4">
+          <li><strong>Adaptabilité</strong> : Idéal pour marquer des tissus trop épais ou imperméables (comme des vestes de pluie techniques, des sacs à dos ou des casquettes) où la broderie directe risquerait d'endommager la membrane.</li>
+          <li><strong>Interchangeabilité</strong> : Pratique pour les équipes de sécurité, les clubs de sport ou les entreprises multiservices. Un même vêtement peut porter des logos différents selon les missions ou événements.</li>
+          <li><strong>Durabilité</strong> : Le patch brodé est extrêmement solide. Si le vêtement est usé, vous pouvez facilement récupérer le patch pour le replacer sur une nouvelle tenue.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Comment utiliser les patchs velcro pour votre marque ?</h2>
+        <p class="mb-10">
+          Vous pouvez créer une collection d'écussons pour fidéliser vos clients (merchandising), équiper vos collaborateurs sur les chantiers, ou encore harmoniser la tenue des membres de votre club sportif ou association de loisir.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Créez vos écussons avec By Sandrine Couture</h2>
+          <p class="mb-6">
+            Nous réalisons vos écussons brodés sur mesure, du dessin numérique à la finition velcro en passant par la découpe nette des contours. Devis gratuit sur demande.
+          </p>
+          <a href="/devis" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Demander un devis écussons
+          </a>
+        </div>
+      </div>
+    `,
+        category: "Entreprises",
+        date: "25 janvier 2026",
+        author: "Sandrine",
+        readTime: "5 min",
+        image: "/images/realisations/banane-moumoute-blanche-moderne.webp",
+        metaDescription: "Découvrez les avantages des écussons personnalisés et patchs velcro brodés pour votre entreprise ou club. Flexibilité, solidité et style unique."
+    },
+    {
+        id: 11,
+        slug: "brodeur-professionnel-normandie-guide",
+        title: "Où faire broder ses vêtements professionnels en Normandie ? Le Guide de Proximité",
+        excerpt: "Favorisez le circuit court ! Découvrez les avantages de travailler avec un atelier de broderie local en Seine-Maritime pour vos projets textiles.",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          À l'heure où les entreprises cherchent à réduire leur empreinte carbone et à soutenir l'économie de proximité, le choix des prestataires locaux devient un atout stratégique. Pour vos vêtements de travail personnalisés, faire appel à un atelier de proximité en Normandie présente de réels avantages.
+        </p>
+
+        <p class="mb-6">
+          Découvrez pourquoi choisir un <strong>brodeur professionnel en Normandie</strong> est le meilleur choix pour garantir la réussite et le suivi rigoureux de vos projets textiles.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">1. Le circuit court : réactivité et flexibilité</h2>
+        <p class="mb-6">
+          Travailler avec un atelier local basé en Seine-Maritime (76) à proximité de Rouen, Yvetot et Le Havre, vous évite les longs délais de livraison et les risques de perte de colis liés aux plateformes d'importation. La communication est simplifiée, et les délais de production sont raccourcis.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">2. La garantie de la qualité artisanale</h2>
+        <p class="mb-6">
+          Contrairement aux usines automatisées à l'étranger, un artisan local réalise un contrôle qualité individuel sur chaque vêtement. Chez <strong>By Sandrine Couture</strong>, nous prenons le temps d'ajuster les tensions de fils et de tester le rendu sur chaque tissu pour s'assurer que le résultat final valorise l'image de votre marque.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">3. Échanges simplifiés et échantillons physiques</h2>
+        <p class="mb-10">
+          Un doute sur la couleur du fil ou sur la taille d'un logo ? Un partenaire de proximité peut vous envoyer des photos d'échantillons brodés réels en cours de production ou vous accueillir à l'atelier pour valider les matières et les coloris.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Soutenez l'artisanat normand</h2>
+          <p class="mb-6">
+            Notre atelier By Sandrine Couture est basé à Robertot (76). Nous accompagnons les professionnels et particuliers de toute la Normandie pour concevoir des broderies d'excellence.
+          </p>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Prendre contact localement
+          </a>
+        </div>
+      </div>
+    `,
+        category: "Conseils",
+        date: "25 janvier 2026",
+        author: "Sandrine",
+        readTime: "5 min",
+        image: "/images/realisations/poules-decoratives-brodees.webp",
+        metaDescription: "Trouvez votre brodeur professionnel en Normandie. Privilégiez la réactivité, le circuit court et la qualité artisanale pour vos vêtements de travail."
+    },
+    {
+        id: 12,
+        slug: "laver-entretenir-linge-bebe-brode",
+        title: "Comment laver et entretenir le linge de bébé brodé : Guide Pratique & Naturel",
+        excerpt: "Pour que les cadeaux brodés de bébé restent doux et impeccables comme au premier jour, voici nos conseils de lavage écologiques et délicats.",
+        content: `
+      <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900 prose-a:text-primary">
+        <p class="lead text-xl font-medium text-gray-700 mb-8">
+          Les bébés se salissent vite, et leur linge (doudous, capes de bain, bavoirs) nécessite des lavages très fréquents. Face à ce rythme, comment s'assurer que les jolies broderies personnalisées gardent leur douceur et leurs couleurs d'origine sans s'abîmer ?
+        </p>
+
+        <p class="mb-6">
+          Dans cet article, nous partageons nos conseils pratiques et des astuces naturelles pour entretenir le linge brodé de bébé en prenant soin à la fois des fibres textiles et de la peau sensible de vos tout-petits.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">La température idéale : 30°C ou 40°C en machine</h2>
+        <p class="mb-6">
+          Bien que le fil polyester professionnel que nous utilisons à l'atelier résiste à de très hautes températures, le tissu en coton (comme l'éponge de la cape de bain ou le lange) peut rétrécir ou se déformer s'il est lavé trop chaud. Un lavage régulier à 30°C ou 40°C est amplement suffisant pour garantir une hygiène parfaite tout en préservant le textile.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Des lessives douces et sans produits chimiques agressifs</h2>
+        <p class="mb-6">
+          La peau de bébé est fine et perméable. Pour la protéger des irritations et des allergies :
+        </p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+          <li>Privilégiez les lessives hypoallergéniques, écologiques ou à base de copeaux de savon de Marseille naturel.</li>
+          <li>Évitez l'utilisation d'adoucissants chimiques industriels. Pour garder les serviettes et doudous doux, ajoutez simplement un demi-verre de **vinaigre blanc** dans le compartiment adoucissant : c'est un excellent anticalcaire naturel et totalement inodore après séchage.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Détacher naturellement le linge brodé</h2>
+        <p class="mb-6">
+          En cas de taches de lait, de fruits ou de terre, évitez d'utiliser du chlore ou de l'eau de Javel qui décoloreraient définitivement les fibres. Frottez plutôt la tache avant lavage avec du **savon de fiel de boeuf** ou saupoudrez du **percarbonate de soude** dilué dans de l'eau tiède. Ces détachants naturels respectent le fil de broderie.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black italic uppercase tracking-tighter">Le repassage : Le secret pour redonner du relief</h2>
+        <p class="mb-10">
+          Après séchage (de préférence à l'air libre pour préserver la douceur), repassez toujours les broderies **sur l'envers** ou en plaçant une pattemouille (un tissu fin humide) sur le motif. Cela évitera d'écraser le relief du fil et redonnera tout son gonflant à la broderie.
+        </p>
+
+        <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10 mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-black italic uppercase tracking-tighter">Découvrez les créations durables Sandrine Couture</h2>
+          <p class="mb-6">
+            Tous nos textiles bébé sont rigoureusement sélectionnés pour leur douceur et leur facilité d'entretien au quotidien.
+          </p>
+          <a href="/realisations" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold italic uppercase tracking-widest text-sm rounded-lg hover:bg-black transition-colors no-underline">
+            Voir notre galerie bébé
+          </a>
+        </div>
+      </div>
+    `,
+        category: "Conseils",
+        date: "25 janvier 2026",
+        author: "Sandrine",
+        readTime: "4 min",
+        image: "/images/realisations/lange-bapteme-personnalise-giulia.webp",
+        metaDescription: "Nos conseils naturels et écologiques pour laver, détacher et repasser le linge et les doudous brodés de bébé sans abîmer les fils ni irriter sa peau."
+    }
 ];
+
