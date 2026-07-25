@@ -99,3 +99,20 @@ export function SchemaOrgBreadcrumb({
     />
   );
 }
+
+export function SchemaOrgWebSite() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "By Sandrine Couture",
+    "url": "https://sandrinecouture.com/"
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+

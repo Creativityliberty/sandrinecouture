@@ -1,6 +1,7 @@
 import {
   SchemaOrgLocalBusiness,
   SchemaOrgOrganization,
+  SchemaOrgWebSite,
 } from "@/components/layout/schema-org";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
@@ -83,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={`${poppins.variable} ${londrinaOutline.variable}`}>
       <head>
+        <SchemaOrgWebSite />
         <SchemaOrgOrganization />
         <SchemaOrgLocalBusiness />
       </head>
