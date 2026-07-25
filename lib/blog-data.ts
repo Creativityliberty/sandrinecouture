@@ -458,7 +458,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
         category: "Particuliers",
-        date: "25 janvier 2026",
+        date: "28 janvier 2026",
         author: "Sandrine",
         readTime: "6 min",
         image: "/images/realisations/sac-linge-enfant-motif-dinosaure-personnalise-mae-sandrine-couture-normandie.webp",
@@ -518,7 +518,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
         category: "Technique",
-        date: "25 janvier 2026",
+        date: "31 janvier 2026",
         author: "Sandrine",
         readTime: "5 min",
         image: "/images/realisations/2b-couverture-collection-1.webp",
@@ -568,7 +568,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
         category: "Entreprises",
-        date: "25 janvier 2026",
+        date: "5 février 2026",
         author: "Sandrine",
         readTime: "5 min",
         image: "/images/realisations/banane-moumoute-blanche-moderne.webp",
@@ -616,7 +616,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
         category: "Conseils",
-        date: "25 janvier 2026",
+        date: "10 février 2026",
         author: "Sandrine",
         readTime: "5 min",
         image: "/images/realisations/poules-decoratives-brodees.webp",
@@ -673,7 +673,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
     `,
         category: "Conseils",
-        date: "25 janvier 2026",
+        date: "15 février 2026",
         author: "Sandrine",
         readTime: "4 min",
         image: "/images/realisations/lange-bapteme-personnalise-giulia.webp",
