@@ -1,12 +1,26 @@
 import React from 'react';
 import { MapPin, Truck, Globe, Package, ArrowRight } from 'lucide-react';
 import { SITE_CONFIG } from "@/lib/site-config";
+import Link from 'next/link';
 
 export function LocalisationSection() {
   const cities = [
     "Rouen", "Le Havre", "Dieppe", "Yvetot", "Fécamp",
     "Caen", "Barentin", "Pavilly", "Doudeville", "Cany-Barville"
   ];
+
+  const citySlugs: Record<string, string> = {
+    "Rouen": "rouen",
+    "Le Havre": "le-havre",
+    "Dieppe": "dieppe",
+    "Yvetot": "yvetot",
+    "Fécamp": "fecamp",
+    "Caen": "caen",
+    "Barentin": "barentin",
+    "Pavilly": "pavilly",
+    "Doudeville": "doudeville",
+    "Cany-Barville": "cany-barville"
+  };
 
   // On double la liste pour le défilement infini sans coupure
   const scrollingCities = [...cities, ...cities, ...cities];
@@ -81,13 +95,18 @@ export function LocalisationSection() {
         </div>
 
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
-          {scrollingCities.map((city, i) => (
-            <div key={i} className="flex items-center gap-12 group">
-              <span className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white/40 group-hover:text-primary transition-colors cursor-default">
-                {city} <ArrowRight className="text-primary ml-4 group-hover:translate-x-4 inline-block transition-transform w-12 h-12" />
-              </span>
-            </div>
-          ))}
+          {scrollingCities.map((city, i) => {
+            const slug = citySlugs[city];
+            return (
+              <div key={i} className="flex items-center gap-12 group">
+                <Link href={`/broderie-${slug}`} className="no-underline">
+                  <span className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white/40 group-hover:text-primary transition-colors cursor-pointer">
+                    {city} <ArrowRight className="text-primary ml-4 group-hover:translate-x-4 inline-block transition-transform w-12 h-12" />
+                  </span>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
 

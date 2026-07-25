@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
+import { CITIES_CONFIG } from "@/lib/local-seo-data";
 
 const baseUrl = "https://sandrinecouture.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
+  const baseRoutes = [
     "",
     "/entreprises",
     "/particuliers",
@@ -17,10 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/confidentialite",
   ];
 
-  return routes.map((route) => ({
+  const cityRoutes = Object.keys(CITIES_CONFIG).map((city) => `/broderie-${city}`);
+  const allRoutes = [...baseRoutes, ...cityRoutes];
+
+  return allRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route.startsWith("/broderie-") ? 0.6 : (route === "" ? 1.0 : 0.8),
   }));
 }
+
