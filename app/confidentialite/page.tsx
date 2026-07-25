@@ -2,10 +2,26 @@ import React from 'react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { SchemaOrgBreadcrumb } from "@/components/layout/schema-org";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de Confidentialité",
+  description: "Découvrez notre engagement envers la protection de vos données personnelles sur le site de By Sandrine Couture.",
+  alternates: {
+    canonical: "/confidentialite",
+  },
+};
 
 export default function Confidentialite() {
     return (
         <main className="min-h-screen bg-white" suppressHydrationWarning>
+            <SchemaOrgBreadcrumb
+                items={[
+                    { name: "Accueil", url: "https://sandrinecouture.com" },
+                    { name: "Confidentialité", url: "https://sandrinecouture.com/confidentialite" },
+                ]}
+            />
             <Navbar />
             <div className="pt-40 pb-24 px-6">
                 <div className="max-w-4xl mx-auto prose prose-slate prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tight">

@@ -2,10 +2,26 @@ import React from 'react';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { SITE_CONFIG } from '@/lib/site-config';
+import { SchemaOrgBreadcrumb } from "@/components/layout/schema-org";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions Légales",
+  description: "Découvrez les mentions légales du site de l'atelier de broderie By Sandrine Couture.",
+  alternates: {
+    canonical: "/mentions-legales",
+  },
+};
 
 export default function MentionsLegales() {
     return (
         <main className="min-h-screen bg-white" suppressHydrationWarning>
+            <SchemaOrgBreadcrumb
+                items={[
+                    { name: "Accueil", url: "https://sandrinecouture.com" },
+                    { name: "Mentions Légales", url: "https://sandrinecouture.com/mentions-legales" },
+                ]}
+            />
             <Navbar />
             <div className="pt-40 pb-24 px-6">
                 <div className="max-w-4xl mx-auto prose prose-slate prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tight">

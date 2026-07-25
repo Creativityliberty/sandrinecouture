@@ -2,13 +2,30 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User } from "lucide-react";
+import { SchemaOrgBreadcrumb } from "@/components/layout/schema-org";
+import { Metadata } from "next";
 
 import { BLOG_POSTS } from "@/lib/blog-data";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Le Blog de la Broderie | Conseils & Tendances",
+  description: "Découvrez nos articles sur l'univers de la broderie, de la personnalisation textile professionnelle et des idées de cadeaux de naissance personnalisés.",
+  alternates: {
+    canonical: "/blog",
+  },
+};
+
 export default function BlogPage() {
   return (
     <div className="relative min-h-screen font-sans bg-white">
+      <SchemaOrgBreadcrumb
+        items={[
+          { name: "Accueil", url: "https://sandrinecouture.com" },
+          { name: "Blog", url: "https://sandrinecouture.com/blog" },
+        ]}
+      />
+
       <Navbar />
 
       {/* Hero Section */}
