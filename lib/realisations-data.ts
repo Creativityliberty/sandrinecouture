@@ -720,5 +720,292 @@ export const REALISATIONS: Realisation[] = [
     title: "Housses de Coussin VanLife",
     category: "Particuliers",
     desc: "Housses de coussin brodées pour van avec le motif élégant du soleil levant. Création unique et artisanale pour un confort nomade."
+  },
+  {
+    id: 104,
+    url: "/images/realisations/protege-carnet-sante-vert-brode.webp",
+    title: "Protège Carnet de Santé & Sac Vert",
+    category: "Bébé",
+    desc: "Ensemble comprenant un protège-carnet de santé brodé et son petit sac assorti à motifs."
+  },
+  {
+    id: 105,
+    url: "/images/realisations/tapis-selle-equitation-charlie.webp",
+    title: "Tapis de Selle Charlie",
+    category: "Particuliers",
+    desc: "Tapis de selle d'équitation bleu marine personnalisé avec broderie du prénom Charlie."
+  },
+  {
+    id: 106,
+    url: "/images/realisations/paniers-tissu-rangement-fleurs.webp",
+    title: "Paniers de Rangement Fleuris",
+    category: "Accessoires",
+    desc: "Paniers gigognes en tissu avec revers motifs floraux pour décoration."
+  },
+  {
+    id: 107,
+    url: "/images/realisations/coeur-tissu-brode-mamie-chouchou.webp",
+    title: "Cœur Suspendu Mamie Chouchou",
+    category: "Particuliers",
+    desc: "Cœur décoratif en tissu jaune avec message brodé 'Mamie Chouchou'."
+  },
+  {
+    id: 108,
+    url: "/images/realisations/gigoteuse-bebe-fleurs-bleues.webp",
+    title: "Gigoteuse Fleurs Bleues",
+    category: "Bébé",
+    desc: "Gigoteuse molletonnée blanche avec motifs de petites fleurs bleues pour bébé."
+  },
+  {
+    id: 109,
+    url: "/images/realisations/coeur-tissu-brode-meilleure-maman.webp",
+    title: "Cœur Suspendu Meilleure Maman",
+    category: "Particuliers",
+    desc: "Cœur en tissu bleu à pois blancs avec broderie 'La meilleure Maman'."
+  },
+  {
+    id: 110,
+    url: "/images/realisations/bavoir-bebe-petit-bonheur.webp",
+    title: "Bavoir Petit Bonheur",
+    category: "Bébé",
+    desc: "Bavoir blanc en éponge avec message brodé 'Petit Bonheur'."
+  },
+  {
+    id: 111,
+    url: "/images/realisations/sac-a-langer-rose-matelasse.webp",
+    title: "Sac à Langer Rose",
+    category: "Bébé",
+    desc: "Sac à langer matelassé rose poudré avec grand espace de rangement."
+  },
+  {
+    id: 112,
+    url: "/images/realisations/serviettes-brodees-eden-noam.webp",
+    title: "Serviettes Brodées Eden & Noam",
+    category: "Particuliers",
+    desc: "Duo de serviettes personnalisées avec prénom et motif brodé pour enfants."
+  },
+  {
+    id: 113,
+    url: "/images/realisations/coeur-tissu-brode-boheme.webp",
+    title: "Cœur Suspendu Bohème",
+    category: "Particuliers",
+    desc: "Cœur décoratif en tissu vert avec message brodé 'Bohème' et motifs fleuris."
+  },
+  {
+    id: 114,
+    url: "/images/realisations/serviette-brodee-coeurs-entrelaces.webp",
+    title: "Serviette Cœurs Entrelacés",
+    category: "Particuliers",
+    desc: "Serviette éponge grise avec deux cœurs roses entrelacés en broderie fine."
+  },
+  {
+    id: 115,
+    url: "/images/realisations/serviette-noam-broderie-hibou.webp",
+    title: "Serviette Hibou Noam",
+    category: "Bébé",
+    desc: "Serviette éponge beige avec un joli hibou coloré et le prénom Noam brodés."
+  },
+  {
+    id: 116,
+    url: "/images/realisations/serviette-enzo-broderie-renard.webp",
+    title: "Serviette Renard Enzo",
+    category: "Bébé",
+    desc: "Serviette éponge orange avec motif renard et prénom Enzo brodés."
+  },
+  {
+    id: 117,
+    url: "/images/realisations/panier-gout-de-l-amour.webp",
+    title: "Panier Le Goût de l'Amour",
+    category: "Particuliers",
+    desc: "Panier de rangement en tissu avec broderie personnalisée 'Le Goût de l'Amour'."
+  },
+  {
+    id: 118,
+    url: "/images/realisations/bavoir-bebe-rose-personnalise.webp",
+    title: "Bavoir Bébé Rose",
+    category: "Bébé",
+    desc: "Bavoir rose personnalisé pour bébé avec doublure imprimée fleurs."
+  },
+  {
+    id: 119,
+    url: "/images/realisations/serviette-eloise-broderie-or.webp",
+    title: "Serviette Éloïse Dorée",
+    category: "Particuliers",
+    desc: "Serviette éponge blanche avec broderie du prénom Éloïse en fil d'or."
+  },
+  {
+    id: 120,
+    url: "/images/realisations/trousse-toilette-fleurs-orange.webp",
+    title: "Trousse Fleurs Orange",
+    category: "Accessoires",
+    desc: "Trousse de toilette en tissu avec fermeture éclair et motifs floraux vifs."
+  },
+  {
+    id: 121,
+    url: "/images/realisations/coeur-tissu-pois-verts.webp",
+    title: "Cœur Suspendu Pois Verts",
+    category: "Particuliers",
+    desc: "Cœur en tissu vert avec motifs de pois et de fleurs brodées."
+  },
+  {
+    id: 122,
+    url: "/images/realisations/bavoir-bebe-rose-mila.webp",
+    title: "Bavoir Mila Rose",
+    category: "Bébé",
+    desc: "Bavoir bébé rose poudré avec broderie du prénom Mila et motifs fleuris."
+  },
+  {
+    id: 123,
+    url: "/images/realisations/tablier-cuisine-fleurs-rouges.webp",
+    title: "Tablier Fleurs Rouges",
+    category: "Accessoires",
+    desc: "Tablier de cuisine croisé avec tissu fleuri rouge et noir, confection artisanale."
+  },
+  {
+    id: 124,
+    url: "/images/realisations/coffret-naissance-sortie-bain.webp",
+    title: "Coffret Sortie de Bain",
+    category: "Bébé",
+    desc: "Coffret de naissance comprenant une cape de bain brodée et son doudou lapin."
+  },
+  {
+    id: 125,
+    url: "/images/realisations/vanity-tissu-fleurs-bleues.webp",
+    title: "Vanity Fleurs Bleues",
+    category: "Accessoires",
+    desc: "Trousse de toilette de type vanity matelassée avec fermeture et motifs fleuris bleus."
+  },
+  {
+    id: 126,
+    url: "/images/realisations/housse-robertot-beige.webp",
+    title: "Housse La Horde de Robertot",
+    category: "Particuliers",
+    desc: "Housse personnalisée en lin ou coton beige avec broderie 'LA HORDE DE ROBERTOT'."
+  },
+  {
+    id: 127,
+    url: "/images/realisations/coeur-tissu-brode-elegance.webp",
+    title: "Cœur Suspendu Élégance",
+    category: "Particuliers",
+    desc: "Cœur décoratif en tissu orange avec message brodé 'Élégance'."
+  },
+  {
+    id: 128,
+    url: "/images/realisations/protege-carnet-sante-coeur.webp",
+    title: "Protège Carnet de Santé Cœur",
+    category: "Bébé",
+    desc: "Housse de protection pour carnet de santé avec motifs de cœurs rouges."
+  },
+  {
+    id: 129,
+    url: "/images/realisations/presentation-naissance-mila.webp",
+    title: "Ensemble Naissance Mila",
+    category: "Bébé",
+    desc: "Présentation de coffret cadeau pour bébé avec doudou, lingettes et broderies."
+  },
+  {
+    id: 130,
+    url: "/images/realisations/tablier-cuisine-rouge-mannequin.webp",
+    title: "Tablier Croisé Rouge",
+    category: "Accessoires",
+    desc: "Tablier de cuisine croisé rouge et blanc en situation sur un mannequin."
+  },
+  {
+    id: 131,
+    url: "/images/realisations/coeur-tissu-fleurs-bleues.webp",
+    title: "Cœur Suspendu Fleurs Bleues",
+    category: "Particuliers",
+    desc: "Cœur décoratif en tissu imprimé de motifs floraux bleus et blancs."
+  },
+  {
+    id: 132,
+    url: "/images/realisations/cape-bain-leo-moutarde.webp",
+    title: "Cape de Bain Léo",
+    category: "Bébé",
+    desc: "Sortie de bain à capuche beige avec liseré moutarde et prénom Léo brodé."
+  },
+  {
+    id: 133,
+    url: "/images/realisations/coussins-amenagement-vanlife.webp",
+    title: "Aménagement VanLife Coussins",
+    category: "Particuliers",
+    desc: "Ensemble de banquettes et coussins en velours côtelé orange pour aménagement de van."
+  },
+  {
+    id: 134,
+    url: "/images/realisations/bavoir-bebe-petite-bouille.webp",
+    title: "Bavoir Petite Bouille",
+    category: "Bébé",
+    desc: "Bavoir bleu ciel brodé 'Petite Bouille' pour les repas de bébé."
+  },
+  {
+    id: 135,
+    url: "/images/realisations/serviette-psg-papi-philippe.webp",
+    title: "Serviette PSG Papi Philippe",
+    category: "Particuliers",
+    desc: "Serviette verte brodée avec l'écusson du PSG et l'inscription 'Papi Philippe'."
+  },
+  {
+    id: 136,
+    url: "/images/realisations/lingettes-lavables-lingerie.webp",
+    title: "Kit Lingettes Lavables",
+    category: "Accessoires",
+    desc: "Collection de lingettes de maquillage réutilisables assorties avec leur étui."
+  },
+  {
+    id: 137,
+    url: "/images/realisations/coeur-tissu-brode-craneuse.webp",
+    title: "Cœur Suspendu Crâneuse",
+    category: "Particuliers",
+    desc: "Cœur en tissu rouge vif brodé avec l'inscription 'Crâneuse'."
+  },
+  {
+    id: 138,
+    url: "/images/realisations/tablier-cuisine-retro-fleurs.webp",
+    title: "Tablier Rétro Fleuri",
+    category: "Accessoires",
+    desc: "Tablier croisé rétro de cuisine en coton imprimé de motifs floraux."
+  },
+  {
+    id: 139,
+    url: "/images/realisations/bavoir-enzo-kiss.webp",
+    title: "Bavoir Enzo Kiss",
+    category: "Bébé",
+    desc: "Bavoir blanc et bleu pour bébé avec inscription 'kiss' et prénom Enzo."
+  },
+  {
+    id: 140,
+    url: "/images/realisations/cape-bain-garcon-oreilles.webp",
+    title: "Cape de Bain Capuche Oreilles",
+    category: "Bébé",
+    desc: "Sortie de bain à capuche avec oreilles d'ours et prénom brodé."
+  },
+  {
+    id: 141,
+    url: "/images/realisations/banniere-campement-robertot.webp",
+    title: "Bannière de Campement Robertot",
+    category: "Particuliers",
+    desc: "Bannière en tissu suspendue avec logo 'LA HORDE DE ROBERTOT' devant un van."
+  },
+  {
+    id: 142,
+    url: "/images/realisations/serviette-louay-broderie.webp",
+    title: "Serviette Louay",
+    category: "Bébé",
+    desc: "Serviette éponge verte avec broderie du prénom Louay."
+  },
+  {
+    id: 143,
+    url: "/images/realisations/serviette-cadeau-pour-toi-maman.webp",
+    title: "Serviette Pour Toi Maman",
+    category: "Particuliers",
+    desc: "Serviette éponge noire brodée avec l'inscription 'Pour Toi, Maman' et cœurs."
+  },
+  {
+    id: 144,
+    url: "/images/realisations/trousse-toilette-motifs-bleus.webp",
+    title: "Trousse de Toilette Graphique Bleue",
+    category: "Accessoires",
+    desc: "Trousse de toilette avec tissu graphique bleu et fermeture éclair."
   }
 ];
