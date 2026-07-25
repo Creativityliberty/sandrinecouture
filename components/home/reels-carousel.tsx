@@ -129,13 +129,6 @@ export function ReelsCarousel() {
       thumbnail: "/images/realisations/2b-couverture-collection-1.webp",
     },
     {
-      id: 17,
-      title: "Broderie sur tablier de cuisine",
-      category: "Entreprises",
-      videoUrl: "https://www.facebook.com/reel/1421997218990897/",
-      thumbnail: "/images/realisations/broderie-vetement-professionnel-entreprise-duha-loc-sandrine-couture-normandie.webp",
-    },
-    {
       id: 18,
       title: "Finitions soignées de l'atelier",
       category: "Atelier",
@@ -179,7 +172,12 @@ export function ReelsCarousel() {
               Découvrez la précision des points de broderie et le travail sur les matières en mouvement direct depuis nos publications réseaux sociaux.
             </p>
           </div>
-          <div className="flex justify-center md:justify-end">
+          <div className="flex flex-wrap justify-center md:justify-end gap-4">
+            <a href="https://www.instagram.com/direct/t/17849788362080500/?hl=fr" target="_blank" rel="noopener noreferrer" className="no-underline">
+              <Button className="rounded-full uppercase text-[9px] font-black tracking-widest h-12 bg-primary hover:bg-black text-white px-6">
+                Nous contacter sur Instagram
+              </Button>
+            </a>
             <a href="https://instagram.com/bysandrinecouture" target="_blank" rel="noopener noreferrer" className="no-underline">
               <Button variant="outline" className="rounded-full uppercase text-[9px] font-black tracking-widest h-12">
                 Suivre sur Instagram
