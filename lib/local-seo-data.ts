@@ -98,5 +98,23 @@ export const CITIES_CONFIG: Record<string, CityConfig> = {
     deliveryText: "Livraison rapide ou retrait simple à l'atelier situé à 20 minutes.",
     proximityText: "Présents sur l'axe Cany-Barville / Yvetot, nous vous garantissons des délais d'exécution courts.",
     description: "Broderie personnalisée et artisanat à Cany-Barville. Marquage de polos, sweats, serviettes de bain et bavoirs pour bébés."
+  },
+  "normandie": {
+    slug: "normandie",
+    name: "Normandie",
+    zip: "76 / 14 / 27 / 50 / 61",
+    department: "Région Normandie",
+    deliveryText: "Expédition dans toute la région Normandie et toute la France sous 48/72h.",
+    proximityText: "Notre atelier est implanté à Robertot au cœur de la Normandie historique.",
+    description: "Atelier de broderie personnalisée en Normandie. Confection haut de gamme de textiles professionnels pour entreprises et cadeaux personnalisés."
+  },
+  "seine-maritime-76": {
+    slug: "seine-maritime-76",
+    name: "Seine-Maritime",
+    zip: "76",
+    department: "Seine-Maritime (76)",
+    deliveryText: "Livraison rapide dans toutes les communes de Seine-Maritime sous 48h.",
+    proximityText: "Artisan d'art local basé en Seine-Maritime pour une réactivité optimale.",
+    description: "Artisan brodeur en Seine-Maritime (76). Personnalisation de vêtements de travail d'entreprises, linge de bain et cadeaux bébés."
   }
 };

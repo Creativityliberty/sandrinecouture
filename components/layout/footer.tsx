@@ -125,7 +125,7 @@ export function Footer() {
               {SITE_CONFIG.seo.regions.map((r) => (
                 <li key={r.slug}>
                   <Link
-                    href={`/#${r.slug}`}
+                    href={`/${r.slug}`}
                     className="hover:text-black transition-colors font-bold no-underline"
                   >
                     {r.name}
@@ -137,7 +137,7 @@ export function Footer() {
                     {SITE_CONFIG.seo.cities.map((c) => (
                       <Link
                         key={c}
-                        href={`/#broderie-${c.toLowerCase()}`}
+                        href={`/broderie-${c.toLowerCase().replace(/\s+/g, '-')}`}
                         className="text-[10px] md:text-[9px] hover:text-primary no-underline uppercase tracking-tighter text-black"
                       >
                         {c}
