@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   phone: "06 29 49 22 13",
   email: "bysandrinecouture@gmail.com",
   whatsapp: "33629492213",
-  googleReview: "https://g.page/r/Cc4sPN8i9gLvEBM/review",
+  googleReview: "https://g.page/r/CUjGe3a2zEGtEBM/review",
   socials: {
     instagram: "https://instagram.com/bysandrinecouture",
     facebook: "https://facebook.com/bysandrinecouture",
