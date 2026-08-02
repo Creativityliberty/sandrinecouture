@@ -11,7 +11,7 @@ export function RealisationsSection() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   // We only show the first 8 on the home page
-  const displayImages = REALISATIONS.slice(0, 8);
+  const displayImages = [...REALISATIONS].sort((a, b) => b.id - a.id).slice(0, 8);
 
   return (
     <section id="réalisations" className="py-24 px-6 bg-white overflow-hidden">

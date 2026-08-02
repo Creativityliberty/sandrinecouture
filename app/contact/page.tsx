@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { Suspense } from "react";
 
@@ -250,6 +250,32 @@ _Envoyé depuis le site Sandrine Couture_`;
                 <p className="font-medium text-sm">Messagerie instantanée</p>
                 <p className="text-[9px] sm:text-[10px] text-white/70 font-bold uppercase tracking-widest mt-1 sm:mt-2">
                   Réponse rapide
+                </p>
+              </div>
+            </a>
+
+            {/* Google Review */}
+            <a
+              href={SITE_CONFIG.googleReview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-4 sm:gap-6 p-4 sm:p-6 bg-gray-50 rounded-xl sm:rounded-2xl hover:bg-yellow-50 transition-colors group no-underline border border-black/5"
+            >
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-[#1a73e8]/10 flex items-center justify-center shrink-0 group-hover:bg-[#1a73e8] group-hover:text-white transition-all">
+                <Star
+                  size={20}
+                  className="text-[#1a73e8] group-hover:text-white sm:w-6 sm:h-6"
+                />
+              </div>
+              <div>
+                <p className="font-bold italic uppercase text-xs sm:text-sm tracking-tight mb-1">
+                  Avis Google
+                </p>
+                <p className="text-gray-700 font-medium text-sm">
+                  Laissez-nous un avis
+                </p>
+                <p className="text-[9px] sm:text-[10px] text-gray-700 font-bold uppercase tracking-widest mt-1 sm:mt-2">
+                  Soutenez notre atelier artisanal
                 </p>
               </div>
             </a>

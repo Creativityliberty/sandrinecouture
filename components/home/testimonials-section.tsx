@@ -1,4 +1,6 @@
 import { Star } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
 
 export function TestimonialsSection() {
   const testimonials = [
@@ -132,6 +134,26 @@ export function TestimonialsSection() {
               Note moyenne
             </h3>
           </div>
+        </div>
+
+        {/* Google Review CTA */}
+        <div className="mt-16 text-center">
+          <a
+            href={SITE_CONFIG.googleReview}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              className="h-16 px-12 rounded-full uppercase text-[10px] tracking-widest font-black shadow-xl bg-[#1a73e8] hover:bg-[#1558b0]"
+            >
+              <Star className="mr-3 w-5 h-5 fill-current" /> Laissez-nous un
+              avis
+            </Button>
+          </a>
+          <p className="mt-4 text-[10px] text-gray-700 font-bold uppercase tracking-widest">
+            Votre avis Google nous aide énormément
+          </p>
         </div>
       </div>
     </section>

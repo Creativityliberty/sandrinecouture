@@ -19,10 +19,12 @@ export function RealisationsPage() {
     "Accessoires",
   ];
 
+  const orderedImages = [...REALISATIONS].sort((a, b) => b.id - a.id);
+
   const filteredImages =
     activeFilter === "Tous"
-      ? REALISATIONS
-      : REALISATIONS.filter((img) => img.category === activeFilter);
+      ? orderedImages
+      : orderedImages.filter((img) => img.category === activeFilter);
 
   return (
     <div className="pt-32 pb-24 px-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
