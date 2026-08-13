@@ -1,153 +1,219 @@
-import { CheckCircle2, MapPin, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { CheckCircle2, MapPin, MessageCircle, ArrowRight, Sparkles, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 
 export function HeroSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 300; // Width of card + gap
+      scrollContainerRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const carouselItems = [
+    {
+      id: 1,
+      title: "Sweat Ours de Muspelheim",
+      category: "Entreprises & Clubs",
+      tagline: "Votre logo d'entreprise brodé sur-mesure",
+      imgUrl: "/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim.webp",
+      detailImgUrl: "/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim-detail.webp",
+      badge: "PRO"
+    },
+    {
+      id: 2,
+      title: "Gilet de Berger Réversible",
+      category: "Bébé & Naissance",
+      tagline: "Personnalisation prénom brodé au choix",
+      imgUrl: "/images/realisations/gilet-berger-bebe-reversible-moumoute-sherpa.webp",
+      detailImgUrl: "/images/realisations/gilet-berger-bebe-reversible-suedine-marron.webp",
+      badge: "BEBE"
+    },
+    {
+      id: 3,
+      title: "Drap de Bain PSG Julian",
+      category: "Particuliers",
+      tagline: "Vos thèmes préférés sur éponge de qualité",
+      imgUrl: "/images/realisations/drap-bain-personnalise-julian-logo-psg-broderie-sur-mesure-france.webp",
+      detailImgUrl: "/images/realisations/drap-bain-personnalise-julian-logo-psg-broderie-sur-mesure-france.webp",
+      badge: "PERSO"
+    }
+  ];
+
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden min-h-[95vh] flex flex-col justify-center bg-white">
-      {/* Soft background glows */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-10 right-10 -z-10 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[80px]" />
+    <section className="relative pt-32 pb-24 overflow-hidden min-h-[90vh] flex flex-col justify-center bg-white">
+      {/* Subtle background glows */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-10 right-10 -z-10 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px]" />
 
-      <div className="container mx-auto px-6 max-w-6xl">
-        
-        {/* Top Grid: Titles and Model Image */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center justify-center relative z-20 mb-8">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Title: Marques / Image */}
-          <div className="col-span-1 md:col-span-4 flex flex-col items-center md:items-end text-center md:text-right">
-            <span className="text-xs font-black tracking-[0.2em] text-gray-400 uppercase mb-2">
-              Personnalisation
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-gray-900">
-              Marquez <br />
-              votre <br />
-              <span className="text-primary font-serif italic normal-case lg:text-7xl">Image.</span>
-            </h1>
-          </div>
-
-          {/* Center Column: Model Image in a premium Rounded Arch Portal */}
-          <div className="col-span-1 md:col-span-4 flex justify-center">
-            <div className="relative w-64 sm:w-72 aspect-[3/4] rounded-t-full overflow-hidden border-8 border-white shadow-[0_25px_60px_rgba(0,0,0,0.15)] bg-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
-              <img
-                src="/images/realisations/muspelheim-hoodie-model.webp"
-                alt="Modèle portant le sweat rouge personnalisé Les Ours de Muspelheim"
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
-              {/* Overlay shadow inside the arch */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-            </div>
-          </div>
-
-          {/* Right Title: Broderie / Excellence */}
-          <div className="col-span-1 md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-3.5 shadow-sm">
+          {/* Left Column: Headline and CTAs */}
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-4 shadow-sm">
               <Sparkles className="w-3 h-3 text-primary animate-pulse" />
-              <span>Savoir-faire normand</span>
+              <span>Atelier Artisanal Normand</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-gray-900">
-              Broderie <br />
-              d' <br />
-              <span className="text-black font-serif italic normal-case lg:text-7xl">Excellence.</span>
-            </h2>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-gray-900 mb-6">
+              Marquez votre <br />
+              <span className="text-primary font-serif italic normal-case lg:text-7xl">Image</span> <br />
+              par la broderie.
+            </h1>
+
+            <p className="text-sm text-gray-700 font-semibold leading-relaxed mb-8 max-w-lg">
+              De la pièce unique de naissance aux séries textiles professionnelles pour entreprises et clubs. Nous donnons du relief à vos logos et créations fil par fil.
+            </p>
+
+            {/* Guarantees */}
+            <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start mb-8 py-4 border-y border-black/5 w-full max-w-lg">
+              {[
+                { text: "Devis rapide sous 24h", icon: CheckCircle2 },
+                { text: "Rendu 3D Haute Précision", icon: CheckCircle2 },
+                { text: "Facturation Pro", icon: CheckCircle2 },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-1.5 text-[8px] font-black uppercase tracking-wider text-primary">
+                  <item.icon className="w-3.5 h-3.5 text-primary" />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-4">
+              <Link href="/devis">
+                <Button
+                  size="lg"
+                  variant="whatsapp"
+                  className="h-12 px-6 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105 uppercase text-[10px] tracking-widest font-bold w-full sm:w-auto flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Demander un devis
+                </Button>
+              </Link>
+              <Link href="/#réalisations">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 px-6 rounded-full border-black/10 hover:bg-black hover:text-white transition-all uppercase text-[10px] tracking-widest font-bold w-full sm:w-auto flex items-center justify-center gap-1.5"
+                >
+                  <span>Nos réalisations</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="flex items-center gap-2 text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-2">
+              <MapPin className="w-3.5 h-3.5 text-primary" />
+              <span>Atelier à Robertot (76) • Normandie</span>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom Card: Glassmorphism layout overlapping the top */}
-        <div className="relative z-10 w-full bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[2.5rem] p-6 sm:p-8 md:p-10 md:-mt-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Left: Content and CTA */}
-            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/5 rounded-full text-[9px] font-black uppercase tracking-wider text-gray-600 mb-4">
-                <MapPin className="w-3 h-3 text-primary" />
-                <span>Atelier Robertot • Normandie</span>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mb-4 uppercase">
-                Le détail qui fait la différence
-              </h3>
-              
-              <p className="text-sm text-gray-700 font-medium leading-relaxed mb-6 max-w-xl">
-                Créations uniques et marquages textiles haut de gamme pour les entreprises et les particuliers. Vos logos et designs sont sublimés fil par fil avec précision dans notre atelier normand.
-              </p>
-
-              {/* Guarantees */}
-              <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start mb-6 py-4 border-y border-black/5 w-full max-w-xl">
-                {[
-                  { text: "Devis rapide", icon: CheckCircle2 },
-                  { text: "Rendu Haute Définition", icon: CheckCircle2 },
-                  { text: "Facture Professionnelle", icon: CheckCircle2 },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-1.5 text-[8px] font-black uppercase tracking-wider text-primary">
-                    <item.icon className="w-3.5 h-3.5 text-primary" />
-                    <span>{item.text}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <Link href="/devis">
-                  <Button
-                    size="lg"
-                    variant="whatsapp"
-                    className="h-12 px-6 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105 uppercase text-[10px] tracking-widest font-bold w-full sm:w-auto flex items-center justify-center gap-2"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    Demander un devis
-                  </Button>
-                </Link>
-                <Link href="/realisations">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-12 px-6 rounded-full border-black/10 hover:bg-black hover:text-white transition-all uppercase text-[10px] tracking-widest font-bold w-full sm:w-auto flex items-center justify-center gap-1.5"
-                  >
-                    <span>Découvrir l'atelier</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Button>
-                </Link>
+          {/* Right Column: Interactive Realisations Carousel */}
+          <div className="lg:col-span-7 flex flex-col w-full overflow-hidden">
+            {/* Carousel Header Controls */}
+            <div className="flex justify-between items-center mb-6 px-1">
+              <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">
+                Faites défiler nos créations réelles
+              </span>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => scroll("left")}
+                  className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-all text-gray-700 active:scale-95 border border-black/5"
+                  aria-label="Précédent"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <button
+                  onClick={() => scroll("right")}
+                  className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-all text-gray-700 active:scale-95 border border-black/5"
+                  aria-label="Suivant"
+                >
+                  <ChevronRight size={16} />
+                </button>
               </div>
             </div>
 
-            {/* Right: Featured Product Widget */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-sm bg-white/80 border border-white p-4 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500">
-                <div className="relative aspect-square w-full rounded-2xl overflow-hidden mb-3.5 bg-gray-50">
+            {/* Scrollable Container */}
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory py-4 px-1 scroll-smooth"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {carouselItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="group relative shrink-0 w-[260px] sm:w-[280px] aspect-[3/4] rounded-[2rem] overflow-hidden snap-start shadow-[0_15px_35px_rgba(0,0,0,0.06)] border border-black/5 bg-gray-50 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)]"
+                >
+                  {/* Real Product Image */}
                   <img
-                    src="/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim-detail.webp"
-                    alt="Zoom sur la broderie de l'Ours de Muspelheim"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    src={item.imgUrl}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-3 right-3 bg-primary text-white text-[8px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
-                    Zoom Broderie
+
+                  {/* Gradient Scrim for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300" />
+
+                  {/* Category Badge (Top Left) */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-block px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest bg-white/20 backdrop-blur-md text-white border border-white/25 shadow-sm">
+                      {item.category}
+                    </span>
                   </div>
-                </div>
-                
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="text-xs font-black uppercase tracking-wider text-gray-900">
-                      Ours de Muspelheim
-                    </h4>
-                    <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-widest mt-0.5">
-                      Broderie d'Entreprise
+
+                  {/* PRO/BEBE Badge (Top Right) */}
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="inline-block px-2.5 py-0.5 rounded text-[8px] font-black uppercase tracking-widest bg-black text-white">
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  {/* Text Details (Bottom) */}
+                  <div className="absolute inset-0 z-10 flex flex-col justify-end p-5 text-white pointer-events-none">
+                    <h3 className="text-base font-extrabold leading-snug drop-shadow-md">
+                      {item.title}
+                    </h3>
+                    <p className="text-[10px] text-gray-300 font-medium mt-1 uppercase tracking-wider drop-shadow-sm">
+                      {item.tagline}
                     </p>
+
+                    {/* Macro Zoom Thumbnail on hover */}
+                    <div className="mt-3.5 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 pointer-events-auto">
+                      <div className="w-10 h-10 rounded-lg overflow-hidden border border-white/40 shadow-md shrink-0">
+                        <img
+                          src={item.detailImgUrl}
+                          alt="Zoom texture"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[8px] font-black uppercase tracking-wider text-primary">
+                          Zoom Broderie
+                        </span>
+                        <span className="text-[7px] font-bold text-gray-300 uppercase tracking-widest flex items-center gap-0.5">
+                          Voir la texture <ArrowUpRight size={8} />
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-[9px] font-black uppercase tracking-widest bg-black text-white px-2 py-0.5 rounded">
-                    PRO
-                  </span>
                 </div>
-              </div>
+              ))}
             </div>
-
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   );
 }
+
 
 
