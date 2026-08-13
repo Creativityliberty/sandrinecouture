@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { useCart } from "@/context/cart-context";
-import { Sparkles, MapPin, CheckCircle2, ChevronRight, Upload, X, Loader2, ArrowRight } from "lucide-react";
+import { Sparkles, MapPin, ChevronRight, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface Product {
@@ -116,12 +116,6 @@ export default function BoutiquePage() {
   const [selectedFont, setSelectedFont] = useState("");
   const [quantity, setQuantity] = useState(1);
 
-  // File Upload to Vercel Blob State
-  const [logoFile, setLogoFile] = useState<File | null>(null);
-  const [logoUrl, setLogoUrl] = useState("");
-  const [logoName, setLogoName] = useState("");
-  const [isUploading, setIsUploading] = useState(false);
-
   const categories = ["Tous", "Bébé", "Accessoires", "Bain", "Maison"];
 
   const filteredProducts = selectedCategory === "Tous"
@@ -134,40 +128,8 @@ export default function BoutiquePage() {
     setSelectedColor(product.colors[0]?.name || "");
     setSelectedFont(product.fonts[0] || "");
     setQuantity(1);
-    setLogoFile(null);
-    setLogoUrl("");
-    setLogoName("");
   };
 
-  const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files || e.target.files.length === 0) return;
-    const file = e.target.files[0];
-    setLogoFile(file);
-    setLogoName(file.name);
-    setIsUploading(true);
-
-    try {
-      // Upload file directly to our Vercel Blob endpoint
-      const response = await fetch(`/api/upload?filename=${encodeURIComponent(file.name)}`, {
-        method: "POST",
-        body: file,
-      });
-
-      if (!response.ok) {
-        throw new Error("Echec de l'upload du logo");
-      }
-
-      const result = await response.json();
-      setLogoUrl(result.url); // Set Vercel Blob URL
-    } catch (error) {
-      console.error(error);
-      alert("Erreur lors de l'envoi de votre image. Veuillez réessayer.");
-      setLogoFile(null);
-      setLogoName("");
-    } finally {
-      setIsUploading(false);
-    }
-  };
 
   const handleAddToCart = () => {
     if (!activeModalProduct) return;
@@ -180,9 +142,7 @@ export default function BoutiquePage() {
       imgUrl: activeModalProduct.imgUrl,
       textToEmbroider,
       font: selectedFont,
-      threadColor: selectedColor,
-      customLogoUrl: logoUrl,
-      customLogoName: logoName
+      threadColor: selectedColor
     });
 
     setActiveModalProduct(null);
@@ -399,57 +359,14 @@ export default function BoutiquePage() {
                 </div>
               </div>
 
-              {/* Option D: Custom Logo Upload (Vercel Blob) */}
-              <div>
-                <label className="block text-[9px] font-black uppercase tracking-wider text-gray-600 mb-2">
-                  4. Optionnel : Votre propre logo ou dessin (Téléverser)
-                </label>
-                <div className="relative border-2 border-dashed border-black/10 rounded-2xl p-4 flex flex-col items-center justify-center bg-gray-55/20 hover:bg-gray-50 transition-colors">
-                  <input
-                    type="file"
-                    accept="image/jpeg, image/png, image/webp, image/svg+xml"
-                    onChange={handleLogoUpload}
-                    disabled={isUploading}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    aria-label="Sélectionnez votre logo"
-                  />
-                  {isUploading ? (
-                    <div className="flex flex-col items-center text-center gap-2">
-                      <Loader2 className="w-6 h-6 text-primary animate-spin" />
-                      <span className="text-[9px] font-bold uppercase tracking-wider text-gray-500">
-                        Préparation de votre fichier...
-                      </span>
-                    </div>
-                  ) : logoName ? (
-                    <div className="flex flex-col items-center text-center gap-1.5">
-                      <CheckCircle2 className="w-6 h-6 text-green-500" />
-                      <span className="text-[9px] font-black uppercase tracking-wider text-green-600 line-clamp-1">
-                        Logo prêt : {logoName}
-                      </span>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setLogoFile(null);
-                          setLogoUrl("");
-                          setLogoName("");
-                        }}
-                        className="text-[8px] font-black uppercase tracking-widest text-red-500 hover:underline mt-1"
-                      >
-                        Retirer le fichier
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col items-center text-center gap-2">
-                      <Upload className="w-5 h-5 text-gray-400" />
-                      <span className="text-[9px] font-black uppercase tracking-widest text-gray-600">
-                        Glisser ou Sélectionner un fichier
-                      </span>
-                      <span className="text-[8px] text-gray-400 uppercase font-semibold">
-                        PNG, JPG, SVG jusqu'à 4.5 Mo
-                      </span>
-                    </div>
-                  )}
-                </div>
+              {/* Option D: Custom Logo Information Note */}
+              <div className="bg-gray-50 border border-black/5 rounded-2xl p-4 text-center">
+                <span className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1">
+                  Besoin d'un logo ou dessin sur mesure ?
+                </span>
+                <span className="block text-[9px] text-gray-600 font-bold leading-relaxed uppercase tracking-wide">
+                  Vous pourrez joindre votre fichier ou votre photo directement dans notre discussion sur WhatsApp ! 📷
+                </span>
               </div>
 
               {/* Option E: Quantity Selector */}

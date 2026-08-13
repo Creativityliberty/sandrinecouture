@@ -102,6 +102,7 @@ export function CartDrawer() {
       message += `💰 *TOTAL GLOBAL : ${cartTotal.toFixed(2)} €*\n\n`;
     }
 
+    message += `📷 *Note :* Si j'ai un modèle, un logo ou un dessin personnalisé à broder, je vous l'enverrai directement à la suite de ce message !\n\n`;
     message += `Est-ce que nous pouvons discuter des modalités ? Merci encore ! ✨`;
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}?text=${encodeURIComponent(message)}`;
