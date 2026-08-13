@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useCart } from "@/context/cart-context";
-import { X, Trash2, Plus, Minus, ShoppingCart, MessageCircle, ExternalLink } from "lucide-react";
+import { X, Trash2, Plus, Minus, ShoppingCart, MessageCircle, ExternalLink, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
 
@@ -18,6 +18,9 @@ export function CartDrawer() {
   } = useCart();
 
   const [mounted, setMounted] = useState(false);
+  const [promoCodeInput, setPromoCodeInput] = useState("");
+  const [activeDiscount, setActiveDiscount] = useState<{ code: string; percent: number } | null>(null);
+  const [promoMessage, setPromoMessage] = useState("");
 
   // Prevent hydration warnings
   useEffect(() => {
@@ -25,6 +28,23 @@ export function CartDrawer() {
   }, []);
 
   if (!mounted) return null;
+
+  const applyPromoCode = () => {
+    const code = promoCodeInput.trim().toUpperCase();
+    if (code === "BIENVENUE10") {
+      setActiveDiscount({ code: "BIENVENUE10", percent: 10 });
+      setPromoMessage("Code -10% appliqué ! 🎉");
+    } else if (code === "NOEL15") {
+      setActiveDiscount({ code: "NOEL15", percent: 15 });
+      setPromoMessage("Code -15% appliqué ! 🎄");
+    } else if (code === "PRO20") {
+      setActiveDiscount({ code: "PRO20", percent: 20 });
+      setPromoMessage("Code -20% appliqué ! 💼");
+    } else {
+      setPromoMessage("Code promo invalide ❌");
+      setActiveDiscount(null);
+    }
+  };
 
   const handleCheckout = () => {
     if (cart.length === 0) return;
@@ -48,31 +68,50 @@ export function CartDrawer() {
       }
     });
 
+    const cartTotal = getCartTotal();
     message += `-------------------------------\n`;
-    message += `💰 *TOTAL GLOBAL : ${getCartTotal().toFixed(2)} €*\n\n`;
+
+    if (activeDiscount) {
+      const discountAmount = (cartTotal * activeDiscount.percent) / 100;
+      const finalTotal = cartTotal - discountAmount;
+      message += `🏷️ *CODE PROMO APPLIQUÉ :* ${activeDiscount.code} (-${activeDiscount.percent}%)\n`;
+      message += `💰 *TOTAL DE BASE :* ${cartTotal.toFixed(2)} €\n`;
+      message += `📉 *REMISE :* -${discountAmount.toFixed(2)} €\n`;
+      message += `💰 *TOTAL COMPLET : ${finalTotal.toFixed(2)} €*\n\n`;
+    } else {
+      message += `💰 *TOTAL GLOBAL : ${cartTotal.toFixed(2)} €*\n\n`;
+    }
+
     message += `Merci de m'envoyer les détails pour le règlement afin de valider ma commande ! ✨`;
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 
-    // Optional: Clear cart after redirect
+    // Clear cart & promo on success
     clearCart();
+    setActiveDiscount(null);
+    setPromoCodeInput("");
+    setPromoMessage("");
     setIsCartOpen(false);
   };
 
+  const cartTotal = getCartTotal();
+  const discountAmount = activeDiscount ? (cartTotal * activeDiscount.percent) / 100 : 0;
+  const finalTotal = cartTotal - discountAmount;
+
   return (
     <>
-      {/* Backdrop overlay */}
+      {/* Backdrop overlay (z-index 200) */}
       {isCartOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-[200] bg-black/40 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
           onClick={() => setIsCartOpen(false)}
         />
       )}
 
-      {/* Slide-over panel */}
+      {/* Slide-over panel (z-index 201) */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 w-full sm:w-[450px] bg-white shadow-2xl flex flex-col transition-transform duration-500 ease-in-out transform ${
+        className={`fixed inset-y-0 right-0 z-[201] w-full sm:max-w-md bg-white shadow-2xl flex flex-col transition-transform duration-500 ease-in-out transform ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -80,13 +119,13 @@ export function CartDrawer() {
         <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
           <div className="flex items-center gap-2.5">
             <ShoppingCart className="w-5 h-5 text-primary" />
-            <h2 className="text-base font-black uppercase tracking-wider text-gray-900">
+            <h2 className="text-sm font-black uppercase tracking-wider text-gray-900">
               Votre Panier
             </h2>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="p-1 rounded-full hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-900"
+            className="p-1.5 rounded-full hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-900 focus:outline-none"
             aria-label="Fermer le panier"
           >
             <X className="w-5 h-5" />
@@ -100,10 +139,10 @@ export function CartDrawer() {
               <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mb-4">
                 <ShoppingCart className="w-8 h-8" />
               </div>
-              <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-1">
+              <h3 className="text-xs font-black text-gray-900 uppercase tracking-wider mb-1">
                 Votre panier est vide
               </h3>
-              <p className="text-xs text-gray-500 max-w-[250px]">
+              <p className="text-[10px] text-gray-500 max-w-[220px] font-semibold uppercase tracking-wider leading-relaxed">
                 Explorez la boutique et personnalisez vos articles pour les ajouter ici.
               </p>
             </div>
@@ -111,7 +150,7 @@ export function CartDrawer() {
             cart.map((item) => (
               <div
                 key={item.id}
-                className="flex gap-4 border-b border-gray-100 pb-5 last:border-0 last:pb-0"
+                className="flex gap-4 border-b border-gray-105 pb-5 last:border-0 last:pb-0"
               >
                 {/* Product Thumbnail */}
                 <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shrink-0">
@@ -126,7 +165,7 @@ export function CartDrawer() {
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-start gap-2">
-                      <h4 className="text-xs font-bold text-gray-900 uppercase tracking-wide line-clamp-1">
+                      <h4 className="text-[11px] font-extrabold text-gray-900 uppercase tracking-wider line-clamp-1">
                         {item.title}
                       </h4>
                       <button
@@ -139,7 +178,7 @@ export function CartDrawer() {
                     </div>
 
                     {/* Personalizations summary */}
-                    <div className="mt-1.5 space-y-0.5 text-[10px] text-gray-500 font-semibold uppercase tracking-wider bg-gray-50 p-2.5 rounded-lg border border-black/5">
+                    <div className="mt-1.5 space-y-0.5 text-[9px] text-gray-500 font-semibold uppercase tracking-wider bg-gray-50 p-2.5 rounded-lg border border-black/5">
                       {item.textToEmbroider && (
                         <div>Texte : <span className="text-black italic font-bold">"{item.textToEmbroider}"</span></div>
                       )}
@@ -164,7 +203,7 @@ export function CartDrawer() {
                     <div className="flex items-center border border-black/10 rounded-full py-0.5 px-1 bg-white">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="p-1 text-gray-500 hover:text-gray-900 transition-colors"
+                        className="p-1 text-gray-500 hover:text-gray-900 transition-colors focus:outline-none"
                         aria-label="Diminuer la quantité"
                       >
                         <Minus className="w-3 h-3" />
@@ -174,7 +213,7 @@ export function CartDrawer() {
                       </span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="p-1 text-gray-500 hover:text-gray-900 transition-colors"
+                        className="p-1 text-gray-500 hover:text-gray-900 transition-colors focus:outline-none"
                         aria-label="Augmenter la quantité"
                       >
                         <Plus className="w-3 h-3" />
@@ -195,15 +234,61 @@ export function CartDrawer() {
         {/* Footer actions */}
         {cart.length > 0 && (
           <div className="p-6 border-t border-gray-100 bg-gray-50 space-y-4">
-            <div className="flex justify-between items-center text-sm font-bold uppercase tracking-wider text-gray-900">
-              <span>Total :</span>
-              <span className="text-base font-black text-primary">
-                {getCartTotal().toFixed(2)} €
-              </span>
+            
+            {/* Shopify-like Promo Code Field */}
+            <div className="border-b border-black/5 pb-4">
+              <label className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1.5">
+                Code Promo / Réduction
+              </label>
+              <div className="flex gap-2">
+                <div className="relative flex-1">
+                  <Tag className="w-3.5 h-3.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={promoCodeInput}
+                    onChange={(e) => setPromoCodeInput(e.target.value)}
+                    placeholder="Ex: BIENVENUE10"
+                    className="w-full pl-9 pr-3 py-2 text-xs font-bold uppercase tracking-wider rounded-xl border border-black/10 focus:outline-none focus:border-primary bg-white"
+                  />
+                </div>
+                <button
+                  onClick={applyPromoCode}
+                  className="px-4 py-2 bg-black text-white hover:bg-neutral-800 transition-colors rounded-xl text-[9px] font-black uppercase tracking-wider"
+                >
+                  Appliquer
+                </button>
+              </div>
+              {promoMessage && (
+                <p className={`text-[9px] font-bold mt-1.5 uppercase tracking-wide ${
+                  activeDiscount ? "text-green-600" : "text-red-500"
+                }`}>
+                  {promoMessage}
+                </p>
+              )}
             </div>
 
-            <p className="text-[10px] text-gray-500 font-semibold leading-relaxed text-center">
-              💡 Votre commande sera validée et finalisée en direct avec Sandrine sur WhatsApp. Aucun paiement n'est requis en ligne.
+            {/* Price Calculations */}
+            <div className="space-y-1.5 text-xs font-bold uppercase tracking-wider text-gray-900">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-500 text-[10px]">Sous-total :</span>
+                <span>{cartTotal.toFixed(2)} €</span>
+              </div>
+              {activeDiscount && (
+                <div className="flex justify-between items-center text-green-600">
+                  <span className="text-[10px]">Remise ({activeDiscount.code}) :</span>
+                  <span>-{discountAmount.toFixed(2)} €</span>
+                </div>
+              )}
+              <div className="flex justify-between items-center border-t border-black/5 pt-3">
+                <span>Total complet :</span>
+                <span className="text-base font-black text-primary">
+                  {finalTotal.toFixed(2)} €
+                </span>
+              </div>
+            </div>
+
+            <p className="text-[9px] text-gray-500 font-bold tracking-wide uppercase leading-relaxed text-center py-1">
+              💡 Le panier est transmis à Sandrine sur WhatsApp. Elle vous recontactera pour finaliser le paiement.
             </p>
 
             <Button
