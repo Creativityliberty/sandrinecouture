@@ -122,12 +122,14 @@ export function ParticuliersPage() {
           <div className="relative group hidden lg:block">
             <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl" />
             <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
-              <img
-                src="/images/realisations/bavoir-bebe-mon-premier-noel.webp"
-                width={900}
-                height={1200}
+              <video
+                src="https://assets.mixkit.co/videos/preview/mixkit-sewing-machine-stitching-fabric-41718-large.mp4"
+                poster="/images/realisations/bavoir-bebe-mon-premier-noel.webp"
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Bavoir personnalisé bébé"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-10 left-10 glass p-6 rounded-2xl border-white/40 text-white">

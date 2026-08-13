@@ -207,11 +207,11 @@ export default function BoutiquePage() {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-gray-900 mb-4">
-              DESIGNED FOR INDIVIDUALITY.<br />
-              <span className="text-primary font-serif italic normal-case lg:text-7xl">Bold. Unique.</span>
+              CRÉÉ POUR VOTRE IDENTITÉ.<br />
+              <span className="text-primary font-serif italic normal-case lg:text-7xl">Authentique. Unique.</span>
             </h1>
-            <p className="text-xs text-gray-500 font-bold uppercase tracking-widest leading-relaxed">
-              Premium Customized Embroidery & High-End Couture.
+            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-relaxed">
+              Broderie d'excellence & Couture haut de gamme personnalisée.
             </p>
           </div>
         </div>

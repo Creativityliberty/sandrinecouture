@@ -11,7 +11,6 @@ import { RealisationsSection } from "@/components/home/realisations-section";
 import { ReassuranceSection } from "@/components/home/reassurance-section";
 import { SegmentationSection } from "@/components/home/segmentation-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
-import { ReelsCarousel } from "@/components/home/reels-carousel";
 import { Navbar } from "@/components/layout/navbar";
 
 export default function HomePage() {
@@ -25,7 +24,6 @@ export default function HomePage() {
         <ReassuranceSection />
         <ProcessSection />
         <RealisationsSection />
-        <ReelsCarousel />
         <TestimonialsSection />
         <LocalisationSection />
         <CtaSection />

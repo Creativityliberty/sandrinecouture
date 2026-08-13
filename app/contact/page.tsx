@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Star, Building2, User } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { Suspense } from "react";
 
@@ -299,7 +299,17 @@ _Envoyé depuis le site Sandrine Couture_`;
                       : "bg-white border border-black/10 text-gray-700 hover:border-primary"
                   }`}
                 >
-                  {type === "entreprise" ? "🏢 Entreprise" : "👋 Particulier"}
+                  {type === "entreprise" ? (
+                    <span className="flex items-center justify-center gap-1.5">
+                      <Building2 className="w-3.5 h-3.5" />
+                      Entreprise
+                    </span>
+                  ) : (
+                    <span className="flex items-center justify-center gap-1.5">
+                      <User className="w-3.5 h-3.5" />
+                      Particulier
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
