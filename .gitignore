@@ -33,3 +33,5 @@ tsconfig.tsbuildinfo
 .npm-cache
 .antigravityignore
 metadata.json
+.vercel
+.env*
