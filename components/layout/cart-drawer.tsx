@@ -102,7 +102,7 @@ export function CartDrawer() {
       message += `💰 *TOTAL GLOBAL : ${cartTotal.toFixed(2)} €*\n\n`;
     }
 
-    message += `Merci de m'envoyer les détails pour le règlement afin de valider ma commande ! ✨`;
+    message += `Est-ce que nous pouvons discuter des modalités ? Merci encore ! ✨`;
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");

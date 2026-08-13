@@ -417,7 +417,7 @@ export default function BoutiquePage() {
                     <div className="flex flex-col items-center text-center gap-2">
                       <Loader2 className="w-6 h-6 text-primary animate-spin" />
                       <span className="text-[9px] font-bold uppercase tracking-wider text-gray-500">
-                        Envoi vers Vercel Blob...
+                        Préparation de votre fichier...
                       </span>
                     </div>
                   ) : logoName ? (

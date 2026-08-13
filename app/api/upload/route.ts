@@ -10,13 +10,12 @@ export async function POST(request: Request): Promise<NextResponse> {
   }
 
   try {
-    if (!request.body) {
-      return NextResponse.json({ error: 'Request body is empty' }, { status: 400 });
-    }
+    const arrayBuffer = await request.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
 
     // Upload direct vers Vercel Blob avec accès public
     // Utile pour les réalisations, produits de la boutique, etc.
-    const blob = await put(filename, request.body, {
+    const blob = await put(filename, buffer, {
       access: 'public',
     });
 
