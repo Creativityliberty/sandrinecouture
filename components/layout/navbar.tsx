@@ -1,14 +1,17 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/cart-context";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLogoHovered, setIsLogoHovered] = useState(false);
+
+  const { getCartItemsCount, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -19,6 +22,7 @@ export function Navbar() {
   const navItems = [
     { label: "Entreprises", href: "/entreprises" },
     { label: "Particuliers", href: "/particuliers" },
+    { label: "Boutique", href: "/boutique" },
     { label: "Réalisations", href: "/realisations" },
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/faq" },
@@ -81,8 +85,22 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* CTA & Cart */}
           <div className="flex items-center gap-3">
+            {/* Cart Icon Button */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2.5 text-gray-700 hover:text-primary transition-colors bg-gray-100/60 rounded-full hover:bg-gray-100"
+              aria-label="Ouvrir le panier"
+            >
+              <ShoppingCart size={16} />
+              {getCartItemsCount() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-[8px] font-black w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
+                  {getCartItemsCount()}
+                </span>
+              )}
+            </button>
+
             <Link href="/devis" aria-label="Demander un devis">
               <Button
                 variant="primary"

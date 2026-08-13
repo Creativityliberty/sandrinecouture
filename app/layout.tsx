@@ -76,6 +76,9 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+import { CartProvider } from "@/context/cart-context";
+import { CartDrawer } from "@/components/layout/cart-drawer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,7 +92,10 @@ export default function RootLayout({
         <SchemaOrgLocalBusiness />
       </head>
       <body className="antialiased font-sans" suppressHydrationWarning>
-        {children}
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

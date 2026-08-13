@@ -19,8 +19,8 @@ export function SchemaOrgLocalBusiness() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "49.4769",
-      longitude: "0.2192",
+      latitude: "49.7212",
+      longitude: "0.7077",
     },
     image: "https://sandrinecouture.com/logo-sandrine.webp",
     priceRange: "$$",
