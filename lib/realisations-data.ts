@@ -1021,5 +1021,34 @@ export const REALISATIONS: Realisation[] = [
     title: "Zoom Broderie Donald Duck sur Éponge Orange",
     category: "Bébé",
     desc: "Zoom sur la broderie haute précision du personnage Donald Duck réalisée sur éponge orange – point couleurs vives, détail chapeau et costume."
+  },
+  {
+    id: 147,
+    url: "/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim.webp",
+    title: "Sweat à Capuche Les Ours de Muspelheim",
+    category: "Entreprises",
+    desc: "Veste sweat à capuche rouge avec une broderie dorée détaillée représentant un ours viking avec une hache pour Les Ours de Muspelheim."
+  },
+  {
+    id: 148,
+    url: "/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim-detail.webp",
+    title: "Zoom Broderie Ours de Muspelheim",
+    category: "Entreprises",
+    desc: "Détail de la broderie dorée haute précision réalisée sur sweat rouge représentant l'ours et ses détails de flammes."
+  },
+  {
+    id: 149,
+    url: "/images/realisations/gilet-berger-bebe-reversible-moumoute-sherpa.webp",
+    title: "Gilet Berger Bébé Réversible Moumoute",
+    category: "Bébé",
+    desc: "Gilet sans manches pour bébé réversible, côté sherpa/moumoute beige doux et chaleureux."
+  },
+  {
+    id: 150,
+    url: "/images/realisations/gilet-berger-bebe-reversible-suedine-marron.webp",
+    title: "Gilet Berger Bébé Réversible Suédine",
+    category: "Bébé",
+    desc: "Gilet réversible pour bébé, côté suédine marron avec biais imprimé de petits oursons."
   }
 ];
+
