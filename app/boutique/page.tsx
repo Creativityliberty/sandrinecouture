@@ -197,21 +197,34 @@ export default function BoutiquePage() {
       <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 -z-10 w-[600px] h-[600px] bg-blue-500/8 rounded-full blur-[140px] animate-pulse duration-7000" />
       <div className="absolute bottom-10 left-1/3 -z-10 w-[400px] h-[400px] bg-pink-500/6 rounded-full blur-[100px]" />
 
-      {/* Hero Header Section */}
-      <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-black/5 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-4 shadow-sm">
+      {/* Hero Header Section with Background Video */}
+      <section className="relative py-28 md:py-36 overflow-hidden rounded-[2.5rem] mx-4 sm:mx-6 mt-28 bg-black shadow-xl">
+        {/* Background Video */}
+        <video
+          src="/videos/boutique-hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark blur overlay for legibility */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+
+        {/* Content Overlaid */}
+        <div className="relative z-10 container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[9px] font-black tracking-widest uppercase text-white mb-6 shadow-sm">
               <Sparkles className="w-3 h-3 text-primary animate-pulse" />
               <span>Marquage artisanal sur mesure</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-gray-900 mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-white mb-6">
               CRÉÉ POUR VOTRE IDENTITÉ.<br />
               <span className="text-primary font-serif italic normal-case lg:text-7xl">Authentique. Unique.</span>
             </h1>
-            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest leading-relaxed">
-              Broderie d'excellence & Couture haut de gamme personnalisée.
+            <p className="text-[10px] sm:text-xs text-gray-300 font-extrabold uppercase tracking-widest leading-relaxed max-w-xl">
+              Broderie d'excellence & Couture haut de gamme personnalisée en Normandie.
             </p>
           </div>
         </div>
