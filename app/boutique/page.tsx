@@ -189,34 +189,40 @@ export default function BoutiquePage() {
   };
 
   return (
-    <div className="relative min-h-screen font-sans bg-white">
+    <div className="relative min-h-screen font-sans bg-gray-50/30 overflow-hidden">
       <Navbar />
 
+      {/* Dynamic background glows to make glassmorphism pop */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 -z-10 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[120px] animate-pulse duration-5000" />
+      <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 -z-10 w-[600px] h-[600px] bg-blue-500/8 rounded-full blur-[140px] animate-pulse duration-7000" />
+      <div className="absolute bottom-10 left-1/3 -z-10 w-[400px] h-[400px] bg-pink-500/6 rounded-full blur-[100px]" />
+
       {/* Hero Header Section */}
-      <section className="relative pt-32 pb-12 overflow-hidden bg-gray-50/50">
+      <section className="relative pt-32 pb-12 overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-4">
-              <Sparkles className="w-3 h-3 text-primary" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-black/5 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-4 shadow-sm">
+              <Sparkles className="w-3 h-3 text-primary animate-pulse" />
               <span>Marquage artisanal sur mesure</span>
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-gray-900 mb-4">
-              LA BOUTIQUE.
+              DESIGNED FOR INDIVIDUALITY.<br />
+              <span className="text-primary font-serif italic normal-case lg:text-7xl">Bold. Unique.</span>
             </h1>
-            <p className="text-sm text-gray-600 font-semibold leading-relaxed">
-              Sélectionnez vos supports de qualité supérieure, personnalisez les couleurs, polices et broderies de votre choix, et nous les fabriquons à la main pour vous dans notre atelier normand.
+            <p className="text-xs text-gray-500 font-bold uppercase tracking-widest leading-relaxed">
+              Premium Customized Embroidery & High-End Couture.
             </p>
           </div>
         </div>
       </section>
 
       {/* Main Catalog Section */}
-      <section className="py-12 px-6">
+      <section className="py-12 px-6 relative z-10">
         <div className="container mx-auto max-w-7xl">
           
           {/* Category Selector Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 border-b border-black/5 pb-6">
+          <div className="flex flex-wrap justify-center gap-2 mb-16 border-b border-black/5 pb-6">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -224,7 +230,7 @@ export default function BoutiquePage() {
                 className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all border ${
                   selectedCategory === cat
                     ? "bg-black text-white border-black"
-                    : "bg-transparent text-gray-600 border-black/10 hover:border-black/30"
+                    : "bg-white/80 text-gray-600 border-black/5 hover:border-black/20 shadow-sm"
                 }`}
               >
                 {cat}
@@ -237,32 +243,32 @@ export default function BoutiquePage() {
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="group bg-white/60 backdrop-blur-md border border-black/5 p-4 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.07)] transition-all duration-500 hover:-translate-y-1"
+                className="group bg-white/40 backdrop-blur-xl border border-white/50 p-5 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.09)] transition-all duration-500 hover:-translate-y-1.5"
               >
                 {/* Image Wrapper */}
-                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-4 bg-gray-50">
+                <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden mb-5 bg-gray-100 border border-white/20">
                   <img
                     src={product.imgUrl}
                     alt={product.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-3 left-3 bg-white/80 backdrop-blur-md text-black border border-white/50 text-[8px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm">
+                  <div className="absolute top-4 left-4 bg-white/85 backdrop-blur-md text-black border border-white/50 text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
                     {product.category}
                   </div>
                 </div>
 
                 {/* Info Text */}
-                <div className="px-1 flex flex-col justify-between h-[150px]">
+                <div className="px-1 flex flex-col justify-between h-[160px]">
                   <div>
-                    <div className="flex justify-between items-start gap-4 mb-2">
-                      <h3 className="text-sm font-black uppercase tracking-wider text-gray-900 leading-tight">
+                    <div className="flex justify-between items-start gap-4 mb-2.5">
+                      <h3 className="text-xs font-black uppercase tracking-wider text-gray-900 leading-tight">
                         {product.title}
                       </h3>
-                      <span className="text-sm font-black text-primary shrink-0">
+                      <span className="text-xs font-black text-primary bg-primary/5 px-2.5 py-0.5 rounded-full shrink-0">
                         {product.price.toFixed(2)} €
                       </span>
                     </div>
-                    <p className="text-xs text-gray-500 font-semibold line-clamp-3 mb-4">
+                    <p className="text-[10px] text-gray-500 font-semibold leading-relaxed line-clamp-3 mb-4">
                       {product.description}
                     </p>
                   </div>
@@ -270,10 +276,10 @@ export default function BoutiquePage() {
                   {/* Add action */}
                   <Button
                     onClick={() => openCustomizationModal(product)}
-                    className="w-full h-11 rounded-xl uppercase text-[9px] font-black tracking-widest flex items-center justify-center gap-1.5 shadow-sm"
+                    className="w-full h-12 rounded-2xl uppercase text-[9px] font-black tracking-widest flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
                   >
+                    <Sparkles className="w-3.5 h-3.5" />
                     <span>Personnaliser & Ajouter</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
                   </Button>
                 </div>
               </div>

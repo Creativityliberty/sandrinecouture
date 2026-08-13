@@ -6,6 +6,26 @@ import { X, Trash2, Plus, Minus, ShoppingCart, MessageCircle, ExternalLink, Tag 
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
 
+const getColorHex = (name?: string) => {
+  if (!name) return "#000000";
+  const colors: Record<string, string> = {
+    "Vieux rose": "#D4A373",
+    "Bleu marine": "#1D3557",
+    "Vert sauge": "#A3B19B",
+    "Rose poudré": "#E8C5C8",
+    "Vert forêt": "#2D5A27",
+    "Blanc pur": "#FFFFFF",
+    "Blanc": "#FFFFFF",
+    "Gris anthracite": "#4A5568",
+    "Vert eucalyptus": "#8FBC8F",
+    "Rouge Noël": "#C53030",
+    "Jaune moutarde": "#ECC94B",
+    "Lin naturel": "#E2D9C8",
+    "Noir": "#1A202C"
+  };
+  return colors[name] || "#000000";
+};
+
 export function CartDrawer() {
   const {
     cart,
@@ -183,7 +203,14 @@ export function CartDrawer() {
                         <div>Texte : <span className="text-black italic font-bold">"{item.textToEmbroider}"</span></div>
                       )}
                       {item.threadColor && (
-                        <div className="flex items-center gap-1">Fil : <span className="text-black font-bold">{item.threadColor}</span></div>
+                        <div className="flex items-center gap-1.5">
+                          <span>Fil :</span>
+                          <span
+                            className="w-2.5 h-2.5 rounded-full border border-black/10 inline-block shrink-0"
+                            style={{ backgroundColor: getColorHex(item.threadColor) }}
+                          />
+                          <span className="text-black font-bold">{item.threadColor}</span>
+                        </div>
                       )}
                       {item.font && (
                         <div>Typo : <span className="text-black font-bold">{item.font}</span></div>
