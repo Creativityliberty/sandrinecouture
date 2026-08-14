@@ -1,62 +1,56 @@
-import { Star, MessageSquare, Award, ArrowUpRight } from "lucide-react";
+import { Star, Award, ArrowUpRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
 
 export function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Marie Dupont",
-      role: "Directrice Restaurant",
-      company: "Le Petit Normand",
-      text: "Les uniformes brodés de Sandrine ont transformé l'image de notre établissement. La précision du fil et la tenue après de nombreux lavages sont tout simplement remarquables. Un travail d'excellence.",
+      name: "Ophélie Cavelier",
+      role: "Cliente Particulier",
+      company: "Avis Google",
+      text: "J’ai eu la chance de faire réaliser deux broderies personnalisées chez Sandrine, et je ne peux que la recommander ! C’est une personne adorable, passionnée et très à l’écoute. Elle a su comprendre exactement ce que j’avais en tête et le résultat est tout simplement magnifique. En plus de son immense gentillesse, elle travaille avec beaucoup de soin et de rapidité : j’ai reçu mes broderies très vite. C’est un vrai plaisir de rencontrer une personne aussi investie dans son travail. Encore un immense merci, je reviendrai avec grand plaisir !",
       rating: 5,
-      initials: "MD",
-      gradient: "from-pink-500/20 to-rose-500/10 text-rose-700 border-rose-500/20"
+      image: "/images/avatars/ophelie.jpg"
     },
     {
-      name: "Thomas Bernard",
-      role: "Responsable RH",
-      company: "Artisans & Co",
-      text: "Un service professionnel d'une réactivité rare. Les vestes softshell brodées avec notre logo d'entreprise font la fierté de nos équipes sur les chantiers. Nous recommandons les yeux fermés.",
+      name: "Arthur Lbs",
+      role: "Client",
+      company: "Avis Google",
+      text: "Qualité de broderie au top. Travail de précision soigné et soignabilité exemplaire. Sandrine a su répondre parfaitement à mes attentes avec des finitions impeccables.",
       rating: 5,
-      initials: "TB",
-      gradient: "from-blue-500/20 to-indigo-500/10 text-indigo-700 border-indigo-500/20"
+      image: "/images/avatars/arthur.jpg"
     },
     {
-      name: "Sophie Martin",
+      name: "Chloé Larchevesque",
       role: "Maman",
-      company: "Particulier",
-      text: "J'ai commandé le sac à dos personnalisé et un drap de bain brodé pour la naissance de mon fils. Le rendu est magnifique, la broderie de la biche est tellement fine. Une magnifique idée cadeau.",
+      company: "Avis Google",
+      text: "Je suis très contente pour la création du premier cartable de ma fille pour sa rentrée scolaire. Les détails sont magnifiques, j'adore le travail réalisé. Encore merci !",
       rating: 5,
-      initials: "SM",
-      gradient: "from-amber-500/20 to-orange-500/10 text-orange-700 border-orange-500/20"
+      image: "/images/avatars/chloe.jpg"
     },
     {
-      name: "Laurent Petit",
-      role: "Gérant",
-      company: "Salon de Coiffure",
-      text: "Les tabliers brodés de notre logo donnent une vraie identité premium à notre salon. La finition est soignée, le contact avec Sandrine est parfait. Merci pour cette collaboration de confiance.",
+      name: "Nadège Lobjois",
+      role: "Cliente",
+      company: "Avis Google",
+      text: "Très satisfaite de la gigoteuse faite par Sandrine pour ma petite fille. Je recommande à 100% ! Merci encore pour la rapidité d'exécution et la qualité irréprochable du produit.",
       rating: 5,
-      initials: "LP",
-      gradient: "from-emerald-500/20 to-teal-500/10 text-teal-700 border-teal-500/20"
+      image: "/images/avatars/nadege.jpg"
     },
     {
-      name: "Isabelle Leclerc",
-      role: "Directrice",
-      company: "Agence Événementielle",
-      text: "Sandrine a réalisé des écussons brodés personnalisés pour un grand événement en un temps record. La qualité des fils dorés et le respect de notre charte graphique étaient irréprochables.",
+      name: "Kehlani Lauthner",
+      role: "Local Guide",
+      company: "Avis Google",
+      text: "Je recommande vivement, j’ai commandé à plusieurs reprises : serviettes d'invités mains brodées, carnet de santé personnalisé pour une naissance, etc. Un travail d'une grande finesse et envoi rapide.",
       rating: 5,
-      initials: "IL",
-      gradient: "from-purple-500/20 to-fuchsia-500/10 text-fuchsia-700 border-fuchsia-500/20"
+      image: "/images/avatars/kehlani.jpg"
     },
     {
-      name: "Jean-Pierre Rousseau",
-      role: "Propriétaire",
-      company: "Hôtel l'Éscale",
-      text: "Les draps de bain brodés au nom de notre établissement ajoutent une véritable note de standing à nos chambres. Les clients remarquent ce soin du détail. Une prestation haut de gamme.",
+      name: "Angélique Justin",
+      role: "Cliente",
+      company: "Avis Google",
+      text: "Atelier de broderie d'une grande qualité et accueil très chaleureux. Sandrine est à l'écoute des besoins et propose un travail méticuleux et rapide. Je recommande vivement !",
       rating: 5,
-      initials: "JR",
-      gradient: "from-cyan-500/20 to-sky-500/10 text-sky-700 border-sky-500/20"
+      image: "/images/avatars/angelique.jpg"
     },
   ];
 
@@ -88,7 +82,7 @@ export function TestimonialsSection() {
               ))}
             </div>
             <span className="text-[10px] font-black uppercase tracking-widest text-gray-800">
-              Note moyenne : 4.9/5 sur Google Reviews
+              Note moyenne : 5/5 sur Google Reviews
             </span>
           </div>
         </div>
@@ -122,9 +116,13 @@ export function TestimonialsSection() {
               {/* Author */}
               <div className="border-t border-black/5 pt-6 mt-auto">
                 <div className="flex items-center gap-3">
-                  {/* Elegant Gradient Initial Monogram */}
-                  <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${testimonial.gradient} border flex items-center justify-center text-xs font-black tracking-wider shrink-0`}>
-                    {testimonial.initials}
+                  {/* Realistic Avatar Image */}
+                  <div className="w-10 h-10 rounded-full border border-black/10 overflow-hidden bg-gray-50 shrink-0 shadow-sm">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="font-black uppercase text-xs tracking-wider text-gray-900 leading-tight">
@@ -157,7 +155,7 @@ export function TestimonialsSection() {
             </h3>
           </div>
           <div className="p-8 bg-white/60 backdrop-blur-md rounded-3xl border border-white/40 shadow-sm text-center">
-            <p className="text-4xl font-black tracking-tighter text-primary mb-1">4.9/5</p>
+            <p className="text-4xl font-black tracking-tighter text-primary mb-1">5/5</p>
             <h3 className="text-[9px] font-black uppercase tracking-widest text-gray-500">
               Note moyenne globale
             </h3>
