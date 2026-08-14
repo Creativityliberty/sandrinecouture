@@ -42,10 +42,38 @@ export function CartDrawer() {
   const [activeDiscount, setActiveDiscount] = useState<{ code: string; percent: number } | null>(null);
   const [promoMessage, setPromoMessage] = useState("");
 
-  // Prevent hydration warnings
+  // Delivery details state
+  const [fullName, setFullName] = useState("");
+  const [streetAddress, setStreetAddress] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [city, setCity] = useState("");
+
+  // Prevent hydration warnings and load local settings
   useEffect(() => {
     setMounted(true);
+    setFullName(localStorage.getItem("sandrine_couture_fullName") || "");
+    setStreetAddress(localStorage.getItem("sandrine_couture_streetAddress") || "");
+    setPostalCode(localStorage.getItem("sandrine_couture_postalCode") || "");
+    setCity(localStorage.getItem("sandrine_couture_city") || "");
   }, []);
+
+  const handleSaveDeliveryInfo = (name: string, value: string) => {
+    if (name === "fullName") {
+      setFullName(value);
+      localStorage.setItem("sandrine_couture_fullName", value);
+    } else if (name === "streetAddress") {
+      setStreetAddress(value);
+      localStorage.setItem("sandrine_couture_streetAddress", value);
+    } else if (name === "postalCode") {
+      setPostalCode(value);
+      localStorage.setItem("sandrine_couture_postalCode", value);
+    } else if (name === "city") {
+      setCity(value);
+      localStorage.setItem("sandrine_couture_city", value);
+    }
+  };
+
+  const isDeliveryInfoComplete = fullName.trim() !== "" && streetAddress.trim() !== "" && postalCode.trim() !== "" && city.trim() !== "";
 
   if (!mounted) return null;
 
@@ -68,23 +96,15 @@ export function CartDrawer() {
 
   const handleCheckout = () => {
     if (cart.length === 0) return;
+    if (!isDeliveryInfoComplete) return;
 
     let message = `Bonjour Sandrine ! 🧵\nJe souhaite passer commande de produits personnalisés depuis le site. Voici mon panier :\n\n📦 *DÉTAIL DE LA COMMANDE :*\n`;
 
     cart.forEach((item, index) => {
       message += `-------------------------------\n`;
       message += `${index + 1}. *${item.title}* (Qté: ${item.quantity}) - ${(item.price * item.quantity).toFixed(2)} €\n`;
-      if (item.textToEmbroider) {
-        message += `   • Prénom/Texte : _${item.textToEmbroider}_\n`;
-      }
       if (item.threadColor) {
-        message += `   • Couleur fil : _${item.threadColor}_\n`;
-      }
-      if (item.font) {
-        message += `   • Police : _${item.font}_\n`;
-      }
-      if (item.customLogoUrl) {
-        message += `   • Logo personnalisé : ${item.customLogoUrl}\n`;
+        message += `   • Couleur tissu : _${item.threadColor}_\n`;
       }
     });
 
@@ -102,7 +122,12 @@ export function CartDrawer() {
       message += `💰 *TOTAL GLOBAL : ${cartTotal.toFixed(2)} €*\n\n`;
     }
 
-    message += `📷 *Note :* Si j'ai un modèle, un logo ou un dessin personnalisé à broder, je vous l'enverrai directement à la suite de ce message !\n\n`;
+    message += `📦 *ADRESSE DE LIVRAISON :*\n`;
+    message += `👤 Nom : ${fullName.trim()}\n`;
+    message += `🏠 Adresse : ${streetAddress.trim()}\n`;
+    message += `📮 Code Postal : ${postalCode.trim()}\n`;
+    message += `🏙️ Ville : ${city.trim()}\n\n`;
+
     message += `Est-ce que nous pouvons discuter des modalités ? Merci encore ! ✨`;
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}?text=${encodeURIComponent(message)}`;
@@ -168,94 +193,150 @@ export function CartDrawer() {
               </p>
             </div>
           ) : (
-            cart.map((item) => (
-              <div
-                key={item.id}
-                className="flex gap-4 border-b border-gray-105 pb-5 last:border-0 last:pb-0"
-              >
-                {/* Product Thumbnail */}
-                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shrink-0">
-                  <img
-                    src={item.imgUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Details */}
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex justify-between items-start gap-2">
-                      <h4 className="text-[11px] font-extrabold text-gray-900 uppercase tracking-wider line-clamp-1">
-                        {item.title}
-                      </h4>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="text-gray-400 hover:text-red-500 transition-colors shrink-0"
-                        aria-label="Retirer l'article"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-
-                    {/* Personalizations summary */}
-                    <div className="mt-1.5 space-y-0.5 text-[9px] text-gray-500 font-semibold uppercase tracking-wider bg-gray-50 p-2.5 rounded-lg border border-black/5">
-                      {item.textToEmbroider && (
-                        <div>Texte : <span className="text-black italic font-bold">"{item.textToEmbroider}"</span></div>
-                      )}
-                      {item.threadColor && (
-                        <div className="flex items-center gap-1.5">
-                          <span>Fil :</span>
-                          <span
-                            className="w-2.5 h-2.5 rounded-full border border-black/10 inline-block shrink-0"
-                            style={{ backgroundColor: getColorHex(item.threadColor) }}
-                          />
-                          <span className="text-black font-bold">{item.threadColor}</span>
-                        </div>
-                      )}
-                      {item.font && (
-                        <div>Typo : <span className="text-black font-bold">{item.font}</span></div>
-                      )}
-                      {item.customLogoName && (
-                        <div className="flex items-center gap-1 text-primary">
-                          <span>Logo : {item.customLogoName}</span>
-                          <ExternalLink className="w-2.5 h-2.5" />
-                        </div>
-                      )}
-                    </div>
+            <>
+              {cart.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex gap-4 border-b border-black/5 pb-5 last:border-0 last:pb-0"
+                >
+                  {/* Product Thumbnail */}
+                  <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shrink-0">
+                    <img
+                      src={item.imgUrl}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
-                  {/* Quantity and price row */}
-                  <div className="flex justify-between items-center mt-3">
-                    {/* Qty edit buttons */}
-                    <div className="flex items-center border border-black/10 rounded-full py-0.5 px-1 bg-white">
-                      <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="p-1 text-gray-500 hover:text-gray-900 transition-colors focus:outline-none"
-                        aria-label="Diminuer la quantité"
-                      >
-                        <Minus className="w-3 h-3" />
-                      </button>
-                      <span className="px-2.5 text-xs font-bold text-gray-900">
-                        {item.quantity}
-                      </span>
-                      <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="p-1 text-gray-500 hover:text-gray-900 transition-colors focus:outline-none"
-                        aria-label="Augmenter la quantité"
-                      >
-                        <Plus className="w-3 h-3" />
-                      </button>
+                  {/* Details */}
+                  <div className="flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start gap-2">
+                        <h4 className="text-[11px] font-extrabold text-gray-900 uppercase tracking-wider line-clamp-1">
+                          {item.title}
+                        </h4>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-gray-400 hover:text-red-500 transition-colors shrink-0"
+                          aria-label="Retirer l'article"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+
+                      {/* Personalizations summary */}
+                      {item.threadColor && (
+                        <div className="mt-1.5 space-y-0.5 text-[9px] text-gray-500 font-semibold uppercase tracking-wider bg-gray-50 p-2.5 rounded-lg border border-black/5">
+                          <div className="flex items-center gap-1.5">
+                            <span>Couleur tissu :</span>
+                            <span
+                              className="w-2.5 h-2.5 rounded-full border border-black/10 inline-block shrink-0"
+                              style={{ backgroundColor: getColorHex(item.threadColor) }}
+                            />
+                            <span className="text-black font-bold">{item.threadColor}</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
-                    {/* Subtotal price */}
-                    <span className="text-xs font-black text-gray-900">
-                      {(item.price * item.quantity).toFixed(2)} €
-                    </span>
+                    {/* Quantity and price row */}
+                    <div className="flex justify-between items-center mt-3">
+                      {/* Qty edit buttons */}
+                      <div className="flex items-center border border-black/10 rounded-full py-0.5 px-1 bg-white">
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          className="p-1 text-gray-500 hover:text-gray-900 transition-colors focus:outline-none"
+                          aria-label="Diminuer la quantité"
+                        >
+                          <Minus className="w-3 h-3" />
+                        </button>
+                        <span className="px-2.5 text-xs font-bold text-gray-900">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          className="p-1 text-gray-500 hover:text-gray-900 transition-colors focus:outline-none"
+                          aria-label="Augmenter la quantité"
+                        >
+                          <Plus className="w-3 h-3" />
+                        </button>
+                      </div>
+
+                      {/* Subtotal price */}
+                      <span className="text-xs font-black text-gray-900">
+                        {(item.price * item.quantity).toFixed(2)} €
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Formulaire d'adresse de livraison */}
+              <div className="border-t border-black/5 pt-6 space-y-4 bg-gray-50/50 p-4 rounded-3xl border border-black/5">
+                <h3 className="text-[10px] font-black uppercase tracking-wider text-gray-900">
+                  Coordonnées de livraison
+                </h3>
+                
+                <div className="space-y-3">
+                  <div>
+                    <label className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1">
+                      Nom Complet
+                    </label>
+                    <input
+                      type="text"
+                      value={fullName}
+                      onChange={(e) => handleSaveDeliveryInfo("fullName", e.target.value)}
+                      placeholder="Ex: Jean Dupont"
+                      className="w-full px-3 py-2 text-xs font-bold rounded-xl border border-black/10 focus:outline-none focus:border-primary bg-white"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1">
+                      Adresse de livraison
+                    </label>
+                    <input
+                      type="text"
+                      value={streetAddress}
+                      onChange={(e) => handleSaveDeliveryInfo("streetAddress", e.target.value)}
+                      placeholder="Ex: 12 Rue de la Paix"
+                      className="w-full px-3 py-2 text-xs font-bold rounded-xl border border-black/10 focus:outline-none focus:border-primary bg-white"
+                      required
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1">
+                        Code Postal
+                      </label>
+                      <input
+                        type="text"
+                        value={postalCode}
+                        onChange={(e) => handleSaveDeliveryInfo("postalCode", e.target.value)}
+                        placeholder="Ex: 75002"
+                        className="w-full px-3 py-2 text-xs font-bold rounded-xl border border-black/10 focus:outline-none focus:border-primary bg-white"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1">
+                        Ville
+                      </label>
+                      <input
+                        type="text"
+                        value={city}
+                        onChange={(e) => handleSaveDeliveryInfo("city", e.target.value)}
+                        placeholder="Ex: Paris"
+                        className="w-full px-3 py-2 text-xs font-bold rounded-xl border border-black/10 focus:outline-none focus:border-primary bg-white"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            ))
+            </>
           )}
         </div>
 
@@ -321,12 +402,20 @@ export function CartDrawer() {
 
             <Button
               onClick={handleCheckout}
+              disabled={!isDeliveryInfoComplete}
               size="lg"
-              className="w-full h-12 rounded-full uppercase text-[10px] font-black tracking-widest flex items-center justify-center gap-2 shadow-lg"
+              className={`w-full h-12 rounded-full uppercase text-[10px] font-black tracking-widest flex items-center justify-center gap-2 shadow-lg ${
+                !isDeliveryInfoComplete ? "bg-gray-300 cursor-not-allowed hover:bg-gray-300" : ""
+              }`}
             >
               <MessageCircle className="w-4 h-4" />
               Acheter via WhatsApp
             </Button>
+            {!isDeliveryInfoComplete && (
+              <p className="text-[8px] text-red-500 font-bold tracking-wide uppercase text-center mt-1">
+                ⚠️ Veuillez remplir vos coordonnées de livraison ci-dessus pour commander
+              </p>
+            )}
           </div>
         )}
       </div>

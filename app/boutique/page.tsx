@@ -111,9 +111,7 @@ export default function BoutiquePage() {
   const [activeModalProduct, setActiveModalProduct] = useState<Product | null>(null);
 
   // Customization Form State
-  const [textToEmbroider, setTextToEmbroider] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
-  const [selectedFont, setSelectedFont] = useState("");
   const [quantity, setQuantity] = useState(1);
 
   const categories = ["Tous", "Bébé", "Accessoires", "Bain", "Maison"];
@@ -124,9 +122,7 @@ export default function BoutiquePage() {
 
   const openCustomizationModal = (product: Product) => {
     setActiveModalProduct(product);
-    setTextToEmbroider("");
     setSelectedColor(product.colors[0]?.name || "");
-    setSelectedFont(product.fonts[0] || "");
     setQuantity(1);
   };
 
@@ -140,8 +136,6 @@ export default function BoutiquePage() {
       price: activeModalProduct.price,
       quantity,
       imgUrl: activeModalProduct.imgUrl,
-      textToEmbroider,
-      font: selectedFont,
       threadColor: selectedColor
     });
 
@@ -251,8 +245,7 @@ export default function BoutiquePage() {
                     onClick={() => openCustomizationModal(product)}
                     className="w-full h-12 rounded-2xl uppercase text-[9px] font-black tracking-widest flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
                   >
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Personnaliser & Ajouter</span>
+                    <span>Ajouter au Panier</span>
                   </Button>
                 </div>
               </div>
@@ -285,7 +278,7 @@ export default function BoutiquePage() {
               </div>
               <div>
                 <h2 className="text-base font-black uppercase tracking-wider text-gray-900 leading-tight">
-                  Personnalisation
+                  Choisir les options
                 </h2>
                 <p className="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">
                   {activeModalProduct.title} • {activeModalProduct.price.toFixed(2)} €
@@ -296,25 +289,10 @@ export default function BoutiquePage() {
             {/* Form Fields */}
             <div className="space-y-5">
               
-              {/* Option A: Text to embroider */}
+              {/* Option A: Fabric color pick */}
               <div>
                 <label className="block text-[9px] font-black uppercase tracking-wider text-gray-600 mb-2">
-                  1. Texte à broder (prénom, mot, initiales - max 20 car.)
-                </label>
-                <input
-                  type="text"
-                  maxLength={20}
-                  value={textToEmbroider}
-                  onChange={(e) => setTextToEmbroider(e.target.value)}
-                  placeholder="Ex: Clara, Papa, Sweet..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-black/10 focus:outline-none focus:border-primary font-bold text-xs"
-                />
-              </div>
-
-              {/* Option B: Thread color pick */}
-              <div>
-                <label className="block text-[9px] font-black uppercase tracking-wider text-gray-600 mb-2">
-                  2. Couleur du fil de broderie
+                  1. Couleur du tissu
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {activeModalProduct.colors.map((c) => (
@@ -337,42 +315,10 @@ export default function BoutiquePage() {
                 </div>
               </div>
 
-              {/* Option C: Font typography */}
-              <div>
-                <label className="block text-[9px] font-black uppercase tracking-wider text-gray-600 mb-2">
-                  3. Style de police d'écriture
-                </label>
-                <div className="flex gap-2">
-                  {activeModalProduct.fonts.map((f) => (
-                    <button
-                      key={f}
-                      onClick={() => setSelectedFont(f)}
-                      className={`px-4 py-2 rounded-xl text-[9px] font-black uppercase tracking-wider border transition-all ${
-                        selectedFont === f
-                          ? "bg-black text-white border-black"
-                          : "bg-transparent text-gray-700 border-black/10 hover:border-black/25"
-                      }`}
-                    >
-                      {f}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Option D: Custom Logo Information Note */}
-              <div className="bg-gray-50 border border-black/5 rounded-2xl p-4 text-center">
-                <span className="block text-[8px] font-black uppercase tracking-widest text-gray-500 mb-1">
-                  Besoin d'un logo ou dessin sur mesure ?
-                </span>
-                <span className="block text-[9px] text-gray-600 font-bold leading-relaxed uppercase tracking-wide">
-                  Vous pourrez joindre votre fichier ou votre photo directement dans notre discussion sur WhatsApp ! 📷
-                </span>
-              </div>
-
-              {/* Option E: Quantity Selector */}
+              {/* Option B: Quantity Selector */}
               <div className="flex items-center justify-between border-t border-black/5 pt-4">
                 <span className="text-[10px] font-black uppercase tracking-wider text-gray-600">
-                  5. Quantité d'articles
+                  2. Quantité d'articles
                 </span>
                 <div className="flex items-center border border-black/10 rounded-full py-1 px-2 bg-white">
                   <button
