@@ -106,20 +106,6 @@ export function ReelsCarousel() {
       category: "Technique",
       videoUrl: "https://www.facebook.com/reel/526177550081104/",
       thumbnail: "/images/realisations/2b-couverture-collection-1.webp",
-    },
-    {
-      id: 18,
-      title: "Finitions soignées de l'atelier",
-      category: "Atelier",
-      videoUrl: "https://www.facebook.com/reel/1523913301924173/",
-      thumbnail: "/images/realisations/poules-decoratives-brodees.webp",
-    },
-    {
-      id: 19,
-      title: "Collection bébés et enfants",
-      category: "Particuliers",
-      videoUrl: "https://www.facebook.com/reel/1352839449114343",
-      thumbnail: "/images/realisations/lange-bapteme-personnalise-giulia.webp",
     }
   ];
 
