@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { Mail, MapPin, MessageCircle, Phone, Star, Building2, User, Instagram, Facebook, Truck } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Star, Building2, User, Instagram, Facebook, Truck, Sparkles, Heart, Award, CheckCircle2, Clock } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { Suspense } from "react";
 
@@ -116,35 +116,132 @@ _Envoyé depuis le site Sandrine Couture_`;
     <div className="relative min-h-screen font-sans bg-white">
       <Navbar />
 
-      {/* Image Hero Section */}
-      <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden">
-        <img
-          src="/images/realisations/sandrine-couture.webp"
-          alt="Sandrine exposant ses produits"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-2 sm:mb-4 italic uppercase leading-[0.9]">
-              Contactez <br />
-              <span className="text-primary not-italic">Sandrine</span>
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto">
-              Découvrez nos créations et parlons de votre projet
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Luxury Artisan Hero & Portrait Section — Sandrine à l'Honneur */}
+      <section className="pt-32 sm:pt-40 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-[#faf8f5] to-white border-b border-black/[0.06]">
+        
+        {/* Background ambient lighting */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-pink-500/[0.07] rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      {/* Subtitle Section */}
-      <section className="pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium max-w-2xl mx-auto">
-            Une question ? Un projet ? Nous sommes là pour vous aider.
-            Contactez-nous par le moyen qui vous convient le mieux.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Top Pill */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white text-[9px] font-mono tracking-[0.25em] uppercase shadow-md border border-white/10">
+              <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+              <span>Votre Artisane Brodeuse en Normandie</span>
+              <span className="text-amber-400">★ ★ ★ ★ ★</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left: Sandrine Portrait Card — Framed Luxury Lookbook */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[4/5] rounded-[3rem] p-3 bg-white border border-pink-500/20 shadow-[0_25px_60px_-15px_rgba(244,63,94,0.18)] group">
+                
+                {/* Image Container with golden ring */}
+                <div className="relative w-full h-full rounded-[2.4rem] overflow-hidden bg-stone-950">
+                  <img
+                    src="/images/realisations/sandrine-couture.webp"
+                    alt="Sandrine, fondatrice et artisane de By Sandrine Couture"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent" />
+
+                  {/* Badges Over Image */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="px-3.5 py-1 rounded-full bg-stone-950/85 backdrop-blur-md text-white border border-white/20 text-[9px] font-mono uppercase tracking-widest font-bold">
+                      Atelier Robertot (76)
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-5 left-5 right-5 z-10 text-white">
+                    <p className="text-[10px] font-mono text-pink-300 uppercase tracking-widest font-bold mb-1">
+                      Artisane Créatrice
+                    </p>
+                    <h3 className="text-2xl font-black uppercase tracking-tight leading-none mb-1 text-white">
+                      Sandrine
+                    </h3>
+                    <p className="text-[11px] text-stone-200 font-medium leading-relaxed opacity-90">
+                      « Chaque projet est unique, cousu avec amour et précision pour vos plus beaux moments. »
+                    </p>
+                  </div>
+                </div>
+
+                {/* Floating Stamp / Certificat Fait Main */}
+                <div className="absolute -bottom-4 -right-4 bg-primary text-white p-3.5 rounded-2xl shadow-xl shadow-pink-500/30 flex items-center gap-2.5 border-2 border-white pointer-events-none">
+                  <Heart className="w-4 h-4 fill-white text-white animate-bounce" />
+                  <span className="text-[9px] font-black uppercase tracking-widest">100% Fait Main</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Personal Greeting & Trust Highlights */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left">
+              
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-5">
+                Parlons de votre projet <br />
+                <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
+                  avec Sandrine
+                </span>.
+              </h1>
+
+              <p className="text-base sm:text-lg text-stone-600 font-medium leading-relaxed mb-8 max-w-xl">
+                Que vous soyez un particulier en quête d'un <b>cadeau de naissance brodé inoubliable</b> ou une <b>entreprise souhaitant habiller ses équipes</b>, Sandrine vous conseille personnellement pour choisir les bons fils, textiles et typographies.
+              </p>
+
+              {/* 3 Value Pillars */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full mb-8">
+                <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-sm">
+                  <div className="w-8 h-8 rounded-xl bg-pink-100 text-primary flex items-center justify-center mb-2.5">
+                    <Clock size={16} />
+                  </div>
+                  <h4 className="text-xs font-black uppercase tracking-wide text-stone-900 mb-0.5">Écoute & Réactivité</h4>
+                  <p className="text-[10px] text-stone-500 font-medium">Réponse sous 24h et conseils adaptés à votre budget.</p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-sm">
+                  <div className="w-8 h-8 rounded-xl bg-pink-100 text-primary flex items-center justify-center mb-2.5">
+                    <Award size={16} />
+                  </div>
+                  <h4 className="text-xs font-black uppercase tracking-wide text-stone-900 mb-0.5">Broderie d'Art</h4>
+                  <p className="text-[10px] text-stone-500 font-medium">Fils certifiés Oeko-Tex et haute tenue au lavage 60°C.</p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-sm">
+                  <div className="w-8 h-8 rounded-xl bg-pink-100 text-primary flex items-center justify-center mb-2.5">
+                    <Truck size={16} />
+                  </div>
+                  <h4 className="text-xs font-black uppercase tracking-wide text-stone-900 mb-0.5">Expédition Rapide</h4>
+                  <p className="text-[10px] text-stone-500 font-medium">Mondial Relay, Colissimo ou retrait direct à l'atelier.</p>
+                </div>
+              </div>
+
+              {/* Quick direct contact action buttons */}
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={`https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-black uppercase tracking-widest text-[10px] shadow-lg shadow-green-500/20 flex items-center gap-2 no-underline transition-transform hover:scale-105"
+                >
+                  <MessageCircle size={15} />
+                  <span>Discuter en direct sur WhatsApp</span>
+                </a>
+
+                <a
+                  href="tel:0629492213"
+                  className="px-6 py-3 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-black uppercase tracking-widest text-[10px] shadow-md flex items-center gap-2 no-underline transition-colors"
+                >
+                  <Phone size={14} />
+                  <span>06 29 49 22 13</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
       </section>
 
