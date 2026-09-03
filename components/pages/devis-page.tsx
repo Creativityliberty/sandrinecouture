@@ -5,6 +5,8 @@ import React, { Suspense, useEffect, useState } from "react";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
 
+import { PRO_ARTICLE_GROUPS, PERSO_ARTICLE_GROUPS } from "@/lib/devis-articles";
+
 function DevisForm() {
   const searchParams = useSearchParams();
   const [formType, setFormType] = useState<"entreprise" | "particulier">(
@@ -25,25 +27,8 @@ function DevisForm() {
     occasion: "",
   });
 
-  const proArticles = [
-    "Polos",
-    "T-shirts",
-    "Sweats / Hoodies",
-    "Tabliers",
-    "Serviettes",
-    "Patchs Velcro",
-    "Autre (préciser)",
-  ];
-  const persoArticles = [
-    "Serviette de bain",
-    "Peignoir",
-    "Doudou / Peluche",
-    "Bavoir",
-    "Couverture bébé",
-    "Protege carnet de santé",
-    "Sac / Totebag",
-    "Autre (préciser)",
-  ];
+  const proArticleGroups = PRO_ARTICLE_GROUPS;
+  const persoArticleGroups = PERSO_ARTICLE_GROUPS;
   const placements = [
     { id: "coeur", label: "Cœur (Gauche)" },
     { id: "dos", label: "Grand Dos" },
@@ -68,10 +53,10 @@ function DevisForm() {
     e.preventDefault();
 
     const isPro = formType === "entreprise";
-    const finalArticle =
-      formData.article === "Autre (préciser)"
-        ? formData.customArticle
-        : formData.article;
+    const isCustom = formData.article.includes("préciser") || formData.article === "Autre (préciser)";
+    const finalArticle = isCustom
+      ? (formData.customArticle || "Support sur-mesure")
+      : formData.article;
 
     const complexityLabels: Record<string, string> = {
       text: "Texte uniquement",
@@ -294,20 +279,32 @@ _Envoyé depuis le site Sandrine Couture_`;
                   id="devis-article"
                   required
                   aria-label="Type d'article"
-                  className="w-full bg-black/5 border-none rounded-2xl p-4 outline-none focus:ring-2 ring-primary/20 transition-all font-bold appearance-none"
+                  className="w-full bg-black/5 border-none rounded-2xl p-4 outline-none focus:ring-2 ring-primary/20 transition-all font-bold"
                   value={formData.article}
                   onChange={(e) =>
                     setFormData({ ...formData, article: e.target.value })
                   }
                 >
-                  <option value="">-- Sélectionner --</option>
+                  <option value="">-- Sélectionner un support à broder --</option>
                   {(formType === "entreprise"
-                    ? proArticles
-                    : persoArticles
-                  ).map((art) => (
-                    <option key={art} value={art}>
-                      {art}
-                    </option>
+                    ? proArticleGroups
+                    : persoArticleGroups
+                  ).map((grp) => (
+                    <optgroup
+                      key={grp.group}
+                      label={grp.group}
+                      className="font-bold text-stone-900 bg-stone-100"
+                    >
+                      {grp.items.map((art) => (
+                        <option
+                          key={art}
+                          value={art}
+                          className="font-normal text-stone-800 bg-white"
+                        >
+                          {art}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </select>
               </div>
@@ -332,20 +329,20 @@ _Envoyé depuis le site Sandrine Couture_`;
                   }
                 />
               </div>
-              {formData.article === "Autre (préciser)" && (
+              {(formData.article.includes("préciser") || formData.article === "Autre (préciser)") && (
                 <div className="md:col-span-2 animate-in fade-in duration-300">
                   <label
                     htmlFor="devis-custom-article"
                     className="text-[10px] font-black uppercase tracking-widest opacity-60"
                   >
-                    Précisez l&apos;article
+                    Précisez votre support personnalisé *
                   </label>
                   <input
                     id="devis-custom-article"
                     required
                     className="w-full bg-black/5 border-none rounded-2xl p-4 outline-none focus:ring-2 ring-primary/20 transition-all font-bold"
-                    placeholder="Ex: Tapis de selle, Casquette spécifique..."
-                    aria-label="Précisez l'article"
+                    placeholder="Ex: Tapis de selle équitation, casquette spécifique, confection sur-mesure..."
+                    aria-label="Précisez le support"
                     value={formData.customArticle}
                     onChange={(e) =>
                       setFormData({

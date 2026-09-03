@@ -1,5 +1,10 @@
 # By Sandrine Couture - AI Development Rules
 
+## 🚨 RÈGLE D'OR D'INTERACTION (OBLIGATOIRE À CHAQUE PROMPT)
+1. **Toujours expliciter et reformuler ce qui a été compris** de la demande.
+2. **Présenter le plan d'action ou le tableau de synthèse**.
+3. **ATTENDRE la validation formelle de l'utilisateur AVANT de modifier ou d'écrire le moindre code**.
+
 ## 🎨 Design System
 - Use the established "Liquid Glass" aesthetic: blurred backgrounds, subtle borders (`border-black/5`), and high-end typography.
 - Colors: Primary (Pink/Magenta accents), Secondary (Soft pinks/whites), Accent (Dark/Black for text and grounding).

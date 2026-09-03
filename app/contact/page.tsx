@@ -7,6 +7,7 @@ import { SITE_CONFIG } from "@/lib/site-config";
 import { Mail, MapPin, MessageCircle, Phone, Star, Building2, User, Instagram, Facebook, Truck, Sparkles, Heart, Award, CheckCircle2, Clock } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { Suspense } from "react";
+import { PRO_ARTICLE_GROUPS, PERSO_ARTICLE_GROUPS } from "@/lib/devis-articles";
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -28,25 +29,8 @@ function ContactFormContent() {
     occasion: "",
   });
 
-  const proArticles = [
-    "Polos",
-    "T-shirts",
-    "Sweats / Hoodies",
-    "Tabliers",
-    "Serviettes",
-    "Patchs Velcro",
-    "Autre (préciser)",
-  ];
-  const persoArticles = [
-    "Serviette de bain",
-    "Peignoir",
-    "Doudou / Peluche",
-    "Bavoir",
-    "Couverture bébé",
-    "Protege carnet de santé",
-    "Sac / Totebag",
-    "Autre (préciser)",
-  ];
+  const proArticleGroups = PRO_ARTICLE_GROUPS;
+  const persoArticleGroups = PERSO_ARTICLE_GROUPS;
   const placements = [
     { id: "coeur", label: "Cœur (Gauche)" },
     { id: "dos", label: "Grand Dos" },
@@ -74,10 +58,10 @@ function ContactFormContent() {
     e.preventDefault();
 
     const isPro = formType === "entreprise";
-    const finalArticle =
-      formData.article === "Autre (préciser)"
-        ? formData.customArticle
-        : formData.article;
+    const isCustom = formData.article.includes("préciser") || formData.article === "Autre (préciser)";
+    const finalArticle = isCustom
+      ? (formData.customArticle || "Support sur-mesure")
+      : formData.article;
 
     const complexityLabels: Record<string, string> = {
       text: "Texte uniquement",
@@ -533,25 +517,37 @@ _Envoyé depuis le site Sandrine Couture_`;
                   aria-label="Sélectionnez un article"
                   className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
                 >
-                  <option value="">Sélectionnez un article</option>
+                  <option value="">Sélectionnez un support à broder</option>
                   {(formType === "entreprise"
-                    ? proArticles
-                    : persoArticles
-                  ).map((art) => (
-                    <option key={art} value={art}>
-                      {art}
-                    </option>
+                    ? proArticleGroups
+                    : persoArticleGroups
+                  ).map((grp) => (
+                    <optgroup
+                      key={grp.group}
+                      label={grp.group}
+                      className="font-bold text-stone-900 bg-stone-100"
+                    >
+                      {grp.items.map((art) => (
+                        <option
+                          key={art}
+                          value={art}
+                          className="font-normal text-stone-800 bg-white"
+                        >
+                          {art}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </select>
               </div>
 
-              {formData.article === "Autre (préciser)" && (
+              {(formData.article.includes("préciser") || formData.article === "Autre (préciser)") && (
                 <div>
                   <label
                     htmlFor="customArticle"
                     className="block text-[10px] font-bold uppercase tracking-widest text-gray-700 mb-2"
                   >
-                    Précisez l'article
+                    Précisez votre support personnalisé *
                   </label>
                   <input
                     id="customArticle"
@@ -560,8 +556,8 @@ _Envoyé depuis le site Sandrine Couture_`;
                     value={formData.customArticle}
                     onChange={handleChange}
                     className="w-full px-3 py-2 rounded-lg border border-black/10 focus:outline-none focus:border-primary font-medium text-sm"
-                    placeholder="Précisez l'article"
-                    aria-label="Précisez l'article"
+                    placeholder="Ex: Tapis de selle, casquette spécifique, confection sur-mesure..."
+                    aria-label="Précisez le support"
                   />
                 </div>
               )}
