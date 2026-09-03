@@ -44,12 +44,12 @@ export function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-900 text-white relative overflow-hidden">
+    <section className="py-20 sm:py-32 px-3.5 sm:px-6 lg:px-8 bg-stone-900 text-white relative w-full max-w-full overflow-hidden">
       
       {/* Subtle Blueprint Lines */}
       <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button";
 
 export function CtaSection() {
   return (
-    <section id="contact" className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 bg-stone-950 text-white relative overflow-hidden">
+    <section id="contact" className="py-20 sm:py-32 px-3.5 sm:px-6 lg:px-8 bg-stone-950 text-white relative w-full max-w-full overflow-hidden">
       
       {/* Dynamic Ambient Lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute -top-32 -right-32 w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto text-center relative z-10">
+      <div className="w-full max-w-5xl mx-auto text-center relative z-10">
         
         {/* Micro Tag */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-8">

@@ -121,9 +121,9 @@ export function ReelsCarousel() {
   };
 
   return (
-    <section className="py-24 bg-gray-50 border-y border-black/5 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+    <section className="py-20 sm:py-24 bg-gray-50 border-y border-black/5 w-full max-w-full overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
           <div className="text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 glass bg-white/60 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-6">
               <Film className="w-3.5 h-3.5" />
@@ -151,8 +151,8 @@ export function ReelsCarousel() {
           </div>
         </div>
 
-        {/* Scrolling Reels Container */}
-        <div className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-hide snap-x snap-mandatory -mx-6 px-6 max-w-7xl mx-auto">
+        {/* Scrolling Reels Container - Contained & Fluid */}
+        <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 pt-2 scrollbar-hide snap-x snap-mandatory w-full max-w-full">
           {reels.map((reel) => {
             const isLocal = !reel.videoUrl.startsWith("http");
             return (

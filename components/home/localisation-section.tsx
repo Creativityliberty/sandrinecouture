@@ -12,13 +12,13 @@ export function LocalisationSection() {
   ];
 
   return (
-    <section id="localisation" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-900 text-white relative overflow-hidden">
+    <section id="localisation" className="py-20 sm:py-32 px-3.5 sm:px-6 lg:px-8 bg-stone-900 text-white relative w-full max-w-full overflow-hidden">
       
       {/* Background Ambience */}
       <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-full max-w-7xl mx-auto relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           

@@ -9,11 +9,11 @@ export function Footer() {
   const [isLogoHovered, setIsLogoHovered] = useState(false);
 
   return (
-    <footer className="bg-rose-200/90 backdrop-blur-md border-t border-rose-300/40 py-16 px-6 mt-12 relative z-10">
-      <div className="container mx-auto">
+    <footer className="bg-rose-200/90 backdrop-blur-md border-t border-rose-300/40 py-12 sm:py-16 px-3.5 sm:px-6 mt-12 relative z-10 w-full max-w-full overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto">
         
         {/* Confiance & Livraison Partenaires — Framed Bento Architecture */}
-        <div className="bg-white/70 backdrop-blur-md rounded-[2.5rem] p-4 sm:p-6 border border-white/60 shadow-xl mb-14">
+        <div className="bg-white/70 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] p-3 sm:p-6 border border-white/60 shadow-xl mb-12 sm:mb-14 w-full max-w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             
             {/* Card 1: Mondial Relay */}

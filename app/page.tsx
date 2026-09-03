@@ -18,9 +18,9 @@ import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen font-sans selection:bg-primary/20 bg-white">
+    <div className="relative min-h-screen font-sans selection:bg-primary/20 bg-white w-full max-w-full overflow-x-hidden">
       <Navbar />
-      <main id="main-content">
+      <main id="main-content" className="w-full max-w-full overflow-x-hidden">
         <HeroSection />
 
         <RevealOnScroll direction="up" delay={50}>

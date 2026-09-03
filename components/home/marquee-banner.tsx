@@ -12,7 +12,7 @@ export function MarqueeBanner() {
   ];
 
   return (
-    <div className="relative w-full overflow-hidden py-5 bg-stone-950 text-white border-y border-stone-800 selection:bg-primary selection:text-white shadow-inner">
+    <div className="relative w-full max-w-full overflow-hidden py-4 sm:py-5 bg-stone-950 text-white border-y border-stone-800 selection:bg-primary selection:text-white shadow-inner">
       {/* Vignette gradients */}
       <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-stone-950 via-stone-950/80 to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-stone-950 via-stone-950/80 to-transparent z-10 pointer-events-none" />

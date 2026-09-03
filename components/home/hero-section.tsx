@@ -70,7 +70,7 @@ export function HeroSection() {
   const current = SHOWCASE_ITEMS[activeIdx];
 
   return (
-    <section className="relative pt-28 sm:pt-36 pb-20 lg:pb-32 overflow-hidden bg-[#faf8f5] text-[#1c1917] selection:bg-primary selection:text-white">
+    <section className="relative w-full max-w-full pt-24 sm:pt-36 pb-16 sm:pb-20 lg:pb-32 overflow-hidden bg-[#faf8f5] text-[#1c1917] selection:bg-primary selection:text-white">
       
       {/* Couture blueprint lines & ambient light */}
       <div className="absolute inset-0 pointer-events-none -z-10">
@@ -86,26 +86,26 @@ export function HeroSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-dashed border-black/[0.02] pointer-events-none" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+      <div className="w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative overflow-hidden">
         
         {/* Top Atelier Bar: Clean luxury meta header */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-black/[0.08] text-[11px] uppercase tracking-[0.2em] font-medium text-stone-500">
-          <div className="flex items-center gap-3">
-            <span className="flex h-2 w-2 relative">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 pb-6 sm:pb-8 mb-8 sm:mb-10 border-b border-black/[0.08] text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium text-stone-500">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
             </span>
             <span className="text-stone-800 font-bold tracking-wider">Atelier Normand • Robertot (76)</span>
-            <span className="text-stone-300">/</span>
+            <span className="text-stone-300 hidden sm:inline">/</span>
             <span className="hidden sm:inline">Capacité de production ouverte</span>
           </div>
 
-          <div className="flex items-center gap-6 text-[10px] font-bold text-stone-700">
+          <div className="flex items-center gap-4 text-[9px] sm:text-[10px] font-bold text-stone-700">
             <span className="flex items-center gap-1.5">
-              <Scissors size={12} className="text-primary" /> Confection & Piquage Sur-Mesure
+              <Scissors size={12} className="text-primary shrink-0" /> Confection & Piquage Sur-Mesure
             </span>
             <span className="hidden md:flex items-center gap-1.5">
-              <Award size={12} className="text-primary" /> Fils Madeira Certifiés
+              <Award size={12} className="text-primary shrink-0" /> Fils Madeira Certifiés
             </span>
           </div>
         </div>
@@ -123,7 +123,7 @@ export function HeroSection() {
             </div>
 
             {/* Monumental Headline */}
-            <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.04] text-stone-900 uppercase mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700 break-words">
               Donnez du <br />
               <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8 inline-block transition-transform hover:scale-105 duration-300">
                 relief éternel
@@ -138,21 +138,21 @@ export function HeroSection() {
             </p>
 
             {/* Technical Confection Cards */}
-            <div className="grid grid-cols-3 gap-3 w-full max-w-lg mb-9 p-2 rounded-2xl bg-white/90 border border-black/[0.08] shadow-sm">
-              <div className="p-3">
-                <div className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Délai Devis</div>
-                <div className="text-lg font-black text-stone-900 mt-0.5 tracking-tight">24 Heures</div>
-                <div className="text-[10px] text-stone-500 font-medium">Étude & BAT rapide</div>
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-3 w-full max-w-lg mb-8 sm:mb-9 p-2 rounded-2xl bg-white/90 border border-black/[0.08] shadow-sm">
+              <div className="p-2 sm:p-3 text-center sm:text-left">
+                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-400 font-bold">Délai Devis</div>
+                <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">24h</div>
+                <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Étude & BAT</div>
               </div>
-              <div className="p-3 border-x border-black/[0.06]">
-                <div className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Tenue Fil</div>
-                <div className="text-lg font-black text-stone-900 mt-0.5 tracking-tight">60°C Lavage</div>
-                <div className="text-[10px] text-stone-500 font-medium">Inusable & indélébile</div>
+              <div className="p-2 sm:p-3 border-x border-black/[0.06] text-center sm:text-left">
+                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-400 font-bold">Tenue Fil</div>
+                <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">60°C</div>
+                <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Inusable</div>
               </div>
-              <div className="p-3">
-                <div className="text-[10px] uppercase tracking-widest text-stone-400 font-bold">Volumes</div>
-                <div className="text-lg font-black text-stone-900 mt-0.5 tracking-tight">1 à 500+</div>
-                <div className="text-[10px] text-stone-500 font-medium">Unité ou séries</div>
+              <div className="p-2 sm:p-3 text-center sm:text-left">
+                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-400 font-bold">Volumes</div>
+                <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">1 à 500+</div>
+                <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Unité ou séries</div>
               </div>
             </div>
 
@@ -195,7 +195,7 @@ export function HeroSection() {
           <div className="lg:col-span-6 flex flex-col items-center relative">
             
             {/* Model Switcher Segmented Control */}
-            <div className="flex items-center gap-1 p-1 rounded-full bg-stone-200/80 border border-black/5 mb-6 backdrop-blur-md">
+            <div className="flex flex-wrap items-center justify-center gap-1 p-1 rounded-full bg-stone-200/80 border border-black/5 mb-6 backdrop-blur-md max-w-full">
               {SHOWCASE_ITEMS.map((item, idx) => (
                 <button
                   key={item.id}
@@ -203,7 +203,7 @@ export function HeroSection() {
                     setActiveIdx(idx);
                     setIsMacro(false);
                   }}
-                  className={`px-4 py-2 rounded-full text-[11px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  className={`px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[11px] font-black uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     activeIdx === idx
                       ? "bg-white text-stone-900 shadow-sm"
                       : "text-stone-600 hover:text-stone-900"
@@ -215,7 +215,7 @@ export function HeroSection() {
             </div>
 
             {/* Luxury Showcase Frame */}
-            <div className="relative w-full max-w-[440px] sm:max-w-[480px] aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-stone-900 border border-stone-800/80 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.25)] group">
+            <div className="relative w-full max-w-[calc(100vw-2rem)] sm:max-w-[440px] aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-stone-900 border border-stone-800/80 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.25)] group">
               
               {/* Product Visual */}
               <img
@@ -252,7 +252,7 @@ export function HeroSection() {
               </div>
 
               {/* Bottom Editorial Card */}
-              <div className="absolute inset-x-5 bottom-5 z-20 p-6 rounded-3xl bg-stone-900/90 border border-white/10 backdrop-blur-xl text-white shadow-2xl">
+              <div className="absolute inset-x-3 sm:inset-x-5 bottom-3 sm:bottom-5 z-20 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-stone-900/90 border border-white/10 backdrop-blur-xl text-white shadow-2xl">
                 
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div>

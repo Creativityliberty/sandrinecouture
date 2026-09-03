@@ -40,10 +40,10 @@ export function ReassuranceSection() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#faf8f5] border-b border-black/[0.06] relative overflow-hidden">
+    <section className="py-20 sm:py-32 px-3.5 sm:px-6 lg:px-8 bg-[#faf8f5] border-b border-black/[0.06] relative w-full max-w-full overflow-hidden">
       
       {/* Editorial Watermark */}
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

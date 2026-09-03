@@ -59,7 +59,7 @@ export function RevealOnScroll({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out will-change-transform ${className}`}
+      className={`w-full max-w-full overflow-hidden transition-all duration-700 ease-out will-change-transform ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),

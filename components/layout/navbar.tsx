@@ -67,18 +67,18 @@ export function Navbar() {
   return (
     <nav
       suppressHydrationWarning
-      className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 pointer-events-none ${
-        isScrolled ? "py-2 sm:py-3" : "py-4 sm:py-6"
+      className={`fixed top-0 left-0 right-0 w-full z-[90] transition-all duration-500 pointer-events-none ${
+        isScrolled ? "py-2 sm:py-3" : "py-3 sm:py-6"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-center">
+      <div className="w-full max-w-7xl mx-auto px-2.5 sm:px-6 flex items-center justify-center">
         
-        {/* Animated Command Bar Container */}
+        {/* Animated Command Bar Container - Guaranteed 100% Fit on 320px to 430px */}
         <div
-          className={`pointer-events-auto w-full max-w-5xl rounded-full px-3 sm:px-6 py-2 flex items-center justify-between transition-all duration-500 border ${
+          className={`pointer-events-auto w-full max-w-5xl rounded-full px-2.5 sm:px-6 py-1.5 sm:py-2 flex items-center justify-between transition-all duration-500 border ${
             isScrolled
               ? "bg-stone-950/90 border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] backdrop-blur-xl text-white"
-              : "bg-white/85 border-black/10 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] backdrop-blur-xl text-stone-900"
+              : "bg-white/90 border-black/10 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] backdrop-blur-xl text-stone-900"
           }`}
         >
           
@@ -86,9 +86,9 @@ export function Navbar() {
           <Link
             href="/"
             aria-label="Retour à l'accueil"
-            className="flex items-center gap-3 group shrink-0 no-underline"
+            className="flex items-center gap-2 sm:gap-3 group shrink-0 no-underline min-w-0"
           >
-            <div className={`w-9 h-9 rounded-full overflow-hidden border p-0.5 transition-all duration-500 group-hover:scale-105 ${
+            <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border p-0.5 shrink-0 transition-all duration-500 group-hover:scale-105 ${
               isScrolled ? "border-primary/40 bg-stone-900 shadow-sm" : "border-primary/20 bg-white shadow-xs"
             }`}>
               <img
@@ -100,13 +100,13 @@ export function Navbar() {
               />
             </div>
             
-            <div className="flex flex-col text-left">
-              <span className={`text-xs font-black tracking-tighter uppercase leading-none font-mono ${
+            <div className="flex flex-col text-left min-w-0">
+              <span className={`text-[11px] sm:text-xs font-black tracking-tighter uppercase leading-none font-mono truncate ${
                 isScrolled ? "text-white" : "text-stone-900"
               }`}>
                 By Sandrine
               </span>
-              <span className="text-[9px] uppercase tracking-widest text-primary font-bold">
+              <span className="text-[8px] sm:text-[9px] uppercase tracking-wider sm:tracking-widest text-primary font-bold truncate">
                 Atelier Normand
               </span>
             </div>

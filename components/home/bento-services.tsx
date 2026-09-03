@@ -109,16 +109,16 @@ export function BentoServices() {
           </div>
 
           {/* Filter Pills */}
-          <div className="inline-flex p-1.5 rounded-2xl bg-white border border-stone-200 shadow-xs">
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-white border border-stone-200 shadow-xs max-w-full">
             {[
-              { id: "all", label: "Toutes nos réalisations" },
+              { id: "all", label: "Toutes mes réalisations" },
               { id: "pro", label: "Professionnels & Clubs" },
               { id: "particulier", label: "Particuliers & Naissance" },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id as any)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                   filter === tab.id
                     ? "bg-stone-900 text-white shadow-xs"
                     : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"

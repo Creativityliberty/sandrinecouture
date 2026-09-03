@@ -14,8 +14,8 @@ export function RealisationsSection() {
   const displayImages = [...REALISATIONS].sort((a, b) => b.id - a.id).slice(0, 8);
 
   return (
-    <section id="réalisations" className="py-24 px-6 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="réalisations" className="py-20 sm:py-24 px-3.5 sm:px-6 bg-white w-full max-w-full overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-8 mb-16 text-center md:text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-4 italic leading-[0.9] uppercase">
