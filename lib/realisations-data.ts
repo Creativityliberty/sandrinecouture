@@ -4,6 +4,8 @@ export interface Realisation {
   title: string;
   category: "Entreprises" | "Particuliers" | "Bébé" | "Accessoires";
   desc: string;
+  searchIntent?: string;
+  keywords?: string[];
 }
 
 export const REALISATIONS: Realisation[] = [
@@ -1048,7 +1050,63 @@ export const REALISATIONS: Realisation[] = [
     url: "/images/realisations/gilet-berger-bebe-reversible-suedine-marron.webp",
     title: "Gilet Berger Bébé Réversible Suédine",
     category: "Bébé",
-    desc: "Gilet réversible pour bébé, côté suédine marron avec biais imprimé de petits oursons."
+    desc: "Gilet réversible pour bébé, côté suédine marron avec biais imprimé de petits oursons.",
+    searchIntent: "Gilet Berger Bébé Réversible Fait Main Normandie",
+    keywords: ["gilet berger bébé réversible", "gilet suédine bébé", "mode bébé artisanale", "cadeau naissance robertot"]
+  },
+  {
+    id: 151,
+    url: "/images/realisations/doudoune-sans-manche-brodee-pont-au-golf-club-normandie.webp",
+    title: "Doudoune Sans Manche Pont Au Golf",
+    category: "Entreprises",
+    desc: "Doudoune matelassée sans manche marine personnalisée avec broderie haute précision du logo 'Pont Au Golf' (golfeur au swing rouge et lettrage blanc). Idéal pour clubs sportifs, équipes et entreprises.",
+    searchIntent: "Broderie Textile Professionnel & Vêtements de Club Sportif",
+    keywords: ["broderie doudoune entreprise", "textile club de golf brodé", "veste sans manche personnalisée", "broderie logo normandie"]
+  },
+  {
+    id: 152,
+    url: "/images/realisations/sweats-brodes-nounou-damour-tata-damour-cadeau-personnalise.webp",
+    title: "Sweats & Chemises 'Nounou d'amour' & 'Tata d'amour'",
+    category: "Particuliers",
+    desc: "Série de sweats et chemises en jean, beige et imprimé léopard, brodés en fil satiné 'Nounou d'amour' et 'Tata d'amour' en écriture cursive raffinée. Cadeau d'émotion et de remerciement pour nounous, taties et maîtresses.",
+    searchIntent: "Cadeau Personnalisé Nounou, Assistante Maternelle & Famille",
+    keywords: ["cadeau brodé nounou d'amour", "pull tata d'amour personnalisé", "cadeau fin d'année crèche", "broderie lettrage cursive"]
+  },
+  {
+    id: 153,
+    url: "/images/realisations/coffret-trousseau-naissance-come-gigoteuse-koala-cape-bain-gilet.webp",
+    title: "Trousseau Complet Bébé Côme (Gigoteuse Koala, Cape & Gilet)",
+    category: "Bébé",
+    desc: "Trousseau de naissance d'exception pour Côme : gigoteuse en gaze de coton imprimé koala et éponge vert sauge brodée 'Chut... je dors', cape de bain taupe brodée ourson, bavoirs assortis 'J'peux pas j'ai biberon' et gilet de berger réversible en sherpa.",
+    searchIntent: "Coffret Trousseau de Naissance Complet Haut de Gamme",
+    keywords: ["trousseau naissance personnalisé", "gigoteuse gaze de coton brodée", "cape de bain prénom bébé", "gilet berger moumoute bébé"]
+  },
+  {
+    id: 154,
+    url: "/images/realisations/doudou-plat-lapin-rose-liberty-brode-prenom-nahima.webp",
+    title: "Doudou Plat Lapin Rose & Liberty Nahima",
+    category: "Bébé",
+    desc: "Doudou plat lapin confectionné en éponge rose poudré ultra-douce et véritable tissu Liberty fleuri assorti, brodé au prénom 'Nahima' en fil framboise grand teint résistant aux lavages fréquents.",
+    searchIntent: "Doudou Plat Bébé Personnalisé Brodé Prénom",
+    keywords: ["doudou lapin brodé prénom", "doudou liberty personnalisé fille", "cadeau naissance artisanal france", "peluche doudou rose poudré"]
+  },
+  {
+    id: 155,
+    url: "/images/realisations/lange-bapteme-brode-ours-parrain-marraine-enzo.webp",
+    title: "Lange de Baptême Brodé Enzo (Parrain & Marraine)",
+    category: "Bébé",
+    desc: "Lange de baptême d'apparat en double gaze de coton blanc immaculé, orné d'un délicat ourson brodé et des inscriptions de cérémonie personnalisées : 'Ma marraine Josépha / Mon parrain Franck' et 'Baptême Enzo / 5 Septembre 2026'.",
+    searchIntent: "Lange de Cérémonie & Cadeau de Baptême Personnalisé",
+    keywords: ["lange baptême brodé prénom", "cadeau parrain marraine baptême", "linge de cérémonie broderie", "mousseline coton baptême normandie"]
+  },
+  {
+    id: 156,
+    url: "/images/realisations/cartables-maternelle-velours-cotele-retro-brodes-ruben-illan.webp",
+    title: "Cartables Maternelle Rétro Velours Côtelé Ruben & Illan",
+    category: "Bébé",
+    desc: "Cartables d'école maternelle style rétro en velours côtelé bleu pétrole avec fermoirs cartable métalliques vintage, poignée confort et broderie du prénom en couleurs contrastées ('Ruben' en rouge écarlate et 'Illan' en vert anis printanier).",
+    searchIntent: "Cartable Maternelle Velours Côtelé Personnalisé Rentrée",
+    keywords: ["cartable maternelle personnalisé prénom", "sac école velours côtelé", "cartable brodé rentrée scolaire", "confection sac enfant artisanale"]
   }
 ];
 

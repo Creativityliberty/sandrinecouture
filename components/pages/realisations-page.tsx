@@ -151,11 +151,16 @@ export function RealisationsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition-opacity" />
 
-                  {/* Category Pill Tag */}
-                  <div className="absolute top-4 left-4 z-10">
+                  {/* Category & Search Intent Pill Tag */}
+                  <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5 items-start">
                     <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-stone-900 text-[9px] font-mono tracking-widest uppercase font-bold shadow-xs">
                       {img.category}
                     </span>
+                    {img.searchIntent && (
+                      <span className="px-2.5 py-0.5 rounded-md bg-stone-950/85 backdrop-blur-md text-amber-300 text-[8px] font-mono tracking-wider uppercase font-semibold shadow-xs border border-white/10 hidden sm:inline-block">
+                        🎯 {img.searchIntent}
+                      </span>
+                    )}
                   </div>
 
                   {/* Zoom Action Icon */}
@@ -273,17 +278,40 @@ export function RealisationsPage() {
               {/* Detail Sidebar */}
               <div className="md:w-2/5 p-8 flex flex-col justify-between bg-[#faf8f5]">
                 <div>
-                  <span className="px-3 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono uppercase tracking-widest font-bold inline-block mb-4">
-                    {selectedRealisation.category}
-                  </span>
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono uppercase tracking-widest font-bold inline-block">
+                      {selectedRealisation.category}
+                    </span>
+                    {selectedRealisation.searchIntent && (
+                      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-[9px] font-mono uppercase tracking-wider font-bold inline-block">
+                        🎯 {selectedRealisation.searchIntent}
+                      </span>
+                    )}
+                  </div>
 
                   <h3 className="text-2xl font-black uppercase tracking-tight text-stone-900 mb-4">
                     {selectedRealisation.title}
                   </h3>
 
-                  <p className="text-stone-600 text-xs leading-relaxed mb-6 font-normal">
+                  <p className="text-stone-600 text-xs leading-relaxed mb-4 font-normal">
                     {selectedRealisation.desc || "Pièce d'exception brodée avec des fils certifiés Oeko-Tex Standard 100. Confectionnée avec précision dans notre atelier de Robertot."}
                   </p>
+
+                  {/* Targeted SEO Keywords */}
+                  {selectedRealisation.keywords && selectedRealisation.keywords.length > 0 && (
+                    <div className="mb-5">
+                      <span className="text-[9px] font-mono uppercase tracking-widest text-stone-500 font-bold block mb-1.5">
+                        Mots-clés SEO ciblés :
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {selectedRealisation.keywords.map((kw, kwIdx) => (
+                          <span key={kwIdx} className="px-2 py-0.5 rounded-md bg-stone-200/80 text-stone-700 text-[9px] font-mono">
+                            #{kw}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="space-y-3 pt-4 border-t border-black/[0.08] text-xs font-mono">
                     <div className="flex items-center gap-2 text-stone-600">
