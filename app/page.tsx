@@ -14,6 +14,7 @@ import { SegmentationSection } from "@/components/home/segmentation-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { ReelsCarousel } from "@/components/home/reels-carousel";
 import { Navbar } from "@/components/layout/navbar";
+import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 
 export default function HomePage() {
   return (
@@ -21,16 +22,46 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <HeroSection />
-        <MarqueeBanner />
-        <SegmentationSection />
-        <BentoServices />
-        <ReassuranceSection />
-        <ProcessSection />
-        <RealisationsSection />
-        <ReelsCarousel />
-        <TestimonialsSection />
-        <LocalisationSection />
-        <CtaSection />
+
+        <RevealOnScroll direction="up" delay={50}>
+          <MarqueeBanner />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <SegmentationSection />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <BentoServices />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <ReassuranceSection />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <ProcessSection />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <RealisationsSection />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <ReelsCarousel />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <TestimonialsSection />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <LocalisationSection />
+        </RevealOnScroll>
+
+        <RevealOnScroll direction="up" delay={100}>
+          <CtaSection />
+        </RevealOnScroll>
       </main>
       <AIAssistant />
       <Footer />

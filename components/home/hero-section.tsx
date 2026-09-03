@@ -123,9 +123,9 @@ export function HeroSection() {
             </div>
 
             {/* Monumental Headline */}
-            <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-6">
+            <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
               Donnez du <br />
-              <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
+              <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8 inline-block transition-transform hover:scale-105 duration-300">
                 relief éternel
               </span> <br />
               à vos créations.
