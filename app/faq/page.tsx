@@ -1,3 +1,4 @@
+import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 "use client";
 
 import { Footer } from "@/components/layout/footer";

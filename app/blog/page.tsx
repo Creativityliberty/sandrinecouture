@@ -1,3 +1,4 @@
+import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 "use client";
 
 import { Footer } from "@/components/layout/footer";
@@ -88,6 +89,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <RevealOnScroll direction="up" delay={80}>
       {/* Articles Grid */}
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
@@ -165,6 +167,9 @@ export default function BlogPage() {
         </div>
       </section>
 
+      </RevealOnScroll>
+
+      <RevealOnScroll direction="up" delay={80}>
       {/* Demande de Devis ou Contact Section */}
       <section className="py-20 px-6 bg-pink-50/50 border-t border-b border-pink-100/60 my-12">
         <div className="max-w-4xl mx-auto text-center">
@@ -196,6 +201,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      </RevealOnScroll>
       <Footer />
     </div>
   );
