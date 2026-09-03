@@ -78,6 +78,7 @@ export const viewport: Viewport = {
 
 import { CartProvider } from "@/context/cart-context";
 import { CartDrawer } from "@/components/layout/cart-drawer";
+import { OrbitalSphereBackground } from "@/components/effects/orbital-sphere-background";
 
 export default function RootLayout({
   children,
@@ -91,9 +92,10 @@ export default function RootLayout({
         <SchemaOrgOrganization />
         <SchemaOrgLocalBusiness />
       </head>
-      <body className="antialiased font-sans" suppressHydrationWarning>
+      <body className="antialiased font-sans relative" suppressHydrationWarning>
         <CartProvider>
-          {children}
+          <OrbitalSphereBackground />
+          <div className="relative z-10">{children}</div>
           <CartDrawer />
         </CartProvider>
       </body>

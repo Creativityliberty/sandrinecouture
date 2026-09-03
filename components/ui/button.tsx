@@ -1,9 +1,8 @@
-
 import React from 'react';
+import { cn } from '@/lib/utils';
 
-// Explicitly define className and children to ensure they are recognized by the compiler
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'outline' | 'ghost' | 'whatsapp';
+  variant?: 'primary' | 'outline' | 'outline-dark' | 'ghost' | 'whatsapp';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   children?: React.ReactNode;
@@ -20,7 +19,8 @@ export function Button({
   
   const variants = {
     primary: "bg-primary text-white shadow-lg shadow-primary/20 hover:scale-105 hover:shadow-primary/30",
-    outline: "border-2 border-black/10 text-black hover:bg-black hover:text-white",
+    outline: "border-2 border-black/10 text-stone-900 hover:bg-stone-900 hover:text-white",
+    "outline-dark": "border border-white/20 bg-white/10 text-white hover:bg-white hover:text-stone-950 shadow-sm",
     ghost: "text-gray-700 hover:text-primary hover:bg-primary/5",
     whatsapp: "bg-[#1da851] text-white shadow-lg shadow-green-600/20 hover:scale-105 hover:bg-[#16803d]"
   };
@@ -33,7 +33,7 @@ export function Button({
 
   return (
     <button 
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={cn(baseStyles, variants[variant], sizes[size], className)}
       {...props}
     >
       {children}

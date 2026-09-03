@@ -1,65 +1,148 @@
-import React from 'react';
-import { Building2, Heart, ArrowRight } from 'lucide-react';
-import { Button } from '../ui/button';
-import Link from 'next/link';
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { Building2, Heart, ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function SegmentationSection() {
   return (
-    <section className="py-32 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <h2 className="text-3xl sm:text-4xl font-black tracking-tighter italic mb-4 uppercase leading-tight">Deux parcours, <br /><span className="text-primary not-italic">une seule exigence.</span></h2>
-        <p className="text-sm text-gray-700 font-medium max-w-xl mx-auto italic uppercase tracking-tighter">Choisissez votre besoin pour aller à l'essentiel.</p>
-      </div>
-
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12 text-center md:text-left">
-        {/* Card Entreprise */}
-        <div className="bento-card glass group min-h-[500px] flex flex-col animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200 fill-mode-both">
-          <div className="h-64 overflow-hidden relative">
-            <img src="/images/realisations/serviette-brodee-audi-axel.webp" width={600} height={800} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Broderie professionnelle pour entreprise" />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-            <div className="absolute top-6 left-6 w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center shadow-xl">
-              <Building2 size={28} />
-            </div>
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#faf8f5] border-b border-black/[0.06] relative overflow-hidden">
+      
+      {/* Editorial grid container */}
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Header with high-fashion restraint */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="max-w-xl">
+            <span className="text-[10px] uppercase font-black tracking-[0.25em] text-primary block mb-3">
+              Sur-Mesure & Spécialisation
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-stone-900 leading-[1.05]">
+              Deux univers, <br />
+              <span className="font-serif italic font-normal text-primary normal-case">la même exigence</span> du fil.
+            </h2>
           </div>
-          <div className="p-10 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tighter mb-3 italic uppercase leading-none">Entreprises <br /><span className="text-primary not-italic">& équipes</span></h3>
-              <p className="text-gray-700 text-sm mb-6 leading-relaxed font-medium">
-                Uniformes brodés pour une image pro : tabliers, polos, casquettes, patchs velcro. Idéal pour valoriser votre identité visuelle avec durabilité.
-              </p>
-            </div>
-            <Link href="/entreprises" className="no-underline">
-              <Button variant="outline" className="w-full sm:w-auto h-12 uppercase text-[9px] font-black tracking-widest px-10">
-                Offre entreprises <ArrowRight size={16} className="ml-2" />
-              </Button>
-            </Link>
-          </div>
+          <p className="text-stone-500 text-sm max-w-sm font-medium leading-relaxed">
+            Que votre demande concerne 500 polos corporate ou un trousseau de naissance cousu à l'unité, notre atelier applique les mêmes standards de rigueur artisanale.
+          </p>
         </div>
 
-        {/* Card Particulier */}
-        <div className="bento-card glass border-primary/5 bg-primary/[0.02] group min-h-[500px] flex flex-col animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500 fill-mode-both">
-          <div className="h-64 overflow-hidden relative">
-            <img src="/images/realisations/sac-personnalise-brode-octavia.webp" width={600} height={800} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Cadeau de naissance personnalisé brodé" />
-            <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors" />
-            <div className="absolute top-6 left-6 w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-xl">
-              <Heart size={28} fill="currentColor" />
+        {/* 2 Big Editorial Architectural Panels */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          {/* Panel 1: Entreprises & Métiers */}
+          <div className="group relative rounded-[2.5rem] bg-stone-900 text-white p-8 sm:p-12 overflow-hidden flex flex-col justify-between min-h-[540px] shadow-2xl transition-all duration-500 hover:shadow-stone-900/30">
+            {/* Ambient Background Image with dark luxury grading */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src="/images/realisations/serviette-brodee-audi-axel.webp"
+                alt="Broderie professionnelle entreprises"
+                className="w-full h-full object-cover opacity-35 transition-transform duration-1000 ease-out group-hover:scale-105 group-hover:opacity-40"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/40" />
             </div>
-          </div>
-          <div className="p-10 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tighter mb-3 italic uppercase leading-none">Particuliers <br /><span className="text-primary not-italic">& cadeaux</span></h3>
-              <p className="text-gray-700 text-sm mb-6 leading-relaxed font-medium">
-                Prénom, date, message brodé. Parfait pour bébé, anniversaires et cadeaux uniques qui durent toute une vie.
+
+            {/* Top Metadata */}
+            <div className="relative z-10 flex items-center justify-between">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-white">
+                <Building2 size={22} />
+              </div>
+              <span className="px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[9px] font-mono tracking-widest uppercase text-stone-200">
+                PRO & COLLECTIVITÉS
+              </span>
+            </div>
+
+            {/* Bottom Content */}
+            <div className="relative z-10 pt-16">
+              <div className="text-[10px] font-mono text-primary uppercase tracking-[0.2em] mb-2">
+                Pôle Corporate • Séries & Identité
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white mb-4">
+                Uniformes, Tabliers & Équipements Professionnels
+              </h3>
+              <p className="text-stone-300 text-sm leading-relaxed mb-8 max-w-md font-normal">
+                Piquage de haute précision, résistance certifiée aux lavages répétés à haute température. Donnez à votre équipe une prestance incomparable.
               </p>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <Link href="/entreprises">
+                  <Button
+                    size="lg"
+                    className="h-13 px-8 rounded-full bg-white text-stone-900 hover:bg-stone-100 font-bold uppercase tracking-wider text-xs shadow-lg transition-transform group-hover:translate-x-0.5 cursor-pointer"
+                  >
+                    <span>L'offre entreprises</span>
+                    <ArrowUpRight size={14} className="ml-1" />
+                  </Button>
+                </Link>
+                <span className="text-[11px] font-mono text-stone-400">
+                  Devis & BAT sous 24h
+                </span>
+              </div>
             </div>
-            <Link href="/particuliers" className="no-underline">
-              <Button className="w-full sm:w-auto h-12 uppercase text-[9px] font-black tracking-widest px-10">
-                Offre particuliers <ArrowRight size={16} className="ml-2" />
-              </Button>
-            </Link>
+
+            {/* Subtle border line */}
+            <div className="absolute inset-3 border border-white/10 rounded-[2.1rem] pointer-events-none" />
           </div>
+
+          {/* Panel 2: Particuliers & Naissance */}
+          <div className="group relative rounded-[2.5rem] bg-[#f4ece1] text-stone-900 p-8 sm:p-12 overflow-hidden flex flex-col justify-between min-h-[540px] border border-stone-300/70 shadow-sm transition-all duration-500 hover:shadow-xl">
+            {/* Ambient Image */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src="/images/realisations/sac-personnalise-brode-octavia.webp"
+                alt="Cadeaux de naissance personnalisés"
+                className="w-full h-full object-cover opacity-25 mix-blend-multiply transition-transform duration-1000 ease-out group-hover:scale-105 group-hover:opacity-30"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#f4ece1] via-[#f4ece1]/80 to-transparent" />
+            </div>
+
+            {/* Top Metadata */}
+            <div className="relative z-10 flex items-center justify-between">
+              <div className="w-12 h-12 rounded-2xl bg-white border border-black/10 flex items-center justify-center text-primary shadow-xs">
+                <Heart size={22} className="fill-primary/20" />
+              </div>
+              <span className="px-3.5 py-1.5 rounded-full bg-white/80 border border-black/10 text-[9px] font-mono tracking-widest uppercase text-stone-700">
+                PIÈCES UNIQUES
+              </span>
+            </div>
+
+            {/* Bottom Content */}
+            <div className="relative z-10 pt-16">
+              <div className="text-[10px] font-mono text-primary uppercase tracking-[0.2em] mb-2">
+                Pôle Atelier • Cadeaux & Naissance
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-stone-900 mb-4">
+                Gilets Moumoute, Linge Délicat & Trousseaux
+              </h3>
+              <p className="text-stone-600 text-sm leading-relaxed mb-8 max-w-md font-normal">
+                Prénoms, dates symboliques, motifs délicats brodés sur des tissus hypoallergéniques certifiés Oeko-Tex. Des souvenirs impérissables pour toute une vie.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <Link href="/particuliers">
+                  <Button
+                    size="lg"
+                    className="h-13 px-8 rounded-full bg-stone-900 text-white hover:bg-stone-800 font-bold uppercase tracking-wider text-xs shadow-lg transition-transform group-hover:translate-x-0.5 cursor-pointer"
+                  >
+                    <span>L'offre particuliers</span>
+                    <ArrowUpRight size={14} className="ml-1" />
+                  </Button>
+                </Link>
+                <span className="text-[11px] font-mono text-stone-500">
+                  Personnalisation sur-mesure
+                </span>
+              </div>
+            </div>
+
+            {/* Subtle border line */}
+            <div className="absolute inset-3 border border-black/5 rounded-[2.1rem] pointer-events-none" />
+          </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }

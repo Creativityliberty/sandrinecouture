@@ -47,6 +47,7 @@ export function CartDrawer() {
   const [streetAddress, setStreetAddress] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [city, setCity] = useState("");
+  const [deliveryMethod, setDeliveryMethod] = useState<"mondial_relay" | "colissimo" | "atelier">("mondial_relay");
 
   // Prevent hydration warnings and load local settings
   useEffect(() => {
@@ -122,7 +123,13 @@ export function CartDrawer() {
       message += `💰 *TOTAL GLOBAL : ${cartTotal.toFixed(2)} €*\n\n`;
     }
 
-    message += `📦 *ADRESSE DE LIVRAISON :*\n`;
+    const methodLabels = {
+      mondial_relay: "Mondial Relay (Point Relais)",
+      colissimo: "Colissimo Domicile (48h)",
+      atelier: "Retrait Atelier Robertot (76)"
+    };
+    message += `🚚 *MODE DE LIVRAISON SOUHAITÉ :* ${methodLabels[deliveryMethod]}\n`;
+    message += `📦 *COORDONNÉES DE LIVRAISON :*\n`;
     message += `👤 Nom : ${fullName.trim()}\n`;
     message += `🏠 Adresse : ${streetAddress.trim()}\n`;
     message += `📮 Code Postal : ${postalCode.trim()}\n`;
@@ -273,9 +280,59 @@ export function CartDrawer() {
 
               {/* Formulaire d'adresse de livraison */}
               <div className="border-t border-black/5 pt-6 space-y-4 bg-gray-50/50 p-4 rounded-3xl border border-black/5">
-                <h3 className="text-[10px] font-black uppercase tracking-wider text-gray-900">
-                  Coordonnées de livraison
-                </h3>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-[10px] font-black uppercase tracking-wider text-gray-900">
+                    Mode d'expédition & Coordonnées
+                  </h3>
+                  <span className="text-[8px] font-bold px-2 py-0.5 rounded-full bg-pink-100 text-primary uppercase">
+                    France & Europe
+                  </span>
+                </div>
+
+                {/* Delivery Method Selector */}
+                <div className="grid grid-cols-3 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryMethod("mondial_relay")}
+                    className={`p-2.5 rounded-2xl border text-left flex flex-col justify-between transition-all ${
+                      deliveryMethod === "mondial_relay"
+                        ? "border-primary bg-primary/10 shadow-sm ring-1 ring-primary"
+                        : "border-black/10 bg-white hover:border-black/20"
+                    }`}
+                  >
+                    <span className="text-[8px] font-black uppercase tracking-tight text-primary">Mondial Relay</span>
+                    <span className="text-[10px] font-extrabold text-gray-900">Point Relais</span>
+                    <span className="text-[8px] text-gray-700 font-semibold">Économique</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryMethod("colissimo")}
+                    className={`p-2.5 rounded-2xl border text-left flex flex-col justify-between transition-all ${
+                      deliveryMethod === "colissimo"
+                        ? "border-primary bg-primary/10 shadow-sm ring-1 ring-primary"
+                        : "border-black/10 bg-white hover:border-black/20"
+                    }`}
+                  >
+                    <span className="text-[8px] font-black uppercase tracking-tight text-primary">Colissimo</span>
+                    <span className="text-[10px] font-extrabold text-gray-900">À domicile</span>
+                    <span className="text-[8px] text-gray-700 font-semibold">48h La Poste</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setDeliveryMethod("atelier")}
+                    className={`p-2.5 rounded-2xl border text-left flex flex-col justify-between transition-all ${
+                      deliveryMethod === "atelier"
+                        ? "border-primary bg-primary/10 shadow-sm ring-1 ring-primary"
+                        : "border-black/10 bg-white hover:border-black/20"
+                    }`}
+                  >
+                    <span className="text-[8px] font-black uppercase tracking-tight text-primary">Retrait</span>
+                    <span className="text-[10px] font-extrabold text-gray-900">Atelier 76</span>
+                    <span className="text-[8px] text-gray-700 font-semibold">Gratuit (Robertot)</span>
+                  </button>
+                </div>
                 
                 <div className="space-y-3">
                   <div>

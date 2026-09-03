@@ -126,8 +126,8 @@ export function AIAssistant() {
           <div className="bg-primary p-6 text-white shrink-0">
             <div className="flex justify-between items-center mb-1">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center overflow-hidden border border-white/10">
-                  <img src="/logo-sandrine.webp" width={40} height={40} className="w-full h-full object-cover" alt="Logo" />
+                <div className="w-11 h-11 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden border border-white/20 shadow-inner p-1">
+                  <img src="/chatbot-icon-3d.webp" width={44} height={44} className="w-full h-full object-contain drop-shadow-md" alt="Aiguille d'Or Sandrine Couture" />
                 </div>
                 <div>
                   <p className="font-black italic uppercase tracking-tighter leading-none">By Sandrine Couture</p>
@@ -215,13 +215,26 @@ export function AIAssistant() {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-black text-white p-5 rounded-[2rem] shadow-2xl hover:scale-110 transition-all group relative border-2 border-primary/20"
+          aria-label="Ouvrir l'assistant atelier Sandrine Couture"
+          className="w-16 h-16 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 group relative border-2 border-pink-400/40 bg-gradient-to-tr from-stone-950 via-stone-900 to-pink-950 p-1 flex items-center justify-center hover:shadow-pink-500/30 hover:shadow-2xl"
         >
-          <div className="absolute top-0 right-0 w-4 h-4 bg-green-500 border-4 border-white rounded-full translate-x-1/4 -translate-y-1/4" />
-          <MessageCircle className="w-7 h-7" />
+          {/* Active online pulse dot */}
+          <div className="absolute top-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full z-10 shadow-sm animate-pulse" />
+          
+          {/* 3D Gold & Glass Spool Needle Icon */}
+          <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center p-1.5 bg-black/40">
+            <img 
+              src="/chatbot-icon-3d.webp" 
+              alt="Assistant Broderie 3D" 
+              className="w-full h-full object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-[0_4px_8px_rgba(244,63,94,0.4)]" 
+            />
+          </div>
+
+          {/* Hover Tooltip Pill */}
           <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 pointer-events-none">
-            <div className="bg-white text-black px-5 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all shadow-xl border border-black/5 translate-x-4 group-hover:translate-x-0 italic">
-              Un projet broderie ? ✨
+            <div className="bg-stone-950/95 text-white px-4 py-2.5 rounded-2xl text-[10px] font-black uppercase tracking-[0.15em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all shadow-2xl border border-white/10 translate-x-3 group-hover:translate-x-0 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-pink-500 animate-ping" />
+              <span>Besoin d'un conseil broderie ? ✨</span>
             </div>
           </div>
         </button>

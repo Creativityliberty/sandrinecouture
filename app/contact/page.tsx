@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { Mail, MapPin, MessageCircle, Phone, Star, Building2, User } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Star, Building2, User, Instagram, Facebook, Truck } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import React, { Suspense } from "react";
 
@@ -279,6 +279,50 @@ _Envoyé depuis le site Sandrine Couture_`;
                 </p>
               </div>
             </a>
+
+            {/* Réseaux Sociaux & Mondial Relay */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <a
+                href={SITE_CONFIG.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3.5 bg-gradient-to-tr from-[#f09433]/10 via-[#e6683c]/10 to-[#bc1888]/10 rounded-xl border border-pink-500/20 hover:scale-105 transition-all group no-underline"
+              >
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] flex items-center justify-center text-white shrink-0 shadow-sm">
+                  <Instagram size={18} />
+                </div>
+                <div>
+                  <p className="font-bold italic uppercase text-[10px] tracking-tight mb-0.5 text-black">Instagram</p>
+                  <p className="text-[9px] text-gray-700 font-semibold">@bysandrinecouture</p>
+                </div>
+              </a>
+
+              <a
+                href={SITE_CONFIG.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3.5 bg-[#1877F2]/10 rounded-xl border border-[#1877F2]/20 hover:scale-105 transition-all group no-underline"
+              >
+                <div className="w-9 h-9 rounded-xl bg-[#1877F2] flex items-center justify-center text-white shrink-0 shadow-sm">
+                  <Facebook size={18} />
+                </div>
+                <div>
+                  <p className="font-bold italic uppercase text-[10px] tracking-tight mb-0.5 text-black">Facebook</p>
+                  <p className="text-[9px] text-gray-700 font-semibold">By Sandrine Couture</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Badge Mondial Relay */}
+            <div className="p-4 bg-pink-50/60 rounded-2xl border border-pink-200/60 flex items-center gap-3.5">
+              <div className="w-9 h-9 rounded-xl bg-primary text-white flex items-center justify-center shrink-0">
+                <Truck size={18} />
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-wider text-black">Livraison Mondial Relay & Colissimo</p>
+                <p className="text-[9px] text-gray-700 font-medium">Expédition express en point relais ou domicile en France métropolitaine.</p>
+              </div>
+            </div>
           </div>
 
           {/* Devis Form */}

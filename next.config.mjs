@@ -20,9 +20,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ["image/webp"],
   },
-  experimental: {
-    optimizeCss: true,
-  },
+  experimental: {},
 };
 
 export default nextConfig;

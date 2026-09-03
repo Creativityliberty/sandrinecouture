@@ -1,188 +1,135 @@
-import { Star, Award, ArrowUpRight } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/site-config";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import React, { useState } from "react";
+import { Star, Award, Quote, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export function TestimonialsSection() {
   const testimonials = [
     {
       name: "Ophélie Cavelier",
-      role: "Cliente Particulier",
-      company: "Avis Google",
-      text: "J’ai eu la chance de faire réaliser deux broderies personnalisées chez Sandrine, et je ne peux que la recommander ! C’est une personne adorable, passionnée et très à l’écoute. Elle a su comprendre exactement ce que j’avais en tête et le résultat est tout simplement magnifique. En plus de son immense gentillesse, elle travaille avec beaucoup de soin et de rapidité : j’ai reçu mes broderies très vite. C’est un vrai plaisir de rencontrer une personne aussi investie dans son travail. Encore un immense merci, je reviendrai avec grand plaisir !",
+      role: "Création Particulier",
+      text: "J’ai eu la chance de faire réaliser deux broderies personnalisées chez Sandrine, et je ne peux que la recommander ! Elle a su comprendre exactement ce que j’avais en tête et le résultat est tout simplement magnifique. Elle travaille avec beaucoup de soin et de rapidité.",
       rating: 5,
-      image: "/images/avatars/ophelie.jpg"
+      date: "Avis vérifié Google",
+      tag: "Pièces Naissance"
     },
     {
       name: "Arthur Lbs",
-      role: "Client",
-      company: "Avis Google",
-      text: "Qualité de broderie au top. Travail de précision soigné et soignabilité exemplaire. Sandrine a su répondre parfaitement à mes attentes avec des finitions impeccables.",
+      role: "Client Pro & Équipe",
+      text: "Qualité de broderie au top. Travail de précision soigné et réactivité exemplaire. Sandrine a su répondre parfaitement à mes attentes avec des finitions impeccables sur nos textiles.",
       rating: 5,
-      image: "/images/avatars/arthur.jpg"
+      date: "Avis vérifié Google",
+      tag: "Série Textile"
     },
     {
       name: "Chloé Larchevesque",
       role: "Maman",
-      company: "Avis Google",
-      text: "Je suis très contente pour la création du premier cartable de ma fille pour sa rentrée scolaire. Les détails sont magnifiques, j'adore le travail réalisé. Encore merci !",
+      text: "Je suis très contente pour la création du premier cartable de ma fille pour sa rentrée scolaire. Les détails sont magnifiques, j'adore le travail réalisé avec passion. Encore un immense merci !",
       rating: 5,
-      image: "/images/avatars/chloe.jpg"
+      date: "Avis vérifié Google",
+      tag: "Cartable Brodé"
     },
     {
       name: "Nadège Lobjois",
       role: "Cliente",
-      company: "Avis Google",
-      text: "Très satisfaite de la gigoteuse faite par Sandrine pour ma petite fille. Je recommande à 100% ! Merci encore pour la rapidité d'exécution et la qualité irréprochable du produit.",
+      text: "Très satisfaite de la gigoteuse faite par Sandrine pour ma petite fille. Je recommande à 100% ! Merci encore pour la rapidité d'exécution et la qualité irréprochable des finitions.",
       rating: 5,
-      image: "/images/avatars/nadege.jpg"
+      date: "Avis vérifié Google",
+      tag: "Gigoteuse Bébé"
     },
     {
       name: "Kehlani Lauthner",
       role: "Local Guide",
-      company: "Avis Google",
-      text: "Je recommande vivement, j’ai commandé à plusieurs reprises : serviettes d'invités mains brodées, carnet de santé personnalisé pour une naissance, etc. Un travail d'une grande finesse et envoi rapide.",
+      text: "Je recommande vivement, j’ai commandé à plusieurs reprises : serviettes d'invités brodées, carnet de santé personnalisé pour une naissance. Un travail d'une grande finesse et envoi très rapide.",
       rating: 5,
-      image: "/images/avatars/kehlani.jpg"
+      date: "Avis vérifié Google",
+      tag: "Carnet de Santé"
     },
     {
       name: "Angélique Justin",
-      role: "Cliente",
-      company: "Avis Google",
-      text: "Atelier de broderie d'une grande qualité et accueil très chaleureux. Sandrine est à l'écoute des besoins et propose un travail méticuleux et rapide. Je recommande vivement !",
+      role: "Cliente Fidèle",
+      text: "Atelier de broderie d'une grande qualité et accueil chaleureux. Sandrine est à l'écoute des besoins et propose un travail méticuleux et rapide. Vous pouvez y aller les yeux fermés !",
       rating: 5,
-      image: "/images/avatars/angelique.jpg"
-    },
+      date: "Avis vérifié Google",
+      tag: "Fidélité Atelier"
+    }
   ];
 
-  return (
-    <section className="py-32 px-6 relative overflow-hidden bg-gray-50/50">
-      
-      {/* Background Decorative Elements */}
-      <div className="absolute top-1/3 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[130px] animate-pulse duration-5000" />
-      <div className="absolute bottom-10 left-0 -z-10 w-[450px] h-[450px] bg-blue-500/5 rounded-full blur-[120px]" />
+  const [activeIdx, setActiveIdx] = useState(0);
 
+  return (
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#faf8f5] border-b border-black/[0.06] relative overflow-hidden">
+      
       <div className="max-w-7xl mx-auto">
         
-        {/* Header */}
-        <div className="flex flex-col items-center text-center mb-24 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-black/5 rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-4 shadow-sm">
-            <Award className="w-3.5 h-3.5 text-primary" />
-            <span>Artisanat local d'excellence</span>
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-primary block mb-3">
+              Retours d'Expérience • Avis 5/5
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-stone-900 leading-[1.05]">
+              La confiance <br />
+              <span className="font-serif italic font-normal text-primary normal-case">fil après fil</span>.
+            </h2>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase leading-[0.95] text-gray-900 mb-6">
-            ILS PARLENT DE NOS<br />
-            <span className="text-primary font-serif italic normal-case lg:text-7xl">Créations.</span>
-          </h2>
-          
-          <div className="flex items-center gap-2 mt-2 bg-white px-5 py-2.5 rounded-2xl border border-black/5 shadow-sm">
-            <div className="flex gap-0.5">
+          <div className="flex items-center gap-4 bg-white px-5 py-3 rounded-2xl border border-black/[0.08] shadow-xs">
+            <div className="flex gap-1 text-amber-500">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} className="fill-amber-450 text-amber-450" style={{ fill: "#fbbf24", color: "#fbbf24" }} />
+                <Star key={i} size={15} fill="currentColor" />
               ))}
             </div>
-            <span className="text-[10px] font-black uppercase tracking-widest text-gray-800">
-              Note moyenne : 5/5 sur Google Reviews
+            <div className="h-4 w-px bg-stone-200" />
+            <span className="text-xs font-mono font-bold text-stone-900">
+              5.0 / 5 sur Google Reviews
             </span>
           </div>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonials Masonry / Card Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t, idx) => (
             <div
-              key={index}
-              className="bg-white/40 backdrop-blur-xl border border-white/50 p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_25px_60px_rgba(233,30,99,0.06)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between"
+              key={idx}
+              className="p-8 rounded-[2rem] bg-white border border-black/[0.07] shadow-sm hover:shadow-xl hover:border-black/15 transition-all duration-500 flex flex-col justify-between"
             >
               <div>
-                {/* Stars */}
-                <div className="flex gap-0.5 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={14}
-                      className="fill-amber-450 text-amber-450"
-                      style={{ fill: "#fbbf24", color: "#fbbf24" }}
-                    />
-                  ))}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex gap-0.5 text-amber-500">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} size={13} fill="currentColor" />
+                    ))}
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-stone-100 text-[9px] font-mono uppercase tracking-wider text-stone-600 font-bold">
+                    {t.tag}
+                  </span>
                 </div>
 
-                {/* Quote */}
-                <p className="text-gray-700 text-xs font-semibold leading-relaxed mb-8 italic">
-                  "{testimonial.text}"
+                <p className="text-stone-700 text-sm leading-relaxed mb-6 font-normal italic">
+                  "{t.text}"
                 </p>
               </div>
 
-              {/* Author */}
-              <div className="border-t border-black/5 pt-6 mt-auto">
-                <div className="flex items-center gap-3">
-                  {/* Realistic Avatar Image */}
-                  <div className="w-10 h-10 rounded-full border border-black/10 overflow-hidden bg-gray-50 shrink-0 shadow-sm">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-black uppercase text-xs tracking-wider text-gray-900 leading-tight">
-                      {testimonial.name}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-x-2 text-[9px] text-gray-500 font-bold uppercase tracking-widest mt-1">
-                      <span>{testimonial.role}</span>
-                      <span className="text-black/20 font-light">•</span>
-                      <span className="text-primary font-black">{testimonial.company}</span>
-                    </div>
-                  </div>
+              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                <div>
+                  <h3 className="text-sm font-black text-stone-900 leading-tight">
+                    {t.name}
+                  </h3>
+                  <span className="text-[10px] text-stone-500 font-mono">
+                    {t.role}
+                  </span>
                 </div>
+                <span className="text-[10px] font-mono text-emerald-600 flex items-center gap-1 font-bold">
+                  <CheckCircle2 size={11} /> {t.date}
+                </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Stats Grid */}
-        <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="p-8 bg-white/60 backdrop-blur-md rounded-3xl border border-white/40 shadow-sm text-center">
-            <p className="text-4xl font-black tracking-tighter text-primary mb-1">500+</p>
-            <h3 className="text-[9px] font-black uppercase tracking-widest text-gray-500">
-              Clients satisfaits
-            </h3>
-          </div>
-          <div className="p-8 bg-white/60 backdrop-blur-md rounded-3xl border border-white/40 shadow-sm text-center">
-            <p className="text-4xl font-black tracking-tighter text-primary mb-1">10 ans</p>
-            <h3 className="text-[9px] font-black uppercase tracking-widest text-gray-500">
-              D'expérience artisanale
-            </h3>
-          </div>
-          <div className="p-8 bg-white/60 backdrop-blur-md rounded-3xl border border-white/40 shadow-sm text-center">
-            <p className="text-4xl font-black tracking-tighter text-primary mb-1">5/5</p>
-            <h3 className="text-[9px] font-black uppercase tracking-widest text-gray-500">
-              Note moyenne globale
-            </h3>
-          </div>
-        </div>
-
-        {/* Google Review CTA */}
-        <div className="mt-20 flex flex-col items-center text-center">
-          <a
-            href={SITE_CONFIG.googleReview || "https://g.page/r/bysandrinecouture/review"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline inline-flex group"
-          >
-            <Button
-              size="lg"
-              className="h-14 px-8 rounded-full uppercase text-[9px] tracking-widest font-black shadow-lg bg-black hover:bg-neutral-800 text-white flex items-center justify-center gap-2 group-hover:scale-105 transition-transform"
-            >
-              <span>Partager votre expérience</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Button>
-          </a>
-          <p className="mt-4 text-[9px] text-gray-500 font-bold uppercase tracking-widest">
-            Votre soutien sur Google nous aide à faire rayonner l'artisanat normand
-          </p>
-        </div>
       </div>
+
     </section>
   );
 }

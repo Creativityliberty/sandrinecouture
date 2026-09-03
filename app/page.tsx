@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { BentoServices } from "@/components/home/bento-services";
 import { CtaSection } from "@/components/home/cta-section";
 import { HeroSection } from "@/components/home/hero-section";
+import { MarqueeBanner } from "@/components/home/marquee-banner";
 import { LocalisationSection } from "@/components/home/localisation-section";
 import { ProcessSection } from "@/components/home/process-section";
 import { RealisationsSection } from "@/components/home/realisations-section";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <HeroSection />
+        <MarqueeBanner />
         <SegmentationSection />
         <BentoServices />
         <ReassuranceSection />

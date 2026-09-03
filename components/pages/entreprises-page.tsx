@@ -1,493 +1,670 @@
-import {
-  Bed,
-  CheckCircle2,
-  Info,
-  Layout,
-  MapPin,
-  MessageCircle,
-  MessageSquare,
-  Package,
-  PartyPopper,
-  Phone,
-  Scissors,
-  Store,
-  Utensils,
-  Wrench,
-  Zap,
-} from "lucide-react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
+import {
+  Utensils,
+  Bed,
+  Wrench,
+  Store,
+  Scissors,
+  PartyPopper,
+  CheckCircle2,
+  ArrowRight,
+  MessageCircle,
+  ShieldCheck,
+  Clock,
+  MapPin,
+  Cpu,
+  Layers,
+  Sparkles,
+  Shirt,
+  Building2,
+  FileCheck,
+  ChevronRight,
+  Target,
+  FileText
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const SECTORS = [
+  {
+    id: "restauration",
+    icon: Utensils,
+    name: "Métiers de Bouche & Restauration",
+    badge: "Lavages Intensifs 60°C",
+    desc: "Tabliers à bavette renforcés, vestes de cuisine respirantes, polos de service et toques. Broderie inaltérable résistante aux graisses et frottements.",
+    recommendations: ["Tabliers sombres", "Polos 100% coton peigné", "Logo cœur & prénom serveur"]
+  },
+  {
+    id: "artisans",
+    icon: Wrench,
+    name: "Artisans, BTP & Industrie",
+    badge: "Haute Résistance",
+    desc: "Sweats à capuche doublés, vestes softshell coupe-vent, bonnets et patchs velcro amovibles pour tenues de chantier exigeantes.",
+    recommendations: ["Softshells déperlantes", "Sweats 320g/m²", "Grand dos haute visibilité"]
+  },
+  {
+    id: "hotellerie",
+    icon: Bed,
+    name: "Hôtellerie, Accueil & Spas",
+    badge: "Élégance Discrète",
+    desc: "Chemises ajustées, peignoirs nid d'abeille, draps de bain denses et serviettes d'accueil avec monogrammes brodés d'une finesse chirurgicale.",
+    recommendations: ["Draps de bain 550g", "Chemises col italien", "Nuque ou logo cœur ton sur ton"]
+  },
+  {
+    id: "boulangerie",
+    icon: Store,
+    name: "Boulangeries, Traiteurs & Épiceries",
+    badge: "Hygiène & Image",
+    desc: "Tabliers courts ou longs, t-shirts légers et casquettes coordonnées pour soigner l'accueil de votre clientèle au quotidien.",
+    recommendations: ["Coton canevas robuste", "Tabliers avec poches", "Lettrage artisanal"]
+  },
+  {
+    id: "esthetique",
+    icon: Scissors,
+    name: "Salons de Coiffure & Instituts",
+    badge: "Ligne Chic",
+    desc: "Tuniques fluides, peignoirs clients personnalisés et serviettes éponge douces arborant votre signature de marque.",
+    recommendations: ["Tissus déperlants anti-coloration", "Broderie fil argent/or", "Finitions délicates"]
+  },
+  {
+    id: "clubs",
+    icon: PartyPopper,
+    name: "Clubs, Associations & Événements",
+    badge: "Esprit de Corps",
+    desc: "Sweats d'équipes, polos d'encadrement, casquettes et écussons pour fédérer vos membres avec un textile qui traverse les saisons.",
+    recommendations: ["Séries moyennes à grandes", "Logo grand format", "Option prénom individuel"]
+  }
+];
+
+const PLACEMENT_OPTIONS = [
+  {
+    id: "coeur",
+    title: "Emplacement Cœur",
+    subtitle: "Le standard absolu",
+    desc: "Position classique sur la poitrine gauche. Discret, raffiné et immédiatement identifiable lors d'un échange professionnel.",
+    badge: "Le + Choisi",
+    size: "8 à 10 cm max"
+  },
+  {
+    id: "manche",
+    title: "Manche Gauche / Droite",
+    subtitle: "La signature moderne",
+    desc: "Emplacement premium pour un rappel subtil de logo, un drapeau français ou l'année de fondation de votre entreprise.",
+    badge: "Finition Chic",
+    size: "6 à 8 cm max"
+  },
+  {
+    id: "nuque",
+    title: "Sous-Col & Nuque",
+    subtitle: "L'élégance couture",
+    desc: "Extrêmement élégant sur les polos et sweats. Visible quand vos collaborateurs se déplacent, sans surcharger l'avant.",
+    badge: "Ultra Tendance",
+    size: "5 à 8 cm max"
+  },
+  {
+    id: "dos",
+    title: "Grand Dos",
+    subtitle: "Impact visuel maximal",
+    desc: "Idéal pour les équipes sur chantier, en cuisine ouverte ou en salon événementiel. Visibilité garantie jusqu'à 20 mètres.",
+    badge: "Haute Visibilité",
+    size: "20 à 28 cm"
+  }
+];
+
+const PACKS = [
+  {
+    id: "starter",
+    name: "PACK ARTISAN",
+    target: "Petites équipes & Indépendants",
+    volume: "5 à 15 pièces",
+    features: [
+      "Panachage tailles & textiles possible",
+      "Broderie Logo Cœur haute densité",
+      "Fils Madeira certifiés Oeko-Tex",
+      "Échantillon / BAT numérique sous 24h",
+      "Facturation HT avec TVA récupérable"
+    ],
+    highlight: false,
+    cta: "Configurer mon Pack Artisan"
+  },
+  {
+    id: "team",
+    name: "PACK TEAM PRO",
+    target: "PME, Hôtels & Restaurants",
+    volume: "15 à 50 pièces",
+    features: [
+      "Frais de numérisation & matrice offerts",
+      "Logo Cœur + Option Nuque ou Manche",
+      "Possibilité d'ajouter les prénoms de l'équipe",
+      "Échantillon brodé physique préalable",
+      "Livraison suivie express en France offerte",
+      "Tarifs dégressifs avantageux"
+    ],
+    highlight: true,
+    badge: "Le Plus Commandé",
+    cta: "Obtenir le devis Pack Team"
+  },
+  {
+    id: "privilege",
+    name: "PACK MULTI-TEXTILES",
+    target: "Grandes Équipes & Réseaux",
+    volume: "50 à 500+ pièces",
+    features: [
+      "Panachage complet : Polos + Sweats + Tabliers + Patchs",
+      "Option patchs velcro détachables",
+      "Priorité de production en atelier",
+      "Accompagnement textile complet avec Sandrine",
+      "Réassorts facilités en 1 clic tout au long de l'année"
+    ],
+    highlight: false,
+    cta: "Étude sur-mesure Grands Volumes"
+  }
+];
+
 export function EntreprisesPage() {
-  const sectors = [
-    {
-      icon: Utensils,
-      name: "Restaurants & métiers de bouche",
-      slug: "restaurant",
-    },
-    { icon: Bed, name: "Hôtels / accueil / entretien", slug: "hotel" },
-    { icon: Wrench, name: "Artisans, BTP, garages", slug: "artisans" },
-    { icon: Store, name: "Boulangeries / traiteurs", slug: "boulangerie" },
-    {
-      icon: Scissors,
-      name: "Salons coiffure / esthétique",
-      slug: "esthetique",
-    },
-    {
-      icon: PartyPopper,
-      name: "Événementiel / assos / clubs",
-      slug: "evenement",
-    },
-  ];
-
-  const products = [
-    "Polos brodés",
-    "T-shirts personnalisés",
-    "Sweats / hoodies brodés",
-    "Tabliers brodés",
-    "Broderie sur serviette de toilette",
-    "Patchs brodés (cousus ou velcro)",
-  ];
-
-  const placements = [
-    { title: "Logo cœur", desc: "Le plus demandé", badge: "Classique" },
-    { title: "Manche", desc: "Détail premium discret", badge: "Premium" },
-    { title: "Nuque", desc: "Très élégant & moderne", badge: "Chic" },
-    {
-      title: "Grand dos",
-      desc: "Impact & visibilité maximale",
-      badge: "Impact",
-    },
-  ];
-
-  const packs = [
-    {
-      name: "STARTER",
-      target: "Idéal : petites équipes / artisans",
-      features: ["Série courte", "Logo cœur", "Finition propre et durable"],
-      variant: "outline",
-    },
-    {
-      name: "TEAM",
-      target: "Idéal : PME / équipe complète",
-      features: ["Série moyenne", "Options manche/nuque", "Contrôle qualité"],
-      variant: "primary",
-    },
-    {
-      name: "PREMIUM",
-      target: "Idéal : image de marque luxe",
-      features: [
-        "Multi-articles",
-        "Patch velcro possible",
-        "Accompagnement complet",
-      ],
-      variant: "outline",
-    },
-  ];
+  const [selectedPlacement, setSelectedPlacement] = useState(0);
 
   return (
-    <div className="pt-20 sm:pt-28 md:pt-32 animate-in fade-in duration-700">
-      {/* HERO SECTION */}
-      <section className="px-4 sm:px-6 mb-12 sm:mb-16 md:mb-24">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 items-center text-center lg:text-left">
-          <div className="animate-in slide-in-from-left-8 duration-1000 flex flex-col items-center lg:items-start">
-            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1 sm:py-1.5 glass rounded-full text-[8px] sm:text-[9px] font-black tracking-widest uppercase text-primary mb-4 sm:mb-6">
-              <MapPin className="w-2.5 sm:w-3 h-2.5 sm:h-3" />
-              <span>Robertot (76560) • Normandie • Livraison France</span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tighter mb-4 sm:mb-6 italic leading-[0.9] uppercase">
-              Uniformes brodés <br />
-              <span className="text-primary not-italic">pour entreprises</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 font-bold mb-4 sm:mb-6 italic uppercase tracking-tighter leading-tight">
-              Une image d'équipe professionnelle, durable et cohérente.
-            </p>
-            <p className="text-sm sm:text-base text-gray-700 mb-6 sm:mb-8 leading-relaxed max-w-xl font-medium">
-              Restaurants, artisans, hôtels, salons, clubs… Je personnalise vos
-              tenues avec une broderie nette et résistante : logo, patch, prénom
-              ou fonction. L'objectif : une finition propre, lisible, qui dure
-              dans le temps.
-            </p>
-
-            <div className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3 mb-8 sm:mb-10 py-4 sm:py-5 border-y border-black/5">
-              {[
-                "Devis rapide",
-                "Travail soigné",
-                "Facture pro",
-                "Livraison",
-              ].map((check, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-1.5 sm:gap-2 text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-primary"
-                >
-                  <CheckCircle2 size={12} className="sm:w-3.5 sm:h-3.5" />{" "}
-                  <span>{check}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-4">
-              <Link href="/devis?type=entreprise">
-                <Button
-                  variant="whatsapp"
-                  size="lg"
-                  className="h-12 px-6 rounded-full shadow-xl uppercase text-[10px] font-bold tracking-widest w-full flex items-center justify-center gap-2"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  Demander un devis
-                </Button>
-              </Link>
-              <Link href="/#réalisations">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="h-12 px-6 rounded-full uppercase text-[10px] font-bold tracking-widest w-full"
-                >
-                  Réalisations
-                </Button>
-              </Link>
-            </div>
-            <p className="text-[10px] text-gray-700 font-bold uppercase tracking-tight italic">
-              Vous remplissez le devis → WhatsApp s’ouvre avec un message
-              complet prêt à envoyer.
-            </p>
-          </div>
-
-          <div className="relative group hidden lg:block">
-            <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl" />
-            <div className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
-              <img
-                src="/images/realisations/2b-couverture-team.webp"
-                width={800}
-                height={541}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Équipe 2B Couverture - Broderie professionnelle"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-10 glass p-6 rounded-2xl border-white/40 text-white">
-                <p className="text-xs uppercase font-black tracking-widest text-primary mb-1">
-                  Qualité Pro
-                </p>
-                <p className="text-xl font-bold italic">
-                  "La tenue qui soude vos équipes."
-                </p>
-              </div>
-            </div>
-          </div>
+    <div className="bg-[#faf8f5] text-[#1c1917] selection:bg-primary selection:text-white pt-24 sm:pt-32">
+      
+      {/* 1. HERO B2B LUXURY & SHOWROOM */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28 border-b border-black/[0.06] overflow-hidden">
+        
+        {/* Architectural backdrop */}
+        <div className="absolute inset-0 pointer-events-none -z-10">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:64px_64px]" />
+          <div className="absolute top-10 left-1/3 w-[500px] h-[500px] bg-primary/[0.06] rounded-full blur-[140px]" />
         </div>
-      </section>
 
-      {/* SECTION 1: POUR QUI ? */}
-      <section className="py-24 px-6 bg-secondary/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4">
-              Pour quels types d’entreprises ?
-            </h2>
-            <p className="text-gray-700 font-medium uppercase tracking-tighter text-sm italic">
-              Les demandes les plus fréquentes en broderie professionnelle.
-            </p>
+          
+          {/* Top Operational Status Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-12 border-b border-black/[0.08] text-[11px] font-mono tracking-widest uppercase text-stone-500">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="font-bold text-stone-800">Atelier B2B Ouvert • Normandie (76)</span>
+              <span className="text-stone-300">/</span>
+              <span>Facturation Pro TVA Déductible</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="hidden sm:inline">Délai devis moyen : &lt; 24h</span>
+              <span className="text-primary font-bold">Minimum : 1 pièce</span>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sectors.map((s, i) => (
-              <div
-                key={i}
-                className="bento-card glass p-8 group hover:bg-primary hover:text-white transition-all duration-500"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-white/20">
-                  <s.icon className="text-primary group-hover:text-white w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold uppercase tracking-tight mb-2 italic">
-                  {s.name}
-                </h3>
-                <p className="text-sm opacity-60 font-medium">
-                  Personnalisation adaptée à votre métier.
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-12 text-center text-sm font-bold uppercase tracking-widest text-gray-700/50 italic">
-            Vous n’êtes pas dans la liste ? Aucun souci : on adapte selon votre
-            besoin.
-          </p>
-        </div>
-      </section>
 
-      {/* SECTION 2 & 3: PRODUITS & PLACEMENTS */}
-      <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-8">
-              Articles brodés <br />
-              <span className="text-primary not-italic">pour vos équipes</span>
-            </h2>
-            <div className="space-y-4 mb-12">
-              {products.map((p, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-black/5 shadow-sm group hover:border-primary/50 transition-all"
-                >
-                  <Package className="text-primary w-5 h-5" />
-                  <span className="font-bold uppercase tracking-widest text-xs">
-                    {p}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Narrative */}
+            <div className="lg:col-span-7 flex flex-col items-start">
+              
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-6 shadow-sm">
+                <Building2 size={12} className="text-primary" />
+                <span>Pôle Uniformes & Branding Corporate</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-6">
+                L'image de vos équipes, <br />
+                <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
+                  gravée dans le fil
+                </span>.
+              </h1>
+
+              <p className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed mb-8 max-w-xl">
+                Restaurants, artisans, hôtellerie, PME et clubs. Donnez à votre équipe une prestance d'exception avec une broderie industrielle haute définition, inusable au lavage et conçue dans notre atelier normand.
+              </p>
+
+              {/* Instant Assurance Pills */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full mb-9 p-3 rounded-2xl bg-white border border-black/[0.08] shadow-sm">
+                <div className="text-left px-2">
+                  <span className="text-xs font-mono font-bold text-stone-900 block">Devis 24h</span>
+                  <span className="text-[10px] text-stone-500">Chiffrage précis</span>
+                </div>
+                <div className="text-left px-2 border-l border-black/[0.06]">
+                  <span className="text-xs font-mono font-bold text-stone-900 block">BAT Brodé</span>
+                  <span className="text-[10px] text-stone-500">Validation visuelle</span>
+                </div>
+                <div className="text-left px-2 border-l border-black/[0.06]">
+                  <span className="text-xs font-mono font-bold text-stone-900 block">Lavage 60°C</span>
+                  <span className="text-[10px] text-stone-500">Fils indélébiles</span>
+                </div>
+                <div className="text-left px-2 border-l border-black/[0.06]">
+                  <span className="text-xs font-mono font-bold text-stone-900 block">TVA Pro</span>
+                  <span className="text-[10px] text-stone-500">Facturation nette</span>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+                <Link href="/devis?type=entreprise" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="h-14 px-8 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-bold uppercase tracking-wider text-xs shadow-xl shadow-stone-900/10 flex items-center justify-center gap-3 w-full cursor-pointer"
+                  >
+                    <MessageCircle className="w-4 h-4 text-primary" />
+                    <span>Demander un devis B2B express</span>
+                    <ChevronRight size={14} />
+                  </Button>
+                </Link>
+
+                <a href="#packs" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="h-14 px-7 rounded-full border-black/15 bg-white hover:bg-stone-900 hover:text-white transition-all font-bold uppercase tracking-wider text-xs w-full flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>Découvrir les packs</span>
+                  </Button>
+                </a>
+              </div>
+
+            </div>
+
+            {/* Right Visual Card */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-stone-900 border border-stone-800 shadow-2xl group">
+                <img
+                  src="/images/realisations/2b-couverture-team.webp"
+                  alt="Broderie professionnelle équipe en noir"
+                  className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/30 to-transparent" />
+                
+                <div className="absolute top-5 left-5 z-10">
+                  <span className="px-3 py-1.5 rounded-full bg-stone-950/80 backdrop-blur-md border border-white/20 text-white text-[9px] font-mono tracking-widest uppercase">
+                    Rendu Haute Précision
                   </span>
                 </div>
-              ))}
+
+                <div className="absolute inset-x-5 bottom-5 z-10 p-6 rounded-3xl bg-stone-900/90 border border-white/10 backdrop-blur-xl text-white">
+                  <div className="text-[10px] font-mono text-primary uppercase tracking-widest mb-1">
+                    Équipe & Série Pro
+                  </div>
+                  <h3 className="text-xl font-bold tracking-tight text-white mb-2">
+                    Série 2B Couverture • Vestes & Sweats Noirs
+                  </h3>
+                  <p className="text-stone-300 text-xs leading-relaxed">
+                    Uniformes noirs brodés pour l'équipe avec logo haute visibilité et finitions résistantes aux intempéries.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="p-4 bg-primary/5 rounded-xl border border-primary/20 text-[10px] font-black uppercase tracking-widest text-primary italic flex items-center gap-3">
-              <Info size={14} /> Je peux broder sur vos textiles ou vous
-              proposer une solution selon le projet.
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* 2. LES SECTEURS & MÉTIERS (BENTO INTERACTIVE) */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-b border-black/[0.06] bg-white">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary block mb-3">
+                Expertise Métier Dédiée
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-stone-900 leading-[1.05]">
+                Des solutions adaptées à <br />
+                <span className="font-serif italic font-normal text-primary normal-case">chaque corps de métier</span>.
+              </h2>
+            </div>
+            <p className="text-stone-500 text-sm max-w-sm font-medium leading-relaxed">
+              Une cuisine étoilée n'a pas les mêmes contraintes qu'un chantier BTP ou un cabinet de soins. Nous ajustons les matières et techniques de broderie.
             </p>
           </div>
 
-          <div className="bg-black text-white p-10 md:p-16 rounded-[3rem] relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full" />
-            <h2 className="text-3xl font-black tracking-tighter italic uppercase mb-12 text-primary">
-              Placement du logo & options
-            </h2>
-            <div className="space-y-8 mb-12">
-              {placements.map((pl, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SECTORS.map((sector) => {
+              const Icon = sector.icon;
+              return (
                 <div
-                  key={i}
-                  className="flex items-center justify-between border-b border-white/10 pb-6 group"
+                  key={sector.id}
+                  className="p-8 rounded-[2rem] bg-[#faf8f5] border border-black/[0.06] hover:border-black/20 hover:shadow-xl transition-all duration-500 flex flex-col justify-between group"
                 >
                   <div>
-                    <h4 className="font-bold italic text-lg">{pl.title}</h4>
-                    <p className="text-xs text-white/50">{pl.desc}</p>
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-white border border-black/10 flex items-center justify-center text-stone-900 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <Icon size={22} />
+                      </div>
+                      <span className="px-3 py-1 rounded-full bg-white border border-black/10 text-[9px] font-mono tracking-widest uppercase text-stone-700 font-bold">
+                        {sector.badge}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-black tracking-tight text-stone-900 mb-3">
+                      {sector.name}
+                    </h3>
+                    <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                      {sector.desc}
+                    </p>
                   </div>
-                  <span className="px-3 py-1 bg-white/10 rounded-full text-[8px] font-black uppercase tracking-widest group-hover:bg-primary transition-colors">
-                    {pl.badge}
-                  </span>
+
+                  <div className="pt-4 border-t border-black/[0.06]">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 block mb-2 font-bold">
+                      Articles Conseillés :
+                    </span>
+                    <div className="space-y-1">
+                      {sector.recommendations.map((rec, rIdx) => (
+                        <div key={rIdx} className="text-xs text-stone-700 flex items-center gap-2 font-medium">
+                          <span className="text-primary font-bold">✦</span>
+                          <span>{rec}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
-                <CheckCircle2 size={12} className="text-primary" /> Ajout prénom
-                / fonction
-              </div>
-              <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
-                <CheckCircle2 size={12} className="text-primary" /> Patch velcro
-                vêtements travail
-              </div>
-            </div>
-            <p className="mt-12 text-[10px] font-black uppercase tracking-[0.2em] text-primary bg-primary/10 p-4 rounded-xl text-center italic flex items-center justify-center gap-2">
-              <Info size={14} /> Votre logo est optimisé avant broderie pour un
-              rendu propre et lisible.
-            </p>
+              );
+            })}
           </div>
+
+          {/* Fallback assurance banner */}
+          <div className="mt-12 p-6 rounded-2xl bg-stone-100 border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div className="flex items-center gap-3">
+              <Sparkles size={18} className="text-primary shrink-0" />
+              <span className="text-sm font-semibold text-stone-800">
+                Vous n'êtes pas dans la liste ou avez un textile bien spécifique ? Aucun souci, nous adaptons le piquage à votre support.
+              </span>
+            </div>
+            <Link href="/devis?type=entreprise">
+              <Button size="sm" className="bg-stone-900 text-white hover:bg-stone-800 text-xs font-mono uppercase tracking-wider">
+                Parler de mon projet
+              </Button>
+            </Link>
+          </div>
+
         </div>
       </section>
 
-      {/* SECTION 4: PACKS ENTREPRISE */}
-      <section className="py-24 px-6 bg-pink-50/30">
+      {/* 3. LES EMPLACEMENTS DE BRODERIE & OPTIONS */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-b border-black/[0.06] bg-[#faf8f5]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tighter italic uppercase mb-4">
-              Packs entreprise
-            </h2>
-            <p className="text-gray-700 font-medium uppercase tracking-tighter text-sm italic">
-              Idéal pour démarrer rapidement avec une base claire.
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary block mb-3">
+                Précision & Composition
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-stone-900 leading-[1.05]">
+                Où positionner <br />
+                <span className="font-serif italic font-normal text-primary normal-case">votre logo d'entreprise</span> ?
+              </h2>
+            </div>
+            <p className="text-stone-500 text-sm max-w-sm font-medium leading-relaxed">
+              La visibilité d'un uniforme dépend de l'équilibre de son placement. Découvrez les zones standards les plus efficaces.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {packs.map((pack, i) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {PLACEMENT_OPTIONS.map((item, idx) => (
               <div
-                key={i}
-                className={`p-10 rounded-[2.5rem] border flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 ${
-                  i === 1
-                    ? "bg-primary text-white border-primary shadow-2xl scale-105 z-10"
-                    : "bg-white border-black/5"
+                key={item.id}
+                onClick={() => setSelectedPlacement(idx)}
+                className={`p-8 rounded-[2rem] border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
+                  selectedPlacement === idx
+                    ? "bg-stone-900 text-white border-stone-900 shadow-xl"
+                    : "bg-white text-stone-900 border-black/[0.08] hover:border-black/20"
                 }`}
               >
                 <div>
-                  <h3 className="text-4xl font-black tracking-tighter mb-2 italic uppercase">
-                    {pack.name}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className={`px-2.5 py-1 rounded-full text-[9px] font-mono tracking-widest uppercase font-bold ${
+                      selectedPlacement === idx ? "bg-primary text-white" : "bg-stone-100 text-stone-800"
+                    }`}>
+                      {item.badge}
+                    </span>
+                    <span className="text-xs font-mono opacity-50">0{idx + 1}</span>
+                  </div>
+
+                  <h3 className="text-xl font-black tracking-tight mb-1">
+                    {item.title}
                   </h3>
-                  <p
-                    className={`text-[10px] uppercase tracking-widest font-black mb-8 ${i === 1 ? "text-white/70" : "text-primary"}`}
-                  >
-                    {pack.target}
+                  <div className={`text-xs font-mono mb-4 ${selectedPlacement === idx ? "text-primary" : "text-stone-500"}`}>
+                    {item.subtitle}
+                  </div>
+                  <p className={`text-xs leading-relaxed ${selectedPlacement === idx ? "text-stone-300" : "text-stone-600"}`}>
+                    {item.desc}
                   </p>
-                  <ul className="space-y-4 mb-12 list-none p-0">
-                    {pack.features.map((f, j) => (
-                      <li
-                        key={j}
-                        className="flex items-center gap-3 text-sm font-bold italic"
-                      >
-                        <CheckCircle2
-                          size={16}
-                          className={i === 1 ? "text-white" : "text-primary"}
-                        />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-                <Link href="/devis" className="no-underline">
+
+                <div className={`pt-4 mt-6 border-t text-[11px] font-mono flex items-center justify-between ${
+                  selectedPlacement === idx ? "border-white/15 text-stone-300" : "border-black/[0.06] text-stone-500"
+                }`}>
+                  <span>Format :</span>
+                  <span className="font-bold">{item.size}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Extra options strip */}
+          <div className="p-8 rounded-[2rem] bg-white border border-black/[0.08] grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <Target size={18} />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-stone-900">Ajout Prénom / Fonction</h4>
+                <p className="text-xs text-stone-500 mt-1">Personnalisation individuelle par collaborateur sans changer le logo.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <Layers size={18} />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-stone-900">Patchs Velcro Détachables</h4>
+                <p className="text-xs text-stone-500 mt-1">Parfait pour le BTP ou pour laver les vestes séparément sans abîmer les écussons.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                <Cpu size={18} />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-stone-900">Optimisation Vectorielle</h4>
+                <p className="text-xs text-stone-500 mt-1">Chaque trait de votre fichier est adapté aux contraintes mécaniques du fil.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. LES PACKS ENTREPRISE CLÉS EN MAIN */}
+      <section id="packs" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-b border-black/[0.06] bg-stone-950 text-white relative overflow-hidden">
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary block mb-3">
+              Formules Entreprises
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-white leading-tight">
+              Des formules calibrées pour <br />
+              <span className="font-serif italic font-normal text-primary normal-case">votre structure</span>.
+            </h2>
+            <p className="text-stone-400 text-sm mt-4">
+              Simples, transparentes et adaptables. Vous pouvez mixer vos articles (polos, sweats, tabliers) selon vos effectifs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {PACKS.map((pack) => (
+              <div
+                key={pack.id}
+                className={`rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 ${
+                  pack.highlight
+                    ? "bg-stone-900 border-2 border-primary shadow-2xl shadow-primary/10 relative scale-100 lg:-translate-y-2"
+                    : "bg-stone-900/60 border border-stone-800"
+                }`}
+              >
+                {pack.highlight && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span className="px-4 py-1 rounded-full bg-primary text-white text-[9px] font-mono uppercase tracking-widest font-bold shadow-md">
+                      {pack.badge}
+                    </span>
+                  </div>
+                )}
+
+                <div>
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-black uppercase tracking-tight text-white">
+                        {pack.name}
+                      </h3>
+                      <div className="text-xs text-stone-400 font-mono mt-1">
+                        {pack.target}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="inline-block px-3 py-1 rounded-lg bg-white/10 text-xs font-mono font-bold text-primary mb-8">
+                    Volume : {pack.volume}
+                  </div>
+
+                  <div className="space-y-3.5 mb-8">
+                    {pack.features.map((feat, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-3 text-xs text-stone-300 font-medium">
+                        <CheckCircle2 size={15} className="text-primary shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <Link href="/devis?type=entreprise" className="w-full">
                   <Button
-                    variant={i === 1 ? "ghost" : "primary"}
-                    className={`w-full h-14 uppercase text-[10px] tracking-widest font-black ${i === 1 ? "bg-white text-primary hover:bg-white/95" : ""}`}
+                    className={`w-full h-13 rounded-full font-bold uppercase tracking-wider text-xs cursor-pointer ${
+                      pack.highlight
+                        ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/30"
+                        : "bg-white text-stone-900 hover:bg-stone-100"
+                    }`}
                   >
-                    {i === 2 ? "Demander un devis" : "Choisir ce pack"}
+                    {pack.cta}
                   </Button>
                 </Link>
+
               </div>
             ))}
           </div>
-          <p className="text-center mt-12 font-black italic uppercase tracking-tighter text-2xl">
-            👉 Vous voulez une config sur mesure ?{" "}
-            <span className="text-primary not-italic">On le fait.</span>
-          </p>
+
+          <div className="mt-12 text-center text-xs font-mono text-stone-400">
+            👉 Besoin d'une configuration personnalisée (panachage spécifique, grand volume) ? <Link href="/devis?type=entreprise" className="text-primary underline">Contactez l'atelier directement</Link>.
+          </div>
+
         </div>
+
       </section>
 
-      {/* SECTION 5: PROCESS */}
-      <section className="py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter italic uppercase mb-16 text-center">
-            Comment se déroule une commande ?
-          </h2>
-          <div className="space-y-12 relative">
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-black/5 hidden md:block" />
+      {/* 5. DÉROULEMENT D'UNE COMMANDE B2B */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-b border-black/[0.06] bg-white">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-primary block mb-3">
+                Process B2B Sans Surprise
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-stone-900 leading-[1.05]">
+                Comment se déroule <br />
+                <span className="font-serif italic font-normal text-primary normal-case">votre commande</span> ?
+              </h2>
+            </div>
+            <div className="flex items-center gap-6 text-xs font-mono text-stone-500">
+              <span className="flex items-center gap-2">
+                <Clock size={15} className="text-primary" /> Délai moyen constaté : ~10 jours
+              </span>
+              <span className="flex items-center gap-2">
+                <FileCheck size={15} className="text-primary" /> Facturation Pro HT
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
-              {
-                t: "Briefing",
-                d: "Vous envoyez : logo + quantité + article(s)",
-              },
-              { t: "Devis", d: "Je vous réponds avec un devis clair sous 24h" },
-              {
-                t: "Validation",
-                d: "Validation + acompte (si nécessaire) pour lancer la programmation",
-              },
-              { t: "Production", d: "Broderie artisanale soignée à Robertot" },
-              {
-                t: "Livraison",
-                d: "Livraison ou retrait direct selon votre localisation",
-              },
-            ].map((step, i) => (
-              <div key={i} className="flex items-start gap-8 relative z-10">
-                <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-black text-xl shrink-0 shadow-lg shadow-primary/20">
-                  {i + 1}
-                </div>
-                <div className="pt-3">
-                  <h3 className="text-xl font-bold uppercase italic tracking-tight mb-2">
-                    {step.t}
+              { num: "01", title: "Briefing", desc: "Envoi de votre logo vectoriel + quantité + types d'articles souhaités." },
+              { num: "02", title: "Devis Chiffré", desc: "Réponse détaillée sous 24h ouvrées avec conseils sur les textiles." },
+              { num: "03", title: "BAT & Accord", desc: "Validation de la matrice de broderie avant lancement en production." },
+              { num: "04", title: "Confection", desc: "Broderie artisanale haute densité réalisée dans notre atelier à Robertot." },
+              { num: "05", title: "Livraison", desc: "Expédition suivie ou retrait direct sur place selon vos préférences." },
+            ].map((step, sIdx) => (
+              <div key={sIdx} className="p-6 rounded-2xl bg-[#faf8f5] border border-black/[0.06] flex flex-col justify-between min-h-[220px]">
+                <span className="text-3xl font-black font-mono text-primary/30">
+                  {step.num}
+                </span>
+                <div>
+                  <h3 className="text-base font-black tracking-tight text-stone-900 mb-2">
+                    {step.title}
                   </h3>
-                  <p className="text-gray-700 font-medium">{step.d}</p>
+                  <p className="text-xs text-stone-600 leading-relaxed">
+                    {step.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-20 grid md:grid-cols-2 gap-6">
-            <div className="p-8 glass rounded-[2rem] flex items-center gap-6">
-              <Zap className="text-primary w-8 h-8" />
-              <div>
-                <p className="text-2xl font-black italic">~10 JOURS</p>
-                <p className="text-[10px] font-black uppercase tracking-widest opacity-50">
-                  Délai moyen constaté
-                </p>
-              </div>
-            </div>
-            <div className="p-8 glass rounded-[2rem] flex items-center gap-6">
-              <Layout className="text-primary w-8 h-8" />
-              <div>
-                <p className="text-2xl font-black italic">FACTURE PRO</p>
-                <p className="text-[10px] font-black uppercase tracking-widest opacity-50">
-                  Disponible pour entreprises
-                </p>
-              </div>
-            </div>
+        </div>
+      </section>
+
+      {/* 6. CALL TO ACTION FINAL B2B */}
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-900 text-white text-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-10">
+          
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[10px] font-mono tracking-widest uppercase mb-6">
+            <MessageCircle size={12} className="text-primary" />
+            <span>Devis Express WhatsApp ou Formulaire</span>
           </div>
-        </div>
-      </section>
 
-      {/* SECTION 6: CONSEIL */}
-      <section className="py-24 px-6 bg-black text-white rounded-[4rem] mx-6 mb-24 overflow-hidden relative text-center">
-        <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full translate-x-1/2" />
-        <div className="max-w-3xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter italic uppercase mb-8">
-            Besoin d’un conseil ?
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white mb-6 leading-tight">
+            Demandez votre devis pro <br />
+            <span className="font-serif italic font-normal text-primary normal-case">en moins d'une minute</span>.
           </h2>
-          <p className="text-xl text-white/50 mb-12 font-medium leading-relaxed">
-            Vous hésitez sur le placement ou le textile ? Pas de souci.
-            Dites-moi votre activité + le rendu souhaité (discret ou visible),
-            et je vous conseille la meilleure option.
+
+          <p className="text-stone-300 text-base max-w-xl mx-auto mb-10 leading-relaxed">
+            Logo + articles + quantité + délai souhaité = chiffrage précis sous 24h avec Sandrine.
           </p>
-          <Link href="/devis" className="no-underline">
-            <Button
-              variant="whatsapp"
-              size="lg"
-              className="h-20 px-12 rounded-full uppercase text-[10px] font-black tracking-widest shadow-2xl"
-            >
-              <MessageSquare className="mr-3 w-5 h-5" /> Demander conseil sur
-              WhatsApp
-            </Button>
-          </Link>
-        </div>
-      </section>
 
-      {/* SECTION 7: ZONE & SEO */}
-      <section className="py-24 px-6 border-t border-black/5">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-black italic uppercase mb-4">
-            Normandie & livraison France
-          </h2>
-          <p className="text-gray-700 mb-12 font-medium">
-            Atelier basé à Robertot (76560). Je travaille avec des entreprises
-            en Normandie et partout en France.
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-6">
-            {[
-              "Broderie Normandie",
-              "Seine-Maritime 76",
-              "Rouen",
-              "Le Havre",
-            ].map((link, i) => (
-              <a
-                key={i}
-                href={`#${link.toLowerCase().replace(/ /g, "-")}`}
-                className="text-sm font-black uppercase tracking-[0.2em] text-black/30 hover:text-primary transition-colors no-underline"
-              >
-                {link}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="py-32 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter mb-8 italic uppercase leading-[0.85]">
-            Demandez votre <br />
-            <span className="text-primary not-italic">devis en 1 minute</span>
-          </h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/devis" className="no-underline">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-10">
+            <Link href="/devis?type=entreprise" className="w-full sm:w-auto">
               <Button
-                variant="whatsapp"
                 size="lg"
-                className="h-16 px-10 rounded-full uppercase text-[9px] font-black tracking-widest"
+                className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider text-xs shadow-xl shadow-primary/30 flex items-center justify-center gap-2 w-full cursor-pointer"
               >
-                Devis entreprise WhatsApp
+                <MessageCircle size={16} />
+                <span>Devis Entreprise WhatsApp</span>
               </Button>
             </Link>
-            <Button
-              onClick={() => (window.location.href = "tel:+33629492213")}
-              variant="outline"
-              size="lg"
-              className="h-16 px-10 rounded-full uppercase text-[9px] font-black tracking-widest"
-            >
-              <Phone className="mr-2 w-4 h-4" /> 06 29 49 22 13
-            </Button>
+
+            <a href="tel:0629492213" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                variant="outline-dark"
+                className="h-14 px-8 uppercase tracking-wider text-xs w-full cursor-pointer"
+              >
+                <span>06 29 49 22 13</span>
+              </Button>
+            </a>
           </div>
-          <p className="mt-8 text-[9px] font-black uppercase tracking-widest text-gray-700 italic">
-            Logo + article + quantité + délai = devis rapide.
-          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-stone-400">
+            <span>Robertot (76560)</span>
+            <span>•</span>
+            <span>Rouen</span>
+            <span>•</span>
+            <span>Le Havre</span>
+            <span>•</span>
+            <span>Dieppe</span>
+            <span>•</span>
+            <span>Livraison France Entière</span>
+          </div>
+
         </div>
       </section>
+
     </div>
   );
 }

@@ -1,56 +1,161 @@
-import React from 'react';
-import { Timer } from 'lucide-react';
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { MessageCircle, FileCheck, Cpu, PackageCheck, ArrowUpRight, Clock, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const STEPS = [
+  {
+    num: "01",
+    phase: "Échange & Besoins",
+    title: "Brief & Formulaire Devis",
+    desc: "Vous indiquez le type de support (sweats, gilets, tabliers, doudous) et envoyez votre visuel ou texte souhaité.",
+    action: "Formulaire en 2 min",
+    icon: MessageCircle
+  },
+  {
+    num: "02",
+    phase: "Pré-production",
+    title: "Numérisation & Piquage",
+    desc: "Nous programmons la matrice de broderie : calcul des densités, choix des sous-couches et sélection des fils Madeira.",
+    action: "Matrice haute définition",
+    icon: Cpu
+  },
+  {
+    num: "03",
+    phase: "Validation",
+    title: "Bon À Tirer (BAT)",
+    desc: "Vous recevez la simulation visuelle ou une broderie test pour validation avant le lancement officiel.",
+    action: "Validation 100% sereine",
+    icon: FileCheck
+  },
+  {
+    num: "04",
+    phase: "Confection & Envoi",
+    title: "Broderie & Expédition",
+    desc: "Lancement machine, échenillage et finitions manuelles soignées. Retrait à Robertot ou envoi suivi en France.",
+    action: "Sous ~7 à 10 jours",
+    icon: PackageCheck
+  }
+];
 
 export function ProcessSection() {
-  const steps = [
-    { num: "01", title: "Devis", desc: "Vous remplissez le formulaire (Entreprise ou Particulier)." },
-    { num: "02", title: "WhatsApp", desc: "WhatsApp s’ouvre avec un message complet et déjà structuré." },
-    { num: "03", title: "Validation", desc: "Je vous réponds avec un devis clair et le délai de production." },
-    { num: "04", title: "Livraison", desc: "Production soignée puis livraison ou retrait à Robertot." }
-  ];
+  const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 px-6 bg-secondary/50">
-      <div className="max-w-7xl mx-auto text-center md:text-left">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter italic uppercase">Comment ça marche ?</h2>
-          <p className="text-lg text-gray-700 font-medium">Vous décrivez votre besoin → je m’occupe du reste.</p>
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-900 text-white relative overflow-hidden">
+      
+      {/* Subtle Blueprint Lines */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-primary block mb-3">
+              Processus Maîtrisé de A à Z
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-[-0.03em] uppercase text-white leading-[1.05]">
+              De l'idée à la matière, <br />
+              <span className="font-serif italic font-normal text-primary normal-case">en quatre étapes</span> limpides.
+            </h2>
+          </div>
+          <p className="text-stone-400 text-sm max-w-md font-medium leading-relaxed">
+            Pas de jargon compliqué, ni de mauvaises surprises. Sandrine vous guide personnellement à chaque étape pour un résultat conforme à vos attentes.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 mb-20">
-          {steps.map((step, i) => (
-            <div key={i} className="relative">
-              <span className="text-8xl font-black text-primary/10 absolute -top-10 -left-4">{step.num}</span>
-              <div className="relative z-10 pt-4">
-                <h3 className="text-xl font-bold mb-3 tracking-tight">{step.title}</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">{step.desc}</p>
+        {/* Timeline Interactive Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {STEPS.map((step, idx) => {
+            const Icon = step.icon;
+            const isCurrent = activeStep === idx;
+
+            return (
+              <div
+                key={step.num}
+                onClick={() => setActiveStep(idx)}
+                className={`p-8 rounded-[2rem] border transition-all duration-500 cursor-pointer flex flex-col justify-between min-h-[320px] ${
+                  isCurrent
+                    ? "bg-stone-800 border-primary shadow-2xl scale-[1.02]"
+                    : "bg-stone-950/60 border-stone-800/80 hover:border-stone-700"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-3xl font-black font-mono text-stone-600">
+                      {step.num}
+                    </span>
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      isCurrent ? "bg-primary text-white" : "bg-stone-800 text-stone-400"
+                    }`}>
+                      <Icon size={18} />
+                    </div>
+                  </div>
+
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-primary block mb-1">
+                    {step.phase}
+                  </span>
+                  <h3 className="text-xl font-black tracking-tight text-white mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-stone-400 text-xs leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-stone-800 flex items-center justify-between text-[10px] font-mono text-stone-300">
+                  <span>{step.action}</span>
+                  <span className="text-primary font-bold">✓</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="p-8 bg-white rounded-[2rem] border border-black/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <Timer size={20} className="animate-pulse" />
+        {/* Production Timeframes Banner */}
+        <div className="p-8 sm:p-10 rounded-[2.5rem] bg-stone-950 border border-stone-800 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div className="flex items-center gap-5">
+            <div className="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary shrink-0">
+              <Clock size={26} />
             </div>
             <div>
-              <p className="font-bold text-sm uppercase tracking-widest">Délais de production</p>
-              <p className="text-xs text-gray-700">Dépend de la complexité et des quantités</p>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-primary block">
+                Transparence Délais
+              </span>
+              <h3 className="text-xl font-bold text-white mt-0.5">
+                Capacité d'atelier & Délais de confection
+              </h3>
+              <p className="text-stone-400 text-xs mt-1">
+                La broderie industrielle exige un temps de séchage et de contrôle qualité rigoureux.
+              </p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-8">
-            <div className="text-center md:text-left">
-              <p className="text-2xl font-black italic tracking-tighter">~1 Semaine</p>
-              <p className="text-[10px] uppercase font-bold text-primary tracking-widest">Particuliers</p>
+
+          <div className="flex flex-wrap items-center gap-6 sm:gap-10">
+            <div className="flex flex-col">
+              <span className="text-2xl font-black text-white font-mono">~5 à 7 jours</span>
+              <span className="text-[10px] uppercase tracking-wider text-primary font-bold">Pièces Uniques & Particuliers</span>
             </div>
-            <div className="text-center md:text-left">
-              <p className="text-2xl font-black italic tracking-tighter">~10 Jours</p>
-              <p className="text-[10px] uppercase font-bold text-primary tracking-widest">Entreprises</p>
+            <div className="h-8 w-px bg-stone-800 hidden sm:block" />
+            <div className="flex flex-col">
+              <span className="text-2xl font-black text-white font-mono">~10 à 15 jours</span>
+              <span className="text-[10px] uppercase tracking-wider text-primary font-bold">Séries Entreprises & Clubs</span>
             </div>
+            <Link href="/devis">
+              <Button
+                className="h-12 px-6 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider cursor-pointer"
+              >
+                Lancer un projet
+              </Button>
+            </Link>
           </div>
         </div>
+
       </div>
+
     </section>
   );
 }

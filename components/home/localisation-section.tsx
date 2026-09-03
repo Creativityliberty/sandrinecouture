@@ -1,120 +1,113 @@
-import React from 'react';
-import { MapPin, Truck, Globe, Package, ArrowRight } from 'lucide-react';
-import { SITE_CONFIG } from "@/lib/site-config";
-import Link from 'next/link';
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { MapPin, Truck, Globe, ArrowUpRight, Compass, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function LocalisationSection() {
-  const cities = [
+  const normandieCities = [
     "Rouen", "Le Havre", "Dieppe", "Yvetot", "Fécamp",
     "Caen", "Barentin", "Pavilly", "Doudeville", "Cany-Barville"
   ];
 
-  const citySlugs: Record<string, string> = {
-    "Rouen": "rouen",
-    "Le Havre": "le-havre",
-    "Dieppe": "dieppe",
-    "Yvetot": "yvetot",
-    "Fécamp": "fecamp",
-    "Caen": "caen",
-    "Barentin": "barentin",
-    "Pavilly": "pavilly",
-    "Doudeville": "doudeville",
-    "Cany-Barville": "cany-barville"
-  };
-
-  // On double la liste pour le défilement infini sans coupure
-  const scrollingCities = [...cities, ...cities, ...cities];
-
   return (
-    <section id="localisation" className="py-32 overflow-hidden bg-white">
-      <div className="container mx-auto px-6 mb-16">
-        <div className="flex flex-col lg:flex-row gap-16 items-center max-w-7xl mx-auto text-center lg:text-left">
-          <div className="flex flex-col items-center lg:items-start">
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 glass rounded-full text-[9px] font-black tracking-widest uppercase text-primary mb-8">
-              <MapPin className="w-3 h-3" />
-              <span>Robertot (76560) • Normandie</span>
+    <section id="localisation" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-900 text-white relative overflow-hidden">
+      
+      {/* Background Ambience */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]" />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Narrative */}
+          <div className="lg:col-span-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[10px] font-mono tracking-widest uppercase text-stone-300 mb-6">
+              <MapPin size={12} className="text-primary" />
+              <span>Robertot (76560) • Cœur du Pays de Caux</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 italic uppercase leading-[0.9]">
-              Broderie locale, <br />
-              <span className="text-primary not-italic">Rayonnement France.</span>
+
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.03em] leading-[1.02] text-white mb-6">
+              Ancrage normand, <br />
+              <span className="font-serif italic font-normal text-primary normal-case">rayonnement</span> sur toute la France.
             </h2>
-            <p className="text-xl text-gray-700 font-medium leading-relaxed max-w-xl mb-10">
-              Mon atelier est niché au cœur de la Normandie, mais mes créations voyagent. Que vous soyez à Rouen ou à l'autre bout de la France, la qualité reste la même.
+
+            <p className="text-stone-300 text-base leading-relaxed mb-8 max-w-lg">
+              L'atelier est installé en Normandie, mais nos broderies voyagent dans tout l'Hexagone et en Europe. Bénéficiez d'une confection artisanale locale avec un service d'expédition rapide et ultra-soigné.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="p-6 rounded-3xl bg-secondary/50 border border-primary/10 flex flex-col justify-between">
-                <div>
-                  <Truck className="text-primary mb-4" size={24} />
-                  <h3 className="font-bold uppercase tracking-widest text-[10px] mb-2">Livraison Partout</h3>
-                  <p className="text-sm font-bold italic">Expédition sécurisée dans toute la France.</p>
-                </div>
-                <img src="/logo-mondial-relay.jpg" width={100} height={32} alt="Mondial Relay" className="h-8 object-contain mt-6 opacity-80 mix-blend-multiply" />
-              </div>
-              <div className="p-6 rounded-3xl bg-black text-white flex flex-col justify-between border border-white/5">
-                <div>
-                  <Globe className="text-primary mb-4" size={24} />
-                  <h3 className="font-bold uppercase tracking-widest text-[10px] mb-2 text-white/80">France & Europe</h3>
-                  <p className="text-sm font-bold italic">Un savoir-faire normand qui s'exporte.</p>
-                </div>
-                <div className="mt-6 flex items-center gap-2 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
-                  <span className="text-[8px] font-black uppercase tracking-widest">Partenaire</span>
-                  <img src="/logo-mondial-relay.jpg" width={80} height={24} alt="Mondial Relay Partner" className="h-6 bg-white py-0.5 px-2 rounded-lg" />
-                </div>
-              </div>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {normandieCities.map((city, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1 rounded-lg bg-stone-800/80 border border-stone-700/60 text-xs font-mono text-stone-300"
+                >
+                  {city}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Link href="/devis">
+                <Button
+                  className="h-12 px-7 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider cursor-pointer"
+                >
+                  Demander une expédition
+                </Button>
+              </Link>
+              <span className="text-stone-400 text-xs font-mono">
+                Retrait gratuit à l'atelier possible
+              </span>
             </div>
           </div>
 
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] blur-3xl" />
-            <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white">
-              <img
-                src="/images/realisations/poules-decoratives-brodees.webp"
-                width={600}
-                height={800}
-                className="w-full h-full object-cover"
-                alt="Poules décoratives brodées - Artisanat Normandie"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-8 left-8 text-white">
-                <p className="text-[10px] uppercase font-black tracking-widest text-primary mb-1">Made in Robertot</p>
-                <p className="text-xl font-bold italic">Votre artisan de proximité.</p>
+          {/* Right Transport & Security Cards */}
+          <div className="lg:col-span-6 grid sm:grid-cols-2 gap-6">
+            
+            {/* Card Colissimo / Mondial Relay */}
+            <div className="p-8 rounded-[2rem] bg-stone-950 border border-stone-800 flex flex-col justify-between min-h-[260px] shadow-xl">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary mb-6">
+                  <Truck size={22} />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  Envois Sécurisés France Entière
+                </h3>
+                <p className="text-stone-400 text-xs leading-relaxed">
+                  Expéditions quotidiennes via Colissimo Suivi ou Mondial Relay. Emballages étanches renforcés pour protéger vos textiles.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-stone-800 text-[10px] font-mono text-stone-400 uppercase tracking-widest">
+                Numéro de suivi dès l'envoi
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* BANDEAU DÉFILANT DES VILLES */}
-      <div className="bg-black py-10 relative">
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10" />
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
-
-        <div className="mb-6 text-center">
-          <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/90 italic">Villes de proximité (76) & Normandie</span>
-        </div>
-
-        <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
-          {scrollingCities.map((city, i) => {
-            const slug = citySlugs[city];
-            return (
-              <div key={i} className="flex items-center gap-12 group">
-                <Link href={`/broderie-${slug}`} className="no-underline">
-                  <span className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white/40 group-hover:text-primary transition-colors cursor-pointer">
-                    {city} <ArrowRight className="text-primary ml-4 group-hover:translate-x-4 inline-block transition-transform w-12 h-12" />
-                  </span>
-                </Link>
+            {/* Card Local Pick Up */}
+            <div className="p-8 rounded-[2rem] bg-stone-950 border border-stone-800 flex flex-col justify-between min-h-[260px] shadow-xl">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center text-white mb-6">
+                  <Compass size={22} />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  Click & Collect à Robertot
+                </h3>
+                <p className="text-stone-400 text-xs leading-relaxed">
+                  Venez directement récupérer votre commande à l'atelier sur rendez-vous et découvrir les machines et échantillons en direct.
+                </p>
               </div>
-            );
-          })}
+              <div className="pt-4 border-t border-stone-800 text-[10px] font-mono text-primary uppercase tracking-widest font-bold">
+                Retrait sans frais supplémentaires
+              </div>
+            </div>
+
+          </div>
+
         </div>
+
       </div>
 
-      <div className="mt-12 text-center">
-        <p className="text-[11px] font-black uppercase tracking-[0.3em] text-gray-700 flex items-center justify-center gap-2">
-          <Package size={14} className="text-primary" /> Livraison rapide : <span className="text-black">Toute la France</span>
-        </p>
-      </div>
     </section>
   );
 }

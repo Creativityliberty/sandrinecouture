@@ -1,4 +1,4 @@
-import { ArrowLeft, Building2, MessageCircle, User } from "lucide-react";
+import { ArrowLeft, Building2, MessageCircle, User, Truck, Clock, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { Suspense, useEffect, useState } from "react";
@@ -116,14 +116,47 @@ _Envoyé depuis le site Sandrine Couture_`;
           <ArrowLeft size={14} /> Retour à l'accueil
         </Link>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 italic uppercase">
             Votre Projet{" "}
             <span className="text-primary not-italic">sur-mesure</span>
           </h1>
-          <p className="text-sm text-gray-700 uppercase tracking-widest font-bold italic">
+          <p className="text-sm text-gray-700 uppercase tracking-widest font-bold italic mb-8">
             Remplissez ces informations pour un devis précis sous 24h.
           </p>
+
+          {/* Quick Perks Bar */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+            <div className="p-3.5 bg-gray-50/80 rounded-2xl border border-black/5 flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-pink-100 text-primary flex items-center justify-center shrink-0">
+                <Clock size={16} />
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase text-black">Devis Express 24h</p>
+                <p className="text-[9px] text-gray-600 font-medium">Réponse rapide & directe</p>
+              </div>
+            </div>
+
+            <div className="p-3.5 bg-gray-50/80 rounded-2xl border border-black/5 flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-pink-100 text-primary flex items-center justify-center shrink-0">
+                <Truck size={16} />
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase text-black">Mondial Relay & Colissimo</p>
+                <p className="text-[9px] text-gray-600 font-medium">Livraison en point relais ou atelier</p>
+              </div>
+            </div>
+
+            <div className="p-3.5 bg-gray-50/80 rounded-2xl border border-black/5 flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-pink-100 text-primary flex items-center justify-center shrink-0">
+                <ShieldCheck size={16} />
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase text-black">Artisanat Normand</p>
+                <p className="text-[9px] text-gray-600 font-medium">Fils certifiés Oeko-Tex</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="flex gap-4 mb-12">

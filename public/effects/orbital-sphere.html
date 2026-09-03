@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbital Sphere - Sandrine Couture</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    #scene {
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      pointer-events: none;
+    }
+    #scene.ready {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+    const canvas = document.getElementById('scene');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    
+    const renderer = new THREE.WebGLRenderer({ 
+      canvas, 
+      alpha: true, 
+      antialias: true,
+      powerPreference: "high-performance" 
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const networkGroup = new THREE.Group();
+    scene.add(networkGroup);
+
+    const radius = 2.4;
+    const particleCount = 14000;
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+
+    // Rose couture et Terracotta lumineux
+    const colorBright = new THREE.Color(0xf43f5e); // Rose vibrant Sandrine
+    const colorDim = new THREE.Color(0xfb7185);    // Rose pastel soyeux
+    const colorGold = new THREE.Color(0xfbbf24);   // Fil d'or atelier
+
+    let validIndex = 0;
+    for (let index = 0; index < particleCount; index += 1) {
+      const phi = Math.acos(-1 + (2 * index) / particleCount);
+      const theta = Math.sqrt(particleCount * Math.PI) * phi;
+      const x = radius * Math.cos(theta) * Math.sin(phi);
+      const y = radius * Math.sin(theta) * Math.sin(phi);
+      const z = radius * Math.cos(phi);
+
+      const noise = Math.sin(x * 3.5) * Math.cos(y * 3.5) * Math.sin(z * 3.5) + Math.cos(x * 6) * 0.4;
+      if (noise <= -0.15) continue;
+
+      const distortion = 1 + noise * 0.12;
+      positions[validIndex * 3] = x * distortion;
+      positions[validIndex * 3 + 1] = y * distortion;
+      positions[validIndex * 3 + 2] = z * distortion;
+
+      let mixedColor = colorDim.clone().lerp(colorBright, noise > 0.4 ? 0.9 : 0.2);
+      if (index % 12 === 0) mixedColor = colorGold;
+
+      colors[validIndex * 3] = mixedColor.r;
+      colors[validIndex * 3 + 1] = mixedColor.g;
+      colors[validIndex * 3 + 2] = mixedColor.b;
+      validIndex += 1;
+    }
+
+    const particleGeometry = new THREE.BufferGeometry();
+    particleGeometry.setAttribute("position", new THREE.BufferAttribute(positions.slice(0, validIndex * 3), 3));
+    particleGeometry.setAttribute("color", new THREE.BufferAttribute(colors.slice(0, validIndex * 3), 3));
+
+    const particleMaterial = new THREE.PointsMaterial({
+      size: 0.016,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.65,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    networkGroup.add(new THREE.Points(particleGeometry, particleMaterial));
+
+    // Orbital rings in threads of gold and rose
+    const orbitMaterial = new THREE.LineBasicMaterial({
+      color: 0xf43f5e,
+      transparent: true,
+      opacity: 0.35,
+      blending: THREE.AdditiveBlending
+    });
+
+    const orbitGeometries = [];
+    for (let index = 0; index < 6; index += 1) {
+      const geometry = new THREE.BufferGeometry();
+      const points = [];
+      const orbitRadius = radius * (1.08 + Math.random() * 0.25);
+
+      for (let point = 0; point <= 90; point += 1) {
+        const angle = (point / 90) * Math.PI * 2;
+        points.push(
+          Math.cos(angle) * orbitRadius,
+          Math.sin(angle) * orbitRadius,
+          Math.sin(angle * 4) * 0.12
+        );
+      }
+      geometry.setAttribute("position", new THREE.Float32BufferAttribute(points, 3));
+      orbitGeometries.push(geometry);
+
+      const line = new THREE.Line(geometry, orbitMaterial);
+      line.rotation.x = Math.random() * Math.PI * 2;
+      line.rotation.y = Math.random() * Math.PI * 2;
+      networkGroup.add(line);
+
+      // Node satellite points
+      if (index % 2 !== 0) {
+        const nodeGeometry = new THREE.SphereGeometry(0.028, 16, 16);
+        const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0xfbbf24 });
+        const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+        const angle = Math.random() * Math.PI * 2;
+        node.position.set(Math.cos(angle) * orbitRadius, Math.sin(angle) * orbitRadius, 0);
+        line.add(node);
+
+        const haloGeometry = new THREE.SphereGeometry(0.08, 16, 16);
+        const haloMaterial = new THREE.MeshBasicMaterial({
+          color: 0xf43f5e,
+          transparent: true,
+          opacity: 0.3,
+          blending: THREE.AdditiveBlending
+        });
+        const halo = new THREE.Mesh(haloGeometry, haloMaterial);
+        node.add(halo);
+      }
+    }
+
+    let responsiveScale = 1;
+    function resize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      camera.aspect = width / Math.max(1, height);
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height, false);
+
+      if (width >= 1024) {
+        networkGroup.position.set(2.4, 0, -1.8);
+        responsiveScale = 1.15;
+        camera.position.z = 5.6;
+      } else {
+        networkGroup.position.set(0, 0, -2.8);
+        responsiveScale = 0.95;
+        camera.position.z = 6.4;
+      }
+      networkGroup.scale.setScalar(responsiveScale);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Fade in when ready
+    canvas.classList.add('ready');
+
+    let animationFrameId;
+    function animate() {
+      networkGroup.rotation.y += 0.001;
+      networkGroup.rotation.x += 0.0004;
+
+      networkGroup.children.forEach((child, index) => {
+        if (child.type === "Line") {
+          child.rotation.z += 0.0006 * (index % 2 === 0 ? 1 : -1);
+        }
+      });
+
+      renderer.render(scene, camera);
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
