@@ -177,15 +177,31 @@ export function Navbar() {
               </Button>
             </Link>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Bento 6-Dot Dice Toggle (High-End Tactile Trigger) */}
             <button
-              className={`lg:hidden p-2 rounded-full cursor-pointer ${
-                isScrolled ? "text-white hover:bg-white/10" : "text-stone-900 hover:bg-black/5"
+              className={`lg:hidden w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer border ${
+                isMobileMenuOpen
+                  ? "bg-primary text-white border-primary shadow-lg shadow-pink-500/30 scale-105"
+                  : isScrolled
+                    ? "bg-white/10 text-white border-white/15 hover:bg-white/20"
+                    : "bg-stone-100 text-stone-900 border-black/10 hover:bg-stone-200"
               }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu de navigation"}
             >
-              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMobileMenuOpen ? (
+                <X size={18} className="animate-in spin-in-90 duration-200" />
+              ) : (
+                /* 6-dot dice matrix (2x3 grid) */
+                <div className="grid grid-cols-3 gap-1 p-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-current transition-transform duration-300 group-hover:scale-125" />
+                </div>
+              )}
             </button>
 
           </div>
@@ -194,59 +210,88 @@ export function Navbar() {
 
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu — Ultra Fluid Luxury Bento Experience */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-stone-950/98 backdrop-blur-2xl z-[100] p-6 flex flex-col items-center justify-center gap-4 text-white animate-in fade-in duration-300 pointer-events-auto">
-          <button
-            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-white cursor-pointer"
-            onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Fermer le menu"
-          >
-            <X size={22} />
-          </button>
+        <div className="lg:hidden fixed inset-0 bg-stone-950/95 backdrop-blur-3xl z-[100] p-6 flex flex-col justify-between text-white animate-in fade-in slide-in-from-top-6 duration-300 pointer-events-auto overflow-y-auto">
+          
+          {/* Top Bar with Brand & Close Button */}
+          <div className="flex items-center justify-between pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full border border-primary/40 overflow-hidden shadow-md bg-stone-900 p-0.5">
+                <img
+                  src="/logo-sandrine.webp"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover rounded-full"
+                  alt="By Sandrine Couture"
+                />
+              </div>
+              <div>
+                <span className="text-xs font-black tracking-tight uppercase block leading-none">By Sandrine Couture</span>
+                <span className="text-[9px] font-mono text-primary uppercase tracking-widest">Atelier Normand • Robertot</span>
+              </div>
+            </div>
 
-          <div className="w-16 h-16 rounded-full border border-primary/30 overflow-hidden mb-2 shadow-xl bg-stone-900 p-1">
-            <img
-              src="/logo-sandrine.webp"
-              width={64}
-              height={64}
-              className="w-full h-full object-cover rounded-full"
-              alt="By Sandrine Couture"
-            />
+            <button
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Fermer le menu"
+            >
+              <X size={20} />
+            </button>
           </div>
 
-          <div className="flex flex-col items-center gap-1 mb-6">
-            <span className="text-base font-black tracking-tight uppercase">By Sandrine Couture</span>
-            <span className="text-xs font-mono text-primary uppercase tracking-widest">Atelier Normand</span>
-          </div>
-
-          <div className="flex flex-col items-center gap-3 w-full max-w-xs">
+          {/* Nav Items Grid / Bento Links */}
+          <div className="py-6 flex flex-col gap-2.5 max-w-md mx-auto w-full">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
+              const isCurrent = pathname === item.href;
               return (
                 <Link
                   key={item.id}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-between w-full px-5 py-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono uppercase tracking-wider text-stone-200 hover:text-white transition-all"
+                  className={`flex items-center justify-between w-full px-5 py-3.5 rounded-2xl border transition-all no-underline ${
+                    isCurrent
+                      ? "bg-primary text-white border-primary shadow-lg shadow-pink-500/25 font-bold"
+                      : "bg-white/5 hover:bg-white/10 border-white/10 text-stone-200 hover:text-white"
+                  }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <Icon size={16} className="text-primary" />
-                    <span>{item.label}</span>
+                  <div className="flex items-center gap-3.5">
+                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${
+                      isCurrent ? "bg-white/20 text-white" : "bg-white/10 text-primary"
+                    }`}>
+                      <Icon size={16} />
+                    </div>
+                    <span className="text-xs font-mono uppercase tracking-wider">{item.label}</span>
                   </div>
-                  <ArrowRight size={14} className="opacity-50" />
+                  <ChevronRight size={16} className={isCurrent ? "text-white" : "text-stone-500"} />
                 </Link>
               );
             })}
           </div>
 
-          <Link href="/devis" className="w-full max-w-xs mt-4" onClick={() => setIsMobileMenuOpen(false)}>
-            <Button
-              className="w-full h-12 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider text-xs shadow-lg shadow-primary/30"
+          {/* Bottom Action Cards */}
+          <div className="pt-4 border-t border-white/10 max-w-md mx-auto w-full space-y-3">
+            <Link 
+              href="/devis" 
+              className="w-full block no-underline" 
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Demander un Devis sous 24h
-            </Button>
-          </Link>
+              <Button
+                className="w-full h-13 rounded-full bg-primary hover:bg-pink-600 text-white font-black uppercase tracking-widest text-xs shadow-xl shadow-pink-500/30 flex items-center justify-center gap-2"
+              >
+                <span>Demander un Devis sous 24h</span>
+                <ArrowRight size={16} />
+              </Button>
+            </Link>
+
+            <div className="flex items-center justify-between px-4 py-2 bg-white/5 rounded-2xl text-[9px] font-mono text-stone-400">
+              <span>Mondial Relay & Colissimo</span>
+              <span className="text-primary font-bold">Fait Main 76</span>
+            </div>
+          </div>
+
         </div>
       )}
     </nav>
