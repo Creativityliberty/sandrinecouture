@@ -1,4 +1,5 @@
 "use client";
+import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 
 import React, { useState } from "react";
 import { REALISATIONS, Realisation } from "@/lib/realisations-data";
