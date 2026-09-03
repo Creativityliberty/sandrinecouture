@@ -1,5 +1,5 @@
-import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 "use client";
+import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
