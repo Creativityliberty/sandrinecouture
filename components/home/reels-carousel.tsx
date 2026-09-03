@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { X } from "lucide-react";
 import { Play, Film, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -15,6 +16,7 @@ interface ReelItem {
 }
 
 export function ReelsCarousel() {
+  const [activeReelId, setActiveReelId] = useState<number | null>(null);
   const reels: ReelItem[] = [
     {
       id: 1,
@@ -155,51 +157,100 @@ export function ReelsCarousel() {
         <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 pt-2 scrollbar-hide snap-x snap-mandatory w-full max-w-full">
           {reels.map((reel) => {
             const isLocal = !reel.videoUrl.startsWith("http");
+            const isActive = activeReelId === reel.id;
+
             return (
               <div
                 key={reel.id}
-                className="w-[280px] sm:w-[300px] shrink-0 snap-start group relative rounded-[2rem] overflow-hidden bg-black shadow-xl border-4 border-white transform transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-between"
+                className="w-[280px] sm:w-[300px] shrink-0 snap-start group relative rounded-[2rem] overflow-hidden bg-stone-950 shadow-xl border-4 border-white transform transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-between select-none"
                 style={{ height: "480px" }}
               >
-                {isLocal ? (
-                  <video
-                    src={reel.videoUrl}
-                    poster={reel.thumbnail}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
+                {isActive ? (
+                  <>
+                    {isLocal ? (
+                      <video
+                        src={reel.videoUrl}
+                        poster={reel.thumbnail}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        autoPlay
+                        controls
+                        playsInline
+                      />
+                    ) : (
+                      <iframe
+                        src={`${getEmbedUrl(reel.videoUrl)}&autoplay=true`}
+                        title={`Vidéo atelier broderie - ${reel.title}`}
+                        width="100%"
+                        height="100%"
+                        style={{ border: "none", overflow: "hidden" }}
+                        scrolling="no"
+                        frameBorder="0"
+                        allowFullScreen={true}
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        className="absolute inset-0 w-full h-full"
+                      />
+                    )}
+                    {/* Close button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveReelId(null);
+                      }}
+                      className="absolute top-4 right-4 z-30 p-2 rounded-full bg-black/80 text-white hover:bg-primary transition-colors cursor-pointer"
+                      aria-label="Fermer la vidéo"
+                    >
+                      <X size={16} />
+                    </button>
+                  </>
                 ) : (
-                  <iframe
-                    src={getEmbedUrl(reel.videoUrl)}
-                    width="100%"
-                    height="100%"
-                    style={{ border: "none", overflow: "hidden" }}
-                    scrolling="no"
-                    frameBorder="0"
-                    allowFullScreen={true}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    className="absolute inset-0 w-full h-full"
-                  />
+                  /* High-Performance Poster Façade (0 KB video downloaded on initial load) */
+                  <button
+                    onClick={() => setActiveReelId(reel.id)}
+                    className="absolute inset-0 w-full h-full text-left cursor-pointer group focus:outline-none"
+                    aria-label={`Lire le reel : ${reel.title}`}
+                  >
+                    <img
+                      src={reel.thumbnail}
+                      alt={reel.title}
+                      width={300}
+                      height={480}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-stone-950/20 group-hover:from-stone-950/80 transition-colors" />
+
+                    {/* Central Play Button */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10">
+                      <div className="w-14 h-14 rounded-full bg-stone-950/80 backdrop-blur-md border border-white/25 text-white flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:border-primary">
+                        <Play className="w-6 h-6 fill-white ml-1 text-white" />
+                      </div>
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-stone-200 bg-stone-900/80 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10 group-hover:bg-primary group-hover:text-white transition-colors">
+                        Regarder le Reel
+                      </span>
+                    </div>
+                  </button>
                 )}
 
-                {/* Local Video Overlay & Badges (only visible for local video or as static top details) */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1 bg-primary text-white text-[9px] font-black uppercase tracking-widest rounded-full shadow-md">
-                    {reel.category}
-                  </span>
-                </div>
+                {/* Badges & Titles */}
+                {!isActive && (
+                  <>
+                    <div className="absolute top-4 left-4 z-20 pointer-events-none">
+                      <span className="px-3 py-1 bg-primary text-white text-[9px] font-black uppercase tracking-widest rounded-full shadow-md">
+                        {reel.category}
+                      </span>
+                    </div>
 
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-16 z-10 pointer-events-none">
-                  <h3 className="text-white font-bold text-sm leading-tight mb-1">
-                    {reel.title}
-                  </h3>
-                  <p className="text-white/60 text-[9px] font-black uppercase tracking-widest">
-                    By Sandrine Couture
-                  </p>
-                </div>
+                    <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/50 to-transparent pt-16 z-20 pointer-events-none">
+                      <h3 className="text-white font-bold text-sm leading-tight mb-1 line-clamp-2">
+                        {reel.title}
+                      </h3>
+                      <p className="text-stone-300 text-[9px] font-black uppercase tracking-widest">
+                        Atelier Sandrine Couture
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             );
           })}

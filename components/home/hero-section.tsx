@@ -140,17 +140,17 @@ export function HeroSection() {
             {/* Technical Confection Cards */}
             <div className="grid grid-cols-3 gap-1.5 sm:gap-3 w-full max-w-lg mb-8 sm:mb-9 p-2 rounded-2xl bg-white/90 border border-black/[0.08] shadow-sm">
               <div className="p-2 sm:p-3 text-center sm:text-left">
-                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-400 font-bold">Délai Devis</div>
+                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-700 font-bold">Délai Devis</div>
                 <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">24h</div>
                 <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Étude & BAT</div>
               </div>
               <div className="p-2 sm:p-3 border-x border-black/[0.06] text-center sm:text-left">
-                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-400 font-bold">Tenue Fil</div>
+                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-700 font-bold">Tenue Fil</div>
                 <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">60°C</div>
                 <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Inusable</div>
               </div>
               <div className="p-2 sm:p-3 text-center sm:text-left">
-                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-400 font-bold">Volumes</div>
+                <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-700 font-bold">Volumes</div>
                 <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">1 à 500+</div>
                 <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Unité ou séries</div>
               </div>
@@ -299,8 +299,8 @@ export function HeroSection() {
 
             </div>
 
-            {/* Quick Indicators */}
-            <div className="flex items-center gap-2 mt-5">
+            {/* Quick Indicators with accessible touch target (44px) */}
+            <div className="flex items-center gap-1 mt-4">
               {SHOWCASE_ITEMS.map((_, i) => (
                 <button
                   key={i}
@@ -308,11 +308,15 @@ export function HeroSection() {
                     setActiveIdx(i);
                     setIsMacro(false);
                   }}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeIdx === i ? "w-10 bg-stone-900" : "w-2.5 bg-stone-300 hover:bg-stone-400"
-                  }`}
+                  className="h-11 min-w-[36px] px-1 flex items-center justify-center cursor-pointer transition-transform hover:scale-105"
                   aria-label={`Afficher création ${i + 1}`}
-                />
+                >
+                  <span
+                    className={`h-2 rounded-full transition-all duration-300 pointer-events-none ${
+                      activeIdx === i ? "w-10 bg-stone-900" : "w-3 bg-stone-400 hover:bg-stone-600"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 

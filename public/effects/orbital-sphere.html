@@ -47,7 +47,7 @@
     scene.add(networkGroup);
 
     const radius = 2.4;
-    const particleCount = 14000;
+    const particleCount = 1800;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
@@ -173,7 +173,20 @@
     canvas.classList.add('ready');
 
     let animationFrameId;
+    let isPaused = false;
+
+    document.addEventListener('visibilitychange', () => {
+      isPaused = document.hidden;
+      if (!isPaused) {
+        animate();
+      } else if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    });
+
     function animate() {
+      if (isPaused) return;
+
       networkGroup.rotation.y += 0.001;
       networkGroup.rotation.x += 0.0004;
 

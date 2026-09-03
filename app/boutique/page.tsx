@@ -268,6 +268,8 @@ export default function BoutiquePage() {
               <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden bg-stone-950 border border-stone-800 shadow-2xl group">
                 <video
                   src="/videos/boutique-hero.mp4"
+                  poster="/images/realisations/sac-personnalise-brode-octavia.webp"
+                  preload="metadata"
                   autoPlay
                   muted
                   loop

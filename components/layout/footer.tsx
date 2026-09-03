@@ -22,12 +22,12 @@ export function Footer() {
                 <Truck className="w-6 h-6" />
               </div>
               <div className="flex-1">
-                <div className="inline-block text-[8px] font-black uppercase tracking-widest text-primary bg-pink-50 px-2 py-0.5 rounded-full mb-1">
+                <div className="inline-block text-[8px] font-black uppercase tracking-widest text-rose-950 bg-rose-100 px-2 py-0.5 rounded-full mb-1">
                   Expédition France
                 </div>
-                <h5 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
+                <h3 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
                   Mondial Relay & Colissimo
-                </h5>
+                </h3>
                 <p className="text-[10px] text-stone-600 font-medium leading-relaxed">
                   Livraison en point relais partout en France ou à domicile en 48h.
                 </p>
@@ -43,9 +43,9 @@ export function Footer() {
                 <div className="inline-block text-[8px] font-black uppercase tracking-widest text-stone-700 bg-stone-100 px-2 py-0.5 rounded-full mb-1">
                   Fait Main 76
                 </div>
-                <h5 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
+                <h3 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
                   Atelier Normand
-                </h5>
+                </h3>
                 <p className="text-[10px] text-stone-600 font-medium leading-relaxed">
                   Confection & broderie artisanale soignée à Robertot (Seine-Maritime).
                 </p>
@@ -61,9 +61,9 @@ export function Footer() {
                 <div className="inline-block text-[8px] font-black uppercase tracking-widest text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full mb-1">
                   Réactivité
                 </div>
-                <h5 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
+                <h3 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
                   Devis Express 24h
-                </h5>
+                </h3>
                 <p className="text-[10px] text-stone-600 font-medium leading-relaxed">
                   Chiffrage précis et maquette numérique pour particuliers & pros.
                 </p>
@@ -79,9 +79,9 @@ export function Footer() {
                 <div className="inline-block text-[8px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full mb-1">
                   Certification
                 </div>
-                <h5 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
+                <h3 className="text-xs font-black uppercase tracking-wider text-stone-900 mb-1 leading-snug">
                   Qualité Artisanale
-                </h5>
+                </h3>
                 <p className="text-[10px] text-stone-600 font-medium leading-relaxed">
                   Fils haute résistance Madeira Polyneon et textiles Oeko-Tex.
                 </p>
@@ -165,7 +165,7 @@ export function Footer() {
               >
                 <div className="w-full h-full bg-white/90 group-hover:bg-transparent rounded-2xl flex items-center justify-center transition-colors">
                   <svg className="w-5 h-5 fill-[#25D366] group-hover:fill-white transition-colors" viewBox="0 0 24 24">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.579-.271-1.077-.394-1.89-1.393-2.023-1.574-.134-.181-.497-.661-.497-1.258 0-.598.307-.891.417-1.011.111-.12.242-.15.324-.15.081 0 .162.002.233.006.074.004.172-.029.27.205.101.242.348.85.378.912.03.061.05.132.01.213-.04.08-.06.13-.12.2-.06.071-.128.158-.183.212-.06.061-.123.127-.053.248.07.121.312.515.67 834.461.411.849.539.97.599.12.06.192.051.262-.03.07-.081.303-.353.383-.474.08-.121.162-.101.272-.06.111.04.707.333.828.394.12.06.202.091.232.141.03.051.03.292-.114.697z"/>
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                   </svg>
                 </div>
               </a>

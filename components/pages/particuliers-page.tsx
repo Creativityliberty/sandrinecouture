@@ -188,6 +188,7 @@ export function ParticuliersPage() {
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-stone-900 border border-stone-800 shadow-2xl group">
                 <video
                   src="https://assets.mixkit.co/videos/preview/mixkit-sewing-machine-stitching-fabric-41718-large.mp4"
+                  preload="none"
                   poster="/images/realisations/gilet-berger-bebe-reversible-moumoute-sherpa.webp"
                   autoPlay
                   muted
