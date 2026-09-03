@@ -128,7 +128,7 @@ export function HeroSection() {
               <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8 inline-block transition-transform hover:scale-105 duration-300">
                 relief éternel
               </span> <br />
-              à vos créations.
+              à vos envies.
             </h1>
 
             {/* Balanced luxury editorial copy */}

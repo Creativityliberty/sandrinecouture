@@ -74,12 +74,12 @@ export function Navbar() {
     >
       <div className="w-full max-w-7xl mx-auto px-2.5 sm:px-6 flex items-center justify-center">
         
-        {/* Animated Command Bar Container - Guaranteed 100% Fit on 320px to 430px */}
+        {/* Animated Command Bar Container - Guaranteed 100% Fit on All Screens */}
         <div
-          className={`pointer-events-auto w-full max-w-5xl rounded-full px-2.5 sm:px-6 py-1.5 sm:py-2 flex items-center justify-between transition-all duration-500 border ${
+          className={`pointer-events-auto w-full max-w-7xl rounded-full px-3 sm:px-6 py-1.5 sm:py-2 flex items-center justify-between transition-all duration-500 border ${
             isScrolled
               ? "bg-stone-950/90 border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] backdrop-blur-xl text-white"
-              : "bg-white/90 border-black/10 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] backdrop-blur-xl text-stone-900"
+              : "bg-white/95 border-black/10 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] backdrop-blur-xl text-stone-900"
           }`}
         >
           
@@ -87,7 +87,7 @@ export function Navbar() {
           <Link
             href="/"
             aria-label="Retour à l'accueil"
-            className="flex items-center gap-2 sm:gap-3 group shrink-0 no-underline min-w-0"
+            className="flex items-center gap-2 sm:gap-3 group shrink-0 no-underline min-w-0 mr-2"
           >
             <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border p-0.5 shrink-0 transition-all duration-500 group-hover:scale-105 ${
               isScrolled ? "border-primary/40 bg-stone-900 shadow-sm" : "border-primary/20 bg-white shadow-xs"
@@ -117,7 +117,7 @@ export function Navbar() {
           <nav
             ref={dockRef}
             aria-label="Navigation principale"
-            className="hidden lg:flex items-center justify-center gap-1.5 h-10 px-2"
+            className="hidden lg:flex items-center justify-center gap-1 xl:gap-1.5 h-10 px-1 xl:px-2 flex-1 max-w-fit mx-auto"
           >
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
@@ -129,7 +129,7 @@ export function Navbar() {
                   href={item.href}
                   data-dock-item
                   aria-current={isActive ? "page" : undefined}
-                  className={`inline-flex items-center gap-2 h-9 px-3.5 rounded-full text-xs font-mono uppercase tracking-wider transition-colors duration-200 cursor-pointer no-underline select-none whitespace-nowrap will-change-transform ${
+                  className={`inline-flex items-center gap-1.5 xl:gap-2 h-9 px-2.5 xl:px-3.5 rounded-full text-[11px] xl:text-xs font-mono uppercase tracking-wider transition-colors duration-200 cursor-pointer no-underline select-none whitespace-nowrap will-change-transform ${
                     isActive
                       ? isScrolled
                         ? "bg-white text-stone-950 font-bold shadow-md"
@@ -139,7 +139,7 @@ export function Navbar() {
                         : "text-stone-600 hover:text-stone-950 hover:bg-black/5"
                   }`}
                 >
-                  <Icon size={13} className={isActive ? "text-primary" : "opacity-70"} />
+                  <Icon size={12} className={isActive ? "text-primary" : "opacity-70"} />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -147,7 +147,7 @@ export function Navbar() {
           </nav>
 
           {/* 3. PAIRED ACTIONS & CART (RIGHT) */}
-          <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-2">
             
             {/* Cart Button */}
             <button
