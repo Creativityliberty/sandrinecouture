@@ -45,8 +45,9 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ThreeUI Animated Proximity Dock Controller (Variant Command Bar / Modern)
+  // ThreeUI Animated Proximity Dock Controller (Variant Command Bar / Modern) — Desktop Only
   useEffect(() => {
+    if (typeof window === "undefined" || window.innerWidth < 1024) return;
     const root = dockRef.current;
     if (!root) return;
 

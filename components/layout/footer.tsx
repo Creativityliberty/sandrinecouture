@@ -203,7 +203,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/devis" className="hover:text-primary transition-colors no-underline font-bold text-primary">
+                <Link href="/devis" className="hover:text-pink-700 transition-colors no-underline font-black text-stone-950 underline decoration-pink-500 underline-offset-4">
                   Demande de Devis 24h
                 </Link>
               </li>

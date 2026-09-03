@@ -1,4 +1,3 @@
-"use client";
 
 import { AIAssistant } from "@/components/layout/ai-assistant";
 import { Footer } from "@/components/layout/footer";

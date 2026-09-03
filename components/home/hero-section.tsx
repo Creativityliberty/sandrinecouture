@@ -89,15 +89,15 @@ export function HeroSection() {
       <div className="w-full max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative overflow-hidden">
         
         {/* Top Atelier Bar: Clean luxury meta header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 pb-6 sm:pb-8 mb-8 sm:mb-10 border-b border-black/[0.08] text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium text-stone-500">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 pb-6 sm:pb-8 mb-8 sm:mb-10 border-b border-black/[0.08] text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-bold text-stone-700">
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
             </span>
-            <span className="text-stone-800 font-bold tracking-wider">Atelier Normand • Robertot (76)</span>
-            <span className="text-stone-300 hidden sm:inline">/</span>
-            <span className="hidden sm:inline">Capacité de production ouverte</span>
+            <span className="text-stone-900 font-black tracking-wider">Atelier Normand • Robertot (76)</span>
+            <span className="text-stone-400 hidden sm:inline">/</span>
+            <span className="hidden sm:inline text-stone-700">Capacité de production ouverte</span>
           </div>
 
           <div className="flex items-center gap-4 text-[9px] sm:text-[10px] font-bold text-stone-700">
@@ -142,17 +142,17 @@ export function HeroSection() {
               <div className="p-2 sm:p-3 text-center sm:text-left">
                 <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-700 font-bold">Délai Devis</div>
                 <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">24h</div>
-                <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Étude & BAT</div>
+                <div className="text-[8px] sm:text-[10px] text-stone-600 font-semibold hidden xs:block">Étude & BAT</div>
               </div>
               <div className="p-2 sm:p-3 border-x border-black/[0.06] text-center sm:text-left">
                 <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-700 font-bold">Tenue Fil</div>
                 <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">60°C</div>
-                <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Inusable</div>
+                <div className="text-[8px] sm:text-[10px] text-stone-600 font-semibold hidden xs:block">Inusable</div>
               </div>
               <div className="p-2 sm:p-3 text-center sm:text-left">
                 <div className="text-[8px] sm:text-[10px] uppercase tracking-wider sm:tracking-widest text-stone-700 font-bold">Volumes</div>
                 <div className="text-base sm:text-lg font-black text-stone-900 mt-0.5 tracking-tight">1 à 500+</div>
-                <div className="text-[8px] sm:text-[10px] text-stone-500 font-medium hidden xs:block">Unité ou séries</div>
+                <div className="text-[8px] sm:text-[10px] text-stone-600 font-semibold hidden xs:block">Unité ou séries</div>
               </div>
             </div>
 

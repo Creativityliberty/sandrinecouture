@@ -70,6 +70,7 @@ const MessageBubble = ({ m, setIsOpen }: { m: { role: 'user' | 'assistant', cont
 };
 
 export function AIAssistant() {
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant', content: string }[]>([
     { role: 'assistant', content: "Bonjour ! Je suis Sandrine. Avez-vous un projet de broderie ou un cadeau en tête ? Je suis là pour vous conseiller avec grand plaisir ! ✨" }
@@ -77,6 +78,15 @@ export function AIAssistant() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(() => setMounted(true));
+    } else {
+      setTimeout(() => setMounted(true), 1200);
+    }
+  }, []);
 
   const quickActions = [
     { label: "Faire un devis", icon: <FileText size={12} />, href: "/devis" },
@@ -87,6 +97,8 @@ export function AIAssistant() {
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [messages]);
+
+  if (!mounted) return null;
 
   const handleSend = async (text?: string) => {
     const messageToSend = text || input;
@@ -226,6 +238,10 @@ export function AIAssistant() {
             <img 
               src="/chatbot-icon-3d.webp" 
               alt="Assistant Broderie 3D" 
+              width={48}
+              height={48}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-[0_4px_8px_rgba(244,63,94,0.4)]" 
             />
           </div>
