@@ -69,7 +69,7 @@ const BENTO_SERVICES: BentoItem[] = [
     category: "all",
     title: "Petite Maroquinerie & Pochettes",
     tagline: "Créations uniques & accessoires de mode",
-    description: "Trousses zippées, tote bags en toile épaisse et étuis sur-mesure confectionnés ou personnalisés directement dans notre atelier normand.",
+    description: "Trousses zippées, tote bags en toile épaisse et étuis sur-mesure confectionnés ou personnalisés de mes mains dans mon atelier normand.",
     features: ["Coton canevas robuste", "Fermetures éclair premium", "Idéal cadeaux d'événements"],
     badge: "Atelier",
     imgUrl: "/images/realisations/gilet-berger-bebe-reversible-suedine-marron.webp",

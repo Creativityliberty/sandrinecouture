@@ -134,7 +134,7 @@ export function HeroSection() {
             {/* Balanced luxury editorial copy */}
             <p className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed mb-8 max-w-lg">
               De l’emblème corporate haute densité aux trousseaux de naissance cousus d’amour. 
-              Chaque point de fil est programmé et brodé dans notre atelier pour résister à l'épreuve du temps.
+              Chaque point de fil est programmé et brodé de mes mains dans mon atelier normand pour résister à l'épreuve du temps.
             </p>
 
             {/* Technical Confection Cards */}
@@ -186,7 +186,7 @@ export function HeroSection() {
               <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                 <ShieldCheck size={14} />
               </div>
-              <span>Accompagnement personnalisé par Sandrine pour chaque projet</span>
+              <span>Je vous accompagne personnellement pour donner vie à chacun de vos projets</span>
             </div>
 
           </div>

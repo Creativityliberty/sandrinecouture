@@ -259,7 +259,7 @@ export default function BoutiquePage() {
               </h1>
 
               <p className="text-stone-600 text-base max-w-lg leading-relaxed font-normal">
-                Des matières premières nobles choisies avec soin (velours côtelé, éponge 550g, gaze de coton) prêtes à accueillir la broderie personnalisée de votre choix. Confectionnées sous vos yeux dans notre atelier normand.
+                Des matières premières nobles choisies avec soin (velours côtelé, éponge 550g, gaze de coton) prêtes à accueillir la broderie personnalisée de votre choix. Confectionnées avec amour de mes mains dans mon atelier normand.
               </p>
             </div>
 

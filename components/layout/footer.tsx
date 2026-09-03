@@ -133,7 +133,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Suivez-nous sur Instagram"
+                aria-label="Suivez mes créations sur Instagram"
                 title="Instagram @bysandrinecouture"
                 className="group relative w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] p-[1px] shadow-sm hover:shadow-md hover:scale-110 transition-all duration-300"
               >

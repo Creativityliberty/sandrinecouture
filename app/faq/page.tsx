@@ -13,52 +13,52 @@ export default function FAQPage() {
     {
       question: "Quels sont les délais de livraison ?",
       answer:
-        "Les délais moyens sont de 10 jours ouvrables après validation de la commande. Pour les urgences, contactez-nous directement via WhatsApp au 06 29 49 22 13.",
+        "Les délais moyens sont de 10 jours ouvrables après validation de la commande. Pour les urgences, contactez-moi directement via WhatsApp au 06 29 49 22 13.",
     },
     {
       question: "Acceptez-vous les petites commandes ?",
       answer:
-        "Oui ! Nous acceptons les commandes à partir d'une pièce. Que ce soit pour un cadeau unique ou une série complète, nous adaptons nos services à vos besoins.",
+        "Oui ! J'accepte les commandes à partir d'une seule pièce. Que ce soit pour un cadeau unique ou une série complète pour votre entreprise, j'adapte ma confection à vos envies.",
     },
     {
       question: "Quels types de textiles pouvez-vous broder ?",
       answer:
-        "Nous brodons sur : polos, t-shirts, sweats, tabliers, serviettes, peignoirs, sacs, trousses, et bien d'autres. Si vous avez un textile spécifique, contactez-nous pour vérifier la faisabilité.",
+        "Je brode sur tous types de supports : polos, t-shirts, sweats, vestes de travail, tabliers, serviettes, peignoirs, sacs et doudous. Si vous avez un textile spécifique, écrivez-moi pour vérifier ensemble.",
     },
     {
       question: "Comment fonctionne le processus de devis ?",
       answer:
-        "1. Vous remplissez le formulaire de devis avec vos détails (logo, quantité, article)\n2. Nous vous répondons sous 24h avec un devis clair\n3. Vous validez et versez un acompte si nécessaire\n4. Nous commençons la production\n5. Livraison à votre adresse",
+        "1. Vous remplissez le formulaire de devis avec vos détails (logo, quantité, article)\n2. Je vous réponds personnellement sous 24h avec un devis clair\n3. Vous validez votre maquette (BAT)\n4. Je lance la confection dans mon atelier\n5. Livraison à votre adresse",
     },
     {
       question: "Pouvez-vous reproduire mon logo en broderie ?",
       answer:
-        "Oui ! Nous numérisons votre logo en haute définition avant la broderie. Cela garantit un rendu propre et lisible. Nous vous montrons un aperçu avant de commencer la production.",
+        "Oui ! Je digitalise et numérise votre logo en haute définition point par point. Je vous envoie systématiquement un aperçu numérique ou une broderie test avant de lancer la production.",
     },
     {
       question: "Quelle est la durée de vie d'une broderie ?",
       answer:
-        "Nos broderies sont très durables et résistent au lavage intensif. Elles ne s'effacent pas et conservent leur qualité pendant des années, même avec un usage quotidien.",
+        "Mes broderies sont conçues pour durer toute une vie. Avec mes fils certifiés Madeira et Oeko-Tex, elles résistent aux lavages intensifs à 60°C sans jamais décolorer ni s'effilocher.",
     },
     {
       question: "Livrez-vous en dehors de la Normandie ?",
       answer:
-        "Oui ! Nous livrons partout en France métropolitaine. Les frais de port varient selon la destination. Contactez-nous pour un devis de livraison.",
+        "Oui ! J'expédie partout en France métropolitaine via Mondial Relay (en point relais) et Colissimo à domicile, ou par retrait direct à mon atelier de Robertot (76).",
     },
     {
       question: "Proposez-vous des retouches ou modifications ?",
       answer:
-        "Bien sûr ! Si vous n'êtes pas satisfait, nous pouvons effectuer des retouches. Contactez-nous dans les 7 jours suivant la livraison.",
+        "Bien sûr ! Votre satisfaction est ma priorité absolue. Si un ajustement est nécessaire, je réalise les retouches avec soin. Contactez-moi simplement dès réception.",
     },
     {
       question: "Quel est votre délai de réponse aux devis ?",
       answer:
-        "Nous répondons à tous les devis sous 24 heures ouvrables. Pour une réponse plus rapide, utilisez WhatsApp : 06 29 49 22 13",
+        "Je réponds personnellement à chaque demande sous 24 heures ouvrées. Pour un échange direct et instantané, écrivez-moi sur WhatsApp au 06 29 49 22 13.",
     },
     {
       question: "Acceptez-vous les paiements en plusieurs fois ?",
       answer:
-        "Pour les commandes importantes, nous pouvons étudier un paiement en plusieurs fois. Contactez-nous directement pour discuter des modalités.",
+        "Pour les commandes pro ou importantes, nous pouvons étudier ensemble des facilités de règlement. Écrivez-moi directement pour en parler.",
     },
   ];
 
@@ -102,7 +102,7 @@ export default function FAQPage() {
             Vous n'avez pas trouvé votre réponse ?
           </h2>
           <p className="text-gray-700 mb-6 sm:mb-8 font-medium text-sm sm:text-base md:text-lg">
-            Contactez-nous directement, nous sommes là pour vous aider !
+            Contactez-moi directement sur WhatsApp ou par email, je vous réponds avec grand plaisir !
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link href="/devis" className="no-underline">

@@ -344,7 +344,7 @@ export function ParticuliersPage() {
                 <span className="font-serif italic font-normal text-primary normal-case">dans les moindres détails</span>.
               </h2>
               <p className="text-stone-600 text-base leading-relaxed mb-8 font-normal">
-                Chaque pièce est confectionnée avec soin dans notre atelier. Vous choisissez chaque élément pour créer un objet qui vous ressemble ou qui marquera la personne qui le reçoit.
+                Chaque pièce est confectionnée avec tendresse et minutie dans mon atelier. Vous choisissez chaque élément pour créer un objet qui vous ressemble ou qui marquera la personne qui le reçoit.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">

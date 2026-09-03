@@ -72,7 +72,7 @@ const MessageBubble = ({ m, setIsOpen }: { m: { role: 'user' | 'assistant', cont
 export function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant', content: string }[]>([
-    { role: 'assistant', content: "Bonjour ! Je suis l'assistant de Sandrine. Avez-vous un projet de broderie en tête ? Je suis là pour vous conseiller. ✨" }
+    { role: 'assistant', content: "Bonjour ! Je suis Sandrine. Avez-vous un projet de broderie ou un cadeau en tête ? Je suis là pour vous conseiller avec grand plaisir ! ✨" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -80,7 +80,7 @@ export function AIAssistant() {
 
   const quickActions = [
     { label: "Faire un devis", icon: <FileText size={12} />, href: "/devis" },
-    { label: "Nos réalisations", icon: <Sparkles size={12} />, href: "/realisations" },
+    { label: "Mes réalisations", icon: <Sparkles size={12} />, href: "/realisations" },
     { label: "WhatsApp", icon: <Phone size={12} />, href: `https://wa.me/${SITE_CONFIG.whatsapp}`, external: true }
   ];
 

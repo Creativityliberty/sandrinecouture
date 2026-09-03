@@ -30,7 +30,7 @@ export function CtaSection() {
         </h2>
 
         <p className="text-stone-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Que vous ayez un fichier vectoriel prêt ou simplement une idée de prénom et de couleur, nous vous répondons avec bienveillance sous 24h ouvrées.
+          Que vous ayez un fichier vectoriel prêt ou simplement une idée de prénom et de couleur, je vous réponds personnellement avec bienveillance sous 24h ouvrées.
         </p>
 
         {/* Dual Luxury Action Bar */}

@@ -24,7 +24,7 @@ export function SegmentationSection() {
             </h2>
           </div>
           <p className="text-stone-500 text-sm max-w-sm font-medium leading-relaxed">
-            Que votre demande concerne 500 polos corporate ou un trousseau de naissance cousu à l'unité, notre atelier applique les mêmes standards de rigueur artisanale.
+            Que votre demande concerne 500 polos d'entreprise ou un trousseau de naissance cousu avec amour à l'unité, j'applique la même exigence et le même soin artisanal.
           </p>
         </div>
 

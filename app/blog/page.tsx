@@ -54,7 +54,7 @@ export default function BlogPage() {
             <span className="text-primary not-italic">Conseils Textiles</span>
           </h1>
           <p className="text-base sm:text-lg text-gray-700 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
-            Astuces d'entretien, guides techniques pour entreprises, idées cadeaux de naissance personnalisés et coulisses de notre atelier à Robertot.
+            Astuces d'entretien, guides techniques pour entreprises, idées cadeaux de naissance personnalisés et coulisses de mon atelier artisanal à Robertot.
           </p>
 
           {/* Search & Category filter */}
@@ -181,7 +181,7 @@ export default function BlogPage() {
             Demandez votre devis personnalisé gratuit
           </h2>
           <p className="text-gray-700 mb-8 font-medium max-w-xl mx-auto text-sm leading-relaxed">
-            Entreprises, artisans ou créations de naissance : recevez une réponse détaillée et un chiffrage précis sous 24h.
+            Entreprises, artisans ou créations de naissance : je vous réponds personnellement avec un chiffrage précis sous 24h ouvrées.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

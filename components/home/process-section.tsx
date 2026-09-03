@@ -18,7 +18,7 @@ const STEPS = [
     num: "02",
     phase: "Pré-production",
     title: "Numérisation & Piquage",
-    desc: "Nous programmons la matrice de broderie : calcul des densités, choix des sous-couches et sélection des fils Madeira.",
+    desc: "Je programme votre matrice de broderie point par point : calcul des densités, renforts et sélection des nuances de fils Madeira.",
     action: "Matrice haute définition",
     icon: Cpu
   },
@@ -63,7 +63,7 @@ export function ProcessSection() {
             </h2>
           </div>
           <p className="text-stone-400 text-sm max-w-md font-medium leading-relaxed">
-            Pas de jargon compliqué, ni de mauvaises surprises. Sandrine vous guide personnellement à chaque étape pour un résultat conforme à vos attentes.
+            Pas de jargon compliqué, ni de mauvaises surprises. Je vous guide personnellement à chaque étape pour un résultat parfaitement fidèle à vos attentes.
           </p>
         </div>
 

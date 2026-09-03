@@ -35,7 +35,7 @@ export function LocalisationSection() {
             </h2>
 
             <p className="text-stone-300 text-base leading-relaxed mb-8 max-w-lg">
-              L'atelier est installé en Normandie, mais nos broderies voyagent dans tout l'Hexagone et en Europe. Bénéficiez d'une confection artisanale locale avec un service d'expédition rapide et ultra-soigné.
+              Mon atelier est installé à Robertot en Normandie, mais mes créations et broderies voyagent dans toute la France et en Europe. Bénéficiez d'une confection artisanale locale avec un service d'expédition rapide et ultra-soigné.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">

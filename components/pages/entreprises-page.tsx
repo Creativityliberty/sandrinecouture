@@ -212,7 +212,7 @@ export function EntreprisesPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed mb-8 max-w-xl">
-                Restaurants, artisans, hôtellerie, PME et clubs. Donnez à votre équipe une prestance d'exception avec une broderie industrielle haute définition, inusable au lavage et conçue dans notre atelier normand.
+                Restaurants, artisans, hôtellerie, PME et clubs. Donnez à votre équipe une prestance d'exception avec une broderie industrielle haute définition, inusable au lavage et réalisée de mes mains dans mon atelier normand.
               </p>
 
               {/* Instant Assurance Pills */}
@@ -588,7 +588,7 @@ export function EntreprisesPage() {
               { num: "01", title: "Briefing", desc: "Envoi de votre logo vectoriel + quantité + types d'articles souhaités." },
               { num: "02", title: "Devis Chiffré", desc: "Réponse détaillée sous 24h ouvrées avec conseils sur les textiles." },
               { num: "03", title: "BAT & Accord", desc: "Validation de la matrice de broderie avant lancement en production." },
-              { num: "04", title: "Confection", desc: "Broderie artisanale haute densité réalisée dans notre atelier à Robertot." },
+              { num: "04", title: "Confection", desc: "Broderie artisanale haute précision que je réalise personnellement dans mon atelier à Robertot." },
               { num: "05", title: "Livraison", desc: "Expédition suivie ou retrait direct sur place selon vos préférences." },
             ].map((step, sIdx) => (
               <div key={sIdx} className="p-6 rounded-2xl bg-[#faf8f5] border border-black/[0.06] flex flex-col justify-between min-h-[220px]">
