@@ -127,7 +127,7 @@ export function Navbar() {
                   key={item.id}
                   href={item.href}
                   data-dock-item
-                  aria-pressed={isActive}
+                  aria-current={isActive ? "page" : undefined}
                   className={`inline-flex items-center gap-2 h-9 px-3.5 rounded-full text-xs font-mono uppercase tracking-wider transition-colors duration-200 cursor-pointer no-underline select-none whitespace-nowrap will-change-transform ${
                     isActive
                       ? isScrolled

@@ -217,10 +217,14 @@ export function HeroSection() {
             {/* Luxury Showcase Frame */}
             <div className="relative w-full max-w-[calc(100vw-2rem)] sm:max-w-[440px] aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-stone-900 border border-stone-800/80 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.25)] group">
               
-              {/* Product Visual */}
+              {/* Product Visual (Priority LCP Asset) */}
               <img
                 src={isMacro ? current.macroUrl : current.imgUrl}
                 alt={current.title}
+                width={480}
+                height={600}
+                fetchPriority="high"
+                decoding="sync"
                 className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
               />
 

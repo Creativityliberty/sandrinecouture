@@ -91,6 +91,14 @@ export default function RootLayout({
         <SchemaOrgWebSite />
         <SchemaOrgOrganization />
         <SchemaOrgLocalBusiness />
+        {/* Preload critical LCP Hero Image */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim.webp"
+          fetchPriority="high"
+          type="image/webp"
+        />
       </head>
       <body className="antialiased font-sans relative" suppressHydrationWarning>
         <CartProvider>
