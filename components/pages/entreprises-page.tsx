@@ -138,7 +138,7 @@ const PACKS = [
       "Frais de numérisation & matrice offerts",
       "Logo Cœur + Option Nuque ou Manche",
       "Possibilité d'ajouter les prénoms de l'équipe",
-      "Échantillon brodé physique préalable",
+      "Validation sur maquette numérique haute définition",
       "Livraison suivie express en France offerte",
       "Tarifs dégressifs avantageux"
     ],

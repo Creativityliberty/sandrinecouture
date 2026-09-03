@@ -63,7 +63,7 @@ export function CtaSection() {
             <MapPin size={13} className="text-primary" /> Atelier à Robertot (76)
           </span>
           <span className="flex items-center gap-2">
-            <ShieldCheck size={13} className="text-primary" /> Devis & BAT gratuit
+            <ShieldCheck size={13} className="text-primary" /> Devis personnalisé sous 24h
           </span>
           <span className="flex items-center gap-2">
             <Scissors size={13} className="text-primary" /> Confection artisanale française

@@ -97,29 +97,25 @@ export function Footer() {
             <Link
               href="/"
               aria-label="Retour à l'accueil"
-              className="flex items-center gap-3 mb-5 group cursor-pointer relative no-underline"
-              onMouseEnter={() => setIsLogoHovered(true)}
-              onMouseLeave={() => setIsLogoHovered(false)}
+              className="flex items-center gap-3.5 mb-5 group cursor-pointer relative no-underline"
             >
-              <div className="w-10 h-10 rounded-full border border-black/10 overflow-hidden bg-white shadow-sm p-1 transition-all duration-500 group-hover:shadow-md group-hover:scale-110">
+              <div className="w-12 h-12 rounded-full border border-black/10 overflow-hidden bg-white shadow-sm p-1 transition-all duration-500 group-hover:shadow-md group-hover:scale-105 shrink-0">
                 <img
                   src="/logo-sandrine.webp"
-                  width={40}
-                  height={40}
+                  width={48}
+                  height={48}
                   className="w-full h-full object-cover rounded-full"
-                  alt="Sandrine Couture Logo"
+                  alt="By Sandrine Couture"
                 />
               </div>
-              <h3
-                className={`font-black tracking-tighter italic uppercase leading-none text-black transition-all duration-500 overflow-hidden whitespace-nowrap ${
-                  isLogoHovered
-                    ? "max-w-xs opacity-100 translate-x-0"
-                    : "max-w-[60px] opacity-100 -translate-x-1"
-                }`}
-              >
-                By Sandrine <br />
-                Couture
-              </h3>
+              <div className="flex flex-col text-left">
+                <span className="text-xl sm:text-2xl font-black uppercase tracking-tight text-stone-950 font-mono leading-none">
+                  By Sandrine Couture
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-bold mt-1">
+                  Atelier de Broderie & Confection • Robertot
+                </span>
+              </div>
             </Link>
             <p className="text-black max-w-sm leading-relaxed mb-6 text-sm md:text-xs font-medium">
               Atelier de broderie d'excellence en Normandie. Spécialiste du

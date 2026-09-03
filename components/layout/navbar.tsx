@@ -102,13 +102,13 @@ export function Navbar() {
             </div>
             
             <div className="flex flex-col text-left min-w-0">
-              <span className={`text-[11px] sm:text-xs font-black tracking-tighter uppercase leading-none font-mono truncate ${
+              <span className={`text-[11px] sm:text-xs font-black tracking-tight uppercase leading-none font-mono truncate ${
                 isScrolled ? "text-white" : "text-stone-900"
               }`}>
-                By Sandrine
+                By Sandrine Couture
               </span>
               <span className="text-[8px] sm:text-[9px] uppercase tracking-wider sm:tracking-widest text-primary font-bold truncate">
-                Atelier Normand
+                Broderie & Confection • Robertot
               </span>
             </div>
           </Link>

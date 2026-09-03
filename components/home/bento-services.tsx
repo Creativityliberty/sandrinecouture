@@ -37,7 +37,7 @@ const BENTO_SERVICES: BentoItem[] = [
     title: "Entreprises, Artisans & Clubs",
     tagline: "Séries textiles corporate & écussons",
     description: "Digitalisation fidèle de votre logo d'entreprise. Sweats, polos, vestes softshell, tabliers et casquettes brodés pour valoriser votre image de marque.",
-    features: ["Aucun minimum imposé", "Fils ultra-résistants 60°C", "Échantillon / BAT brodé préalable"],
+    features: ["Aucun minimum imposé", "Fils ultra-résistants 60°C", "Maquette & BAT numérique préalable"],
     badge: "B2B & Collectivités",
     imgUrl: "/images/realisations/sweat-capuche-rouge-brode-ours-muspelheim.webp",
     size: "large"

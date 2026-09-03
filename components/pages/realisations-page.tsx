@@ -91,7 +91,7 @@ export function RealisationsPage() {
             <div className="flex items-center gap-2.5">
               <BookOpen size={16} className="text-primary" />
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-stone-900">
-                La Bibliothèque Tactile • 7 Recueils d'Échantillons 3D
+                La Bibliothèque Tactile • 7 Recueils de Créations 3D
               </h2>
             </div>
             <span className="text-[11px] font-mono text-stone-500">

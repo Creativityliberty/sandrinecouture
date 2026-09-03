@@ -74,7 +74,7 @@ const PRODUCTS: Product[] = [
     price: 35.00,
     category: "Bain",
     badge: "Qualité Grand Hôtel",
-    spec: "Éponge 550g/m² • Résistance chlore & 60°C",
+    spec: "Éponge 550g/m² • Résistance 60°C",
     description: "Serviette éponge épaisse et ultra-douce, idéale pour le bain quotidien avec une broderie de précision au choix.",
     imgUrl: "/images/realisations/serviette-bain-brodee-personnalisee-medieval-fantastique-robertot-normandie.webp",
     colors: [
@@ -131,6 +131,99 @@ const PRODUCTS: Product[] = [
       { name: "Noir", hex: "#1A202C" }
     ],
     fonts: ["Script", "Moderne", "Classique"]
+  },
+  {
+    id: 7,
+    title: "Cartable maternelle rétro en velours",
+    price: 45.00,
+    category: "Bébé",
+    badge: "Coup de Cœur Rentrée",
+    spec: "Velours côtelé grosse côte • Fermoirs métal vintage",
+    description: "Cartable d'école maternelle style rétro avec poignée confort et broderie du prénom en fil haute densité.",
+    imgUrl: "/images/realisations/cartables-maternelle-velours-cotele-retro-brodes-ruben-illan.webp",
+    colors: [
+      { name: "Bleu pétrole", hex: "#1E3D59" },
+      { name: "Vieux rose", hex: "#D4A373" },
+      { name: "Vert forêt", hex: "#2D5A27" }
+    ],
+    fonts: ["Script", "Moderne", "Classique"]
+  },
+  {
+    id: 8,
+    title: "Doudou plat lapin & Liberty fleuri",
+    price: 28.00,
+    category: "Bébé",
+    badge: "Fait Main Robertot",
+    spec: "Éponge rose poudré • Véritable Liberty de Londres",
+    description: "Doudou plat lapin ultra-doux avec oreilles et foulard en tissu Liberty, brodé au prénom de bébé en fil grand teint.",
+    imgUrl: "/images/realisations/doudou-plat-lapin-rose-liberty-brode-prenom-nahima.webp",
+    colors: [
+      { name: "Rose poudré", hex: "#E8C5C8" },
+      { name: "Écru", hex: "#F5F0EA" },
+      { name: "Vert d'eau", hex: "#C7E8D8" }
+    ],
+    fonts: ["Script", "Moderne", "Classique"]
+  },
+  {
+    id: 9,
+    title: "Gilet de berger réversible bébé",
+    price: 38.00,
+    category: "Bébé",
+    badge: "Pièce Artisanale",
+    spec: "Sherpa moumoute ultra-chaud • Suédine marron",
+    description: "Gilet sans manche réversible pour bébé, parfait pour les demi-saisons et les promenades bien au chaud.",
+    imgUrl: "/images/realisations/gilet-berger-bebe-reversible-moumoute-sherpa.webp",
+    colors: [
+      { name: "Naturel", hex: "#E2D9C8" },
+      { name: "Chocolat", hex: "#5C4033" }
+    ],
+    fonts: ["Classique"]
+  },
+  {
+    id: 10,
+    title: "Lange de cérémonie & baptême brodé",
+    price: 24.00,
+    category: "Bébé",
+    badge: "Cérémonie",
+    spec: "Double gaze coton blanc • Broderie soignée or ou vert",
+    description: "Lange d'apparat en mousseline de coton blanc avec broderie personnalisée pour baptême (parrain, marraine, date).",
+    imgUrl: "/images/realisations/lange-bapteme-brode-ours-parrain-marraine-enzo.webp",
+    colors: [
+      { name: "Blanc pur", hex: "#FFFFFF" }
+    ],
+    fonts: ["Script", "Classique"]
+  },
+  {
+    id: 11,
+    title: "Sac banane XL velours brodé",
+    price: 32.00,
+    category: "Accessoires",
+    badge: "Tendance Mode",
+    spec: "Velours côtelé épais • Sangle ajustable résistante",
+    description: "Grande banane zippée avec texte ou motif brodé personnalisé, ultra pratique pour le quotidien.",
+    imgUrl: "/images/realisations/banane-brodee-je-roule-ma-bosse.webp",
+    colors: [
+      { name: "Gris souris", hex: "#7E8287" },
+      { name: "Noir profond", hex: "#1C1917" },
+      { name: "Terracotta", hex: "#C08A74" }
+    ],
+    fonts: ["Script", "Moderne"]
+  },
+  {
+    id: 12,
+    title: "Sweat à message affectif brodé",
+    price: 49.00,
+    category: "Maison",
+    badge: "Cadeau Famille",
+    spec: "Coton peigné doux 320g • Broderie cursive satinée",
+    description: "Sweat col rond ou hoodie brodé d'une attention affectve : Nounou d'amour, Tata d'amour, Maman louve, etc.",
+    imgUrl: "/images/realisations/sweats-brodes-nounou-damour-tata-damour-cadeau-personnalise.webp",
+    colors: [
+      { name: "Écru chiné", hex: "#F0ECE1" },
+      { name: "Denim bleu", hex: "#3B5998" },
+      { name: "Léopard doux", hex: "#7D5A43" }
+    ],
+    fonts: ["Script", "Moderne"]
   }
 ];
 
@@ -173,6 +266,7 @@ export default function BoutiquePage() {
   return (
     <div className="bg-[#faf8f5] text-[#1c1917] min-h-screen selection:bg-primary selection:text-white pt-24 sm:pt-32">
       <Navbar />
+
       {/* Google SEO JSON-LD Product & Store Catalog Schema */}
       <script
         type="application/ld+json"
@@ -181,7 +275,7 @@ export default function BoutiquePage() {
             "@context": "https://schema.org",
             "@type": "ItemPage",
             "name": "Boutique By Sandrine Couture - Créations Textiles Personnalisées",
-            "description": "Boutique artisanale d'articles brodés personnalisés en Normandie : sacs à dos d'écolier en velours, trousses de toilette, serviettes de bain et bavoirs.",
+            "description": "Boutique artisanale d'articles brodés personnalisés en Normandie : sacs à dos d'écolier, cartables velours, trousses de toilette, serviettes de bain et bavoirs.",
             "url": "https://sandrinecouture.com/boutique",
             "mainEntity": {
               "@type": "ItemList",
@@ -218,23 +312,22 @@ export default function BoutiquePage() {
         }}
       />
 
-
-      {/* 1. HERO BOUTIQUE LUXURY CONCEPT STORE */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 border-b border-black/[0.06] overflow-hidden">
+      {/* 1. HERO BOUTIQUE QUIET LUXURY */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 border-b border-stone-200/60 overflow-hidden bg-[#faf8f5]">
         
-        {/* Background Patterns */}
+        {/* Subtle Background Accent */}
         <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:64px_64px]" />
-          <div className="absolute top-10 left-1/3 w-[500px] h-[500px] bg-primary/[0.06] rounded-full blur-[140px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:48px_48px]" />
+          <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-[120px]" />
         </div>
 
         <div className="max-w-7xl mx-auto">
           
           {/* Top Status Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-12 border-b border-black/[0.08] text-[11px] font-mono tracking-widest uppercase text-stone-500">
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-stone-200/80 text-[11px] font-mono tracking-widest uppercase text-stone-500">
             <div className="flex items-center gap-2.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-bold text-stone-800">Boutique Atelier • Confection Réalisée en Normandie</span>
+              <span className="font-bold text-stone-800">By Sandrine Couture • Atelier Robertot (Normandie)</span>
               <span className="text-stone-300">/</span>
               <span>Personnalisation Prénom Incluse</span>
             </div>
@@ -244,69 +337,36 @@ export default function BoutiquePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-6 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-4 shadow-xs">
                 <ShoppingBag size={12} className="text-primary" />
                 <span>La Sélection Prête à Personnaliser</span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-6">
+              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-stone-900 uppercase mb-4">
                 Chaque pièce a <br />
                 <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
                   une histoire à raconter
                 </span>.
               </h1>
-
-              <p className="text-stone-600 text-base max-w-lg leading-relaxed font-normal">
-                Des matières premières nobles choisies avec soin (velours côtelé, éponge 550g, gaze de coton) prêtes à accueillir la broderie personnalisée de votre choix. Confectionnées avec amour de mes mains dans mon atelier normand.
-              </p>
             </div>
 
-            {/* Video Workshop Showcase Card */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden bg-stone-950 border border-stone-800 shadow-2xl group">
-                <video
-                  src="/videos/boutique-hero.mp4"
-                  poster="/images/realisations/sac-personnalise-brode-octavia.webp"
-                  preload="metadata"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent pointer-events-none" />
-
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1 rounded-full bg-stone-950/80 backdrop-blur-md border border-white/20 text-white text-[9px] font-mono tracking-widest uppercase flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
-                    Atelier en Direct
-                  </span>
-                </div>
-
-                <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone-300">
-                    Broderie & Confection Robertot
-                  </span>
-                  <span className="text-[10px] font-mono text-primary font-bold">
-                    100% Artisanal
-                  </span>
-                </div>
-              </div>
-            </div>
+            <p className="text-stone-600 text-sm max-w-sm leading-relaxed font-normal">
+              Des matières nobles choisies avec soin (velours côtelé, éponge 550g, gaze de coton, Liberty) prêtes à accueillir la broderie de votre choix. Confectionnées de mes mains dans mon atelier normand.
+            </p>
           </div>
 
-          {/* Sticky Luxury Filter Segmented Control */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-2 rounded-2xl bg-white border border-black/[0.08] shadow-sm">
-            <div className="flex flex-wrap items-center gap-1.5">
+          {/* Sticky Segmented Filter Control */}
+          <div className="flex flex-wrap items-center justify-between gap-3 p-1.5 rounded-2xl bg-white/80 backdrop-blur-md border border-stone-200/80 shadow-xs">
+            <div className="flex flex-wrap items-center gap-1">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                     selectedCategory === cat
-                      ? "bg-stone-900 text-white shadow-sm"
+                      ? "bg-stone-900 text-white shadow-xs"
                       : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
                   }`}
                 >
@@ -315,9 +375,9 @@ export default function BoutiquePage() {
               ))}
             </div>
 
-            <div className="hidden sm:flex items-center gap-3 px-4 text-xs font-mono text-stone-500">
-              <SlidersHorizontal size={14} className="text-primary" />
-              <span>{filteredProducts.length} créations disponibles</span>
+            <div className="hidden sm:flex items-center gap-2.5 px-4 text-xs font-mono text-stone-500">
+              <SlidersHorizontal size={13} className="text-primary" />
+              <span>{filteredProducts.length} créations</span>
             </div>
           </div>
 
@@ -325,82 +385,67 @@ export default function BoutiquePage() {
 
       </section>
 
-      {/* 2. CATALOG GRID FRAMER LOOKBOOK */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-black/[0.06]">
+      {/* 2. CATALOG GRID — COMPACT & ÉPURÉ */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-stone-200/60 bg-[#faf8f5]">
         <div className="max-w-7xl mx-auto">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="group relative rounded-[2.5rem] bg-white border border-black/[0.07] shadow-sm hover:shadow-2xl hover:border-black/20 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+                onClick={() => openCustomizationModal(product)}
+                className="group cursor-pointer rounded-2xl sm:rounded-3xl bg-white/85 hover:bg-white border border-stone-200/80 hover:border-primary/40 shadow-2xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
               >
-                {/* Visual Canvas */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-950">
+                {/* Visual Image Container — Compact Aspect Ratio */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-100">
                   <img
                     src={product.imgUrl}
                     alt={product.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-
-                  {/* Top Badges */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-white/95 text-stone-900 text-[9px] font-mono tracking-widest uppercase font-bold shadow-xs">
+                  
+                  {/* Category Pill Tag */}
+                  <div className="absolute top-2.5 left-2.5 z-10">
+                    <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-stone-900 text-[8px] sm:text-[9px] font-mono tracking-widest uppercase font-bold shadow-2xs">
                       {product.category}
                     </span>
-                    <span className="px-2.5 py-1 rounded-full bg-stone-950/80 backdrop-blur-md border border-white/20 text-white text-[9px] font-mono uppercase tracking-wider">
-                      {product.badge}
-                    </span>
                   </div>
 
-                  {/* Price Tag Overlay */}
-                  <div className="absolute bottom-4 right-4 z-10">
-                    <span className="px-3.5 py-1.5 rounded-full bg-stone-900/90 text-white backdrop-blur-md border border-white/20 text-xs font-mono font-black shadow-lg">
-                      {product.price.toFixed(2)} €
-                    </span>
+                  {/* Zoom Action on Hover */}
+                  <div className="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-stone-900/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <Eye size={12} />
                   </div>
+
+                  {/* Badge */}
+                  {product.badge && (
+                    <div className="absolute bottom-2.5 left-2.5 z-10">
+                      <span className="px-2 py-0.5 rounded-md bg-stone-950/80 backdrop-blur-md text-white text-[8px] font-mono uppercase tracking-wider">
+                        {product.badge}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
-                {/* Content Card Details */}
-                <div className="p-7 flex flex-col justify-between flex-grow">
+                {/* Content Details */}
+                <div className="p-3.5 sm:p-5 flex flex-col justify-between flex-grow">
                   <div>
-                    <h3 className="text-xl font-black tracking-tight text-stone-900 mb-1.5 leading-snug group-hover:text-primary transition-colors">
-                      {product.title}
-                    </h3>
-                    <div className="text-[11px] font-mono text-primary font-bold mb-3">
+                    <div className="text-[10px] font-mono text-primary font-bold uppercase tracking-wider mb-1 line-clamp-1">
                       {product.spec}
                     </div>
-                    <p className="text-stone-600 text-xs leading-relaxed mb-6 font-normal">
-                      {product.description}
-                    </p>
+                    <h3 className="text-xs sm:text-sm font-bold text-stone-900 tracking-tight leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+                      {product.title}
+                    </h3>
                   </div>
 
-                  {/* Available Thread/Fabric Swatches */}
-                  <div className="pt-4 border-t border-black/[0.06]">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 font-bold">
-                        Tissus disponibles :
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        {product.colors.map((c) => (
-                          <span
-                            key={c.name}
-                            title={c.name}
-                            className="w-3.5 h-3.5 rounded-full border border-black/15 shadow-2xs"
-                            style={{ backgroundColor: c.hex }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <Button
-                      onClick={() => openCustomizationModal(product)}
-                      className="w-full h-12 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-bold uppercase tracking-wider text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:bg-primary group-hover:shadow-primary/20"
-                    >
-                      <span>Ajouter au Panier</span>
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                  {/* Price & Action Row */}
+                  <div className="mt-3 pt-3 border-t border-stone-200/60 flex items-center justify-between">
+                    <span className="text-xs sm:text-sm font-black font-mono text-stone-900">
+                      {product.price.toFixed(2)} €
+                    </span>
+                    <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-wider inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                      <span className="hidden sm:inline">Détails</span>
+                      <ArrowRight size={11} />
+                    </span>
                   </div>
 
                 </div>
@@ -412,42 +457,42 @@ export default function BoutiquePage() {
         </div>
       </section>
 
-      {/* 3. ATELIER TRUST MATRIX */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-b border-black/[0.06] bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* 3. ATELIER TRUST MATRIX — BEIGE CHIC */}
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-stone-200/60 bg-[#faf8f5]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div className="p-8 rounded-[2rem] bg-[#faf8f5] border border-black/[0.06] flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white border border-black/10 flex items-center justify-center text-primary shrink-0">
-              <Scissors size={20} />
+          <div className="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/70 border border-stone-200/80 flex items-start gap-4">
+            <div className="w-11 h-11 rounded-2xl bg-white border border-stone-200/80 flex items-center justify-center text-primary shrink-0 shadow-2xs">
+              <Scissors size={18} />
             </div>
             <div>
-              <h4 className="text-base font-black text-stone-900 mb-1">Prénom Brodé Offert</h4>
+              <h4 className="text-sm font-black text-stone-900 mb-1 uppercase tracking-tight">Personnalisation Prénom</h4>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Chaque création de la boutique inclut la personnalisation du prénom avec la typographie de votre choix.
+                Chaque création de la boutique inclut la broderie de personnalisation du prénom avec le style d'écriture de votre choix.
               </p>
             </div>
           </div>
 
-          <div className="p-8 rounded-[2rem] bg-[#faf8f5] border border-black/[0.06] flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white border border-black/10 flex items-center justify-center text-primary shrink-0">
-              <ShieldCheck size={20} />
+          <div className="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/70 border border-stone-200/80 flex items-start gap-4">
+            <div className="w-11 h-11 rounded-2xl bg-white border border-stone-200/80 flex items-center justify-center text-primary shrink-0 shadow-2xs">
+              <ShieldCheck size={18} />
             </div>
             <div>
-              <h4 className="text-base font-black text-stone-900 mb-1">Fils Madeira Résistants</h4>
+              <h4 className="text-sm font-black text-stone-900 mb-1 uppercase tracking-tight">Fils Madeira Résistants</h4>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Broderies indélébiles certifiées Oeko-Tex Standard 100, garanties pour résister à des dizaines de lavages.
+                Broderies certifiées Oeko-Tex Standard 100, garanties pour résister aux lavages répétés sans ternir.
               </p>
             </div>
           </div>
 
-          <div className="p-8 rounded-[2rem] bg-[#faf8f5] border border-black/[0.06] flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white border border-black/10 flex items-center justify-center text-primary shrink-0">
-              <Clock size={20} />
+          <div className="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/70 border border-stone-200/80 flex items-start gap-4">
+            <div className="w-11 h-11 rounded-2xl bg-white border border-stone-200/80 flex items-center justify-center text-primary shrink-0 shadow-2xs">
+              <Clock size={18} />
             </div>
             <div>
-              <h4 className="text-base font-black text-stone-900 mb-1">Confection & Envoi Rapide</h4>
+              <h4 className="text-sm font-black text-stone-900 mb-1 uppercase tracking-tight">Confection & Envoi Rapide</h4>
               <p className="text-xs text-stone-600 leading-relaxed">
-                Votre commande est personnalisée à Robertot et expédiée sous 3 à 5 jours avec numéro de suivi.
+                Votre commande est confectionnée et brodée à Robertot puis expédiée sous 3 à 5 jours avec numéro de suivi.
               </p>
             </div>
           </div>
@@ -457,60 +502,71 @@ export default function BoutiquePage() {
 
       {/* 4. MODAL DE PERSONNALISATION HAUT DE GAMME */}
       {activeModalProduct && (
-        <div className="fixed inset-0 z-[100] bg-stone-950/70 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-white border border-black/10 rounded-[2.5rem] p-6 sm:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-in zoom-in-95 duration-300">
+        <div 
+          className="fixed inset-0 z-[100] bg-stone-950/70 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setActiveModalProduct(null)}
+        >
+          <div 
+            className="bg-[#faf8f5] border border-black/10 rounded-[2.5rem] p-6 sm:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             {/* Close Button */}
             <button
               onClick={() => setActiveModalProduct(null)}
-              className="absolute top-6 right-6 p-2 rounded-full bg-stone-100 hover:bg-stone-200 transition-colors text-stone-600 hover:text-stone-900 cursor-pointer"
+              className="absolute top-6 right-6 p-2 rounded-full bg-stone-200/80 hover:bg-stone-300 transition-colors text-stone-700 cursor-pointer"
+              aria-label="Fermer la vue détaillée"
             >
               <X className="w-4 h-4" />
             </button>
 
-            {/* Modal Header */}
-            <div className="mb-6 flex gap-4 items-center pr-8">
-              <div className="w-16 h-16 rounded-2xl overflow-hidden bg-stone-900 border border-black/10 shrink-0">
+            {/* Modal Header with High-Res Image */}
+            <div className="mb-6">
+              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden bg-stone-900 border border-black/10 mb-4">
                 <img
                   src={activeModalProduct.imgUrl}
                   alt={activeModalProduct.title}
                   className="w-full h-full object-cover"
                 />
               </div>
+
               <div>
-                <span className="text-[9px] font-mono uppercase tracking-widest text-primary font-bold block">
-                  Configuration Article
+                <span className="text-[9px] font-mono uppercase tracking-widest text-primary font-bold block mb-1">
+                  {activeModalProduct.category} • {activeModalProduct.spec}
                 </span>
-                <h2 className="text-lg font-black uppercase tracking-tight text-stone-900 leading-tight">
+                <h2 className="text-xl font-black uppercase tracking-tight text-stone-900 leading-tight">
                   {activeModalProduct.title}
                 </h2>
-                <p className="text-xs text-stone-500 font-mono mt-0.5">
-                  {activeModalProduct.price.toFixed(2)} € TTC
+                <p className="text-sm text-stone-600 mt-2 text-xs leading-relaxed">
+                  {activeModalProduct.description}
                 </p>
+                <div className="mt-3 text-lg font-black font-mono text-stone-950">
+                  {activeModalProduct.price.toFixed(2)} € TTC
+                </div>
               </div>
             </div>
 
             {/* Form Fields */}
-            <div className="space-y-6">
+            <div className="space-y-6 pt-4 border-t border-stone-200">
               
               {/* Option A: Fabric color pick */}
               <div>
-                <label className="block text-[10px] font-mono font-bold uppercase tracking-wider text-stone-700 mb-3">
-                  1. Couleur du support textile :
+                <label className="block text-[10px] font-mono font-bold uppercase tracking-wider text-stone-700 mb-2.5">
+                  Couleur du support :
                 </label>
-                <div className="flex flex-wrap gap-2.5">
+                <div className="flex flex-wrap gap-2">
                   {activeModalProduct.colors.map((c) => (
                     <button
                       key={c.name}
                       onClick={() => setSelectedColor(c.name)}
-                      className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all cursor-pointer ${
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                         selectedColor === c.name
-                          ? "bg-stone-900 text-white border-stone-900 shadow-sm"
-                          : "bg-stone-50 text-stone-700 border-black/10 hover:border-black/25"
+                          ? "bg-stone-900 text-white border-stone-900 shadow-xs"
+                          : "bg-white text-stone-700 border-black/10 hover:border-black/25"
                       }`}
                     >
                       <span
-                        className="w-3.5 h-3.5 rounded-full border border-black/20 shrink-0"
+                        className="w-3 h-3 rounded-full border border-black/20 shrink-0"
                         style={{ backgroundColor: c.hex }}
                       />
                       <span>{c.name}</span>
@@ -520,27 +576,27 @@ export default function BoutiquePage() {
               </div>
 
               {/* Option B: Quantity Selector */}
-              <div className="flex items-center justify-between border-t border-black/5 pt-5">
+              <div className="flex items-center justify-between border-t border-stone-200 pt-4">
                 <div>
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-stone-700 block">
-                    2. Quantité souhaitée :
+                    Quantité :
                   </span>
-                  <span className="text-[10px] text-stone-400">Prénoms configurables après validation</span>
+                  <span className="text-[9px] text-stone-500">Prénoms configurables après validation</span>
                 </div>
 
-                <div className="flex items-center border border-black/15 rounded-full py-1 px-2.5 bg-stone-50">
+                <div className="flex items-center border border-black/15 rounded-full py-1 px-2.5 bg-white">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-1.5 text-stone-600 hover:text-stone-950 font-bold transition-colors cursor-pointer"
+                    className="p-1 text-stone-600 hover:text-stone-950 font-bold transition-colors cursor-pointer"
                   >
                     -
                   </button>
-                  <span className="px-4 text-sm font-mono font-black text-stone-900">
+                  <span className="px-3 text-sm font-mono font-black text-stone-900">
                     {quantity}
                   </span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="p-1.5 text-stone-600 hover:text-stone-950 font-bold transition-colors cursor-pointer"
+                    className="p-1 text-stone-600 hover:text-stone-950 font-bold transition-colors cursor-pointer"
                   >
                     +
                   </button>
@@ -550,19 +606,19 @@ export default function BoutiquePage() {
             </div>
 
             {/* Modal Actions */}
-            <div className="mt-8 flex gap-3 border-t border-black/5 pt-5">
+            <div className="mt-6 flex gap-3 border-t border-stone-200 pt-5">
               <Button
                 variant="outline"
                 onClick={() => setActiveModalProduct(null)}
-                className="flex-1 h-13 rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer"
+                className="flex-1 h-12 rounded-full uppercase text-xs font-bold tracking-wider cursor-pointer border-black/15"
               >
-                Annuler
+                Fermer
               </Button>
               <Button
                 onClick={handleAddToCart}
-                className="flex-1 h-13 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider shadow-lg shadow-primary/20 cursor-pointer"
+                className="flex-1 h-12 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider shadow-md shadow-primary/20 cursor-pointer"
               >
-                Ajouter au Panier ({ (activeModalProduct.price * quantity).toFixed(2) } €)
+                Ajouter ({ (activeModalProduct.price * quantity).toFixed(2) } €)
               </Button>
             </div>
 
