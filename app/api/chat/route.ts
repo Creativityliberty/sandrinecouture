@@ -43,13 +43,10 @@ export async function POST(req: Request) {
         }
 
         const ai = new GoogleGenAI({ apiKey });
-        // Note: In some versions of @google/genai, models are accessed differently. 
-        // The previous implementation used ai.models.generateContent.
-        // Let's stick to a robust implementation for Next.js Edge.
 
-        // Based on the user's previous code:
+        const modelName = 'gemini-2.5-flash';
         const response = await ai.models.generateContent({
-            model: 'gemini-2.0-flash', // Upgrading to latest stable if possible, or sticking to provided
+            model: modelName,
             contents: lastMessage,
             config: {
                 systemInstruction: SYSTEM_PROMPT,
