@@ -53,11 +53,11 @@ export default function BlogPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[75%_35%] sm:object-[80%_40%] filter brightness-[0.92] contrast-[1.08] saturate-[1.05]"
+            className="object-cover object-[75%_35%] sm:object-[80%_40%] filter brightness-[1.06] contrast-[1.02] saturate-[1.05]"
           />
-          {/* Subtle Dark Glassmorphism scrim: text is super crisp on left, cliffs & workshop clear on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/75 to-stone-950/35 z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/70 z-[1]" />
+          {/* Subtle soft gradient scrim: text is super crisp on left while revealing the bright sunlight, sea view and table on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/45 to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/45 via-transparent to-stone-950/35 z-[1]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">

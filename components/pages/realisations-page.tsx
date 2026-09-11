@@ -148,14 +148,14 @@ export function RealisationsPage() {
                 onClick={() => setSelectedRealisation(img)}
               >
                 {/* Visual Canvas */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-950">
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-100">
                   <img
                     src={img.url}
                     alt={img.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     loading={i < 6 ? "eager" : "lazy"}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-50 group-hover:opacity-80 transition-opacity" />
 
                   {/* Category Pill Tag */}
                   <div className="absolute top-4 left-4 z-10">
@@ -288,10 +288,10 @@ export function RealisationsPage() {
               </button>
 
               {/* Large Image Visual */}
-              <div className="md:w-3/5 relative bg-stone-950 aspect-[4/3] md:aspect-auto">
+              <div className="md:w-3/5 relative bg-stone-950 flex items-center justify-center p-3 min-h-[350px] md:min-h-[500px]">
                 <img
                   src={selectedRealisation.url}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full max-h-[75vh] object-contain"
                   alt={selectedRealisation.title}
                 />
               </div>
