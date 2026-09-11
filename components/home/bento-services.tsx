@@ -3,20 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { 
-  Building2, 
-  Baby, 
-  Tag, 
-  Gift, 
   ArrowUpRight, 
-  ShieldCheck, 
   Sparkles, 
-  Cpu, 
-  Check, 
-  Layers, 
-  Shirt, 
-  Trophy 
+  Cpu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "motion/react";
+import { LUXURY_EASE, MotionReveal } from "@/components/effects/motion-reveal";
 
 interface BentoItem {
   id: string;
@@ -94,7 +87,7 @@ export function BentoServices() {
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-          <div className="max-w-2xl">
+          <MotionReveal direction="up" distance={24} duration={0.65} className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/80 border border-stone-300/60 text-[10px] font-black uppercase tracking-widest text-stone-700 mb-4">
               <Sparkles size={12} className="text-primary" />
               <span>Savoir-Faire & Confections</span>
@@ -106,7 +99,7 @@ export function BentoServices() {
             <p className="text-stone-600 text-base sm:text-lg mt-3 max-w-xl font-normal">
               Que ce soit pour affirmer l'identité de votre entreprise ou célébrer une naissance, chaque fil est déposé avec précision millimétrique.
             </p>
-          </div>
+          </MotionReveal>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-white border border-stone-200 shadow-xs max-w-full">
@@ -114,101 +107,122 @@ export function BentoServices() {
               { id: "all", label: "Toutes mes réalisations" },
               { id: "pro", label: "Professionnels & Clubs" },
               { id: "particulier", label: "Particuliers & Naissance" },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setFilter(tab.id as any)}
-                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
-                  filter === tab.id
-                    ? "bg-stone-900 text-white shadow-xs"
-                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+            ].map((tab) => {
+              const isActive = filter === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setFilter(tab.id as any)}
+                  className={`relative px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer whitespace-nowrap ${
+                    isActive ? "text-white" : "text-stone-600 hover:text-stone-900"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="bento-filter-pill"
+                      className="absolute inset-0 bg-stone-900 rounded-xl shadow-xs -z-10"
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
+                  {tab.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
-          {filteredServices.map((service, index) => {
-            const isLarge = service.size === "large";
-            const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4";
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+          <AnimatePresence mode="popLayout">
+            {filteredServices.map((service) => {
+              const isLarge = service.size === "large";
+              const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4";
 
-            return (
-              <div
-                key={service.id}
-                className={`${colSpan} group relative rounded-[2rem] bg-white border border-stone-200/80 shadow-xs hover:shadow-xl hover:border-stone-400/60 transition-all duration-500 overflow-hidden flex flex-col justify-between`}
-              >
-                {/* Visual Header / Background Media */}
-                <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-stone-900">
-                  <img
-                    src={service.imgUrl}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent" />
-                  
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/90 backdrop-blur-md text-stone-900 shadow-xs">
-                      {service.badge}
-                    </span>
-                  </div>
+              return (
+                <motion.div
+                  layout
+                  key={service.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.45, ease: LUXURY_EASE }}
+                  whileHover={{ y: -4 }}
+                  className={`${colSpan} group relative rounded-[2rem] bg-white border border-stone-200/80 shadow-xs hover:shadow-xl hover:border-stone-400/60 transition-all duration-300 overflow-hidden flex flex-col justify-between`}
+                >
+                  {/* Visual Header / Background Media */}
+                  <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-stone-900">
+                    <img
+                      src={service.imgUrl}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent" />
+                    
+                    {/* Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/90 backdrop-blur-md text-stone-900 shadow-xs">
+                        {service.badge}
+                      </span>
+                    </div>
 
-                  {/* Title on Image */}
-                  <div className="absolute bottom-4 inset-x-5 text-white">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-primary block mb-0.5">
-                      {service.tagline}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight">
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Content Details */}
-                <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between bg-white">
-                  <div>
-                    <p className="text-stone-600 text-sm leading-relaxed mb-5">
-                      {service.description}
-                    </p>
-
-                    <div className="space-y-2 mb-6">
-                      {service.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2 text-xs font-semibold text-stone-700">
-                          <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[9px] shrink-0 font-bold">
-                            ✓
-                          </span>
-                          <span>{feat}</span>
-                        </div>
-                      ))}
+                    {/* Title on Image */}
+                    <div className="absolute bottom-4 inset-x-5 text-white">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-primary block mb-0.5">
+                        {service.tagline}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight">
+                        {service.title}
+                      </h3>
                     </div>
                   </div>
 
-                  {/* Bottom Action */}
-                  <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
-                    <Link
-                      href="/devis"
-                      className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-900 group-hover:text-primary transition-colors cursor-pointer"
-                    >
-                      <span>Configurer un projet</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </Link>
+                  {/* Content Details */}
+                  <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between bg-white">
+                    <div>
+                      <p className="text-stone-600 text-sm leading-relaxed mb-5">
+                        {service.description}
+                      </p>
 
-                    <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
-                      Atelier 76
-                    </span>
+                      <div className="space-y-2 mb-6">
+                        {service.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-2 text-xs font-semibold text-stone-700">
+                            <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[9px] shrink-0 font-bold">
+                              ✓
+                            </span>
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Bottom Action */}
+                    <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
+                      <Link
+                        href="/devis"
+                        className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-900 group-hover:text-primary transition-colors cursor-pointer"
+                      >
+                        <span>Configurer un projet</span>
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </Link>
+
+                      <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+                        Atelier 76
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
 
         {/* Highlight Banner: Expertise Piquage & Digitalisation */}
-        <div className="relative rounded-[2.5rem] bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white p-8 sm:p-10 border border-stone-800 shadow-2xl overflow-hidden">
+        <MotionReveal
+          direction="up"
+          distance={28}
+          duration={0.7}
+          className="relative rounded-[2.5rem] bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white p-8 sm:p-10 border border-stone-800 shadow-2xl overflow-hidden"
+        >
           {/* Subtle thread graphic background */}
           <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
           
@@ -247,7 +261,7 @@ export function BentoServices() {
               </Link>
             </div>
           </div>
-        </div>
+        </MotionReveal>
 
       </div>
     </section>

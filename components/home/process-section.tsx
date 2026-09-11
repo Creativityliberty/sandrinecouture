@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { MessageCircle, FileCheck, Cpu, PackageCheck, ArrowUpRight, Clock, Check } from "lucide-react";
+import { MessageCircle, FileCheck, Cpu, PackageCheck, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+import { StaggerContainer, StaggerItem, MotionReveal, LUXURY_EASE } from "@/components/effects/motion-reveal";
 
 const STEPS = [
   {
@@ -53,7 +55,7 @@ export function ProcessSection() {
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
+          <MotionReveal direction="up" distance={24} duration={0.65}>
             <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-primary block mb-3">
               Processus Maîtrisé de A à Z
             </span>
@@ -61,62 +63,72 @@ export function ProcessSection() {
               De l'idée à la matière, <br />
               <span className="font-serif italic font-normal text-primary normal-case">en quatre étapes</span> limpides.
             </h2>
-          </div>
-          <p className="text-stone-400 text-sm max-w-md font-medium leading-relaxed">
-            Pas de jargon compliqué, ni de mauvaises surprises. Je vous guide personnellement à chaque étape pour un résultat parfaitement fidèle à vos attentes.
-          </p>
+          </MotionReveal>
+          <MotionReveal direction="up" distance={20} delay={150} duration={0.65}>
+            <p className="text-stone-400 text-sm max-w-md font-medium leading-relaxed">
+              Pas de jargon compliqué, ni de mauvaises surprises. Je vous guide personnellement à chaque étape pour un résultat parfaitement fidèle à vos attentes.
+            </p>
+          </MotionReveal>
         </div>
 
-        {/* Timeline Interactive Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Timeline Interactive Cards with Stagger */}
+        <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {STEPS.map((step, idx) => {
             const Icon = step.icon;
             const isCurrent = activeStep === idx;
 
             return (
-              <div
-                key={step.num}
-                onClick={() => setActiveStep(idx)}
-                className={`p-8 rounded-[2rem] border transition-all duration-500 cursor-pointer flex flex-col justify-between min-h-[320px] ${
-                  isCurrent
-                    ? "bg-stone-800 border-primary shadow-2xl scale-[1.02]"
-                    : "bg-stone-950/60 border-stone-800/80 hover:border-stone-700"
-                }`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-black font-mono text-stone-600">
-                      {step.num}
-                    </span>
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                      isCurrent ? "bg-primary text-white" : "bg-stone-800 text-stone-400"
-                    }`}>
-                      <Icon size={18} />
+              <StaggerItem key={step.num}>
+                <motion.div
+                  onClick={() => setActiveStep(idx)}
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3, ease: LUXURY_EASE }}
+                  className={`p-8 rounded-[2rem] border transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[320px] ${
+                    isCurrent
+                      ? "bg-stone-800 border-primary shadow-2xl"
+                      : "bg-stone-950/60 border-stone-800/80 hover:border-stone-700"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-3xl font-black font-mono text-stone-600">
+                        {step.num}
+                      </span>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
+                        isCurrent ? "bg-primary text-white" : "bg-stone-800 text-stone-400"
+                      }`}>
+                        <Icon size={18} />
+                      </div>
                     </div>
+
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-primary block mb-1">
+                      {step.phase}
+                    </span>
+                    <h3 className="text-xl font-black tracking-tight text-white mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-stone-400 text-xs leading-relaxed">
+                      {step.desc}
+                    </p>
                   </div>
 
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-primary block mb-1">
-                    {step.phase}
-                  </span>
-                  <h3 className="text-xl font-black tracking-tight text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-stone-400 text-xs leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-stone-800 flex items-center justify-between text-[10px] font-mono text-stone-300">
-                  <span>{step.action}</span>
-                  <span className="text-primary font-bold">✓</span>
-                </div>
-              </div>
+                  <div className="pt-4 border-t border-stone-800 flex items-center justify-between text-[10px] font-mono text-stone-300">
+                    <span>{step.action}</span>
+                    <span className="text-primary font-bold">✓</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
 
         {/* Production Timeframes Banner */}
-        <div className="p-8 sm:p-10 rounded-[2.5rem] bg-stone-950 border border-stone-800 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <MotionReveal
+          direction="up"
+          distance={28}
+          duration={0.7}
+          className="p-8 sm:p-10 rounded-[2.5rem] bg-stone-950 border border-stone-800 flex flex-col lg:flex-row lg:items-center justify-between gap-8"
+        >
           <div className="flex items-center gap-5">
             <div className="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary shrink-0">
               <Clock size={26} />
@@ -146,13 +158,13 @@ export function ProcessSection() {
             </div>
             <Link href="/devis">
               <Button
-                className="h-12 px-6 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider cursor-pointer"
+                className="h-12 px-6 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider cursor-pointer shadow-md hover:shadow-lg transition-shadow"
               >
                 Lancer un projet
               </Button>
             </Link>
           </div>
-        </div>
+        </MotionReveal>
 
       </div>
 
