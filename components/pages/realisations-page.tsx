@@ -46,93 +46,67 @@ export function RealisationsPage() {
   const displayedImages = filteredImages.slice(0, visibleCount);
 
   return (
-    <div className="bg-[#faf8f5] text-[#1c1917] min-h-screen selection:bg-primary selection:text-white pt-24 sm:pt-32 pb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#faf8f5] text-[#1c1917] min-h-screen selection:bg-primary selection:text-white pt-24 sm:pt-32">
+      
+      {/* 1. HERO RÉALISATIONS QUIET LUXURY (STYLE BOUTIQUE) */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-8 pb-14 sm:pb-20 border-b border-stone-200/60 overflow-hidden bg-stone-900 text-white">
         
-        {/* Breadcrumb back */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors mb-8 no-underline text-xs font-mono uppercase tracking-wider"
-        >
-          <ArrowLeft size={14} /> Retour au Showroom
-        </Link>
+        {/* Realistic Embroidery Needle & Pink Heart in Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <Image 
+            src="/images/hero/hero-realisations-broderie-coeur.webp" 
+            alt="Cœur brodé au fil rose avec aiguille de couture et fil en gros plan"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[75%_35%] sm:object-[82%_40%] filter brightness-[0.92] contrast-[1.08] saturate-[1.05]"
+          />
+          {/* Subtle Dark Glassmorphism scrim: text is super crisp on left, needle & heart clear on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/75 to-stone-950/35 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/70 z-[1]" />
+        </div>
 
-        {/* 1. HERO SECTION & TITLE WITH REALISTIC EMBROIDERY BACKDROP */}
-        <div className="relative rounded-[2.5rem] overflow-hidden p-6 sm:p-10 lg:p-14 mb-14 border border-stone-200/70 shadow-xs bg-[#faf8f5]">
-          {/* Background Realistic Embroidery Needle & Pink Heart Image */}
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <Image
-              src="/images/hero/hero-realisations-broderie-coeur.webp"
-              alt="Cœur brodé au fil rose avec aiguille de couture et fil en gros plan"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-[75%_40%] sm:object-[82%_42%] opacity-85 lg:opacity-95 filter contrast-[1.03] saturate-[1.05]"
-            />
-            {/* Luxury Ivory Gradients to protect text readability on left while keeping needle visible on right */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#faf8f5] via-[#faf8f5]/90 to-transparent sm:via-[#faf8f5]/75" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5]/80 via-transparent to-transparent" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Top Status Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-white/15 text-[11px] font-mono tracking-widest uppercase text-stone-300">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold text-white">By Sandrine Couture • Atelier Robertot (Normandie)</span>
+              <span className="text-stone-400">/</span>
+              <span>Piquage & Broderie d'Art</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="text-stone-300">Fils Certifiés Oeko-Tex 100</span>
+              <Link href="/devis" className="text-primary-light font-bold hover:underline transition-colors">
+                Devis sur mesure sous 24h &rarr;
+              </Link>
+            </div>
           </div>
 
-          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/90 backdrop-blur-md text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-5 shadow-md border border-white/15">
-                <div className="flex items-center gap-0.5 text-amber-400">
-                  <Star size={11} className="fill-amber-400" />
-                  <Star size={11} className="fill-amber-400" />
-                  <Star size={11} className="fill-amber-400" />
-                </div>
-                <span className="font-bold text-stone-100">Archives Atelier & Pièces Réalisées</span>
-                <div className="flex items-center gap-0.5 text-amber-400">
-                  <Star size={11} className="fill-amber-400" />
-                  <Star size={11} className="fill-amber-400" />
-                </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900/90 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-4 shadow-md border border-white/10 backdrop-blur-md">
+                <Scissors size={12} className="text-primary" />
+                <span>Archives Atelier & Pièces Réalisées</span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-950 uppercase drop-shadow-xs">
+              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-white uppercase mb-4 drop-shadow-md">
                 Chaque point est <br />
-                <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/30 underline-offset-8">
+                <span className="font-serif italic font-normal normal-case text-primary-light underline decoration-primary/40 underline-offset-8">
                   une empreinte unique
                 </span>.
               </h1>
             </div>
 
-            <div className="max-w-sm bg-white/75 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-xs">
-              <p className="text-stone-700 text-xs sm:text-sm leading-relaxed font-medium">
-                Plus de 100 créations brodées et confectionnées de mes mains à Robertot. Des uniformes d'artisans normands aux coffrets de naissance les plus délicats.
-              </p>
-              <div className="mt-3 flex items-center gap-2 text-[10px] font-mono text-primary font-bold uppercase tracking-wider">
-                <Scissors size={12} />
-                <span>Piquage Artisanal & Fait Main 76</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 2. THE THREE.JS 3D BOOKSHELF EXPERIENCE */}
-        <div className="mb-20">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-            <div className="flex items-center gap-2.5">
-              <BookOpen size={16} className="text-primary" />
-              <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-stone-900">
-                La Bibliothèque Tactile • 7 Recueils de Créations 3D
-              </h2>
-            </div>
-            <span className="text-[11px] font-mono text-stone-500">
-              Three.js r165 WebGL • Expérience Interactive
-            </span>
+            <p className="text-stone-200 text-sm sm:text-base max-w-sm leading-relaxed font-normal drop-shadow-sm">
+              Plus de 100 créations brodées et confectionnées de mes mains à Robertot. Des uniformes professionnels d'artisans normands aux trousseaux de naissance les plus délicats.
+            </p>
           </div>
 
-          {/* Interactive Bookshelf Viewer */}
-          <BookshelfFrame />
-        </div>
-
-        {/* 3. COMPLETE GALLERY CATALOG WITH FILTERS */}
-        <div className="pt-8 border-t border-black/[0.08]">
-          
-          {/* Segmented Filter Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
-            <div className="flex flex-wrap items-center gap-2">
+          {/* Sticky Segmented Filter Control */}
+          <div className="flex flex-wrap items-center justify-between gap-3 p-1.5 rounded-2xl bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-xs">
+            <div className="flex flex-wrap items-center gap-1">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -140,10 +114,10 @@ export function RealisationsPage() {
                     setActiveFilter(cat);
                     setVisibleCount(18);
                   }}
-                  className={`px-6 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                     activeFilter === cat
-                      ? "bg-stone-900 text-white shadow-md shadow-black/10"
-                      : "bg-white text-stone-600 hover:text-stone-900 border border-black/[0.08] hover:bg-stone-100"
+                      ? "bg-stone-900 text-white shadow-xs"
+                      : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
                   }`}
                 >
                   {cat}
@@ -151,12 +125,20 @@ export function RealisationsPage() {
               ))}
             </div>
 
-            <div className="flex items-center gap-3 text-xs font-mono text-stone-500">
-              <SlidersHorizontal size={14} className="text-primary" />
+            <div className="hidden sm:flex items-center gap-2.5 px-4 text-xs font-mono text-stone-500">
+              <SlidersHorizontal size={13} className="text-primary" />
               <span>{filteredImages.length} pièces archivées</span>
             </div>
           </div>
 
+        </div>
+
+      </section>
+
+      {/* 2. CATALOGUE DES RÉALISATIONS (BENTO GRID) */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
+        <div className="max-w-7xl mx-auto">
+          
           {/* Lookbook Bento Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedImages.map((img, i) => (
@@ -182,54 +164,74 @@ export function RealisationsPage() {
                     </span>
                   </div>
 
-                  {/* Zoom Action Icon */}
-                  <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-900/80 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Eye size={14} />
-                  </div>
-
-                  {/* Overlay Title on Hover */}
-                  <div className="absolute bottom-4 left-5 right-5 z-10 text-white">
-                    <h3 className="text-lg font-black tracking-tight uppercase leading-snug">
-                      {img.title}
-                    </h3>
+                  {/* Zoom Icon indicator */}
+                  <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-950/60 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100">
+                    <Eye size={15} />
                   </div>
                 </div>
 
                 {/* Card Meta Content */}
-                <div className="p-6 flex flex-col justify-between flex-grow">
-                  <p className="text-stone-600 text-xs leading-relaxed line-clamp-2 mb-4 font-normal">
-                    {img.desc || "Broderie personnalisée sur mesure confectionnée dans notre atelier en Normandie."}
-                  </p>
+                <div className="p-6 flex flex-col justify-between grow">
+                  <div>
+                    <h3 className="text-base font-black uppercase tracking-tight text-stone-900 group-hover:text-primary transition-colors duration-300 line-clamp-1 mb-1.5">
+                      {img.title}
+                    </h3>
+                    <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed font-normal">
+                      {img.desc}
+                    </p>
+                  </div>
 
-                  <div className="pt-3 border-t border-black/[0.06] flex items-center justify-between">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400">
-                      Confection Robertot
+                  <div className="mt-5 pt-4 border-t border-black/[0.06] flex items-center justify-between text-xs">
+                    <span className="font-mono text-stone-400 text-[10px] tracking-wider uppercase">
+                      Atelier 76
                     </span>
-                    <span className="text-[10px] font-mono text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      <span>Inspecter</span>
-                      <ArrowRight size={12} />
+                    <span className="font-bold text-stone-900 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 inline-flex items-center gap-1 text-[11px] uppercase tracking-wider">
+                      Détails <ArrowRight size={12} />
                     </span>
                   </div>
                 </div>
-
               </div>
             ))}
           </div>
 
-          {/* Load More Button if remaining */}
+          {/* Load More Button */}
           {visibleCount < filteredImages.length && (
-            <div className="mt-16 text-center">
+            <div className="mt-14 text-center">
               <Button
-                variant="outline"
                 onClick={() => setVisibleCount((prev) => prev + 18)}
-                className="h-13 px-8 rounded-full font-mono uppercase text-xs font-bold tracking-wider cursor-pointer border-black/15 hover:bg-stone-900 hover:text-white transition-all shadow-sm"
+                variant="outline"
+                className="h-14 px-8 rounded-full border-stone-300 hover:border-stone-900 bg-white font-mono uppercase text-xs tracking-wider transition-all duration-300 shadow-sm cursor-pointer"
               >
-                Afficher plus de créations ({filteredImages.length - visibleCount} restantes)
+                Afficher plus de réalisations ({filteredImages.length - visibleCount} restantes)
               </Button>
             </div>
           )}
 
         </div>
+      </section>
+
+      {/* 3. LA BIBLIOTHÈQUE TACTILE 3D (THREE.JS WEBGL) */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-stone-200/60 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-2.5">
+              <BookOpen size={18} className="text-primary" />
+              <h2 className="text-base sm:text-lg font-mono font-bold uppercase tracking-widest text-stone-900">
+                La Bibliothèque Tactile • 7 Recueils de Créations 3D
+              </h2>
+            </div>
+            <span className="text-[11px] font-mono text-stone-500">
+              Three.js r165 WebGL • Cliquez et faites pivoter les recueils
+            </span>
+          </div>
+
+          {/* Interactive Bookshelf Viewer */}
+          <BookshelfFrame />
+        </div>
+      </section>
+
+      {/* 4. FINAL CTA & MODAL */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
 
         {/* 4. FINAL CTA */}
         <div className="mt-24 p-10 sm:p-16 rounded-[3rem] bg-stone-950 text-white border border-stone-800 shadow-2xl relative overflow-hidden">
