@@ -488,13 +488,20 @@ export default function BoutiquePage() {
       {/* 1. HERO BOUTIQUE QUIET LUXURY */}
       <section className="relative px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 border-b border-stone-200/60 overflow-hidden bg-[#faf8f5]">
         
-        {/* Subtle Background Accent */}
-        <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:48px_48px]" />
+        {/* Authentic Normandie Market Stand Photo in Background */}
+        <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+          <img 
+            src="/images/boutique/stand-marche-normandie.jpg" 
+            alt="Le stand By Sandrine Couture sur les marchés artisanaux de Normandie"
+            className="w-full h-full object-cover object-center filter brightness-[1.08] contrast-[1.02] opacity-[0.22] scale-105"
+          />
+          {/* Gentle linen cream scrims to preserve quiet luxury feel and crisp typography */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#faf8f5]/95 via-[#faf8f5]/80 to-[#faf8f5]/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5] via-transparent to-[#faf8f5]/90" />
           <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-[120px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           
           {/* Top Status Bar */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-stone-200/80 text-[11px] font-mono tracking-widest uppercase text-stone-500">

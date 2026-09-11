@@ -121,33 +121,33 @@ _Envoyé depuis le site Sandrine Couture_`;
             
             {/* Left: Sandrine Portrait Card — Framed Luxury Lookbook */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[4/5] rounded-[3rem] p-3 bg-white border border-pink-500/20 shadow-[0_25px_60px_-15px_rgba(244,63,94,0.18)] group">
+              <div className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[3/4] rounded-[3rem] p-3 bg-white border border-pink-500/20 shadow-[0_25px_60px_-15px_rgba(244,63,94,0.18)] group">
                 
                 {/* Image Container with golden ring */}
                 <div className="relative w-full h-full rounded-[2.4rem] overflow-hidden bg-stone-950">
                   <img
-                    src="/images/realisations/sandrine-couture.webp"
-                    alt="Sandrine, fondatrice et artisane de By Sandrine Couture"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    src="/images/contact/sandrine-marche-artisanal.jpg"
+                    alt="Sandrine sur les marchés artisanaux de Normandie avec ses créations"
+                    className="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-transparent" />
 
                   {/* Badges Over Image */}
                   <div className="absolute top-4 left-4 z-10">
                     <span className="px-3.5 py-1 rounded-full bg-stone-950/85 backdrop-blur-md text-white border border-white/20 text-[9px] font-mono uppercase tracking-widest font-bold">
-                      Atelier Robertot (76)
+                      Marchés Normands & Atelier
                     </span>
                   </div>
 
                   <div className="absolute bottom-5 left-5 right-5 z-10 text-white">
                     <p className="text-[10px] font-mono text-pink-300 uppercase tracking-widest font-bold mb-1">
-                      Artisane Créatrice
+                      À Votre Rencontre
                     </p>
                     <h3 className="text-2xl font-black uppercase tracking-tight leading-none mb-1 text-white">
                       Sandrine
                     </h3>
                     <p className="text-[11px] text-stone-200 font-medium leading-relaxed opacity-90">
-                      « Chaque projet est unique, cousu avec amour et précision pour vos plus beaux moments. »
+                      « Venez me rencontrer sur les marchés normands ou échangeons directement pour concrétiser votre projet ! »
                     </p>
                   </div>
                 </div>
