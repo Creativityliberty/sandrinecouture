@@ -1,80 +1,56 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react";
-import { MessageCircle, X, Send, Sparkles, Loader2, Phone, FileText, ChevronRight } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { 
+  MessageCircle, 
+  X, 
+  Send, 
+  Sparkles, 
+  Loader2, 
+  Phone, 
+  FileText, 
+  ChevronRight, 
+  ShoppingBag,
+  ExternalLink
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { useCart } from "@/context/cart-context";
+import { ChatMessage, ChatBlock, Product, QuickReply } from "@/types/chat-commerce";
+import { ChatProductCarousel } from "@/components/chat/chat-product-carousel";
+import { ChatQuickReplies } from "@/components/chat/chat-quick-replies";
+import { ChatProductConfigurator } from "@/components/chat/chat-product-configurator";
+import { ChatQuoteCard } from "@/components/chat/chat-quote-card";
 import Link from "next/link";
-
-const MessageBubble = ({ m, setIsOpen }: { m: { role: 'user' | 'assistant', content: string }, setIsOpen: (o: boolean) => void }) => {
-  const isAssistant = m.role === 'assistant';
-
-  // Parse CTA syntax: [CTA:Label:URL]
-  const ctaRegex = /\[CTA:(.*?):(.*?)\]/g;
-  const parts = m.content.split(ctaRegex);
-  const ctas: { label: string, url: string }[] = [];
-
-  let match;
-  const tempContent = m.content;
-  while ((match = ctaRegex.exec(tempContent)) !== null) {
-    ctas.push({ label: match[1], url: match[2] });
-  }
-
-  // Clean content (remove CTAs from text bubble)
-  const cleanContent = m.content.replace(ctaRegex, '').trim();
-
-  return (
-    <div className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'} space-y-3`}>
-      {cleanContent && (
-        <div className={`max-w-[85%] p-4 rounded-3xl text-[13px] leading-relaxed font-medium shadow-sm transition-all hover:shadow-md ${m.role === 'user'
-          ? 'bg-black text-white rounded-tr-none'
-          : 'bg-white text-gray-800 rounded-tl-none border border-black/5'
-          }`}>
-          {cleanContent}
-        </div>
-      )}
-
-      {isAssistant && ctas.length > 0 && (
-        <div className="flex flex-col gap-2 w-full max-w-[85%] animate-in slide-in-from-left-2 fade-in duration-300">
-          {ctas.map((cta, i) => {
-            const isWhatsApp = cta.url === 'wa_link';
-            const url = isWhatsApp ? `https://wa.me/${SITE_CONFIG.whatsapp}` : cta.url;
-            const isExternal = isWhatsApp || url.startsWith('http');
-
-            const btnClass = "w-full flex items-center justify-between p-4 bg-primary text-white rounded-2xl text-[11px] font-black uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20 group/cta border border-white/10";
-
-            const content = (
-              <>
-                <span className="flex items-center gap-2">
-                  {isWhatsApp ? <Phone size={14} className="text-white/80" /> : <Sparkles size={14} className="text-white/80" />}
-                  {cta.label}
-                </span>
-                <ChevronRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />
-              </>
-            );
-
-            return isExternal ? (
-              <a key={i} href={url} target="_blank" rel="noopener noreferrer" className={btnClass + " no-underline"}>
-                {content}
-              </a>
-            ) : (
-              <Link key={i} href={url} onClick={() => setIsOpen(false)} className={btnClass + " no-underline"}>
-                {content}
-              </Link>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-};
 
 export function AIAssistant() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: 'user' | 'assistant', content: string }[]>([
-    { role: 'assistant', content: "Bonjour ! Je suis Sandrine. Avez-vous un projet de broderie ou un cadeau en tête ? Je suis là pour vous conseiller avec grand plaisir ! ✨" }
+  const { addToCart, setIsCartOpen } = useCart();
+  const [activeConfigProduct, setActiveConfigProduct] = useState<Product | null>(null);
+
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      id: "welcome",
+      role: "assistant",
+      blocks: [
+        {
+          type: "text",
+          content: "Bonjour ! Je suis Sandrine. Bienvenue dans mon atelier de broderie normand ✨ Que recherchez-vous aujourd'hui ?"
+        },
+        {
+          type: "quick_replies",
+          options: [
+            { id: "opt_naissance", label: "👶 Cadeau Naissance (< 30 €)", payload: "Je cherche une idée de cadeau de naissance pour moins de 30 €" },
+            { id: "opt_b2b", label: "👔 Projet Entreprise & Logos", payload: "Je souhaite des vêtements brodés avec le logo de mon entreprise" },
+            { id: "opt_accessoires", label: "✨ Sacs & Trousses fait main", payload: "Montrez-moi vos créations de sacs et trousses artisanales" },
+            { id: "opt_custom", label: "🧵 Personnaliser un prénom", payload: "Comment personnaliser un article avec un prénom brodé ?" }
+          ]
+        }
+      ]
+    }
   ]);
+
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -88,170 +64,343 @@ export function AIAssistant() {
     }
   }, []);
 
-  const quickActions = [
-    { label: "Faire un devis", icon: <FileText size={12} />, href: "/devis" },
-    { label: "Mes réalisations", icon: <Sparkles size={12} />, href: "/realisations" },
-    { label: "WhatsApp", icon: <Phone size={12} />, href: `https://wa.me/${SITE_CONFIG.whatsapp}`, external: true }
-  ];
-
   useEffect(() => {
-    if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-  }, [messages]);
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages, isLoading]);
 
   if (!mounted) return null;
 
-  const handleSend = async (text?: string) => {
-    const messageToSend = text || input;
-    if (!messageToSend.trim() || isLoading) return;
+  const handleSend = async (textToSend?: string) => {
+    const userText = textToSend || input;
+    if (!userText.trim() || isLoading) return;
 
     setInput("");
-    setMessages(prev => [...prev, { role: 'user', content: messageToSend }]);
+    const userMsgId = Date.now().toString();
+
+    const newMessages: ChatMessage[] = [
+      ...messages,
+      {
+        id: userMsgId,
+        role: "user",
+        blocks: [{ type: "text", content: userText }]
+      }
+    ];
+
+    setMessages(newMessages);
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: [...messages, { role: 'user', content: messageToSend }]
-        }),
+      // Build lightweight message payload for backend
+      const payloadMessages = newMessages.map(m => {
+        const textContent = m.blocks
+          .filter(b => b.type === "text")
+          .map(b => (b as { type: "text"; content: string }).content)
+          .join(" ");
+        return {
+          role: m.role,
+          content: textContent || "Interaction produit"
+        };
+      });
+
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: payloadMessages })
       });
 
       const data = await response.json();
+      const assistantBlocks: ChatBlock[] = data.blocks || [
+        { type: "text", content: data.text || "Je reste à votre écoute pour concrétiser votre projet !" }
+      ];
 
-      if (data.error) throw new Error(data.error);
-
-      setMessages(prev => [...prev, { role: 'assistant', content: data.text || "Désolée, je n'ai pas pu traiter votre demande." }]);
+      setMessages(prev => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          blocks: assistantBlocks
+        }
+      ]);
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "Une petite erreur technique... Contactez Sandrine directement par WhatsApp ! [CTA:Ouvrir WhatsApp:wa_link]" }]);
+      setMessages(prev => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          blocks: [
+            {
+              type: "text",
+              content: "Une petite coupure momentanée... Écrivez-moi directement sur WhatsApp, je vous réponds avec grand plaisir !"
+            },
+            {
+              type: "actions",
+              actions: [
+                {
+                  label: "Discuter sur WhatsApp",
+                  url: `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}`,
+                  actionType: "wa"
+                }
+              ]
+            }
+          ]
+        }
+      ]);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handleProductSelect = (product: Product) => {
+    // Insert a product configurator block into chat
+    setMessages(prev => [
+      ...prev,
+      {
+        id: Date.now().toString(),
+        role: "assistant",
+        blocks: [
+          {
+            type: "text",
+            content: `Vous avez choisi : **${product.title}** (${product.price.toFixed(2)} €). Personnalisez vos options ci-dessous :`
+          },
+          {
+            type: "product_configurator",
+            product
+          }
+        ]
+      }
+    ]);
+  };
+
+  const handleDirectAddToCart = (product: Product) => {
+    addToCart({
+      productId: product.id,
+      title: product.title,
+      price: product.price,
+      quantity: 1,
+      imgUrl: product.imgUrl,
+      threadColor: product.colors[0]?.name || "Écru"
+    });
+    setIsCartOpen(true);
+  };
+
+  const handleConfiguredAddToCart = (item: {
+    productId: number;
+    title: string;
+    price: number;
+    imgUrl: string;
+    threadColor: string;
+    notes?: string;
+  }) => {
+    addToCart({
+      productId: item.productId,
+      title: item.title,
+      price: item.price,
+      quantity: 1,
+      imgUrl: item.imgUrl,
+      threadColor: item.threadColor,
+      textToEmbroider: item.notes
+    });
+    setIsCartOpen(true);
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-[100] font-sans">
       {isOpen ? (
-        <div className="glass w-[360px] h-[580px] flex flex-col rounded-[2.5rem] overflow-hidden shadow-2xl border-white/20 animate-in slide-in-from-bottom-10 fade-in duration-500 bg-white/95">
+        <div className="glass w-[360px] sm:w-[400px] h-[600px] flex flex-col rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/40 animate-in slide-in-from-bottom-10 fade-in duration-500 bg-white/95">
           {/* Header */}
-          <div className="bg-primary p-6 text-white shrink-0">
+          <div className="bg-gradient-to-r from-stone-900 to-stone-950 p-5 text-white shrink-0 shadow-md">
             <div className="flex justify-between items-center mb-1">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden border border-white/20 shadow-inner p-1">
-                  <img src="/chatbot-icon-3d.webp" width={44} height={44} className="w-full h-full object-contain drop-shadow-md" alt="Aiguille d'Or Sandrine Couture" />
+                <div className="w-10 h-10 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden border border-white/20 shadow-inner p-0.5">
+                  <img
+                    src="/images/hero/sandrine-atelier-real.jpg"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover rounded-xl"
+                    alt="Sandrine Couture"
+                  />
                 </div>
                 <div>
-                  <p className="font-black italic uppercase tracking-tighter leading-none">By Sandrine Couture</p>
-                  <div className="flex items-center gap-1.5 mt-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">En ligne</p>
+                  <div className="flex items-center gap-1.5">
+                    <p className="font-black text-sm uppercase tracking-tight leading-none text-white">
+                      By Sandrine Couture
+                    </p>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   </div>
+                  <p className="text-[10px] text-stone-300 font-medium mt-0.5">
+                    Conseillère Atelier & Créations
+                  </p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors cursor-pointer text-white/80 hover:text-white"
+                aria-label="Fermer le chat"
               >
-                <X className="w-5 h-5" />
+                <X size={16} />
               </button>
             </div>
           </div>
 
-          {/* Chat Messages */}
-          <div ref={scrollRef} className="flex-1 p-6 overflow-y-auto space-y-6 bg-gray-50/50">
-            {messages.map((m, i) => (
-              <MessageBubble key={i} m={m} setIsOpen={setIsOpen} />
-            ))}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-white p-4 rounded-3xl rounded-tl-none border border-black/5 shadow-sm">
-                  <Loader2 className="w-4 h-4 animate-spin text-primary" />
+          {/* Messages Stream */}
+          <div
+            ref={scrollRef}
+            className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#faf8f5]/60 text-stone-800"
+          >
+            {messages.map((m) => {
+              const isUser = m.role === "user";
+              return (
+                <div
+                  key={m.id}
+                  className={`flex flex-col ${isUser ? "items-end" : "items-start"} space-y-2 max-w-full`}
+                >
+                  {m.blocks.map((block, idx) => {
+                    if (block.type === "text") {
+                      return (
+                        <div
+                          key={idx}
+                          className={`max-w-[88%] p-3.5 rounded-2xl text-[12px] sm:text-[13px] leading-relaxed font-medium shadow-xs ${
+                            isUser
+                              ? "bg-stone-900 text-white rounded-tr-none"
+                              : "bg-white text-stone-800 rounded-tl-none border border-black/5"
+                          }`}
+                        >
+                          {block.content}
+                        </div>
+                      );
+                    }
+
+                    if (block.type === "products") {
+                      return (
+                        <div key={idx} className="w-full max-w-full">
+                          <ChatProductCarousel
+                            products={block.products}
+                            onSelect={handleProductSelect}
+                            onAddToCart={handleDirectAddToCart}
+                          />
+                        </div>
+                      );
+                    }
+
+                    if (block.type === "quick_replies") {
+                      return (
+                        <div key={idx} className="w-full">
+                          <ChatQuickReplies
+                            options={block.options}
+                            onSelect={(opt) => handleSend(opt.payload)}
+                            disabled={isLoading}
+                          />
+                        </div>
+                      );
+                    }
+
+                    if (block.type === "product_configurator") {
+                      return (
+                        <div key={idx} className="w-full">
+                          <ChatProductConfigurator
+                            product={block.product}
+                            onAddToCart={handleConfiguredAddToCart}
+                          />
+                        </div>
+                      );
+                    }
+
+                    if (block.type === "quote") {
+                      return (
+                        <div key={idx} className="w-full">
+                          <ChatQuoteCard quote={block.quote} />
+                        </div>
+                      );
+                    }
+
+                    if (block.type === "actions") {
+                      return (
+                        <div key={idx} className="flex flex-col gap-2 w-full max-w-[88%]">
+                          {block.actions.map((act, aIdx) => (
+                            <a
+                              key={aIdx}
+                              href={act.url || `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full flex items-center justify-between p-3 rounded-xl bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-wider transition-all shadow-md shadow-pink-500/20 no-underline cursor-pointer"
+                            >
+                              <span>{act.label}</span>
+                              <ChevronRight size={14} />
+                            </a>
+                          ))}
+                        </div>
+                      );
+                    }
+
+                    return null;
+                  })}
                 </div>
+              );
+            })}
+
+            {isLoading && (
+              <div className="flex items-center gap-2 p-3 bg-white rounded-2xl rounded-tl-none border border-black/5 w-fit text-xs text-stone-500 shadow-xs">
+                <Loader2 size={13} className="animate-spin text-primary" />
+                <span className="italic">Sandrine vous répond...</span>
               </div>
             )}
           </div>
 
-          {/* Quick Actions & Input */}
-          <div className="p-4 bg-white border-t border-black/5 space-y-4">
-            {/* Quick Actions Horizontal Scroll */}
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
-              {quickActions.map((action, idx) => (
-                action.external ? (
-                  <a
-                    key={idx}
-                    href={action.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 flex items-center gap-2 px-4 py-2 bg-secondary/50 hover:bg-secondary rounded-full text-[10px] font-black uppercase tracking-widest transition-all no-underline text-foreground border border-primary/10"
-                  >
-                    {action.icon}
-                    {action.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={idx}
-                    href={action.href}
-                    onClick={() => action.href === '/devis' && setIsOpen(false)}
-                    className="shrink-0 flex items-center gap-2 px-4 py-2 bg-secondary/50 hover:bg-secondary rounded-full text-[10px] font-black uppercase tracking-widest transition-all no-underline text-foreground border border-primary/10"
-                  >
-                    {action.icon}
-                    {action.label}
-                  </Link>
-                )
-              ))}
-            </div>
-
-            <div className="relative group">
+          {/* Input Bar */}
+          <div className="p-3 bg-white border-t border-stone-200/80 shrink-0">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSend();
+              }}
+              className="flex items-center gap-2"
+            >
               <input
+                type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Posez votre question..."
-                className="w-full bg-gray-50 border-2 border-transparent rounded-[1.5rem] py-4 px-5 pr-12 focus:bg-white focus:border-primary/20 outline-none transition-all text-sm font-medium"
+                placeholder="Posez votre question à Sandrine..."
+                className="flex-1 px-4 py-2.5 rounded-full border border-stone-200 text-xs bg-stone-50 focus:outline-none focus:border-primary focus:bg-white transition-colors"
               />
               <button
-                onClick={() => handleSend()}
-                disabled={isLoading}
-                className="absolute right-2 top-2 p-2.5 bg-primary text-white rounded-xl hover:scale-105 transition-transform disabled:opacity-50 shadow-lg shadow-primary/20"
+                type="submit"
+                disabled={isLoading || !input.trim()}
+                className="w-10 h-10 rounded-full bg-stone-900 hover:bg-primary text-white flex items-center justify-center transition-all disabled:opacity-40 disabled:pointer-events-none cursor-pointer shrink-0 shadow-sm"
               >
-                <ChevronRight className="w-4 h-4" />
+                <Send size={15} />
               </button>
-            </div>
-
-            <p className="text-[9px] text-center text-gray-400 font-bold uppercase tracking-widest">
-              L&apos;IA peut faire des erreurs, vérifiez les infos.
-            </p>
+            </form>
           </div>
         </div>
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          aria-label="Ouvrir l'assistant atelier Sandrine Couture"
-          className="w-16 h-16 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 group relative border-2 border-pink-400/40 bg-gradient-to-tr from-stone-950 via-stone-900 to-pink-950 p-1 flex items-center justify-center hover:shadow-pink-500/30 hover:shadow-2xl"
+          className="group relative flex items-center gap-3 p-3.5 rounded-full bg-stone-900 text-white shadow-2xl hover:scale-105 transition-all duration-300 border border-white/20 cursor-pointer"
+          aria-label="Ouvrir la conseillère atelier"
         >
-          {/* Active online pulse dot */}
-          <div className="absolute top-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full z-10 shadow-sm animate-pulse" />
-          
-          {/* 3D Gold & Glass Spool Needle Icon */}
-          <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center p-1.5 bg-black/40">
-            <img 
-              src="/chatbot-icon-3d.webp" 
-              alt="Assistant Broderie 3D" 
-              width={48}
-              height={48}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-contain group-hover:rotate-12 transition-transform duration-500 drop-shadow-[0_4px_8px_rgba(244,63,94,0.4)]" 
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/20">
+            <img
+              src="/images/hero/sandrine-atelier-real.jpg"
+              alt="Sandrine Couture"
+              className="w-full h-full object-cover"
             />
+            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-stone-900 animate-pulse" />
           </div>
 
-          {/* Hover Tooltip Pill */}
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 pointer-events-none">
-            <div className="bg-stone-950/95 text-white px-4 py-2.5 rounded-2xl text-[10px] font-black uppercase tracking-[0.15em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all shadow-2xl border border-white/10 translate-x-3 group-hover:translate-x-0 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-pink-500 animate-ping" />
-              <span>Besoin d'un conseil broderie ? ✨</span>
-            </div>
+          <div className="hidden sm:flex flex-col text-left pr-2">
+            <span className="text-[11px] font-black uppercase tracking-wider text-white">
+              Une question broderie ?
+            </span>
+            <span className="text-[9px] text-stone-300 font-medium">
+              Sandrine vous répond en direct
+            </span>
+          </div>
+
+          <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary-light group-hover:bg-primary group-hover:text-white transition-colors">
+            <MessageCircle size={16} />
           </div>
         </button>
       )}
