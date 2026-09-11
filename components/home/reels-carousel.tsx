@@ -19,6 +19,13 @@ export function ReelsCarousel() {
   const [activeReelId, setActiveReelId] = useState<number | null>(null);
   const reels: ReelItem[] = [
     {
+      id: 100,
+      title: "Broderie et créations artisanales en atelier",
+      category: "Atelier / Coulisses",
+      videoUrl: "https://www.facebook.com/share/r/1C2sCL8i1A/",
+      thumbnail: "/images/hero/sandrine-atelier-real.jpg",
+    },
+    {
       id: 1,
       title: "Sac à dos enfant Nora-Dee brodé",
       category: "Bébé / Naissance",
