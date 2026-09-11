@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import standMarcheImg from "@/public/images/boutique/stand-marche-normandie.jpg";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { useCart } from "@/context/cart-context";
@@ -486,54 +488,56 @@ export default function BoutiquePage() {
       />
 
       {/* 1. HERO BOUTIQUE QUIET LUXURY */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 border-b border-stone-200/60 overflow-hidden bg-[#faf8f5]">
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-8 pb-14 sm:pb-20 border-b border-stone-200/60 overflow-hidden bg-stone-900 text-white">
         
         {/* Authentic Normandie Market Stand Photo in Background */}
-        <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
-          <img 
-            src="/images/boutique/stand-marche-normandie.jpg" 
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <Image 
+            src={standMarcheImg} 
             alt="Le stand By Sandrine Couture sur les marchés artisanaux de Normandie"
-            className="w-full h-full object-cover object-center filter brightness-[1.08] contrast-[1.02] opacity-[0.22] scale-105"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[50%_40%] filter brightness-[0.95] contrast-[1.05]"
           />
-          {/* Gentle linen cream scrims to preserve quiet luxury feel and crisp typography */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#faf8f5]/95 via-[#faf8f5]/80 to-[#faf8f5]/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5] via-transparent to-[#faf8f5]/90" />
-          <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-primary/[0.04] rounded-full blur-[120px]" />
+          {/* Subtle Dark Glassmorphism scrim: text is super crisp on left, stand and products completely clear on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/65 to-stone-950/30 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/70 z-[1]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           
           {/* Top Status Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-stone-200/80 text-[11px] font-mono tracking-widest uppercase text-stone-500">
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-white/15 text-[11px] font-mono tracking-widest uppercase text-stone-300">
             <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-bold text-stone-800">By Sandrine Couture • Atelier Robertot (Normandie)</span>
-              <span className="text-stone-300">/</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold text-white">By Sandrine Couture • Atelier Robertot (Normandie)</span>
+              <span className="text-stone-400">/</span>
               <span>Personnalisation Prénom Incluse</span>
             </div>
             <div className="flex items-center gap-6">
-              <span className="text-stone-600">Expédition suivie 48h</span>
-              <span className="text-primary font-bold">Paiement 100% Sécurisé</span>
+              <span className="text-stone-300">Expédition suivie 48h</span>
+              <span className="text-primary-light font-bold">Paiement 100% Sécurisé</span>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-4 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900/90 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-4 shadow-md border border-white/10 backdrop-blur-md">
                 <ShoppingBag size={12} className="text-primary" />
                 <span>La Sélection Prête à Personnaliser</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-stone-900 uppercase mb-4">
+              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-white uppercase mb-4 drop-shadow-md">
                 Chaque pièce a <br />
-                <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
+                <span className="font-serif italic font-normal normal-case text-primary-light underline decoration-primary/40 underline-offset-8">
                   une histoire à raconter
                 </span>.
               </h1>
             </div>
 
-            <p className="text-stone-600 text-sm max-w-sm leading-relaxed font-normal">
-              Des matières nobles choisies avec soin (velours côtelé, éponge 550g, gaze de coton, Liberty) prêtes à accueillir la broderie de votre choix. Confectionnées de mes mains dans mon atelier normand.
+            <p className="text-stone-200 text-sm sm:text-base max-w-sm leading-relaxed font-normal drop-shadow-sm">
+              Des matières nobles choisies avec soin (velours côtelé, bambou doux, gaze de coton, Liberty) prêtes à accueillir la broderie de votre choix. Confectionnées de mes mains dans mon atelier normand.
             </p>
           </div>
 
