@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   ArrowUpRight, 
   Sparkles, 
@@ -150,23 +151,25 @@ export function BentoServices() {
                   className={`${colSpan} group relative rounded-[2rem] bg-white border border-stone-200/80 shadow-xs hover:shadow-xl hover:border-stone-400/60 transition-all duration-300 overflow-hidden flex flex-col justify-between`}
                 >
                   {/* Visual Header / Background Media */}
-                  <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-stone-900">
-                    <img
+                  <div className={`relative ${isLarge ? "h-72 sm:h-80 md:h-[380px]" : "h-72 sm:h-80 md:h-[340px]"} w-full overflow-hidden bg-stone-900`}>
+                    <Image
                       src={service.imgUrl}
                       alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      fill
+                      sizes={isLarge ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                      className="object-cover object-center sm:object-[center_35%] transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent" />
                     
                     {/* Badge */}
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 z-10">
                       <span className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/90 backdrop-blur-md text-stone-900 shadow-xs">
                         {service.badge}
                       </span>
                     </div>
 
                     {/* Title on Image */}
-                    <div className="absolute bottom-4 inset-x-5 text-white">
+                    <div className="absolute bottom-4 inset-x-5 text-white z-10">
                       <span className="text-[10px] uppercase font-bold tracking-wider text-primary block mb-0.5">
                         {service.tagline}
                       </span>
