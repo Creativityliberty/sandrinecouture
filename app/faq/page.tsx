@@ -2,9 +2,11 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
+import { SchemaOrgBreadcrumb } from "@/components/layout/schema-org";
 import { 
   ChevronDown, 
   MessageCircle, 
@@ -272,58 +274,118 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="relative min-h-screen font-sans bg-white selection:bg-primary selection:text-white">
+    <div className="bg-[#faf8f5] text-[#1c1917] min-h-screen selection:bg-primary selection:text-white pt-24 sm:pt-32">
       {/* Google Rich Snippets SEO Tag */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
+      <SchemaOrgBreadcrumb
+        items={[
+          { name: "Accueil", url: "https://sandrinecouture.com" },
+          { name: "FAQ", url: "https://sandrinecouture.com/faq" },
+        ]}
+      />
+
       <Navbar />
 
-      {/* Hero Header */}
-      <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#faf8f5] via-white to-white border-b border-stone-200/70 relative overflow-hidden">
-        {/* Background glow */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* 1. HERO FAQ QUIET LUXURY (STYLE BOUTIQUE / RÉALISATIONS / BLOG) */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-8 pb-14 sm:pb-20 border-b border-stone-200/60 overflow-hidden bg-stone-900 text-white">
+        
+        {/* Authentic Normandie Coast Atelier Photo with Laptop Google PAA in Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <Image 
+            src="/images/hero/hero-faq-atelier.webp" 
+            alt="Atelier de couture et broderie By Sandrine Couture avec ordinateur ouvert sur les questions fréquentes et vue sur les falaises de Normandie"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[75%_35%] sm:object-[80%_40%] filter brightness-[1.06] contrast-[1.02] saturate-[1.05]"
+          />
+          {/* Subtle soft gradient scrim: text is super crisp on left while revealing the bright sunlight, sea view and table on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/45 to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/45 via-transparent to-stone-950/35 z-[1]" />
+        </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <MotionReveal direction="up" distance={20} duration={0.6}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-stone-200 shadow-2xs text-[10px] font-black uppercase tracking-widest text-stone-800 mb-5">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span>Questions Métiers & Recherches Google (PAA)</span>
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Top Status Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-white/15 text-[11px] font-mono tracking-widest uppercase text-stone-300">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold text-white">By Sandrine Couture • Atelier Robertot (Normandie)</span>
+              <span className="text-stone-400">/</span>
+              <span>Questions Fréquentes &amp; PAA Google</span>
             </div>
-            
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-[-0.03em] uppercase text-stone-950 leading-[1.05] mb-5">
-              Les réponses précises aux vraies questions <br />
-              <span className="font-serif italic font-normal text-primary normal-case">que vous tapez sur Google</span>.
-            </h1>
+            <div className="flex items-center gap-6">
+              <span className="text-stone-300">Conseils &amp; Faisabilité Technique</span>
+              <span className="text-primary-light font-bold">Réponses 100% Transparentes</span>
+            </div>
+          </div>
 
-            <p className="text-sm sm:text-lg text-stone-600 font-normal leading-relaxed max-w-2xl mx-auto mb-8">
-              Restaurateurs, chefs de chantier, clubs sportifs, mamans ou particuliers : découvrez toutes les réponses techniques et concrètes de l'atelier de broderie normand.
+          {/* Dedicated Mobile Showcase */}
+          <div className="sm:hidden mb-8 rounded-2xl overflow-hidden border border-white/20 shadow-xl relative aspect-[16/10]">
+            <Image
+              src="/images/hero/hero-faq-atelier.webp"
+              alt="Atelier de couture et broderie By Sandrine Couture"
+              fill
+              className="object-cover object-center filter brightness-[1.05]"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 right-3 text-left">
+              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider block mb-1">
+                Atelier Normand • Pays de Caux (76)
+              </span>
+              <p className="text-xs text-white font-medium">
+                Toutes les réponses de l'artisane aux questions que vous tapez sur Google
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900/90 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-4 shadow-md border border-white/10 backdrop-blur-md">
+                <HelpCircle size={12} className="text-primary" />
+                <span>Base de Connaissance &amp; Recherches Google (PAA)</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-white uppercase mb-4 drop-shadow-md">
+                Les réponses précises aux <br />
+                <span className="font-serif italic font-normal normal-case text-primary-light underline decoration-primary/40 underline-offset-8">
+                  vraies questions
+                </span>.
+              </h1>
+            </div>
+
+            <p className="text-stone-200 text-sm sm:text-base max-w-sm leading-relaxed font-normal drop-shadow-sm">
+              Restaurateurs, artisans BTP, clubs sportifs ou cadeaux de naissance : découvrez toutes les réponses techniques et concrètes de l'atelier de broderie normand.
             </p>
-          </MotionReveal>
+          </div>
 
-          {/* Quick Search Bar */}
-          <MotionReveal direction="up" distance={20} delay={100} duration={0.6} className="max-w-xl mx-auto">
-            <div className="relative flex items-center">
+          {/* Integrated Search Bar in Hero Glassmorphism */}
+          <div className="max-w-3xl">
+            <div className="relative flex items-center p-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200/80 shadow-lg">
               <Search className="absolute left-4 w-5 h-5 text-stone-400 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Tapez votre recherche (ex: restaurant, softshell, doudou, logo, urgence)..."
-                className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white border border-stone-200 shadow-md focus:border-primary focus:ring-2 focus:ring-primary/20 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 outline-hidden transition-all"
+                placeholder="Rechercher une question (ex: lavage 90°, softshell, doudou, logo, urgence, TVA)..."
+                className="w-full pl-12 pr-24 py-3.5 rounded-xl bg-transparent text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 outline-hidden font-medium"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-4 text-xs font-bold text-stone-400 hover:text-stone-700 cursor-pointer"
+                  className="absolute right-4 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-[11px] font-bold text-stone-600 cursor-pointer transition-colors"
                 >
                   Effacer
                 </button>
               )}
             </div>
-          </MotionReveal>
+          </div>
+
         </div>
       </section>
 
