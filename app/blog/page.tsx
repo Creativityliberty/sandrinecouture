@@ -4,10 +4,11 @@ import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, User, Clock, Search, Sparkles, BookOpen } from "lucide-react";
+import { ArrowRight, Calendar, User, Clock, Search, Sparkles, BookOpen, SlidersHorizontal, Scissors } from "lucide-react";
 import { SchemaOrgBreadcrumb } from "@/components/layout/schema-org";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function BlogPage() {
@@ -31,7 +32,7 @@ export default function BlogPage() {
   });
 
   return (
-    <div className="relative min-h-screen font-sans bg-white">
+    <div className="bg-[#faf8f5] text-[#1c1917] min-h-screen selection:bg-primary selection:text-white pt-24 sm:pt-32">
       <SchemaOrgBreadcrumb
         items={[
           { name: "Accueil", url: "https://sandrinecouture.com" },
@@ -41,57 +42,108 @@ export default function BlogPage() {
 
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-36 pb-14 px-6 relative">
-        <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-6 duration-700">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 text-primary text-[10px] font-mono uppercase tracking-widest mb-6">
-            <BookOpen size={12} />
-            <span>L'Atelier des Savoir-Faire & Tendances</span>
+      {/* 1. HERO BLOG QUIET LUXURY (STYLE BOUTIQUE / RÉALISATIONS) */}
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-8 pb-14 sm:pb-20 border-b border-stone-200/60 overflow-hidden bg-stone-900 text-white">
+        
+        {/* Authentic Normandie Coast Atelier Photo in Background */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <Image 
+            src="/images/hero/hero-blog-atelier.webp" 
+            alt="Atelier de couture et broderie avec vue sur les falaises de Normandie par Sandrine Couture"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[75%_35%] sm:object-[80%_40%] filter brightness-[0.92] contrast-[1.08] saturate-[1.05]"
+          />
+          {/* Subtle Dark Glassmorphism scrim: text is super crisp on left, cliffs & workshop clear on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/75 to-stone-950/35 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/70 z-[1]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Top Status Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-10 border-b border-white/15 text-[11px] font-mono tracking-widest uppercase text-stone-300">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold text-white">By Sandrine Couture • Atelier Robertot (Normandie)</span>
+              <span className="text-stone-400">/</span>
+              <span>Le Journal de l'Atelier</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <span className="text-stone-300">Guides &amp; Conseils 100% Gratuits</span>
+              <span className="text-primary-light font-bold">Savoir-Faire Artisanal</span>
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-6 italic uppercase leading-[0.9] text-gray-950">
-            Le Mag de la Broderie & <br />
-            <span className="text-primary not-italic">Conseils Textiles</span>
-          </h1>
-          <p className="text-base sm:text-lg text-gray-700 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
-            Astuces d'entretien, guides techniques pour entreprises, idées cadeaux de naissance personnalisés et coulisses de mon atelier artisanal à Robertot.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900/90 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-4 shadow-md border border-white/10 backdrop-blur-md">
+                <BookOpen size={12} className="text-primary" />
+                <span>Savoir-Faire, Tendances &amp; Guides Textiles</span>
+              </div>
 
-          {/* Search & Category filter */}
-          <div className="max-w-xl mx-auto space-y-4">
-            <div className="relative">
-              <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Rechercher un conseil (ex: BTP, lavage, doudou)..."
-                className="w-full pl-11 pr-4 py-3.5 bg-gray-50 rounded-2xl border border-black/10 focus:outline-none focus:border-primary text-xs font-bold transition-all shadow-sm"
-              />
+              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-white uppercase mb-4 drop-shadow-md">
+                Le Mag de la Broderie &amp; <br />
+                <span className="font-serif italic font-normal normal-case text-primary-light underline decoration-primary/40 underline-offset-8">
+                  conseils textiles
+                </span>.
+              </h1>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            <p className="text-stone-200 text-sm sm:text-base max-w-sm leading-relaxed font-normal drop-shadow-sm">
+              Astuces d'entretien, guides techniques pour professionnels, idées de cadeaux de naissance personnalisés et coulisses de mon atelier artisanal à Robertot.
+            </p>
+          </div>
+
+          {/* Integrated Search & Category Filter Bar */}
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-2 rounded-2xl bg-white/90 backdrop-blur-md border border-stone-200/80 shadow-xs">
+            
+            {/* Category Pills */}
+            <div className="flex flex-wrap items-center gap-1.5">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                     selectedCategory === cat
-                      ? "bg-primary text-white shadow-md shadow-pink-500/20 scale-105"
-                      : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-black/5"
+                      ? "bg-stone-900 text-white shadow-xs"
+                      : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
                   }`}
                 >
                   {cat}
                 </button>
               ))}
             </div>
+
+            {/* Live Search Input */}
+            <div className="flex items-center gap-3 w-full lg:w-auto">
+              <div className="relative w-full lg:w-72">
+                <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Rechercher un guide (ex: BTP, lavage)..."
+                  className="w-full pl-10 pr-4 py-2 bg-stone-100 hover:bg-stone-200/70 focus:bg-white rounded-xl border border-stone-200 focus:outline-none focus:border-stone-900 text-xs font-medium text-stone-900 placeholder:text-stone-400 transition-all"
+                />
+              </div>
+
+              <div className="hidden sm:flex items-center gap-2 px-3 text-xs font-mono text-stone-500 shrink-0">
+                <SlidersHorizontal size={13} className="text-primary" />
+                <span>{filteredPosts.length} articles</span>
+              </div>
+            </div>
+
           </div>
+
         </div>
+
       </section>
 
       <RevealOnScroll direction="up" delay={80}>
       {/* Articles Grid */}
-      <section className="py-12 px-6">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
         <div className="max-w-6xl mx-auto">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-20 bg-gray-50 rounded-3xl border border-black/5">
