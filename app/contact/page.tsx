@@ -314,10 +314,10 @@ _Envoyé depuis le site Sandrine Couture_`;
               </div>
             </a>
 
-            {/* WhatsApp with Direct Link & QR Code */}
-            <div className="p-4 sm:p-6 bg-gradient-to-br from-emerald-950/90 to-stone-900 text-white rounded-2xl border border-emerald-500/30 shadow-xl overflow-hidden relative group">
-              <div className="flex flex-col sm:flex-row items-center gap-5">
-                <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-white p-2 shadow-md shrink-0 flex items-center justify-center overflow-hidden border border-white/20">
+            {/* WhatsApp with Direct Link & Clean QR Code */}
+            <div className="p-5 sm:p-7 bg-gradient-to-br from-emerald-950 via-stone-900 to-stone-950 text-white rounded-3xl border border-emerald-500/30 shadow-2xl overflow-hidden relative group">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-white p-3 shadow-xl shrink-0 flex flex-col items-center justify-center border-2 border-white/60 ring-4 ring-emerald-500/20 transition-transform group-hover:scale-[1.02]">
                   <img 
                     src="/images/contact/whatsapp-qr-sandrine.png" 
                     alt="Scanner le QR code WhatsApp By Sandrine Couture"
@@ -325,24 +325,24 @@ _Envoyé depuis le site Sandrine Couture_`;
                   />
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[9px] font-bold uppercase tracking-wider mb-2 border border-emerald-500/30">
-                    <MessageCircle size={12} />
-                    <span>WhatsApp Professionnel</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase tracking-wider mb-2.5 border border-emerald-500/30">
+                    <MessageCircle size={13} />
+                    <span>WhatsApp Professionnel Direct</span>
                   </div>
-                  <h3 className="font-bold text-base sm:text-lg text-white mb-1">
-                    Scannez pour discuter en direct
+                  <h3 className="font-black text-lg sm:text-xl text-white mb-1.5 tracking-tight">
+                    Scannez pour échanger avec Sandrine
                   </h3>
-                  <p className="text-xs text-stone-300 mb-3 leading-relaxed">
-                    Envoyez vos photos, motifs ou questions directement sur le compte professionnel de Sandrine.
+                  <p className="text-xs sm:text-sm text-stone-300 mb-4 leading-relaxed">
+                    Pointez l'appareil photo de votre smartphone sur le code pour envoyer vos photos, logos ou poser vos questions en direct.
                   </p>
                   <a
                     href="https://wa.me/33629492213"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black uppercase tracking-wider transition-transform hover:scale-105 no-underline shadow-lg shadow-green-500/20"
+                    className="inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 no-underline shadow-lg shadow-green-500/25 cursor-pointer"
                   >
-                    <MessageCircle size={14} />
-                    <span>Ouvrir WhatsApp</span>
+                    <MessageCircle size={15} />
+                    <span>Ouvrir WhatsApp en 1 clic</span>
                   </a>
                 </div>
               </div>

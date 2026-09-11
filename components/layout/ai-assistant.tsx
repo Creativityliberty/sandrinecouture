@@ -21,6 +21,7 @@ import { ChatProductCarousel } from "@/components/chat/chat-product-carousel";
 import { ChatQuickReplies } from "@/components/chat/chat-quick-replies";
 import { ChatProductConfigurator } from "@/components/chat/chat-product-configurator";
 import { ChatQuoteCard } from "@/components/chat/chat-quote-card";
+import { FormattedChatMessage } from "@/components/chat/formatted-chat-message";
 import Link from "next/link";
 
 export function AIAssistant() {
@@ -262,13 +263,13 @@ export function AIAssistant() {
                       return (
                         <div
                           key={idx}
-                          className={`max-w-[88%] p-3.5 rounded-2xl text-[12px] sm:text-[13px] leading-relaxed font-medium shadow-xs ${
+                          className={`max-w-[88%] p-3.5 sm:p-4 rounded-2xl shadow-xs ${
                             isUser
                               ? "bg-stone-900 text-white rounded-tr-none"
                               : "bg-white text-stone-800 rounded-tl-none border border-black/5"
                           }`}
                         >
-                          {block.content}
+                          <FormattedChatMessage content={block.content} isUser={isUser} />
                         </div>
                       );
                     }

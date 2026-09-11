@@ -34,8 +34,23 @@ interface Testimonial {
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    id: "ophelie",
+    id: "faty",
     num: "(01)",
+    category: "NOUVEAU • COUTURE & CONFECTION",
+    name: "Faty",
+    role: "Avis récent Google (août)",
+    text: "Je vous recommande vivement Sandrine si vous avez besoin d’une couturière. Elle réalise un travail rapide et soigné !",
+    rating: 5,
+    date: "Avis vérifié Google • Il y a 3 semaines",
+    tag: "Couture & Retouches",
+    features: ["Atelier Confection •", "Rapidité Exemplaire •", "Finition Soignée"],
+    imgUrl: "/images/realisations/trousse-toilette-eponge-brodee.webp",
+    ctaText: "Contacter l'Atelier",
+    ctaLink: "/contact"
+  },
+  {
+    id: "ophelie",
+    num: "(02)",
     category: "PIÈCES NAISSANCE",
     name: "Ophélie Cavelier",
     role: "Création Particulier",
@@ -50,7 +65,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "arthur",
-    num: "(02)",
+    num: "(03)",
     category: "SÉRIE TEXTILE PRO",
     name: "Arthur Lbs",
     role: "Client Pro & Équipe",
@@ -65,7 +80,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "chloe",
-    num: "(03)",
+    num: "(04)",
     category: "CARTABLE BRODÉ",
     name: "Chloé Larchevesque",
     role: "Maman",
@@ -80,7 +95,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "nadege",
-    num: "(04)",
+    num: "(05)",
     category: "GIGOTEUSE BÉBÉ",
     name: "Nadège Lobjois",
     role: "Cliente",
@@ -95,7 +110,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "kehlani",
-    num: "(05)",
+    num: "(06)",
     category: "CARNET DE SANTÉ & LINGE",
     name: "Kehlani Lauthner",
     role: "Local Guide Google",
@@ -110,7 +125,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "angelique",
-    num: "(06)",
+    num: "(07)",
     category: "FIDÉLITÉ ATELIER",
     name: "Angélique Justin",
     role: "Cliente Fidèle",

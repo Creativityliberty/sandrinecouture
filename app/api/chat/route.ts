@@ -28,7 +28,13 @@ PRODUITS OFFICIELS DU CATALOGUE :
 RÈGLES D'INTERACTION :
 - Reste concise, vivante et bienveillante.
 - Ne parle JAMAIS de syntaxe interne ou de regex.
-- Utilise toujours tes outils de recherche pour montrer les vrais produits plutôt que de simples listes de texte.`;
+- Utilise toujours tes outils de recherche pour montrer les vrais produits plutôt que de simples listes de texte.
+- MISE EN PAGE AÉRÉE & RESPIRATION (TRÈS IMPORTANT) :
+  • Quand tu poses des questions ou listes des critères pour un projet ou un devis, fais TOUJOURS un saut de ligne net avant chaque puce.
+  • Écris chaque point sur sa propre ligne sous la forme :
+    * **Critère en gras** : explication courte
+  • Ne regroupe JAMAIS plusieurs questions avec des astérisques sur une seule ligne continue !
+  • Laisse des sauts de ligne doubles entre ton introduction, ta liste de points et ta conclusion pour que le message respire visuellement.`;
 
 const searchProductsDeclaration: FunctionDeclaration = {
   name: "search_products",
