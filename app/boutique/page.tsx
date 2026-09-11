@@ -351,6 +351,30 @@ const PRODUCTS: Product[] = [
       { name: "Blanc & Fleurs Ocre/Rose", hex: "#E8C5C8" }
     ],
     fonts: ["Script", "Moderne"]
+  },
+  {
+    id: 109,
+    title: "Tapis Nomade Bébé Écureuil & Bambou",
+    price: 30.00,
+    category: "Bébé",
+    badge: "Indispensable Bébé",
+    spec: "Extérieur tissu bambou • Dessus coton imprimé • Ouate moelleuse",
+    description: "Un petit cocon de douceur à emporter partout avec bébé ! Ce tapis nomade molletonné est l'allié incontournable pour les sorties, les visites chez nounou ou les voyages. Confectionné avec un extérieur en tissu bambou ultra-doux et respirant, un ravissant dessus en coton imprimé petits écureuils des bois, et une ouate intérieure pour un confort moelleux et isolant. Création artisanale normande personnalisable sur commande.",
+    imgUrl: "/images/boutique/hero-tapis-nomade.jpg",
+    variants: [
+      {
+        name: "Modèle Écureuil des Bois & Éponge Bambou Corail",
+        badge: "Motif Écureuil",
+        images: {
+          closed: "/images/boutique/tapis-nomade-ecureuil-bambou.jpg",
+          open: "/images/boutique/tapis-nomade-ecureuil-bambou.jpg"
+        }
+      }
+    ],
+    colors: [
+      { name: "Écureuil & Vieux Rose / Corail", hex: "#C76B66" }
+    ],
+    fonts: ["Script", "Moderne"]
   }
 ];
 
