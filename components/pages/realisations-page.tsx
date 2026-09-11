@@ -15,7 +15,8 @@ import {
   Layers,
   MapPin,
   Clock,
-  Star
+  Star,
+  Scissors
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,33 +57,56 @@ export function RealisationsPage() {
           <ArrowLeft size={14} /> Retour au Showroom
         </Link>
 
-        {/* 1. HERO SECTION & TITLE */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-stone-950 via-stone-900 to-stone-950 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-5 shadow-md border border-white/10">
-              <div className="flex items-center gap-0.5 text-amber-400">
-                <Star size={11} className="fill-amber-400" />
-                <Star size={11} className="fill-amber-400" />
-                <Star size={11} className="fill-amber-400" />
-              </div>
-              <span className="font-bold text-stone-200">Archives Atelier & Pièces Réalisées</span>
-              <div className="flex items-center gap-0.5 text-amber-400">
-                <Star size={11} className="fill-amber-400" />
-                <Star size={11} className="fill-amber-400" />
-              </div>
-            </div>
-
-            <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase">
-              Chaque point est <br />
-              <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
-                une empreinte unique
-              </span>.
-            </h1>
+        {/* 1. HERO SECTION & TITLE WITH REALISTIC EMBROIDERY BACKDROP */}
+        <div className="relative rounded-[2.5rem] overflow-hidden p-6 sm:p-10 lg:p-14 mb-14 border border-stone-200/70 shadow-xs bg-[#faf8f5]">
+          {/* Background Realistic Embroidery Needle & Pink Heart Image */}
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <Image
+              src="/images/hero/hero-realisations-broderie-coeur.webp"
+              alt="Cœur brodé au fil rose avec aiguille de couture et fil en gros plan"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[75%_40%] sm:object-[82%_42%] opacity-85 lg:opacity-95 filter contrast-[1.03] saturate-[1.05]"
+            />
+            {/* Luxury Ivory Gradients to protect text readability on left while keeping needle visible on right */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#faf8f5] via-[#faf8f5]/90 to-transparent sm:via-[#faf8f5]/75" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5]/80 via-transparent to-transparent" />
           </div>
 
-          <p className="text-stone-600 text-base max-w-sm leading-relaxed font-normal">
-            Plus de 100 créations brodées et confectionnées à Robertot. Des uniformes d'artisans normands aux coffrets de naissance les plus délicats.
-          </p>
+          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/90 backdrop-blur-md text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-5 shadow-md border border-white/15">
+                <div className="flex items-center gap-0.5 text-amber-400">
+                  <Star size={11} className="fill-amber-400" />
+                  <Star size={11} className="fill-amber-400" />
+                  <Star size={11} className="fill-amber-400" />
+                </div>
+                <span className="font-bold text-stone-100">Archives Atelier & Pièces Réalisées</span>
+                <div className="flex items-center gap-0.5 text-amber-400">
+                  <Star size={11} className="fill-amber-400" />
+                  <Star size={11} className="fill-amber-400" />
+                </div>
+              </div>
+
+              <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-950 uppercase drop-shadow-xs">
+                Chaque point est <br />
+                <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/30 underline-offset-8">
+                  une empreinte unique
+                </span>.
+              </h1>
+            </div>
+
+            <div className="max-w-sm bg-white/75 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-xs">
+              <p className="text-stone-700 text-xs sm:text-sm leading-relaxed font-medium">
+                Plus de 100 créations brodées et confectionnées de mes mains à Robertot. Des uniformes d'artisans normands aux coffrets de naissance les plus délicats.
+              </p>
+              <div className="mt-3 flex items-center gap-2 text-[10px] font-mono text-primary font-bold uppercase tracking-wider">
+                <Scissors size={12} />
+                <span>Piquage Artisanal & Fait Main 76</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 2. THE THREE.JS 3D BOOKSHELF EXPERIENCE */}
