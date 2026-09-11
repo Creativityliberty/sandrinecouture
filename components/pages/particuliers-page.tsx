@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Baby,
   Gift,
@@ -93,129 +94,128 @@ export function ParticuliersPage() {
   return (
     <div className="bg-[#faf8f5] text-[#1c1917] selection:bg-primary selection:text-white pt-24 sm:pt-32">
       
-      {/* 1. HERO PARTICULIERS LUXURY STUDIO */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pb-20 sm:pb-28 border-b border-black/[0.06] overflow-hidden">
+      {/* 1. HERO PARTICULIERS QUIET LUXURY STUDIO */}
+      <section className="relative w-full max-w-full pt-8 sm:pt-12 pb-16 sm:pb-28 lg:pb-32 overflow-hidden bg-stone-950 text-white selection:bg-primary selection:text-white border-b border-white/10">
         
-        {/* Subtle warm glow background */}
-        <div className="absolute inset-0 pointer-events-none -z-10">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:64px_64px]" />
-          <div className="absolute top-10 right-1/4 w-[500px] h-[500px] bg-rose-200/40 rounded-full blur-[140px]" />
-          <div className="absolute bottom-10 left-1/4 w-[400px] h-[400px] bg-amber-100/50 rounded-full blur-[130px]" />
+        {/* Background Photo for Desktop (>= sm) */}
+        <div className="hidden sm:block absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <Image 
+            src="/images/hero/hero-particuliers-atelier.webp" 
+            alt="Étalage de créations textiles artisanales pour particuliers par Sandrine Couture à Robertot : doudou lapin brodé, gilet sherpa et carnet de santé"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[78%_40%] filter brightness-[0.96] contrast-[1.04] saturate-[1.05]"
+          />
+          {/* Soft, warm luxury gradient for desktop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/65 to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-stone-950/40 z-[1]" />
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Top Meta Status */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-12 border-b border-black/[0.08] text-[11px] font-mono tracking-widest uppercase text-stone-500">
-            <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="font-bold text-stone-800">Atelier Créatif Particuliers • Normandie (76)</span>
-              <span className="text-stone-300">/</span>
-              <span>Pièces Uniques & Sur-Mesure</span>
+          {/* Top Atelier Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 sm:pb-6 mb-8 sm:mb-12 border-b border-white/15 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] font-bold text-stone-300 font-mono">
+            <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+              <span className="flex h-2.5 w-2.5 relative shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              <span className="text-white font-black tracking-wider">Atelier Créatif Particuliers • Normandie (76)</span>
+              <span className="text-stone-400 hidden sm:inline">/</span>
+              <span className="hidden sm:inline text-stone-300">Pièces Uniques & Trousseaux</span>
             </div>
-            <div className="flex items-center gap-6">
-              <span className="text-stone-600">Délai moyen confection : ~5 à 7 jours</span>
-              <span className="text-primary font-bold">Sans minimum de commande</span>
+
+            <div className="flex items-center gap-4 text-[10px] font-bold text-stone-300">
+              <span className="flex items-center gap-1.5">
+                <Scissors size={13} className="text-primary-light shrink-0" /> Fils Madeira Certifiés Oeko-Tex 100
+              </span>
+              <span className="text-primary-light font-bold">
+                Sans minimum de commande
+              </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Dedicated Mobile Photo Showcase (Visible only on mobile < sm) */}
+          <div className="sm:hidden w-full mb-8 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-stone-900">
+            <Image 
+              src="/images/hero/hero-particuliers-atelier.webp" 
+              alt="Créations bébé et cadeaux personnalisés brodés par Sandrine Couture"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[60%_40%]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-bold text-white uppercase tracking-wider bg-stone-950/70 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/15">
+              <span className="flex items-center gap-1.5">
+                <Sparkles size={11} className="text-primary-light" /> Trousseaux & Cadeaux Bébé
+              </span>
+              <span className="text-stone-300 font-mono text-[9px]">Atelier Robertot (76)</span>
+            </div>
+          </div>
+
+          {/* Narrative Content */}
+          <div className="max-w-2xl flex flex-col items-start">
             
-            {/* Left Column Narrative */}
-            <div className="lg:col-span-7 flex flex-col items-start">
-              
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-900 text-white text-[9px] font-mono tracking-[0.25em] uppercase mb-6 shadow-sm">
-                <Sparkles size={12} className="text-primary" />
-                <span>Cadeaux Uniques & Éveil</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-6xl xl:text-[4.25rem] font-black tracking-[-0.03em] leading-[1.02] text-stone-900 uppercase mb-6">
-                Le prénom brodé, <br />
-                <span className="font-serif italic font-normal normal-case text-primary underline decoration-primary/20 underline-offset-8">
-                  un souvenir d'enfance
-                </span> <br />
-                qui reste.
-              </h1>
-
-              <p className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed mb-8 max-w-xl">
-                Vous cherchez un cadeau qui touche vraiment le cœur ? De la couverture de naissance au peignoir personnalisé, nous donnons vie à vos attentions avec des fils doux, inusables et certifiés sans substances nocives.
-              </p>
-
-              {/* Guarantees Matrix */}
-              <div className="grid grid-cols-3 gap-3 w-full mb-9 p-3 rounded-2xl bg-white border border-black/[0.08] shadow-sm">
-                <div className="text-left px-2">
-                  <span className="text-xs font-mono font-bold text-stone-900 block">Oeko-Tex 100</span>
-                  <span className="text-[10px] text-stone-500">100% sûr pour bébé</span>
-                </div>
-                <div className="text-left px-2 border-x border-black/[0.06]">
-                  <span className="text-xs font-mono font-bold text-stone-900 block">Lavage 60°C</span>
-                  <span className="text-[10px] text-stone-500">Fils Madeira inaltérables</span>
-                </div>
-                <div className="text-left px-2">
-                  <span className="text-xs font-mono font-bold text-stone-900 block">Fait en Normandie</span>
-                  <span className="text-[10px] text-stone-500">Atelier à Robertot</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-                <Link href="/devis?type=particulier" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="h-14 px-8 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-bold uppercase tracking-wider text-xs shadow-xl shadow-stone-900/10 flex items-center justify-center gap-3 w-full cursor-pointer"
-                  >
-                    <MessageCircle className="w-4 h-4 text-primary" />
-                    <span>Créer mon cadeau sur-mesure</span>
-                    <ChevronRight size={14} />
-                  </Button>
-                </Link>
-
-                <Link href="/boutique" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-14 px-7 rounded-full border-black/15 bg-white hover:bg-stone-900 hover:text-white transition-all font-bold uppercase tracking-wider text-xs w-full flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <span>Voir les articles prêts à broder</span>
-                  </Button>
-                </Link>
-              </div>
-
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-900/90 border border-white/20 text-white text-[9px] sm:text-[10px] font-bold tracking-[0.22em] uppercase mb-4 sm:mb-6 backdrop-blur-md shadow-lg font-mono">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span>Cadeaux Uniques & Éveil • Fait Main 76</span>
             </div>
 
-            {/* Right Video / Live Workshop Card */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-stone-900 border border-stone-800 shadow-2xl group">
-                <video
-                  src="https://assets.mixkit.co/videos/preview/mixkit-sewing-machine-stitching-fabric-41718-large.mp4"
-                  preload="none"
-                  poster="/images/realisations/gilet-berger-bebe-reversible-moumoute-sherpa.webp"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover opacity-85 transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/25 to-transparent pointer-events-none" />
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-white uppercase mb-4 sm:mb-6 drop-shadow-lg">
+              Le prénom brodé, <br />
+              <span className="font-serif italic font-normal normal-case text-primary-light underline decoration-primary/40 underline-offset-8 inline-block">
+                un souvenir d'enfance
+              </span> <br />
+              qui traverse le temps.
+            </h1>
 
-                <div className="absolute top-5 left-5 z-10">
-                  <span className="px-3 py-1.5 rounded-full bg-stone-950/80 backdrop-blur-md border border-white/20 text-white text-[9px] font-mono tracking-widest uppercase">
-                    Machine en Action • Atelier Robertot
-                  </span>
-                </div>
+            {/* Copy */}
+            <p className="text-sm sm:text-base lg:text-lg text-stone-200 font-normal leading-relaxed mb-8 max-w-xl drop-shadow-md">
+              Vous cherchez une attention qui touche vraiment le cœur ? De la couverture de naissance au peignoir personnalisé, nous donnons vie à vos idées avec des fils doux, inusables et certifiés sans substances nocives.
+            </p>
 
-                <div className="absolute inset-x-5 bottom-5 z-10 p-6 rounded-3xl bg-stone-900/90 border border-white/10 backdrop-blur-xl text-white">
-                  <span className="text-[10px] font-mono text-primary uppercase tracking-widest block mb-1">
-                    Gilet de Berger Réversible
-                  </span>
-                  <h3 className="text-xl font-bold tracking-tight text-white mb-2">
-                    Sherpa Moelleux & Prénom Personnalisé
-                  </h3>
-                  <p className="text-stone-300 text-xs leading-relaxed">
-                    Chaque point est calibré pour une tenue irréprochable et un contact tout doux avec la peau délicate de l'enfant.
-                  </p>
-                </div>
+            {/* Guarantees Matrix */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 w-full mb-8 p-3.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-md text-white">
+              <div className="text-left px-2">
+                <span className="text-xs font-mono font-bold text-white block">Oeko-Tex 100</span>
+                <span className="text-[10px] text-stone-300">100% sûr pour bébé</span>
               </div>
+              <div className="text-left px-2 border-x border-white/15">
+                <span className="text-xs font-mono font-bold text-white block">Lavage 60°C</span>
+                <span className="text-[10px] text-stone-300">Fils inaltérables</span>
+              </div>
+              <div className="text-left px-2">
+                <span className="text-xs font-mono font-bold text-white block">Fait en Normandie</span>
+                <span className="text-[10px] text-stone-300">Atelier à Robertot</span>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              <Link href="/devis?type=particulier" className="w-full sm:w-auto no-underline">
+                <Button
+                  size="lg"
+                  className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase tracking-wider text-xs shadow-xl shadow-primary/25 flex items-center justify-center gap-3 w-full cursor-pointer"
+                >
+                  <MessageCircle className="w-4 h-4 text-white" />
+                  <span>Créer mon cadeau sur-mesure</span>
+                  <ChevronRight size={14} />
+                </Button>
+              </Link>
+
+              <Link href="/boutique" className="w-full sm:w-auto no-underline">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-14 px-7 rounded-full border-white/20 bg-stone-900/80 text-white hover:bg-white hover:text-stone-950 transition-all font-bold uppercase tracking-wider text-xs w-full flex items-center justify-center gap-2 cursor-pointer backdrop-blur-md"
+                >
+                  <span>Voir les articles prêts à broder</span>
+                </Button>
+              </Link>
             </div>
 
           </div>
