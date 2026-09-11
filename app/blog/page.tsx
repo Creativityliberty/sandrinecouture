@@ -165,51 +165,53 @@ export default function BlogPage() {
               {filteredPosts.map((article) => (
                 <article
                   key={article.id}
-                  className="group bg-white rounded-3xl border border-black/10 overflow-hidden hover:shadow-2xl hover:border-primary/40 transition-all duration-500 flex flex-col relative"
+                  className="group bg-white rounded-[2.25rem] border border-black/[0.07] shadow-sm hover:shadow-2xl hover:border-black/20 transition-all duration-500 overflow-hidden flex flex-col justify-between cursor-pointer relative"
                 >
                   {/* Image */}
-                  <div className="h-56 overflow-hidden relative bg-gray-100">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
                     <img
                       src={article.image}
                       alt={article.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3.5 py-1.5 bg-white/95 backdrop-blur-md text-primary text-[9px] font-black uppercase tracking-widest rounded-full shadow-sm">
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-stone-900 text-[9px] font-mono tracking-widest uppercase font-bold shadow-xs">
                         {article.category}
                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-7 flex flex-col flex-1">
-                    <h3 className="text-lg font-black tracking-tight uppercase leading-snug mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                      <Link href={`/blog/${article.slug}`} className="before:absolute before:inset-0 text-inherit no-underline">
-                        {article.title}
-                      </Link>
-                    </h3>
-                    <p className="text-gray-700 text-xs mb-6 line-clamp-3 font-medium leading-relaxed">
-                      {article.excerpt}
-                    </p>
+                  <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
+                    <div>
+                      <h3 className="text-base sm:text-lg font-black tracking-tight uppercase leading-snug mb-2.5 line-clamp-2 group-hover:text-primary transition-colors">
+                        <Link href={`/blog/${article.slug}`} className="before:absolute before:inset-0 text-inherit no-underline">
+                          {article.title}
+                        </Link>
+                      </h3>
+                      <p className="text-stone-600 text-xs mb-6 line-clamp-3 font-normal leading-relaxed">
+                        {article.excerpt}
+                      </p>
+                    </div>
 
                     {/* Meta */}
-                    <div className="mt-auto pt-4 border-t border-black/5 space-y-2">
-                      <div className="flex items-center justify-between text-[9px] font-bold uppercase tracking-widest text-gray-700">
+                    <div className="mt-auto pt-4 border-t border-black/[0.06] space-y-3">
+                      <div className="flex items-center justify-between text-[10px] font-mono font-bold uppercase tracking-wider text-stone-500">
                         <div className="flex items-center gap-1.5">
                           <Calendar size={13} className="text-primary" />
                           {article.date}
                         </div>
-                        <div className="flex items-center gap-1.5 text-primary font-black">
-                          <Clock size={13} />
+                        <div className="flex items-center gap-1.5 text-stone-700">
+                          <Clock size={13} className="text-primary" />
                           {article.readTime}
                         </div>
                       </div>
-                    </div>
 
-                    {/* CTA Button */}
-                    <div className="mt-5 w-full py-2.5 bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white font-black uppercase text-[9px] tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
-                      <span>Lire le guide complet</span>
-                      <ArrowRight size={14} />
+                      {/* CTA Button */}
+                      <div className="w-full py-2.5 bg-stone-100 group-hover:bg-primary text-stone-800 group-hover:text-white font-mono font-bold uppercase text-[10px] tracking-wider rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Lire le guide</span>
+                        <ArrowRight size={13} />
+                      </div>
                     </div>
                   </div>
                 </article>
