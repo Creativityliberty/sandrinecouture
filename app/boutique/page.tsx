@@ -79,6 +79,8 @@ export default function BoutiquePage() {
       price: finalPrice,
       quantity,
       imgUrl: currentVariantImg,
+      category: activeModalProduct.category,
+      variantName: variantName || undefined,
       threadColor: selectedColor || variantName
     });
 

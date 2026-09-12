@@ -9,6 +9,8 @@ export interface CartItem {
   price: number;
   quantity: number;
   imgUrl: string;
+  category?: string;
+  variantName?: string;
   textToEmbroider?: string;
   font?: string;
   threadColor?: string;
@@ -58,7 +60,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const addToCart = (item: Omit<CartItem, "id">) => {
     setCart((prevCart) => {
       // Generate a unique ID based on product ID and customization options
-      const uniqueId = `${item.productId}-${item.textToEmbroider || ""}-${item.font || ""}-${item.threadColor || ""}-${item.customLogoUrl || ""}`;
+      const uniqueId = `${item.productId}-${item.variantName || ""}-${item.textToEmbroider || ""}-${item.font || ""}-${item.threadColor || ""}-${item.customLogoUrl || ""}`;
       
       const existingItemIndex = prevCart.findIndex((i) => i.id === uniqueId);
 

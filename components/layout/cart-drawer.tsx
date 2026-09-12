@@ -99,13 +99,36 @@ export function CartDrawer() {
     if (cart.length === 0) return;
     if (!isDeliveryInfoComplete) return;
 
-    let message = `Bonjour Sandrine ! 🧵\nJe souhaite passer commande de produits personnalisés depuis le site. Voici mon panier :\n\n📦 *DÉTAIL DE LA COMMANDE :*\n`;
+    const origin = typeof window !== "undefined" && window.location.origin && !window.location.origin.includes("localhost")
+      ? window.location.origin
+      : "https://sandrinecouture.com";
+
+    let message = `Bonjour Sandrine ! 🧵\nJe souhaite passer commande de créations personnalisées depuis le site. Voici mon panier :\n\n📦 *DÉTAIL DE LA COMMANDE :*\n`;
 
     cart.forEach((item, index) => {
       message += `-------------------------------\n`;
-      message += `${index + 1}. *${item.title}* (Qté: ${item.quantity}) - ${(item.price * item.quantity).toFixed(2)} €\n`;
-      if (item.threadColor) {
-        message += `   • Couleur tissu : _${item.threadColor}_\n`;
+      message += `${index + 1}. *${item.title}* (Qté: ${item.quantity}) — ${(item.price * item.quantity).toFixed(2)} €\n`;
+      if (item.category) {
+        message += `   📂 Catégorie : ${item.category}\n`;
+      }
+      if (item.variantName) {
+        message += `   🎨 Modèle / Motif : _${item.variantName}_\n`;
+      }
+      if (item.threadColor && item.threadColor !== item.variantName) {
+        message += `   🧵 Couleur / Tissu : _${item.threadColor}_\n`;
+      }
+      if (item.textToEmbroider) {
+        message += `   ✍️ Prénom / Texte à broder : "*${item.textToEmbroider}*"\n`;
+      }
+      if (item.font) {
+        message += `   🔤 Style d'écriture : _${item.font}_\n`;
+      }
+      if (item.imgUrl) {
+        const photoUrl = item.imgUrl.startsWith("http") ? item.imgUrl : `${origin}${item.imgUrl.startsWith("/") ? "" : "/"}${item.imgUrl}`;
+        message += `   🔗 Photo du modèle : ${photoUrl}\n`;
+      }
+      if (item.customLogoUrl) {
+        message += `   📎 Mon fichier / logo : ${item.customLogoUrl}\n`;
       }
     });
 
@@ -135,7 +158,7 @@ export function CartDrawer() {
     message += `📮 Code Postal : ${postalCode.trim()}\n`;
     message += `🏙️ Ville : ${city.trim()}\n\n`;
 
-    message += `Est-ce que nous pouvons discuter des modalités ? Merci encore ! ✨`;
+    message += `Est-ce que tout est bon pour vous pour lancer la confection ? Merci beaucoup Sandrine ! ✨`;
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp || "33629492213"}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
