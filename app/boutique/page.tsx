@@ -42,6 +42,7 @@ export default function BoutiquePage() {
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [modalActiveTab, setModalActiveTab] = useState<"photos" | "video" | "guide">("photos");
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState<number>(0);
 
   const categories = ["Tous", "Bébé", "Accessoires", "Bain", "Maison"];
 
@@ -56,6 +57,7 @@ export default function BoutiquePage() {
     setSelectedColor(product.colors[0]?.name || "");
     setQuantity(1);
     setModalActiveTab("photos");
+    setSelectedVideoIndex(0);
   };
 
   const handleAddToCart = () => {
@@ -462,25 +464,63 @@ export default function BoutiquePage() {
                 </>
               )}
 
-              {/* TAB 2: VERTICAL VIDEO PLAYER */}
-              {modalActiveTab === "video" && activeModalProduct.videoUrl && (
-                <div className="mb-4">
-                  <div className="relative aspect-[9/16] max-h-[380px] sm:max-h-[420px] mx-auto rounded-2xl overflow-hidden bg-stone-950 border border-black/15 shadow-xl flex items-center justify-center">
-                    <video
-                      src={activeModalProduct.videoUrl}
-                      poster={activeModalProduct.videoPoster}
-                      controls
-                      playsInline
-                      preload="none"
-                      className="w-full h-full object-contain"
-                    />
+              {/* TAB 2: MULTI-VIDEO PLAYER (COMPLÈTE & EXPRESS) */}
+              {modalActiveTab === "video" && (activeModalProduct.videoUrl || activeModalProduct.videos) && (() => {
+                const currentVideo = activeModalProduct.videos && activeModalProduct.videos.length > 0
+                  ? activeModalProduct.videos[selectedVideoIndex] || activeModalProduct.videos[0]
+                  : {
+                      id: "default",
+                      title: "Démo Vidéo",
+                      url: activeModalProduct.videoUrl || "",
+                      poster: activeModalProduct.videoPoster || "",
+                      format: "vertical" as const,
+                      duration: "3 min"
+                    };
+
+                const isVertical = currentVideo.format === "vertical";
+
+                return (
+                  <div className="mb-4">
+                    {/* Sub-toggle selector if multiple videos exist */}
+                    {activeModalProduct.videos && activeModalProduct.videos.length > 1 && (
+                      <div className="flex items-center justify-center gap-2 mb-3 p-1 rounded-xl bg-stone-200/60 border border-stone-300/60">
+                        {activeModalProduct.videos.map((vid, vIdx) => (
+                          <button
+                            key={vid.id}
+                            onClick={() => setSelectedVideoIndex(vIdx)}
+                            className={`flex-1 py-1.5 px-3 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                              selectedVideoIndex === vIdx
+                                ? "bg-stone-900 text-white shadow-xs"
+                                : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
+                            }`}
+                          >
+                            <span>{vid.title}</span>
+                            <span className="opacity-70 text-[9px]">({vid.duration})</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Adaptive Video Container */}
+                    <div className={`relative ${isVertical ? "aspect-[9/16] max-h-[380px] sm:max-h-[420px]" : "aspect-[16/9] w-full"} mx-auto rounded-2xl overflow-hidden bg-stone-950 border border-black/15 shadow-xl flex items-center justify-center`}>
+                      <video
+                        key={currentVideo.url}
+                        src={currentVideo.url}
+                        poster={currentVideo.poster}
+                        controls
+                        playsInline
+                        preload="none"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    <div className="p-3 mt-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-stone-800 text-[11px] font-medium flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                      <span>🎬 {currentVideo.title} • Atelier Robertot (Normandie) : mise en place de la tasse et des compartiments.</span>
+                    </div>
                   </div>
-                  <div className="p-3 mt-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-stone-800 text-[11px] font-medium flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                    <span>🎬 Démo vidéo à l'Atelier Robertot : découvrez la mise en place de la tasse et des 6 poches.</span>
-                  </div>
-                </div>
-              )}
+                );
+              })()}
 
               {/* TAB 3: EXPLANATION GUIDE & POCKETS */}
               {modalActiveTab === "guide" && activeModalProduct.details && (

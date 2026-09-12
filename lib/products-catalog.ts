@@ -13,6 +13,26 @@ export const PRODUCTS_CATALOG: Product[] = [
     imgUrl: "/images/produits/sac-pause-cafe/hero-pause-cafe.jpg",
     videoUrl: "/videos/produits/sac-pause-cafe-demo.mp4",
     videoPoster: "/videos/produits/sac-pause-cafe-demo-poster.webp",
+    videos: [
+      {
+        id: "complete",
+        title: "Démo Complète",
+        badge: "Smartphone (3 min)",
+        url: "/videos/produits/sac-pause-cafe-demo.mp4",
+        poster: "/videos/produits/sac-pause-cafe-demo-poster.webp",
+        format: "vertical",
+        duration: "2:58"
+      },
+      {
+        id: "express",
+        title: "Aperçu Express",
+        badge: "1 Min Chrono",
+        url: "/videos/produits/sac-pause-cafe-demo-express.mp4",
+        poster: "/videos/produits/sac-pause-cafe-demo-express-poster.webp",
+        format: "horizontal",
+        duration: "1:02"
+      }
+    ],
     details: {
       howItWorks: [
         "Compartiment central rembourré pour maintenir votre tasse ou mug droit sans risque de casse",

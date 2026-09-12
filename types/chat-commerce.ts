@@ -7,6 +7,16 @@ export interface ProductVariant {
   };
 }
 
+export interface ProductVideo {
+  id: string;
+  title: string;
+  badge?: string;
+  url: string;
+  poster: string;
+  format: "vertical" | "horizontal";
+  duration: string;
+}
+
 export interface Product {
   id: number;
   slug: string;
@@ -19,6 +29,7 @@ export interface Product {
   imgUrl: string;
   videoUrl?: string;
   videoPoster?: string;
+  videos?: ProductVideo[];
   details?: {
     howItWorks?: string[];
     capacity?: string[];
