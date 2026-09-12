@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        londrina: ["Londrina Outline", "sans-serif"],
+        serif: ["'Instrument Serif'", "Georgia", "serif"],
+        instrument: ["'Instrument Serif'", "Georgia", "serif"],
       },
         colors: {
           primary: "#b1586a",

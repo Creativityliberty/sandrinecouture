@@ -5,7 +5,7 @@ import {
 } from "@/components/layout/schema-org";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { poppins, londrinaOutline } from "@/lib/fonts";
+import { poppins } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sandrinecouture.com"),
@@ -86,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning className={`${poppins.variable} ${londrinaOutline.variable}`}>
+    <html lang="fr" suppressHydrationWarning className={poppins.variable}>
       <head>
         <SchemaOrgWebSite />
         <SchemaOrgOrganization />

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,7 @@
 @layer base {
   html,
   body {
-    font-family: var(--font-poppins), sans-serif;
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
     overflow-x: hidden;
     max-width: 100vw;
     width: 100%;
@@ -23,10 +25,28 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-londrina), sans-serif;
-    font-weight: 400;
+    font-family: inherit;
+    font-weight: inherit;
     font-style: normal;
   }
+}
+
+.font-serif,
+.instrument-serif,
+.instrument-serif-regular {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-serif.italic,
+.italic.font-serif,
+.font-serif-italic,
+.instrument-serif-italic,
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 @layer components {
