@@ -17,6 +17,14 @@ export interface Product {
   badge: string;
   spec: string;
   imgUrl: string;
+  videoUrl?: string;
+  videoPoster?: string;
+  details?: {
+    howItWorks?: string[];
+    capacity?: string[];
+    dimensions?: string;
+    care?: string;
+  };
   variants?: ProductVariant[];
   colors: { name: string; hex: string }[];
   fonts: string[];

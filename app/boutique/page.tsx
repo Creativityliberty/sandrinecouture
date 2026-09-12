@@ -20,7 +20,11 @@ import {
   CheckCircle2,
   SlidersHorizontal,
   Clock,
-  Heart
+  Heart,
+  Play,
+  Film,
+  Coffee,
+  Info
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -37,6 +41,7 @@ export default function BoutiquePage() {
   const [selectedViewMode, setSelectedViewMode] = useState<"closed" | "open">("closed");
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [modalActiveTab, setModalActiveTab] = useState<"photos" | "video" | "guide">("photos");
 
   const categories = ["Tous", "Bébé", "Accessoires", "Bain", "Maison"];
 
@@ -50,6 +55,7 @@ export default function BoutiquePage() {
     setSelectedViewMode("closed");
     setSelectedColor(product.colors[0]?.name || "");
     setQuantity(1);
+    setModalActiveTab("photos");
   };
 
   const handleAddToCart = () => {
@@ -257,6 +263,16 @@ export default function BoutiquePage() {
                       </span>
                     </div>
                   )}
+
+                  {/* Video Indicator Badge */}
+                  {product.videoUrl && (
+                    <div className="absolute bottom-2.5 right-2.5 z-10">
+                      <span className="px-2.5 py-0.5 rounded-full bg-primary text-white text-[8px] font-mono uppercase font-bold flex items-center gap-1 shadow-md">
+                        <Play size={8} className="fill-white" />
+                        <span>Vidéo</span>
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content Details */}
@@ -353,45 +369,158 @@ export default function BoutiquePage() {
               <X className="w-4 h-4" />
             </button>
 
-            {/* Modal Header with High-Res Image & Dual-View Toggle */}
+            {/* Modal Header with Media Switcher & Controls */}
             <div className="mb-6">
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#f5f0eb] border border-black/10 mb-3 flex items-center justify-center p-2">
-                <img
-                  src={
-                    activeModalProduct.variants && activeModalProduct.variants[selectedVariantIndex]
-                      ? activeModalProduct.variants[selectedVariantIndex].images[selectedViewMode]
-                      : activeModalProduct.imgUrl
-                  }
-                  alt={activeModalProduct.title}
-                  className="w-full h-full object-contain transition-all duration-300"
-                />
-              </div>
+              
+              {/* Media & Guide Tab Switcher */}
+              {(activeModalProduct.videoUrl || activeModalProduct.details) && (
+                <div className="flex items-center gap-1.5 mb-4 p-1 rounded-2xl bg-stone-200/70 border border-stone-300/60">
+                  <button
+                    onClick={() => setModalActiveTab("photos")}
+                    className={`flex-1 py-2 px-2.5 rounded-xl text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                      modalActiveTab === "photos"
+                        ? "bg-stone-900 text-white shadow-xs"
+                        : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
+                    }`}
+                  >
+                    <Eye size={13} />
+                    <span>Photos</span>
+                  </button>
 
-              {/* Dual View Toggle Controls (Only rendered if open and closed images are different) */}
-              {activeModalProduct.variants && 
-               activeModalProduct.variants[selectedVariantIndex] &&
-               activeModalProduct.variants[selectedVariantIndex].images.closed !== activeModalProduct.variants[selectedVariantIndex].images.open && (
-                <div className="flex items-center justify-center gap-2 mb-4 p-1.5 rounded-2xl bg-stone-200/60 border border-stone-300/60">
-                  <button
-                    onClick={() => setSelectedViewMode("closed")}
-                    className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      selectedViewMode === "closed"
-                        ? "bg-stone-900 text-white shadow-xs"
-                        : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
-                    }`}
-                  >
-                    Vue Extérieure
-                  </button>
-                  <button
-                    onClick={() => setSelectedViewMode("open")}
-                    className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                      selectedViewMode === "open"
-                        ? "bg-stone-900 text-white shadow-xs"
-                        : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
-                    }`}
-                  >
-                    Vue Intérieure
-                  </button>
+                  {activeModalProduct.videoUrl && (
+                    <button
+                      onClick={() => setModalActiveTab("video")}
+                      className={`flex-1 py-2 px-2.5 rounded-xl text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                        modalActiveTab === "video"
+                          ? "bg-primary text-white shadow-xs"
+                          : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
+                      }`}
+                    >
+                      <Play size={13} className="fill-current" />
+                      <span>Démo Vidéo</span>
+                    </button>
+                  )}
+
+                  {activeModalProduct.details && (
+                    <button
+                      onClick={() => setModalActiveTab("guide")}
+                      className={`flex-1 py-2 px-2.5 rounded-xl text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                        modalActiveTab === "guide"
+                          ? "bg-stone-900 text-white shadow-xs"
+                          : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
+                      }`}
+                    >
+                      <Info size={13} />
+                      <span>Guide Poches</span>
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* TAB 1: HIGH-RES PHOTOS */}
+              {modalActiveTab === "photos" && (
+                <>
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#f5f0eb] border border-black/10 mb-3 flex items-center justify-center p-2">
+                    <img
+                      src={
+                        activeModalProduct.variants && activeModalProduct.variants[selectedVariantIndex]
+                          ? activeModalProduct.variants[selectedVariantIndex].images[selectedViewMode]
+                          : activeModalProduct.imgUrl
+                      }
+                      alt={activeModalProduct.title}
+                      className="w-full h-full object-contain transition-all duration-300"
+                    />
+                  </div>
+
+                  {/* Dual View Toggle Controls (Only rendered if open and closed images are different) */}
+                  {activeModalProduct.variants && 
+                   activeModalProduct.variants[selectedVariantIndex] &&
+                   activeModalProduct.variants[selectedVariantIndex].images.closed !== activeModalProduct.variants[selectedVariantIndex].images.open && (
+                    <div className="flex items-center justify-center gap-2 mb-4 p-1.5 rounded-2xl bg-stone-200/60 border border-stone-300/60">
+                      <button
+                        onClick={() => setSelectedViewMode("closed")}
+                        className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                          selectedViewMode === "closed"
+                            ? "bg-stone-900 text-white shadow-xs"
+                            : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
+                        }`}
+                      >
+                        Vue Extérieure
+                      </button>
+                      <button
+                        onClick={() => setSelectedViewMode("open")}
+                        className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                          selectedViewMode === "open"
+                            ? "bg-stone-900 text-white shadow-xs"
+                            : "text-stone-700 hover:text-stone-950 hover:bg-stone-200/80"
+                        }`}
+                      >
+                        Vue Intérieure
+                      </button>
+                    </div>
+                  )}
+                </>
+              )}
+
+              {/* TAB 2: VERTICAL VIDEO PLAYER */}
+              {modalActiveTab === "video" && activeModalProduct.videoUrl && (
+                <div className="mb-4">
+                  <div className="relative aspect-[9/16] max-h-[380px] sm:max-h-[420px] mx-auto rounded-2xl overflow-hidden bg-stone-950 border border-black/15 shadow-xl flex items-center justify-center">
+                    <video
+                      src={activeModalProduct.videoUrl}
+                      poster={activeModalProduct.videoPoster}
+                      controls
+                      playsInline
+                      preload="none"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="p-3 mt-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-stone-800 text-[11px] font-medium flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                    <span>🎬 Démo vidéo à l'Atelier Robertot : découvrez la mise en place de la tasse et des 6 poches.</span>
+                  </div>
+                </div>
+              )}
+
+              {/* TAB 3: EXPLANATION GUIDE & POCKETS */}
+              {modalActiveTab === "guide" && activeModalProduct.details && (
+                <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-4 mb-4 text-left">
+                  <div>
+                    <h4 className="text-xs font-mono font-black uppercase tracking-wider text-stone-900 flex items-center gap-2 mb-2">
+                      <Coffee size={14} className="text-primary" />
+                      <span>Ce que vous pouvez y glisser :</span>
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {activeModalProduct.details.capacity?.map((cap, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs text-stone-700 bg-stone-50 p-2 rounded-xl border border-stone-100">
+                          <CheckCircle2 size={13} className="text-emerald-600 shrink-0" />
+                          <span>{cap}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono font-black uppercase tracking-wider text-stone-900 flex items-center gap-2 mb-2">
+                      <Scissors size={14} className="text-primary" />
+                      <span>Organisation des 6 poches artisanales :</span>
+                    </h4>
+                    <ul className="space-y-1.5 text-xs text-stone-600">
+                      {activeModalProduct.details.howItWorks?.map((step, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="w-4 h-4 rounded-full bg-stone-100 text-stone-700 text-[10px] font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            {idx + 1}
+                          </span>
+                          <span>{step}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-3 border-t border-stone-100 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-stone-500">
+                    <span>📐 {activeModalProduct.details.dimensions}</span>
+                    <span>🧼 {activeModalProduct.details.care}</span>
+                  </div>
                 </div>
               )}
 

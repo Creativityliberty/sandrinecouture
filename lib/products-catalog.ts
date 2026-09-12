@@ -11,6 +11,24 @@ export const PRODUCTS_CATALOG: Product[] = [
     spec: "Format nomade • 6 poches astucieuses intégrées",
     description: "Le compagnon idéal de vos pauses bien méritées ! Ce petit sac artisanal est spécialement conçu pour emporter votre tasse préférée, sachet de thé, capsule de café, sucre et cuillère. Pratique, élégant et confectionné à la main dans notre atelier normand.",
     imgUrl: "/images/produits/sac-pause-cafe/hero-pause-cafe.jpg",
+    videoUrl: "/videos/produits/sac-pause-cafe-demo.mp4",
+    videoPoster: "/videos/produits/sac-pause-cafe-demo-poster.webp",
+    details: {
+      howItWorks: [
+        "Compartiment central rembourré pour maintenir votre tasse ou mug droit sans risque de casse",
+        "4 poches intérieures élastiquées pour sachets de thé, infusions ou capsules de café",
+        "1 poche latérale dédiée pour cuillère, touillette et dosettes de sucre",
+        "Fermeture zippée fluide et anse de transport renforcée pour vos déplacements bureau ou voyage"
+      ],
+      capacity: [
+        "1 Tasse / Mug standard ou isotherme",
+        "4 à 6 Sachets de thé ou capsules Nespresso/Dolce Gusto",
+        "Dosettes de sucre & cuillère",
+        "Petite gourmandise (biscuit, chocolat)"
+      ],
+      dimensions: "Hauteur 14 cm × Diamètre 12 cm (format nomade compact)",
+      care: "Lavable en machine à 30°C (cycle délicat, séchage à l'air libre)"
+    },
     customizable: true,
     variants: [
       {
