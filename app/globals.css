@@ -25,8 +25,8 @@
   h4,
   h5,
   h6 {
-    font-family: inherit;
-    font-weight: inherit;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
     font-style: normal;
   }
 }

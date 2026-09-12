@@ -351,7 +351,7 @@ export default function FAQPage() {
                 <span>Base de Connaissance &amp; Recherches Google (PAA)</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-[-0.03em] leading-[1.05] text-white uppercase mb-4 drop-shadow-md">
+              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-normal tracking-tight leading-[1.05] text-white uppercase mb-4 drop-shadow-md">
                 Les réponses précises aux <br />
                 <span className="font-serif italic font-normal normal-case text-primary-light underline decoration-primary/40 underline-offset-8">
                   vraies questions
