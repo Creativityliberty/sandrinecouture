@@ -267,7 +267,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     id: 107,
     slug: "trousse-coton-vichy-rose",
     title: "Trousse en Coton Broderie Cœurs & Vichy Rose",
-    price: 25.00,
+    price: 22.00,
     category: "Accessoires",
     badge: "Finition Soignée",
     spec: "Toile de coton • Broderie cœurs • Doublure Vichy",
