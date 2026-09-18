@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import standMarcheImg from "@/public/images/boutique/stand-marche-normandie.jpg";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -15,16 +16,17 @@ import {
   ShoppingBag, 
   ShieldCheck, 
   Eye, 
-  Scissors,
-  Check,
-  CheckCircle2,
-  SlidersHorizontal,
-  Clock,
-  Heart,
-  Play,
-  Film,
-  Coffee,
-  Info
+  Scissors, 
+  Check, 
+  CheckCircle2, 
+  SlidersHorizontal, 
+  Clock, 
+  Heart, 
+  Play, 
+  Film, 
+  Coffee, 
+  Info,
+  ExternalLink
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -710,6 +712,17 @@ export default function BoutiquePage() {
                     : activeModalProduct.price) * quantity).toFixed(2) 
                 } €)
               </Button>
+            </div>
+
+            {/* Direct Page Link & Share */}
+            <div className="mt-4 pt-3 border-t border-stone-100 text-center">
+              <Link
+                href={`/boutique/${activeModalProduct.slug}`}
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-stone-600 hover:text-primary transition-colors py-1 px-3 rounded-lg hover:bg-stone-100"
+              >
+                <span>Ouvrir la page dédiée & copier le lien</span>
+                <ExternalLink size={13} />
+              </Link>
             </div>
 
           </div>

@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { CITIES_CONFIG } from "@/lib/local-seo-data";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { PRODUCTS_CATALOG } from "@/lib/products-catalog";
 
 const baseUrl = "https://sandrinecouture.com";
 
@@ -20,6 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/cgv", priority: 0.3, changeFrequency: "yearly" as const },
     { path: "/confidentialite", priority: 0.3, changeFrequency: "yearly" as const },
   ];
+
+  // Individual Product pages
+  const productRoutes = PRODUCTS_CATALOG.map((product) => ({
+    url: `${baseUrl}/boutique/${product.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
 
   // City landing pages
   const cityRoutes = Object.keys(CITIES_CONFIG).map((city) => ({
@@ -52,5 +61,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }));
 
-  return [...standardRoutes, ...cityRoutes, ...sectorRoutes, ...blogRoutes];
+  return [...standardRoutes, ...productRoutes, ...cityRoutes, ...sectorRoutes, ...blogRoutes];
 }
