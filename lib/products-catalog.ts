@@ -340,6 +340,83 @@ export const PRODUCTS_CATALOG: Product[] = [
       { name: "Écureuil & Vieux Rose / Corail", hex: "#C76B66" }
     ],
     fonts: ["Script", "Moderne"]
+  },
+  {
+    id: 110,
+    slug: "couvre-plats-tissu-alimentaire",
+    title: "Couvre-Plats en Tissu Alimentaire & Film Étanche",
+    price: 20.00,
+    category: "Maison",
+    badge: "Zéro Déchet & Fait Main",
+    spec: "Film alimentaire étanche • Lavable en machine • Jusqu'à 30 cm",
+    description: "L'alternative écologique, saine et élégante au film plastique et à l'aluminium ! Confectionnés à la main en Normandie, ces couvre-plats réutilisables associent un extérieur en tissu raffiné et une doublure intérieure en film certifié contact alimentaire pour garder vos saladiers, plats et préparations bien au frais. Élastiqués et froncés avec soin, ils s'adaptent parfaitement à tous vos récipients jusqu'à 30 cm de diamètre.",
+    imgUrl: "/images/produits/couvre-plats/hero-couvre-plats.jpg",
+    details: {
+      howItWorks: [
+        "Extérieur en tissu de créateur (Toile de Jouy, Pandas bambou, Cupcakes gourmands)",
+        "Doublure intérieure en film certifié contact alimentaire (hermétique, imperméable et sans transfert de goût)",
+        "Élastique souple et résistant pour épouser la forme de vos plats, saladiers, bols et casseroles",
+        "Réutilisable à l'infini : un geste zéro déchet durable pour préserver la planète avec style"
+      ],
+      capacity: [
+        "Grand saladier ou plat à tarte (jusqu'à 30 cm de diamètre)",
+        "Saladier moyen, cul-de-poule ou bol de préparation",
+        "Petits bols, ramequins et pots de yaourt maison",
+        "Conservation au réfrigérateur ou transport pour pique-nique"
+      ],
+      dimensions: "Élastiqué adaptable : convient aux récipients de 12 cm à 30 cm de diamètre",
+      care: "Lavable en machine à 30°C ou nettoyage rapide d'un coup d'éponge humide. Séchage à l'air libre."
+    },
+    customizable: true,
+    variants: [
+      {
+        name: "Lot de 3 Couvre-Plats (20 €) - Assortiment Trio (Jouy, Pandas, Cupcakes)",
+        badge: "Trio Complet • 20,00 €",
+        images: {
+          closed: "/images/produits/couvre-plats/hero-couvre-plats.jpg",
+          open: "/images/produits/couvre-plats/hero-couvre-plats.jpg"
+        }
+      },
+      {
+        name: "Lot de 3 Couvre-Plats (20 €) - Toile de Jouy Bleue",
+        badge: "Classique Chic • 20,00 €",
+        images: {
+          closed: "/images/produits/couvre-plats/jouy-bleue.jpg",
+          open: "/images/produits/couvre-plats/jouy-bleue.jpg"
+        }
+      },
+      {
+        name: "Lot de 3 Couvre-Plats (20 €) - Pandas & Bambou",
+        badge: "Motif Champêtre • 20,00 €",
+        images: {
+          closed: "/images/produits/couvre-plats/pandas-bambou.jpg",
+          open: "/images/produits/couvre-plats/pandas-bambou.jpg"
+        }
+      },
+      {
+        name: "Lot de 3 Couvre-Plats (20 €) - Cupcakes Gourmands",
+        badge: "Pâtisserie & Couleurs • 20,00 €",
+        images: {
+          closed: "/images/produits/couvre-plats/cupcakes-gourmands.jpg",
+          open: "/images/produits/couvre-plats/cupcakes-gourmands.jpg"
+        }
+      },
+      {
+        name: "Couvre-Plat à l'Unité (8 €) - Motif au choix",
+        badge: "Format Unitaire • 8,00 €",
+        images: {
+          closed: "/images/produits/couvre-plats/presentation-duo.jpg",
+          open: "/images/produits/couvre-plats/presentation-duo.jpg"
+        }
+      }
+    ],
+    colors: [
+      { name: "Assortiment Trio", hex: "#D4C5B0" },
+      { name: "Toile de Jouy Bleue", hex: "#4A6FA5" },
+      { name: "Pandas & Bambou", hex: "#A3B19B" },
+      { name: "Cupcakes Gourmands", hex: "#E8C5C8" }
+    ],
+    fonts: ["Script", "Moderne"]
   }
 ];
 

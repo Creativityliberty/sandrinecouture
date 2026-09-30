@@ -56,10 +56,11 @@ export function ProductView({ product }: ProductViewProps) {
 
   // Dynamic price calculation based on variant
   let currentPrice = product.price;
-  if (variantName?.includes("30 €")) {
-    currentPrice = 30.00;
-  } else if (variantName?.includes("23 €")) {
-    currentPrice = 23.00;
+  if (variantName) {
+    const match = variantName.match(/(\d+(?:[.,]\d+)?)\s*€/);
+    if (match) {
+      currentPrice = parseFloat(match[1].replace(",", "."));
+    }
   }
 
   const currentImage = currentVariant 

@@ -62,6 +62,18 @@ export default function BoutiquePage() {
     setSelectedVideoIndex(0);
   };
 
+  const getVariantPrice = (product: Product | null, variantIndex: number): number => {
+    if (!product) return 0;
+    const variantName = product.variants?.[variantIndex]?.name;
+    if (variantName) {
+      const match = variantName.match(/(\d+(?:[.,]\d+)?)\s*€/);
+      if (match) {
+        return parseFloat(match[1].replace(",", "."));
+      }
+    }
+    return product.price;
+  };
+
   const handleAddToCart = () => {
     if (!activeModalProduct) return;
 
@@ -71,13 +83,7 @@ export default function BoutiquePage() {
       ? `${activeModalProduct.title} - ${variantName}`
       : activeModalProduct.title;
 
-    // Support variant price override (e.g. 23€ for small beach bag vs 30€ for large)
-    let finalPrice = activeModalProduct.price;
-    if (variantName?.includes("30 €")) {
-      finalPrice = 30.00;
-    } else if (variantName?.includes("23 €")) {
-      finalPrice = 23.00;
-    }
+    const finalPrice = getVariantPrice(activeModalProduct, selectedVariantIndex);
 
     const currentVariantImg = variant
       ? variant.images[selectedViewMode]
@@ -577,13 +583,7 @@ export default function BoutiquePage() {
                   {activeModalProduct.description}
                 </p>
                 <div className="mt-3 text-lg font-black font-mono text-stone-950">
-                  { (
-                    activeModalProduct.variants?.[selectedVariantIndex]?.name.includes("30 €") 
-                      ? 30 
-                      : activeModalProduct.variants?.[selectedVariantIndex]?.name.includes("23 €") 
-                      ? 23 
-                      : activeModalProduct.price
-                  ).toFixed(2) } € TTC
+                  {getVariantPrice(activeModalProduct, selectedVariantIndex).toFixed(2)} € TTC
                 </div>
               </div>
             </div>
@@ -704,13 +704,7 @@ export default function BoutiquePage() {
                 onClick={handleAddToCart}
                 className="flex-1 h-12 rounded-full bg-primary hover:bg-primary/90 text-white font-bold uppercase text-xs tracking-wider shadow-md shadow-primary/20 cursor-pointer"
               >
-                Ajouter ({ 
-                  ((activeModalProduct.variants?.[selectedVariantIndex]?.name.includes("30 €") 
-                    ? 30 
-                    : activeModalProduct.variants?.[selectedVariantIndex]?.name.includes("23 €") 
-                    ? 23 
-                    : activeModalProduct.price) * quantity).toFixed(2) 
-                } €)
+                Ajouter ({(getVariantPrice(activeModalProduct, selectedVariantIndex) * quantity).toFixed(2)} €)
               </Button>
             </div>
 
