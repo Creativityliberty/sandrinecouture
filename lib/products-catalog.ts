@@ -370,7 +370,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     customizable: true,
     variants: [
       {
-        name: "Lot de 3 Couvre-Plats (20 €) - Assortiment Trio (Jouy, Pandas, Cupcakes)",
+        name: "Lot de 3 Couvre-Plats (20 €) - Assortiment Trio (1 Jouy + 1 Pandas + 1 Cupcakes)",
         badge: "Trio Complet • 20,00 €",
         images: {
           closed: "/images/produits/couvre-plats/hero-couvre-plats.jpg",
@@ -378,35 +378,27 @@ export const PRODUCTS_CATALOG: Product[] = [
         }
       },
       {
-        name: "Lot de 3 Couvre-Plats (20 €) - Toile de Jouy Bleue",
-        badge: "Classique Chic • 20,00 €",
+        name: "À l'Unité (8 €) - Toile de Jouy Bleue",
+        badge: "Classique Chic • 8,00 €",
         images: {
           closed: "/images/produits/couvre-plats/jouy-bleue.jpg",
           open: "/images/produits/couvre-plats/jouy-bleue.jpg"
         }
       },
       {
-        name: "Lot de 3 Couvre-Plats (20 €) - Pandas & Bambou",
-        badge: "Motif Champêtre • 20,00 €",
+        name: "À l'Unité (8 €) - Pandas & Bambou",
+        badge: "Motif Champêtre • 8,00 €",
         images: {
           closed: "/images/produits/couvre-plats/pandas-bambou.jpg",
           open: "/images/produits/couvre-plats/pandas-bambou.jpg"
         }
       },
       {
-        name: "Lot de 3 Couvre-Plats (20 €) - Cupcakes Gourmands",
-        badge: "Pâtisserie & Couleurs • 20,00 €",
+        name: "À l'Unité (8 €) - Cupcakes Gourmands",
+        badge: "Motif Gourmand • 8,00 €",
         images: {
           closed: "/images/produits/couvre-plats/cupcakes-gourmands.jpg",
           open: "/images/produits/couvre-plats/cupcakes-gourmands.jpg"
-        }
-      },
-      {
-        name: "Couvre-Plat à l'Unité (8 €) - Motif au choix",
-        badge: "Format Unitaire • 8,00 €",
-        images: {
-          closed: "/images/produits/couvre-plats/presentation-duo.jpg",
-          open: "/images/produits/couvre-plats/presentation-duo.jpg"
         }
       }
     ],
