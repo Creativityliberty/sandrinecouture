@@ -409,6 +409,41 @@ export const PRODUCTS_CATALOG: Product[] = [
       { name: "Cupcakes Gourmands", hex: "#E8C5C8" }
     ],
     fonts: ["Script", "Moderne"]
+  },
+  {
+    id: 111,
+    slug: "couverture-molletonnee-bambou-animaux",
+    title: "Couverture Molletonnée Bébé Bambou & Coton Animaux de la Forêt",
+    description: "Couverture 1m × 1m, haut en éponge bambou vert menthe brodé du prénom, bas en coton imprimé animaux de la forêt (ours, écureuils, chouettes, renards), garnissage molletonné. Fait main à l'Atelier Robertot (76).",
+    price: 50.00,
+    category: "Bébé",
+    badge: "Fait Main Normandie",
+    spec: "Éponge bambou • Coton imprimé • 1 m × 1 m molletonné",
+    imgUrl: "/images/produits/couverture-molletonnee-bambou/hero-couverture-molletonnee.webp",
+    details: {
+      howItWorks: [
+        "Un côté doux en éponge bambou et un côté coton à motif",
+        "Garnissage intérieur molletonné pour un confort thermique idéal",
+        "Partie haute brodée au prénom de l'enfant"
+      ],
+      capacity: ["Format idéal pour le berceau, le landau ou les balades (100×100 cm)."],
+      care: "Lavage en machine à 30°C. Séchage à plat recommandé.",
+      dimensions: "100 cm × 100 cm"
+    },
+    variants: [
+      {
+        name: "Animaux de la Forêt & Éponge Bambou Vert Menthe",
+        badge: "Modèle Unique",
+        images: {
+          closed: "/images/produits/couverture-molletonnee-bambou/hero-couverture-molletonnee.webp",
+          open: "/images/produits/couverture-molletonnee-bambou/hero-couverture-molletonnee.webp"
+        }
+      }
+    ],
+    colors: [
+      { name: "Bambou Vert Menthe & Forêt", hex: "#A3C4BC" }
+    ],
+    fonts: ["Script", "Moderne"]
   }
 ];
 
