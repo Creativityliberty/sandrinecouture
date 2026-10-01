@@ -1107,6 +1107,60 @@ export const REALISATIONS: Realisation[] = [
     desc: "Cartables d'école maternelle style rétro en velours côtelé bleu pétrole avec fermoirs cartable métalliques vintage, poignée confort et broderie du prénom en couleurs contrastées ('Ruben' en rouge écarlate et 'Illan' en vert anis printanier).",
     searchIntent: "Cartable Maternelle Velours Côtelé Personnalisé Rentrée",
     keywords: ["cartable maternelle personnalisé prénom", "sac école velours côtelé", "cartable brodé rentrée scolaire", "confection sac enfant artisanale"]
+  },
+  {
+    id: 157,
+    url: "/images/realisations/casquette-cycliste-retro-broderie-ecusson-brasil-cbf.webp",
+    title: "Casquette Cycliste Rétro Écusson Brasil CBF",
+    category: "Entreprises",
+    desc: "Confection artisanale sur-mesure d'une casquette cycliste rétro en toile de coton vert forêt avec broderie haute densité de l'écusson Brasil CBF (5 étoiles brodées en fil or) et surpiqûres décoratives jaunes.",
+    searchIntent: "Casquette Cycliste Sur Mesure Broderie Logo Écusson",
+    keywords: ["casquette cycliste sur mesure", "broderie ecusson casquette", "casquette vintage velo artisanale", "broderie personnalisee logo entreprise"]
+  },
+  {
+    id: 158,
+    url: "/images/realisations/casquette-cycliste-revers-visiere-brode-brasil-dunk.webp",
+    title: "Visière de Casquette Broderie Typo Brasil & Silhouette Dunk",
+    category: "Entreprises",
+    desc: "Détail du revers de visière en sergé jaune d'or avec lettrage brodé 'BRASIL', silhouette athlétique brodée en fil vert forêt et coutures fantaisie festonnées réalisées à la main.",
+    searchIntent: "Broderie Revers de Visiere Casquette Personnalisee",
+    keywords: ["broderie visiere casquette", "marquage textile casquette sport", "broderie logo revers casquette", "accessoire velo personnalise"]
+  },
+  {
+    id: 159,
+    url: "/images/realisations/casquette-cycliste-broderie-christ-redempteur-corcovado-rio.webp",
+    title: "Casquette Cycliste Broderie Christ Rédempteur Corcovado",
+    category: "Entreprises",
+    desc: "Broderie de précision du Christ Rédempteur de Rio de Janeiro sur le panneau supérieur d'une casquette de cyclisme en toile émeraude avec coutures en point zig-zag de finition artisanale.",
+    searchIntent: "Broderie Motif Complexe Casquette Artisanale",
+    keywords: ["broderie motif detaille casquette", "confection casquette artisanale normandie", "broderie fil or sur mesure", "atelier broderie personnalisee"]
+  },
+  {
+    id: 160,
+    url: "/images/realisations/casquette-cycliste-revers-visiere-broderie-paname-rouge.webp",
+    title: "Casquette Rétro Revers de Visière Brodé Paname Rouge",
+    category: "Entreprises",
+    desc: "Confection sur-mesure d'une casquette vintage bicolore rouge et bleu marine, rehaussée d'un lettrage 'PANAME' brodé au point bourdon en fil rouge écarlate et de surpiqûres contrastées.",
+    searchIntent: "Casquette Personnalisee Lettrage Brode Paname",
+    keywords: ["casquette broderie lettrage relief", "casquette paname personnalisee", "broderie texte visiere", "confection textile sur mesure normandie"]
+  },
+  {
+    id: 161,
+    url: "/images/realisations/casquette-cycliste-broderie-relief-back-2-back.webp",
+    title: "Casquette Confection Main Broderie Relief Back 2 Back",
+    category: "Entreprises",
+    desc: "Broderie typographique tri-couleur 'BACK 2 BACK' en relief (blanc immaculé, rouge feu et contour noir) sur toile de coton rouge vif avec surpiqûres noires géométriques.",
+    searchIntent: "Broderie Typographie 3D Relief Casquette",
+    keywords: ["broderie relief casquette", "lettrage 3d textile", "casquette sportive brodee sur mesure", "broderie publicitaire casquette"]
+  },
+  {
+    id: 162,
+    url: "/images/realisations/casquette-broderie-trophee-coupe-europe-etoiles.webp",
+    title: "Casquette Artisanale Broderie Trophée Coupe d'Europe",
+    category: "Entreprises",
+    desc: "Broderie minutieuse du Trophée de la Coupe d'Europe aux étoiles sur le flanc de casquette en tissu rouge, réalisée avec des fils Madeira de haute résistance certifiés Oeko-Tex Standard 100.",
+    searchIntent: "Broderie Trophee Coupe d'Europe Casquette Club",
+    keywords: ["broderie trophee sportif casquette", "broderie club association sport", "marquage broderie prestige", "atelier broderie robertot normandie"]
   }
 ];
 
