@@ -194,6 +194,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services/ourlets" className="hover:text-primary transition-colors no-underline font-bold">
+                  Service Retouches & Ourlets
+                </Link>
+              </li>
+              <li>
                 <Link href="/realisations" className="hover:text-primary transition-colors no-underline">
                   Galerie & Bibliothèque 3D
                 </Link>

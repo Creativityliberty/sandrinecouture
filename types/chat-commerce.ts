@@ -22,7 +22,7 @@ export interface Product {
   slug: string;
   title: string;
   price: number;
-  category: "Bébé" | "Accessoires" | "Bain" | "Maison";
+  category: "Bébé" | "Accessoires" | "Bain" | "Maison" | "Retouches";
   description: string;
   badge: string;
   spec: string;

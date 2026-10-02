@@ -444,6 +444,111 @@ export const PRODUCTS_CATALOG: Product[] = [
       { name: "Bambou Vert Menthe & Forêt", hex: "#A3C4BC" }
     ],
     fonts: ["Script", "Moderne"]
+  },
+  {
+    id: 112,
+    slug: "retouche-ourlet-simple",
+    title: "L'Essentiel — Ourlet Simple",
+    description: "Retouche d'ourlet simple, idéal pour vos jeans, pantalons droits et chinos en coton. Vous pouvez envoyer votre pièce par voie postale (Mondial Relay, Colissimo) ou la déposer directement à l'Atelier Robertot (76). N'oubliez pas de marquer votre pli avec une épingle à nourrice ou de fournir un vêtement modèle.",
+    price: 12.00,
+    category: "Retouches",
+    badge: "Service Sur-Mesure",
+    spec: "Jean • Chino • Coton",
+    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    details: {
+      howItWorks: [
+        "Marquez votre pli à la longueur souhaitée avec une épingle (ou fournissez un vêtement modèle)",
+        "Passez commande et expédiez-nous votre vêtement (ou déposez-le à l'atelier)",
+        "Nous réalisons la retouche et vous le renvoyons sous 10 jours ouvrés"
+      ],
+      capacity: ["Jean, pantalon droit classique, chino en coton"],
+      care: "Le vêtement doit être lavé avant l'envoi. Les frais de port retour sont calculés au moment de l'achat.",
+      dimensions: "Ourlet standard"
+    },
+    variants: [
+      {
+        name: "Prestation — Ourlet Simple",
+        badge: "Atelier Normand",
+        images: {
+          closed: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+          open: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp"
+        }
+      }
+    ],
+    colors: [
+      { name: "Service Retouche", hex: "#EAE6DF" }
+    ],
+    fonts: ["Classique"]
+  },
+  {
+    id: 113,
+    slug: "retouche-ourlet-invisible",
+    title: "Le Tailleur — Ourlet Invisible",
+    description: "Retouche d'ourlet invisible, la finition parfaite pour vos pantalons de costume, tailleurs et pièces en laine fine. Point invisible réalisé à la main ou machine spécifique pour un tombé impeccable.",
+    price: 18.00,
+    category: "Retouches",
+    badge: "Finition Premium",
+    spec: "Pantalon de costume • Laine • Crêpe",
+    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    details: {
+      howItWorks: [
+        "Marquez votre pli à la longueur souhaitée avec une épingle (ou fournissez un vêtement modèle)",
+        "Passez commande et expédiez-nous votre vêtement (ou déposez-le à l'atelier)",
+        "Nous réalisons l'ourlet invisible et vous le renvoyons sous 10 jours ouvrés"
+      ],
+      capacity: ["Pantalon de costume, tailleur, tissus délicats nécessitant un point invisible"],
+      care: "Le vêtement doit être lavé ou pressé avant l'envoi.",
+      dimensions: "Ourlet invisible classique"
+    },
+    variants: [
+      {
+        name: "Prestation — Ourlet Invisible",
+        badge: "Atelier Normand",
+        images: {
+          closed: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+          open: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp"
+        }
+      }
+    ],
+    colors: [
+      { name: "Service Retouche", hex: "#EAE6DF" }
+    ],
+    fonts: ["Classique"]
+  },
+  {
+    id: 114,
+    slug: "retouche-ourlet-jupe-robe",
+    title: "Le Vestiaire Féminin — Ourlet Jupe & Robe",
+    description: "Retouche de la longueur de vos jupes et robes droites (non plissées, sans volants complexes). Idéal pour ajuster la coupe de vos pièces habillées ou du quotidien.",
+    price: 18.00,
+    category: "Retouches",
+    badge: "Ajustement Parfait",
+    spec: "Jupe droite • Robe",
+    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    details: {
+      howItWorks: [
+        "Marquez votre pli à la longueur souhaitée avec une épingle",
+        "Passez commande et expédiez-nous votre vêtement (ou déposez-le à l'atelier)",
+        "Nous ajustons la longueur et vous le renvoyons"
+      ],
+      capacity: ["Jupe droite, robe classique sans fioritures complexes"],
+      care: "Le vêtement doit être lavé avant l'envoi.",
+      dimensions: "Ourlet droit"
+    },
+    variants: [
+      {
+        name: "Prestation — Ourlet Jupe & Robe",
+        badge: "Atelier Normand",
+        images: {
+          closed: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+          open: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp"
+        }
+      }
+    ],
+    colors: [
+      { name: "Service Retouche", hex: "#EAE6DF" }
+    ],
+    fonts: ["Classique"]
   }
 ];
 

@@ -15,7 +15,8 @@ import {
   Menu, 
   X, 
   ArrowRight,
-  ChevronRight
+  ChevronRight,
+  Scissors
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/cart-context";
@@ -25,6 +26,7 @@ const NAV_ITEMS = [
   { id: "entreprises", label: "Entreprises", href: "/entreprises", icon: Building2 },
   { id: "particuliers", label: "Particuliers", href: "/particuliers", icon: Baby },
   { id: "boutique", label: "Boutique", href: "/boutique", icon: ShoppingBag },
+  { id: "retouches", label: "Retouches", href: "/services/ourlets", icon: Scissors },
   { id: "realisations", label: "Réalisations", href: "/realisations", icon: Sparkles },
   { id: "blog", label: "Blog", href: "/blog", icon: BookOpen },
   { id: "faq", label: "FAQ", href: "/faq", icon: HelpCircle },
