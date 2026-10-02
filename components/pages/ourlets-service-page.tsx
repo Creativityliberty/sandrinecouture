@@ -50,7 +50,7 @@ const HEM_SERVICES: HemService[] = [
     desc: "Ajustement de longueur au millimètre avec surpiqûre ton sur ton ou conservation du style jean d'origine (fil couleur tabac ou or).",
     finishing: "Surjet protecteur intérieur + surpiqûre robuste au fil polyester haute ténacité.",
     idealFor: ["Jeans homme & femme", "Pantalons chinos", "Pantalons en toile & velours"],
-    imgUrl: "/images/hero/hero-particuliers-atelier.webp",
+    imgUrl: "/images/produits/retouches/ourlet-simple-jean.webp",
   },
   {
     id: 113,
@@ -63,7 +63,7 @@ const HEM_SERVICES: HemService[] = [
     desc: "La finition noble par excellence. Aucun point n'apparaît sur l'endroit du tissu pour préserver la ligne et la pureté de vos tenues habillées.",
     finishing: "Point souple thermo-fixé et couture invisible pour un tombé parfait sur la chaussure.",
     idealFor: ["Pantalons de costume homme", "Pantalons tailleur femme", "Pantalons en laine fine ou crêpe"],
-    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    imgUrl: "/images/produits/retouches/ourlet-invisible-tailleur.webp",
   },
   {
     id: 114,
@@ -76,7 +76,7 @@ const HEM_SERVICES: HemService[] = [
     desc: "Redéfinissez la longueur de vos jupes et robes favorites pour épouser harmonieusement votre silhouette et vos talons.",
     finishing: "Finition soignée adaptée à l'élasticité et à la fluidité de la matière.",
     idealFor: ["Jupes droites & trapèzes", "Robes d'été & de cérémonie", "Tissus lin, popeline ou viscose"],
-    imgUrl: "/images/realisations/gilet-berger-bebe-reversible-moumoute-sherpa.webp",
+    imgUrl: "/images/produits/retouches/ourlet-robe-jupe.webp",
   }
 ];
 
@@ -357,14 +357,26 @@ export function OurletsServicePage() {
                 <div
                   key={service.id}
                   onClick={() => setSelectedService(index)}
-                  className={`rounded-3xl border bg-white p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer relative overflow-hidden ${
+                  className={`rounded-3xl border bg-white p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl cursor-pointer relative overflow-hidden ${
                     isSelected
                       ? "border-primary ring-2 ring-primary/20 shadow-primary/10"
                       : "border-stone-200/80 hover:border-stone-300"
                   }`}
                 >
+                  {/* Visual Image Showcase */}
+                  <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-5 bg-stone-100 border border-stone-200/60 shadow-inner group">
+                    <Image
+                      src={service.imgUrl}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-transparent to-transparent pointer-events-none" />
+                  </div>
+
                   {/* Top Badge */}
-                  <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-[9px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-stone-100 text-stone-800 border border-stone-200">
                       {service.badge}
                     </span>

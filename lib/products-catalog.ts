@@ -448,13 +448,13 @@ export const PRODUCTS_CATALOG: Product[] = [
   {
     id: 112,
     slug: "retouche-ourlet-simple",
-    title: "L'Essentiel — Ourlet Simple",
+    title: "L'Essentiel — Ourlet Simple & Jean",
     description: "Retouche d'ourlet simple, idéal pour vos jeans, pantalons droits et chinos en coton. Vous pouvez envoyer votre pièce par voie postale (Mondial Relay, Colissimo) ou la déposer directement à l'Atelier Robertot (76). N'oubliez pas de marquer votre pli avec une épingle à nourrice ou de fournir un vêtement modèle.",
     price: 12.00,
     category: "Retouches",
     badge: "Service Sur-Mesure",
     spec: "Jean • Chino • Coton",
-    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    imgUrl: "/images/produits/retouches/ourlet-simple-jean.webp",
     details: {
       howItWorks: [
         "Marquez votre pli à la longueur souhaitée avec une épingle (ou fournissez un vêtement modèle)",
@@ -470,8 +470,8 @@ export const PRODUCTS_CATALOG: Product[] = [
         name: "Prestation — Ourlet Simple",
         badge: "Atelier Normand",
         images: {
-          closed: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
-          open: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp"
+          closed: "/images/produits/retouches/ourlet-simple-jean.webp",
+          open: "/images/produits/retouches/ourlet-simple-jean.webp"
         }
       }
     ],
@@ -489,7 +489,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     category: "Retouches",
     badge: "Finition Premium",
     spec: "Pantalon de costume • Laine • Crêpe",
-    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    imgUrl: "/images/produits/retouches/ourlet-invisible-tailleur.webp",
     details: {
       howItWorks: [
         "Marquez votre pli à la longueur souhaitée avec une épingle (ou fournissez un vêtement modèle)",
@@ -505,8 +505,8 @@ export const PRODUCTS_CATALOG: Product[] = [
         name: "Prestation — Ourlet Invisible",
         badge: "Atelier Normand",
         images: {
-          closed: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
-          open: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp"
+          closed: "/images/produits/retouches/ourlet-invisible-tailleur.webp",
+          open: "/images/produits/retouches/ourlet-invisible-tailleur.webp"
         }
       }
     ],
@@ -524,7 +524,7 @@ export const PRODUCTS_CATALOG: Product[] = [
     category: "Retouches",
     badge: "Ajustement Parfait",
     spec: "Jupe droite • Robe",
-    imgUrl: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
+    imgUrl: "/images/produits/retouches/ourlet-robe-jupe.webp",
     details: {
       howItWorks: [
         "Marquez votre pli à la longueur souhaitée avec une épingle",
@@ -540,8 +540,8 @@ export const PRODUCTS_CATALOG: Product[] = [
         name: "Prestation — Ourlet Jupe & Robe",
         badge: "Atelier Normand",
         images: {
-          closed: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp",
-          open: "/images/hero/hero-particuliers-prop3-atelier-artisan.webp"
+          closed: "/images/produits/retouches/ourlet-robe-jupe.webp",
+          open: "/images/produits/retouches/ourlet-robe-jupe.webp"
         }
       }
     ],
