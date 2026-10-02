@@ -153,12 +153,12 @@ export function OurletsServicePage() {
         {/* Background Photo for Desktop (>= sm) */}
         <div className="hidden sm:block absolute inset-0 pointer-events-none z-0 overflow-hidden">
           <Image 
-            src="/images/hero/hero-particuliers-prop3-atelier-artisan.webp" 
-            alt="Atelier de retouches et couture de précision By Sandrine Couture en Normandie"
+            src="/images/hero/hero-services-ourlets.webp" 
+            alt="Sandrine réalisant des ourlets et retouches de précision dans son atelier en Normandie"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center filter brightness-[0.70] contrast-[1.08] saturate-[0.95]"
+            className="object-cover object-[78%_35%] filter brightness-[0.95] contrast-[1.04] saturate-[1.05]"
           />
           {/* Gradients */}
           <div className="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/75 to-transparent z-[1]" />
@@ -192,12 +192,12 @@ export function OurletsServicePage() {
           {/* Dedicated Mobile Photo Showcase */}
           <div className="sm:hidden w-full mb-8 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-stone-900">
             <Image 
-              src="/images/hero/hero-particuliers-prop3-atelier-artisan.webp" 
+              src="/images/hero/hero-services-ourlets.webp" 
               alt="Atelier couture et retouches Sandrine Couture"
               fill
               priority
               sizes="100vw"
-              className="object-cover object-center"
+              className="object-cover object-[78%_35%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-bold text-white uppercase tracking-wider bg-stone-950/70 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/15">
