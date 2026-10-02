@@ -436,6 +436,24 @@ export function OurletsServicePage() {
                       )}
                     </Button>
 
+                    <a
+                      href={`https://wa.me/33624021287?text=${encodeURIComponent(
+                        `Bonjour Sandrine, je souhaite commander la prestation : ${service.title} (${service.price.toFixed(2)} €).\nComment pouvons-nous procéder pour l'envoi / le paiement (PayPal / Virement / CB / Dépôt atelier) ?`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="no-underline"
+                    >
+                      <Button
+                        variant="outline"
+                        className="w-full h-11 rounded-full border-emerald-600/30 text-emerald-700 hover:bg-emerald-50 hover:text-emerald-800 uppercase tracking-wider text-[11px] font-bold transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      >
+                        <MessageCircle size={14} className="text-emerald-600" />
+                        <span>Commander via WhatsApp</span>
+                      </Button>
+                    </a>
+
                     <Link
                       href={`/boutique/${service.slug}`}
                       className="text-center text-[11px] font-mono text-stone-500 hover:text-primary transition-colors py-1 no-underline"
