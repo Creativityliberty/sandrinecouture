@@ -422,7 +422,7 @@ export function TestimonialsSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-stone-300 hover:border-stone-900 bg-stone-50 hover:bg-stone-900 hover:text-white text-stone-800 text-xs font-bold uppercase tracking-wider transition-all"
             >
-              <span>Voir tous nos avis Google</span>
+              <span>Voir tous les avis Google de l'Atelier</span>
               <ArrowUpRight size={14} />
             </Link>
           </div>

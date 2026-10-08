@@ -101,7 +101,7 @@ export function BusinessSection() {
 
         {/* Packs */}
         <div className="mb-32">
-          <h3 className="text-3xl font-black mb-12 tracking-tighter italic text-center uppercase">Nos Solutions Prêtes-à-Broder</h3>
+          <h3 className="text-3xl font-black mb-12 tracking-tighter italic text-center uppercase">Mes Solutions Prêtes-à-Broder</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {SITE_CONFIG.packs.map((pack, i) => (
               <div key={i} className={`p-10 rounded-[2.5rem] border flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 ${

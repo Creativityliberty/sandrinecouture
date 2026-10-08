@@ -248,7 +248,7 @@ export function BentoServices() {
                   La matrice de piquage offerte sur vos séries
                 </h3>
                 <p className="text-stone-300 text-sm leading-relaxed">
-                  Contrairement à une simple impression, la broderie requiert une programmation point par point de chaque angle et de la densité du fil. Nous optimisons chaque logo vectoriel pour un relief 3D saisissant et une durabilité à toute épreuve.
+                  Contrairement à une simple impression, la broderie requiert une programmation point par point de chaque angle et de la densité du fil. J'optimise personnellement chaque logo vectoriel pour un relief 3D saisissant et une durabilité à toute épreuve.
                 </p>
               </div>
             </div>

@@ -139,17 +139,17 @@ export function ReelsCarousel() {
               <span>Les Coulisses de l'Atelier</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter italic uppercase leading-[0.9]">
-              Nos Réalisations <br />
+              Mes Réalisations <br />
               <span className="text-primary not-italic">En Vidéo.</span>
             </h2>
             <p className="text-gray-700 font-medium max-w-xl mt-4 text-sm sm:text-base">
-              Découvrez la précision des points de broderie et le travail sur les matières en mouvement direct depuis nos publications réseaux sociaux.
+              Découvrez la précision des points de broderie et le travail sur les matières en mouvement direct depuis mes publications sur les réseaux sociaux.
             </p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-4">
             <a href="https://www.instagram.com/direct/t/17849788362080500/?hl=fr" target="_blank" rel="noopener noreferrer" className="no-underline">
               <Button className="rounded-full uppercase text-[9px] font-black tracking-widest h-12 bg-primary hover:bg-black text-white px-6">
-                Nous contacter sur Instagram
+                Me contacter sur Instagram
               </Button>
             </a>
             <a href="https://instagram.com/bysandrinecouture" target="_blank" rel="noopener noreferrer" className="no-underline">
