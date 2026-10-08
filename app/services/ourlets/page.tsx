@@ -8,7 +8,7 @@ import { RevealOnScroll } from "@/components/effects/reveal-on-scroll";
 export const metadata: Metadata = {
   title: "Service d'Ourlets & Retouches Vêtements en Ligne & Atelier (76) | By Sandrine Couture",
   description:
-    "Faites retoucher vos jeans, pantalons de costume, robes et jupes avec précision dans notre atelier normand à Robertot (76). Finition point invisible et d'origine, expédition France (Mondial Relay, Colissimo) ou dépôt sur place. Dès 12 €.",
+    "Faites retoucher vos jeans, pantalons de costume, robes et jupes avec précision dans mon atelier normand à Robertot (76). Finition point invisible et d'origine, expédition France (Mondial Relay, Colissimo) ou dépôt sur place. Dès 12 €.",
   keywords: [
     "retouche ourlet pantalon",
     "ourlet jean",
@@ -149,7 +149,7 @@ export default function Page() {
         name: "Conservez-vous la couleur d'origine du fil sur les jeans ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Oui, nous disposons d'une large palette de fils de coutellerie et tailleur (Madeira & Gütermann), incluant les fils spécifiques couleur or/tabac pour préserver le style originel des toiles denim.",
+          text: "Oui, je dispose d'une large palette de fils de coutellerie et tailleur (Madeira & Gütermann), incluant les fils spécifiques couleur or/tabac pour préserver le style originel des toiles denim.",
         },
       },
       {
@@ -157,7 +157,7 @@ export default function Page() {
         name: "Faites-vous les ourlets de rideaux ou de robes de mariée ?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Oui, ces prestations particulières font l'objet d'une étude sur mesure. Contactez-nous directement via notre formulaire de devis ou sur WhatsApp pour une estimation gratuite sous 24h.",
+          text: "Oui, ces prestations particulières font l'objet d'une étude sur mesure. Contactez-moi directement via mon formulaire de devis ou sur WhatsApp pour une estimation gratuite sous 24h.",
         },
       },
     ],

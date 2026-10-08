@@ -60,7 +60,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Restauration & Cuisine",
     searchIntentTag: "veste de cuisine broderie nom chef et logo restaurant",
     question: "Veste de cuisine & service : peut-on broder le nom du chef sur la poitrine et le logo du restaurant sur la manche ?",
-    answer: "Absolument. Notre atelier est équipé pour positionner vos marquages au millimètre sur toutes les zones du vêtement de cuisine ou de salle :\n\n• Cœur / Poitrine : Nom et titre du chef, monogramme ou blason.\n• Manches : Écusson du restaurant, drapeau français ou logo discret.\n• Bavette & Tour de cou : Grand lettrage sur tabliers de sommeliers ou serveurs.\n• Grand dos : Enseigne visible en salle ou lors des prestations traiteur.",
+    answer: "Absolument. Mon atelier est équipé pour positionner vos marquages au millimètre sur toutes les zones du vêtement de cuisine ou de salle :\n\n• Cœur / Poitrine : Nom et titre du chef, monogramme ou blason.\n• Manches : Écusson du restaurant, drapeau français ou logo discret.\n• Bavette & Tour de cou : Grand lettrage sur tabliers de sommeliers ou serveurs.\n• Grand dos : Enseigne visible en salle ou lors des prestations traiteur.",
     highlight: "Multi-emplacements précis au millimètre",
     actionText: "Configurer mes vestes de cuisine",
     actionLink: "/devis"
@@ -71,7 +71,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Restauration & Cuisine",
     searchIntentTag: "reassort tablier brodé petit nombre nouvel employé",
     question: "Réassort en cours d'année : puis-je commander seulement 2 ou 3 tabliers quand un nouveau serveur ou cuisinier arrive ?",
-    answer: "Oui, sans aucun surcoût de programmation ! Dès votre première commande, votre matrice de numérisation de logo est archivée précieusement et à vie dans notre base atelier.\n\nQuand vous recrutez un nouveau salarié ou renouvelez un tablier usé, il vous suffit de nous envoyer un message WhatsApp : nous relançons 1, 2 ou 3 pièces immédiatement au même tarif unitaire négocié, sans frais de dossier.",
+    answer: "Oui, sans aucun surcoût de programmation ! Dès votre première commande, votre matrice de numérisation de logo est archivée précieusement et à vie dans ma base atelier.\n\nQuand vous recrutez un nouveau salarié ou renouvelez un tablier usé, il vous suffit de m'envoyer un message WhatsApp : je relance 1, 2 ou 3 pièces immédiatement au même tarif unitaire négocié, sans frais de dossier.",
     highlight: "Matrice archivée à vie • Réassort 1 pièce",
     actionText: "Échanger avec Sandrine",
     actionLink: "https://wa.me/33629492213"
@@ -84,7 +84,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Artisans & BTP",
     searchIntentTag: "broderie veste softshell btp étanchéité pluie",
     question: "Broderie sur veste softshell ou parka de chantier : est-ce que cela perce et abîme l'imperméabilité du vêtement ?",
-    answer: "Non, nous appliquons un protocole technique spécifique pour les vêtements d'extérieur techniques du BTP :\n\n• Sous-couche déperlante et renfort stabilisateur thermique étanche appliqués sur l'envers du piquage pour sceller les micro-perforations de l'aiguille.\n• Préservation du confort coupe-vent et déperlant de votre softshell, doudoune de travail ou parka haute visibilité.\n• Vos équipes restent parfaitement au sec sur les chantiers tout en arborant une image de marque irréprochable.",
+    answer: "Non, j'applique un protocole technique spécifique pour les vêtements d'extérieur techniques du BTP :\n\n• Sous-couche déperlante et renfort stabilisateur thermique étanche appliqués sur l'envers du piquage pour sceller les micro-perforations de l'aiguille.\n• Préservation du confort coupe-vent et déperlant de votre softshell, doudoune de travail ou parka haute visibilité.\n• Vos équipes restent parfaitement au sec sur les chantiers tout en arborant une image de marque irréprochable.",
     highlight: "Scellage étanche sous broderie",
     actionText: "Demander une étude BTP",
     actionLink: "/devis"
@@ -97,7 +97,7 @@ const INTENT_FAQS: FAQItemData[] = [
     question: "Sweat et polaire de travail : pourquoi la broderie est-elle obligatoire plutôt que le flocage pour les artisans ?",
     answer: "Sur un chantier de maçonnerie, plomberie, menuiserie ou électricité, le flocage plastique est détruit en quelques semaines par les frottements d'outils, la poussière et les lavages hebdomadaires répétés.\n\nLa broderie est tissée directement dans l'épaisseur de la maille du textile avec un point de bourdon et de remplissage haute densité. Même après 100 chantiers, le logo reste intact, net et valorise l'image professionnelle de votre entreprise auprès de vos clients.",
     highlight: "10x plus robuste que le flocage",
-    actionText: "Voir nos réalisations BTP",
+    actionText: "Voir mes réalisations BTP",
     actionLink: "/realisations"
   },
   {
@@ -117,7 +117,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Équitation & Clubs",
     searchIntentTag: "broderie tapis de selle chabraque équitation cheval club",
     question: "Broderie équestre : prenez-vous en charge les tapis de selle très épais, couvertures de chevaux et bonnets ?",
-    answer: "C'est l'une des spécialités reconnues de l'atelier en Normandie ! La broderie équestre exige des cadres de tension lourds et des aiguilles renforcées capables de traverser le matelassage épais sans déformer la ligne de dos du cheval.\n\n• Nous brodons sur : chabraques d'obstacles et de dressage, couvre-reins polaires, couvertures d'écurie, chemises séchantes, bonnets anti-mouches et vestes de concours.\n• Fils imputrescibles résistants à la sueur acide du cheval et aux frottements de la selle.",
+    answer: "C'est l'une des spécialités reconnues de l'atelier en Normandie ! La broderie équestre exige des cadres de tension lourds et des aiguilles renforcées capables de traverser le matelassage épais sans déformer la ligne de dos du cheval.\n\n• Je brode sur : chabraques d'obstacles et de dressage, couvre-reins polaires, couvertures d'écurie, chemises séchantes, bonnets anti-mouches et vestes de concours.\n• Fils imputrescibles résistants à la sueur acide du cheval et aux frottements de la selle.",
     highlight: "Spécialiste broderie équestre Normandie",
     actionText: "Demander une broderie équestre",
     actionLink: "/contact"
@@ -128,7 +128,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Clubs & Assos",
     searchIntentTag: "sweat capuche broderie club sportif petite serie sans minimum",
     question: "Club de sport : quel est le délai pour une série de 20 à 50 sweats à capuche avant le début de saison ou un tournoi ?",
-    answer: "En moyenne 7 à 12 jours ouvrés à compter de la validation du Bon À Tirer (BAT).\n\n• Nous vous envoyons une simulation numérique ultra-précise avec le blason de votre club, les numéros ou les prénoms des joueurs.\n• Tarifs de groupe spécialement étudiés pour les associations et clubs sportifs.\n• Envoi d'une broderie test sur tissu pour validation par le bureau du club avant lancement de la série complète.",
+    answer: "En moyenne 7 à 12 jours ouvrés à compter de la validation du Bon À Tirer (BAT).\n\n• Je vous envoie une simulation numérique ultra-précise avec le blason de votre club, les numéros ou les prénoms des joueurs.\n• Tarifs de groupe spécialement étudiés pour les associations et clubs sportifs.\n• Envoi d'une broderie test sur tissu pour validation par le bureau du club avant lancement de la série complète.",
     highlight: "Tarifs club & BAT préalable inclus",
     actionText: "Devis pour mon association",
     actionLink: "/devis"
@@ -141,7 +141,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Spas, Instituts & Santé",
     searchIntentTag: "drap de bain peignoir brodé logo spa résistant huiles massage",
     question: "Spas & Instituts de beauté : vos broderies sur peignoirs et draps de bain résistent-elles aux huiles de massage et lavages fréquents ?",
-    answer: "Parfaitement. Les instituts de beauté et centres de bien-être ont des contraintes drastiques d'hygiène avec des cycles de lavage quotidiens à 60°C pour éliminer les résidus d'huiles végétales et d'huiles essentielles.\n\nNous sélectionnons des éponges 550g/m² peignées au toucher velours luxueux et des fils de broderie hydrofuges et inaltérables qui conservent leur gonflant sans gratter les clientes lors des soins.",
+    answer: "Parfaitement. Les instituts de beauté et centres de bien-être ont des contraintes drastiques d'hygiène avec des cycles de lavage quotidiens à 60°C pour éliminer les résidus d'huiles végétales et d'huiles essentielles.\n\nJe sélectionne des éponges 550g/m² peignées au toucher velours luxueux et des fils de broderie hydrofuges et inaltérables qui conservent leur gonflant sans gratter les clientes lors des soins.",
     highlight: "Résistance huiles & hygiène 60°C",
     actionText: "Découvrir la gamme Linge",
     actionLink: "/boutique"
@@ -152,7 +152,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Spas, Instituts & Santé",
     searchIntentTag: "blouse medicale broderie prenom kine osteo anti irritation",
     question: "Blouse médicale, ostéo & kiné : la broderie gratte-t-elle la peau à l'intérieur du vêtement ?",
-    answer: "Non, jamais. Nous appliquons systématiquement au dos de chaque broderie de vêtement porté à même la peau une protection thermo-fusible ultra-douce appelée « cover-stitch ».\n\nCe voile protecteur soyeux isole totalement les fils et nœuds de renfort intérieur, garantissant zéro démangeaison, zéro rougeur et un confort absolu tout au long de vos journées de consultations.",
+    answer: "Non, jamais. J'applique systématiquement au dos de chaque broderie de vêtement porté à même la peau une protection thermo-fusible ultra-douce appelée « cover-stitch ».\n\nCe voile protecteur soyeux isole totalement les fils et nœuds de renfort intérieur, garantissant zéro démangeaison, zéro rougeur et un confort absolu tout au long de vos journées de consultations.",
     highlight: "Finition intérieure douce brevetée"
   },
 
@@ -163,7 +163,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Naissance & Famille",
     searchIntentTag: "faire broder prenom sur doudou vêtement couverture déjà acheté",
     question: "Peut-on faire broder un prénom sur un doudou, un plaid ou un vêtement que j'ai déjà acheté dans le commerce ?",
-    answer: "Oui, avec grand plaisir ! Vous n'êtes absolument pas obligés d'acheter vos articles chez nous.\n\nVous pouvez déposer à l'atelier de Robertot (ou m'envoyer par colis) le doudou fétiche, la couverture en tricot offerte par les grands-parents ou la cape de bain achetée en magasin. Sandrine choisira l'entoilage adapté pour broder délicatement le prénom de bébé sans altérer la douceur d'origine du doudou.",
+    answer: "Oui, avec grand plaisir ! Vous n'êtes absolument pas obligés d'acheter vos articles chez moi.\n\nVous pouvez déposer à l'atelier de Robertot (ou m'envoyer par colis) le doudou fétiche, la couverture en tricot offerte par les grands-parents ou la cape de bain achetée en magasin. Je choisirai l'entoilage adapté pour broder délicatement le prénom de bébé sans altérer la douceur d'origine du doudou.",
     highlight: "Broderie sur vos articles personnels acceptée",
     actionText: "Envoyer une photo de mon doudou",
     actionLink: "https://wa.me/33629492213"
@@ -174,7 +174,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Naissance & Famille",
     searchIntentTag: "broderie naissance bébé certifiée oeko tex sans produit toxique",
     question: "Bébé & Nourrissons : vos matières et fils sont-ils certifiés sans aucun risque pour la santé des tout-petits ?",
-    answer: "La sécurité des nouveau-nés est la priorité absolue de Sandrine, elle-même maman passionnée de puériculture :\n\n• Tous nos fils de broderie sont certifiés Oeko-Tex Standard 100 Classe 1 (la norme la plus exigeante au monde, autorisée pour le contact direct avec la salive et la peau des bébés dès le premier jour).\n• Tissus en fibre de bambou naturelle, suédine douce et coton bio certifié.\n• Aucun fil coupant, nœud saillant ou composant allergène.",
+    answer: "La sécurité des nouveau-nés est ma priorité absolue, étant moi-même maman passionnée de puériculture :\n\n• Tous mes fils de broderie sont certifiés Oeko-Tex Standard 100 Classe 1 (la norme la plus exigeante au monde, autorisée pour le contact direct avec la salive et la peau des bébés dès le premier jour).\n• Tissus en fibre de bambou naturelle, suédine douce et coton bio certifié.\n• Aucun fil coupant, nœud saillant ou composant allergène.",
     highlight: "100% Oeko-Tex Standard 100 Classe 1",
     actionText: "Voir les créations Bébé",
     actionLink: "/boutique"
@@ -185,7 +185,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Naissance & Famille",
     searchIntentTag: "cartable sac a dos maternelle brodé prénom dessin animaux",
     question: "Rentrée scolaire & Crèche : peut-on broder un animal ou un dessin personnalisé en plus du prénom sur le sac ?",
-    answer: "Oui, c'est l'une des demandes préférées des familles ! En plus du prénom brodé dans la typographie de votre choix (cursive rétro, moderne, majuscules), nous disposons d'un catalogue de motifs brodés de haute précision :\n\n• Petits animaux de la forêt (renards, biches, hérissons, écureuils)\n• Dinosaures, engins de chantier, tracteurs, fusées\n• Fleurs champêtres, cœurs vichy et étoiles poétiques.\nLe tout brodé sur des sacs à dos résistants et lavables.",
+    answer: "Oui, c'est l'une des demandes préférées des familles ! En plus du prénom brodé dans la typographie de votre choix (cursive rétro, moderne, majuscules), je dispose d'un catalogue de motifs brodés de haute précision :\n\n• Petits animaux de la forêt (renards, biches, hérissons, écureuils)\n• Dinosaures, engins de chantier, tracteurs, fusées\n• Fleurs champêtres, cœurs vichy et étoiles poétiques.\nLe tout brodé sur des sacs à dos résistants et lavables.",
     highlight: "Motifs + Prénom au choix",
     actionText: "Découvrir les cartables brodés",
     actionLink: "/boutique"
@@ -198,7 +198,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Urgences & Marques",
     searchIntentTag: "peut on faire broder doudoune veste de marque carhartt north face",
     question: "Puis-je faire broder une veste ou doudoune de marque de grande valeur (Carhartt, The North Face, Ralph Lauren, Barbour) ?",
-    answer: "Oui, Sandrine a l'habitude de manipuler des pièces haut de gamme et des vestes de grande valeur.\n\n• Technique sur doudoune : Nous utilisons des cadres de serrage magnétique spéciaux qui ne pincent ni n'écrasent le tissu plume, et des aiguilles ultra-fines qui ne percent pas les chambres d'isolation thermique en duvet.\n• Vestes Barbour ou toiles cirées : Piquage précis avec renfort stabilisateur pour préserver l'allure noble du textile.",
+    answer: "Oui, j'ai l'habitude de manipuler des pièces haut de gamme et des vestes de grande valeur.\n\n• Technique sur doudoune : J'utilise des cadres de serrage magnétique spéciaux qui ne pincent ni n'écrasent le tissu plume, et des aiguilles ultra-fines qui ne percent pas les chambres d'isolation thermique en duvet.\n• Vestes Barbour ou toiles cirées : Piquage précis avec renfort stabilisateur pour préserver l'allure noble du textile.",
     highlight: "Cadres magnétiques sans trace de serrage",
     actionText: "Poser une question à Sandrine",
     actionLink: "/contact"
@@ -209,7 +209,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Urgences & Marques",
     searchIntentTag: "broderie personnalisée express 48h cadeau derniere minute",
     question: "Cadeau de dernière minute ou événement ce week-end : proposez-vous une confection express sous 24h à 48h ?",
-    answer: "Oui, selon la disponibilité de l'atelier ! Pour toute demande urgente, ne passez pas par un email classique :\n\n• Écrivez ou appelez directement Sandrine sur son WhatsApp professionnel au 06 29 49 22 13.\n• Précisez votre besoin (prénom, article en stock à l'atelier ou vêtement apporté).\n• Si l'article est en stock, une confection prioritaire en 24h à 48h peut être calée dans le planning avec retrait direct à l'atelier de Robertot ou expédition Chronopost express.",
+    answer: "Oui, selon la disponibilité de l'atelier ! Pour toute demande urgente, ne passez pas par un email classique :\n\n• Écrivez ou appelez directement sur mon WhatsApp professionnel au 06 29 49 22 13.\n• Précisez votre besoin (prénom, article en stock à l'atelier ou vêtement apporté).\n• Si l'article est en stock, une confection prioritaire en 24h à 48h peut être calée dans le planning avec retrait direct à l'atelier de Robertot ou expédition Chronopost express.",
     highlight: "Créneau d'urgence WhatsApp en direct",
     actionText: "Ligne directe WhatsApp",
     actionLink: "https://wa.me/33629492213"
@@ -220,7 +220,7 @@ const INTENT_FAQS: FAQItemData[] = [
     categoryLabel: "Atelier 76",
     searchIntentTag: "atelier broderie pres de chez moi yvetot rouen le havre dieppe",
     question: "Où faire broder un vêtement en Normandie (Seine-Maritime 76) et comment venir à l'atelier ?",
-    answer: "L'atelier By Sandrine Couture est situé dans le pays de Caux à Robertot (76560), idéalement placé au carrefour de la Seine-Maritime :\n\n• À 10 minutes d'Yvetot et de Doudeville\n• À 15 minutes de Cany-Barville et de Saint-Valery-en-Caux\n• À 40 minutes de Rouen, Dieppe et Le Havre\n\nVous pouvez venir déposer et retirer vos vêtements gratuitement sur rendez-vous, ou profiter de nos envois suivis en 48h partout en France via Colissimo et Mondial Relay.",
+    answer: "L'atelier By Sandrine Couture est situé dans le pays de Caux à Robertot (76560), idéalement placé au carrefour de la Seine-Maritime :\n\n• À 10 minutes d'Yvetot et de Doudeville\n• À 15 minutes de Cany-Barville et de Saint-Valery-en-Caux\n• À 40 minutes de Rouen, Dieppe et Le Havre\n\nVous pouvez venir déposer et retirer vos vêtements gratuitement sur rendez-vous, ou profiter de mes envois suivis en 48h partout en France via Colissimo et Mondial Relay.",
     highlight: "Proximité Yvetot, Rouen, Le Havre (76)",
     actionText: "Plan d'accès et coordonnées",
     actionLink: "/contact"

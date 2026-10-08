@@ -308,7 +308,7 @@ export function RealisationsPage() {
                   </h3>
 
                   <p className="text-stone-600 text-xs leading-relaxed mb-6 font-normal">
-                    {selectedRealisation.desc || "Pièce d'exception brodée avec des fils certifiés Oeko-Tex Standard 100. Confectionnée avec précision dans notre atelier de Robertot."}
+                    {selectedRealisation.desc || "Pièce d'exception brodée avec des fils certifiés Oeko-Tex Standard 100. Confectionnée avec précision dans mon atelier à Robertot."}
                   </p>
 
                   <div className="space-y-3 pt-4 border-t border-black/[0.08] text-xs font-mono">

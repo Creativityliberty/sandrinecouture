@@ -236,7 +236,7 @@ _Envoyé depuis le site Sandrine Couture_`;
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
             <div>
               <h2 className="text-2xl sm:text-3xl font-black tracking-tighter italic uppercase mb-6 sm:mb-8">
-                Nos coordonnées
+                Mes coordonnées directes
               </h2>
             </div>
 
@@ -366,10 +366,10 @@ _Envoyé depuis le site Sandrine Couture_`;
                   Avis Google
                 </p>
                 <p className="text-gray-700 font-medium text-sm">
-                  Laissez-nous un avis
+                  Laissez-moi votre avis
                 </p>
                 <p className="text-[9px] sm:text-[10px] text-gray-700 font-bold uppercase tracking-widest mt-1 sm:mt-2">
-                  Soutenez notre atelier artisanal
+                  Soutenez mon atelier artisanal
                 </p>
               </div>
             </a>

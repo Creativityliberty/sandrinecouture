@@ -2,9 +2,9 @@ import { SchemaOrgBreadcrumb } from "@/components/layout/schema-org";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Notre Portfolio de Broderie",
+  title: "Mon Portfolio de Broderie",
   description:
-    "Découvrez nos dernières réalisations en broderie artisanale : uniformes pro, cadeaux de naissance et projets sur mesure en Normandie.",
+    "Découvrez mes réalisations en broderie artisanale : uniformes professionnels, cadeaux de naissance et confections sur mesure en Normandie.",
   alternates: {
     canonical: "/realisations",
   },

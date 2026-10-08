@@ -99,7 +99,7 @@ const STEPS = [
     step: "03",
     icon: Scissors,
     title: "Façonnage & Retour Soigné",
-    desc: "Nous coupons, surjetons et piquons votre ourlet avec le fil exact assorti à la matière. Votre vêtement repassé et impeccable vous est réexpédié sous 7 à 10 jours ouvrés.",
+    desc: "Je coupe, surjette et pique votre ourlet avec le fil exact assorti à la matière. Votre vêtement repassé et impeccable vous est réexpédié sous 7 à 10 jours ouvrés.",
     tip: "Contrôle qualité & tombé garanti"
   }
 ];
@@ -115,11 +115,11 @@ const FAQS = [
   },
   {
     q: "Conservez-vous la couleur d'origine du fil (notamment sur les jeans) ?",
-    a: "Oui, nous disposons d'une large palette de fils de coutellerie et tailleur (Madeira & Gütermann), incluant les fils spécifiques couleur or/tabac pour préserver le style originel des jeans et toiles denim."
+    a: "Oui, je dispose d'une large palette de fils de coutellerie et tailleur (Madeira & Gütermann), incluant les fils spécifiques couleur or/tabac pour préserver le style originel des jeans et toiles denim."
   },
   {
     q: "Faites-vous les ourlets de rideaux ou de robes de mariée ?",
-    a: "Oui, ces prestations particulières nécessitent une étude sur mesure en fonction de l'ampleur et de la délicatesse des étoffes. Contactez-nous directement via notre formulaire de devis ou sur WhatsApp pour recevoir une estimation rapide sous 24h."
+    a: "Oui, ces prestations particulières nécessitent une étude sur mesure en fonction de l'ampleur et de la délicatesse des étoffes. Contactez-moi directement via mon formulaire de devis ou sur WhatsApp pour recevoir une estimation rapide sous 24h."
   }
 ];
 
@@ -228,7 +228,7 @@ export function OurletsServicePage() {
 
             {/* Copy */}
             <p className="text-sm sm:text-base lg:text-lg text-stone-200 font-normal leading-relaxed mb-8 max-w-xl drop-shadow-md">
-              Prolongez la vie de vos vêtements préférés et offrez-leur un ajustement sur mesure. Jeans, pantalons de costume ou robes de soirée : nous réalisons vos ourlets avec des points invisibles ou des surpiqûres conformes aux finitions d'origine.
+              Prolongez la vie de vos vêtements préférés et offrez-leur un ajustement sur mesure. Jeans, pantalons de costume ou robes de soirée : je réalise vos ourlets avec des points invisibles ou des surpiqûres conformes aux finitions d'origine.
             </p>
 
             {/* Guarantees Matrix */}
@@ -488,7 +488,7 @@ export function OurletsServicePage() {
                 Rideaux, doublures complexes ou robes de cocktail
               </h3>
               <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                Pour les étoffes d'ameublement ou les pièces haute couture à plusieurs volants, nous établissons un devis personnalisé sous 24h.
+                Pour les étoffes d'ameublement ou les pièces haute couture à plusieurs volants, j'établis un devis personnalisé sous 24h.
               </p>
             </div>
             
@@ -591,7 +591,7 @@ export function OurletsServicePage() {
               Questions Fréquentes sur les <span className="font-serif italic font-normal text-primary normal-case">Retouches</span>
             </h2>
             <p className="text-stone-600 text-sm">
-              Tout ce que vous devez savoir pour nous confier vos vêtements en toute sérénité.
+              Tout ce que vous devez savoir pour me confier vos vêtements en toute sérénité.
             </p>
           </div>
 
@@ -642,7 +642,7 @@ export function OurletsServicePage() {
             Prêt(e) à redonner une coupe parfaite à vos vêtements ?
           </h2>
           <p className="text-xs sm:text-sm text-stone-300 max-w-xl mx-auto mb-8 font-mono uppercase tracking-wider">
-            Rejoignez nos clients partout en France et bénéficiez du savoir-faire d'un atelier artisanal normand.
+            Rejoignez mes clients partout en France et bénéficiez du savoir-faire d'un atelier artisanal normand.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
