@@ -175,7 +175,7 @@ export function ParticuliersPage() {
 
             {/* Copy */}
             <p className="text-sm sm:text-base lg:text-lg text-stone-200 font-normal leading-relaxed mb-8 max-w-xl drop-shadow-md">
-              Vous cherchez une attention qui touche vraiment le cœur ? De la couverture de naissance au peignoir personnalisé, nous donnons vie à vos idées avec des fils doux, inusables et certifiés sans substances nocives.
+              Vous cherchez une attention qui touche vraiment le cœur ? De la couverture de naissance au peignoir personnalisé, je donne vie à vos idées avec des fils doux, inusables et certifiés sans substances nocives.
             </p>
 
             {/* Guarantees Matrix */}
@@ -399,7 +399,7 @@ export function ParticuliersPage() {
                       <span className="px-2.5 py-0.5 rounded bg-primary/10 text-primary text-[9px] font-mono uppercase font-bold">Clé en main</span>
                     </div>
                     <p className="text-xs text-stone-600 leading-relaxed">
-                      Nous fournissons les matières premières de qualité supérieure : serviettes éponge denses 550g, gilets sherpa, bavoirs et trousses sélectionnées avec rigueur.
+                      Je sélectionne des matières premières de qualité supérieure : serviettes éponge denses 550g, gilets sherpa, bavoirs et trousses sélectionnées avec rigueur.
                     </p>
                   </div>
                 </div>
@@ -440,9 +440,9 @@ export function ParticuliersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { num: "01", title: "Votre Envie", desc: "Vous choisissez l'article et indiquez le prénom ou motif souhaité via notre formulaire." },
-              { num: "02", title: "Échange Direct", desc: "WhatsApp s'ouvre : Sandrine vous confirme le prix exact et vous propose des polices d'écriture." },
-              { num: "03", title: "Confection Soignée", desc: "Broderie artisanale sur nos machines industrielles avec contrôle méticuleux du fil." },
+              { num: "01", title: "Votre Envie", desc: "Vous choisissez l'article et indiquez le prénom ou motif souhaité via mon formulaire." },
+              { num: "02", title: "Échange Direct", desc: "WhatsApp s'ouvre : je vous confirme le prix exact et vous propose des polices d'écriture." },
+              { num: "03", title: "Confection Soignée", desc: "Broderie artisanale sur mes machines professionnelles avec contrôle méticuleux du fil." },
               { num: "04", title: "Réception Heureuse", desc: "Retrait à Robertot (76) ou livraison suivie à votre domicile dans un joli paquet." },
             ].map((step, sIdx) => (
               <div key={sIdx} className="p-8 rounded-[2rem] bg-[#faf8f5] border border-black/[0.06] flex flex-col justify-between min-h-[240px]">
@@ -479,7 +479,7 @@ export function ParticuliersPage() {
           </h2>
 
           <p className="text-stone-300 text-base max-w-xl mx-auto mb-10 leading-relaxed">
-            Parlez-nous de votre projet en 2 minutes : Sandrine vous répond avec tendresse et professionnalisme.
+            Parlez-moi de votre projet en 2 minutes : je vous réponds personnellement avec bienveillance et professionnalisme.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-10">

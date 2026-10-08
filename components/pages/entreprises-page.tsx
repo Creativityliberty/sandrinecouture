@@ -318,7 +318,7 @@ export function EntreprisesPage() {
               </h2>
             </div>
             <p className="text-stone-500 text-sm max-w-sm font-medium leading-relaxed">
-              Une cuisine étoilée n'a pas les mêmes contraintes qu'un chantier BTP ou un cabinet de soins. Nous ajustons les matières et techniques de broderie.
+              Une cuisine étoilée n'a pas les mêmes contraintes qu'un chantier BTP ou un cabinet de soins. J'adapte précisément les matières et techniques de broderie.
             </p>
           </div>
 
@@ -371,7 +371,7 @@ export function EntreprisesPage() {
             <div className="flex items-center gap-3">
               <Sparkles size={18} className="text-primary shrink-0" />
               <span className="text-sm font-semibold text-stone-800">
-                Vous n'êtes pas dans la liste ou avez un textile bien spécifique ? Aucun souci, nous adaptons le piquage à votre support.
+                Vous n'êtes pas dans la liste ou avez un textile bien spécifique ? Aucun souci, j'adapte le piquage à votre support.
               </span>
             </div>
             <Link href="/devis?type=entreprise">
