@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import standMarcheImg from "@/public/images/boutique/stand-marche-normandie.jpg";
+import boutiqueHeroImg from "@/public/images/boutique/hero-boutique-artisanale-luxe.webp";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { useCart } from "@/context/cart-context";
@@ -155,19 +155,19 @@ export default function BoutiquePage() {
       {/* 1. HERO BOUTIQUE QUIET LUXURY */}
       <section className="relative px-4 sm:px-6 lg:px-8 pt-8 pb-14 sm:pb-20 border-b border-stone-200/60 overflow-hidden bg-stone-900 text-white">
         
-        {/* Authentic Normandie Market Stand Photo in Background */}
+        {/* Quiet Luxury Atelier Artisan Background Photo */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
           <Image 
-            src={standMarcheImg} 
-            alt="Le stand By Sandrine Couture sur les marchés artisanaux de Normandie"
+            src={boutiqueHeroImg} 
+            alt="Atelier d'artisanat textile et broderie haut de gamme By Sandrine Couture en Normandie"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[50%_40%] filter brightness-[0.95] contrast-[1.05]"
+            className="object-cover object-[50%_35%] filter brightness-[0.92] contrast-[1.05]"
           />
-          {/* Subtle Dark Glassmorphism scrim: text is super crisp on left, stand and products completely clear on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/65 to-stone-950/30 z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/70 z-[1]" />
+          {/* Refined Glassmorphism scrim: text is super crisp on left, creations radiant on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-stone-950/92 via-stone-950/60 to-stone-950/25 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-stone-950/60 z-[1]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
